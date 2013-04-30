@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/maelstrom/userGroupOption.xsd">
+	<import>
+		<categories>
+			<category name="user.jCoins">
+				<parent>user</parent>
+			</category>
+
+			<category name="user.jCoins.general">
+				<parent>user.jCoins</parent>
+			</category>
+
+			<category name="mod.jCoins">
+				<parent>mod</parent>
+			</category>
+
+			<category name="mod.jCoins.general">
+				<parent>mod.jCoins</parent>
+			</category>
+
+			<category name="admin.jCoins">
+				<parent>admin</parent>
+			</category>
+			
+			<category name="admin.jCoins.general">
+				<parent>admin.jCoins</parent>
+			</category>
+
+			<category name="admin.jCoins.premiumgroups">
+				<parent>admin.jCoins</parent>
+			</category>
+		</categories>
+
+		<options>
+			<option name="mod.jCoins.canModTransfer">
+				<categoryname>mod.jCoins.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+			<option name="mod.jCoins.canSeeTransferList">
+				<categoryname>mod.jCoins.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+			<option name="admin.jCoins.premiumgroups.canEditPremiumGroups">
+				<categoryname>admin.jCoins.premiumgroups</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+
+			<option name="admin.jCoins.canExecuteMassProcessing">
+				<categoryname>admin.jCoins.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>

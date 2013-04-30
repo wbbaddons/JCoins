@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/option.xsd">
+	<import>
+		<categories>
+			<category name="jCoins">
+				    <showorder>4</showorder>
+				    
+			</category>
+
+			<category name="jCoins.general">
+				    <parent>jCoins</parent>
+			</category>
+
+			<category name="jCoins.receiveCoins">
+					<parent>jCoins</parent>
+			</category>
+			
+		</categories>
+		<options>
+			<option name="module_jcoins">
+				<categoryname>module.community</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<enableoptions><![CDATA[jCoins]]></enableoptions>
+			</option>
+
+			<option name="jcoins_statements_autocompress">
+				<categoryname>jCoins.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>0</defaultvalue>
+			</option>
+
+			<option name="jcoins_coins_tax">
+				<categoryname>jCoins.receiveCoins</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>5</defaultvalue>
+			</option>
+
+			<option name="jcoins_receiveCoins_like">
+				<categoryname>jCoins.receiveCoins</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>10</defaultvalue>
+			</option>
+
+			<option name="jcoins_receiveCoins_dislike">
+				<categoryname>jCoins.receiveCoins</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>-5</defaultvalue>
+			</option>
+
+			<option name="jcoins_receiveCoins_createconversation">
+				<categoryname>jCoins.receiveCoins</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>5</defaultvalue>
+			</option>
+
+			<option name="jcoins_receiveCoins_addconversationreply">
+				<categoryname>jCoins.receiveCoins</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>2</defaultvalue>
+			</option>
+
+			<option name="jcoins_receiveCoins_useradd">
+				<categoryname>jCoins.receiveCoins</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>50</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>

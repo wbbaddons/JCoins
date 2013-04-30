@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/templateListener.xsd">
+	<import>
+		<templatelistener name="userPanel">
+			<environment>user</environment>
+			<templatename>userPanel</templatename>
+			<eventname>menuItems</eventname>
+			<templatecode><![CDATA[{include file='__userPanelJCoinsLink'}]]></templatecode>
+		</templatelistener>
+
+		<templatelistener name="userSidebar">
+			<environment>user</environment>
+			<templatename>userSidebar</templatename>
+			<eventname>statistics</eventname>
+			<templatecode><![CDATA[{include file='__userSidebarJCoinsDisplaySum'}]]></templatecode>
+		</templatelistener>
+
+		<templatelistener name="user">
+			<environment>user</environment>
+			<templatename>user</templatename>
+			<eventname>buttons</eventname>
+			<templatecode><![CDATA[{include file='__userJCoinsDisplayTransfer'}]]></templatecode>
+		</templatelistener>
+
+		<templatelistener name="usersMassProcessingAddJCoinsAction">
+			<environment>admin</environment>
+			<templatename>usersMassProcessing</templatename>
+			<eventname>additionalActions</eventname>
+			<templatecode><![CDATA[{include file='__userMassProcessingJcoinsAction'}]]></templatecode>
+		</templatelistener>
+
+		<templatelistener name="usersMassProcessingAddJCoinsActionSettings">
+			<environment>admin</environment>
+			<templatename>usersMassProcessing</templatename>
+			<eventname>additionalActionSettings</eventname>
+			<templatecode><![CDATA[{include file='__userMassProcessingJcoinsActionSettings'}]]></templatecode>
+		</templatelistener>
+	</import>
+</data>

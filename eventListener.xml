@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/eventListener.xsd">
+	<import>
+		<!-- Like Event Action -->
+		<eventlistener>
+			<eventclassname>wcf\data\like\LikeAction</eventclassname>
+			<eventname>finalizeAction</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsLikeActionListener</listenerclassname>
+		</eventlistener>
+
+		<!-- Conversation -->
+		<eventlistener>
+			<eventclassname>wcf\data\conversation\ConversationAction</eventclassname>
+			<eventname>finalizeAction</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsConversationAddListener</listenerclassname>
+		</eventlistener>
+
+		<eventlistener>
+			<eventclassname>wcf\data\conversation\message\ConversationMessageAction</eventclassname>
+			<eventname>finalizeAction</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsConversationMessageAddListener</listenerclassname>
+		</eventlistener>
+
+		<!-- User --> 
+		<eventlistener>
+			<eventclassname>wcf\data\user\UserAction</eventclassname>
+			<eventname>finalizeAction</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsUserAddListener</listenerclassname>
+		</eventlistener>
+
+		<!-- UserMassProcessing --> 
+		<eventlistener>
+			<eventclassname>wcf\acp\form\UsersMassProcessingForm</eventclassname>
+			<eventname>readFormParameters</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
+			<environment>admin</environment>
+		</eventlistener>
+
+		<eventlistener>
+			<eventclassname>wcf\acp\form\UsersMassProcessingForm</eventclassname>
+			<eventname>validate</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
+			<environment>admin</environment>
+		</eventlistener>
+
+		<eventlistener>
+			<eventclassname>wcf\acp\form\UsersMassProcessingForm</eventclassname>
+			<eventname>saved</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
+			<environment>admin</environment>
+		</eventlistener>
+
+		<eventlistener>
+			<eventclassname>wcf\acp\form\UsersMassProcessingForm</eventclassname>
+			<eventname>assignVariables</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
+			<environment>admin</environment>
+		</eventlistener>
+	</import>
+</data>
