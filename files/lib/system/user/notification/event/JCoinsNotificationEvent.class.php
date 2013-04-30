@@ -7,7 +7,7 @@ class JCoinsNotificationEvent extends AbstractUserNotificationEvent {
 	 * @see	wcf\system\user\notification\event\IUserNotificationEvent::getMessage()
 	 */
 	public function getTitle() {
-		return $this->getLanguage()->getDynamicVariable('wcf.user.notification.jcoins.title');
+		return $this->getLanguage()->get('wcf.user.notification.jcoins.title');
 	}
 
 	/**
