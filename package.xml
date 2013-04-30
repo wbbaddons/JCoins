@@ -2,8 +2,8 @@
 <package name="de.joshsboard.jCoins" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
 	<packageinformation>
 		<packagename>jCoins</packagename>
-		<packagedescription>Blubb</packagedescription>
-		<version>1.0.18</version>
+		<packagedescription>A credit system for WCF2.</packagedescription>
+		<version>1.0.0</version>
 		<date>2013-03-02</date>
 		<isunique>1</isunique>
 		<plugin>com.woltlab.wcf</plugin>
