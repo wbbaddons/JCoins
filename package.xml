@@ -27,6 +27,7 @@
 	<instructions type="install">
 	    <instruction type="template">templates.tar</instruction>
 	    <instruction type="file">files.tar</instruction>
+            <instruction type="sql">install.sql</instruction>
 	    <instruction type="templateListener">templateListener.xml</instruction>
 	    <instruction type="option">options.xml</instruction>
 	    <instruction type="eventListener">eventListener.xml</instruction>
