@@ -18,6 +18,7 @@
 		<item name="wcf.jCoins.statement.noresults"><![CDATA[Es sind momentan keine Kontoauszüge verfügbar.]]></item>
 		<item name="wcf.jCoins.statement.domoderativ"><![CDATA[Moderative Überweisung tätigen]]></item>
 		<item name="wcf.jCoins.statement.successfullsumup"><![CDATA[Die Kontoauszüge wurden erfolgreich zusammengefasst.]]></item>
+                <item name="wcf.jCoins.statement.compress"><![CDATA[Kontoauszüge zusammenfassen]]></item>
 
 		<!-- TRANSFER --> 
 		<item name="wcf.jCoins.transfer.domoderativ"><![CDATA[Moderative Überweisung tätigen]]></item>
@@ -63,7 +64,8 @@
 		<item name="wcf.jCoins.premiumgroups.buy"><![CDATA[Kaufen]]></item>
 		<item name="wcf.jCoins.premiumgroups.renew"><![CDATA[Verlängern]]></item>
 		<item name="wcf.jCoins.premiumgroups.link"><![CDATA[Meine Premiumgruppen]]></item>
-
+                <item name="wcf.jCoins.premiumgroups.nogroups"><![CDATA[Momentan kannst du keine Premiumgruppen kaufen, da keine verfügbar sind.]]></item>
+                
 		<item name="wcf.jCoins.premiumgroups.statement.buy"><![CDATA[Eine Premiumbenutzergruppe gekauft.]]></item>
 	</category>
 

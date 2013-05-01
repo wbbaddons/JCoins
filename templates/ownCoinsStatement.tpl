@@ -11,7 +11,7 @@
 
 <header class="boxHeadline">
 	<hgroup>
-		<h1>Kontoauszüge</h1>
+		<h1>{lang}wcf.jCoins.statement.title{/lang}</h1>
 	</hgroup>
 </header>
 		
@@ -22,7 +22,7 @@
     <nav>
 	<ul id="jCoinsStatementButtonContainer" class="">
 	    {content}
-		{if $entrys|count > 1}<li><a class="button" href="{link controller='SumUpStatements'}{/link}" title="{link controller='SumUpStatements'}{/link}"><span>Kontoauszüge zusammenfassen</span></a></li>{/if}
+		{if $entrys|count > 1}<li><a class="button" href="{link controller='SumUpStatements'}{/link}" title="{link controller='SumUpStatements'}{/link}"><span>{lang}wcf.jCoins.statement.compress{/lang}</span></a></li>{/if}
 		{event name='largeButtonsTop'}
 	    {/content}
 	</ul>
@@ -32,7 +32,7 @@
 
 <div class="marginTop statementBox">
     {if $entrys|count == 0}
-	<p class="info">Es wurden leider noch keine Kontoauszugeinträge gefunden.</p>
+	<p class="info">{lang}wcf.jCoins.statement.noresults{/lang}</p>
     {else}
 	    
     <table class="table">

@@ -43,7 +43,7 @@
 			
 			{if !$group->isDisabled()}
 			<dl>
-				<dt>Kaufen</dt>
+				<dt>{lang}wcf.jCoins.premiumgroups.buy{/lang}</dt>
 				<dd>{if $group->getJCoins() > $__wcf->user->jCoinsBalance}<span class="badge red">{lang}wcf.jCoins.premiumgroups.notenougthjcoins{/lang}</span>{else}<span class="button" id="buyPremiumGroupButton{$group->premiumGroupID}">{if $group->isMember()}{lang}wcf.jCoins.premiumgroups.renew{/lang}{else}{lang}wcf.jCoins.premiumgroups.buy{/lang}{/if}{/if}</span></dd>
 			</dl>
 			    <script type="text/javascript">
@@ -59,7 +59,7 @@
 		
 		{/content}
 		{hascontentelse}
-		<p class="info">Derzeit kannst du keine Premiumgruppen kaufen und es ist auch keine Premiumgruppe bei dir aktiv.</p>
+		<p class="info">{lang}wcf.jCoins.premiumgroups.nogroups{/lang}</p>
 		{/hascontent}
 	</div>
 
