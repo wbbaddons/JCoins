@@ -14,6 +14,13 @@
 			<eventname>statistics</eventname>
 			<templatecode><![CDATA[{include file='__userSidebarJCoinsDisplaySum'}]]></templatecode>
 		</templatelistener>
+                
+                <templatelistener name="messageSidebarJCoins">
+			<environment>user</environment>
+			<templatename>messageSidebar</templatename>
+			<eventname>userCredits</eventname>
+			<templatecode><![CDATA[{include file='__userMessageSidebarJCoinsDisplaySum.tpl'}]]></templatecode>
+		</templatelistener>
 
 		<templatelistener name="user">
 			<environment>user</environment>
