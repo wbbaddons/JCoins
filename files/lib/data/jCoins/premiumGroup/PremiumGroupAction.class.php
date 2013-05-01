@@ -7,8 +7,7 @@ use wcf\data\user\User;
 use wcf\system\WCF;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
-use wcf\data\jCoins\statement\StatementEditor; 
-use wcf\data\jCoins\premiumGroup\PremiumGroup;
+use wcf\data\jCoins\statement\StatementEditor;
 
 class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggleAction {
 	/**
@@ -118,6 +117,38 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 				));
 			}
 			
+                        $sql = "SELECT until
+                            FROM	wcf".WCF_N."_user_to_group_temp
+                            WHERE userID = ? AND groupID = ?";
+                        
+                        $statement = WCF::getDB()->prepareStatement($sql);
+                        $statement->execute(array(
+                                WCF::getUser()->userID, 
+                                $pGroup->getGroupID()
+                        ));
+                        $row = $statement->fetchArray();
+                        
+                        if (isset($row['until'])) {
+                                $sql = "UPDATE wcf".WCF_N."_user_to_group_temp SET until = ? WHERE userID = ? AND groupID = ?";
+                                $statement = WCF::getDB()->prepareStatement($sql);
+                                $statement->execute(array(
+                                        $row['until'] + $pGroup->getPeriod(),
+                                        WCF::getUser()->userID, 
+                                        $pGroup->getGroupID()
+                                ));
+                        } else {
+                                $sql = "INSERT INTO wcf".WCF_N."_user_to_group_temp
+                                        (until, userID, groupID)
+                                    VALUES
+                                        (?, ?, ?)";
+                                $statement = WCF::getDB()->prepareStatement($sql);
+                                $statement->execute(array(
+                                        $pGroup->getPeriod(),
+                                        WCF::getUser()->userID, 
+                                        $pGroup->getGroupID()
+                                ));
+                        }
+                        
 			$editor = new UserEditor(new User(WCF::getUser()->userID)); 
 			$editor->addToGroup($pGroup->getGroupID());
 			$editor->resetCache(); 

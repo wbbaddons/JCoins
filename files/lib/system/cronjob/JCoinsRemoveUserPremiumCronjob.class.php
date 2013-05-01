@@ -2,10 +2,16 @@
 namespace wcf\system\cronjob;
 use wcf\data\cronjob\Cronjob;
 use wcf\system\WCF;
-use wcf\data\jCoins\premiumGroup\PremiumGroup;
-use wcf\data\user\UserEditor;
 
-class JCoinsDailyTaxCronjob extends AbstractCronjob {
+/**
+ * Removes users from premium groups. 
+ * 
+ * @author      Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ * @subpackage	system.cronjob
+ * @category	Community Framework
+ */
+class JCoinsRemoveUserPremiumCronjob extends AbstractCronjob {
 	/**
 	 * @see	wcf\system\cronjob\ICronjob::execute()
 	 */
@@ -19,10 +25,10 @@ class JCoinsDailyTaxCronjob extends AbstractCronjob {
 		$statement->execute();
 
 		while ($row = $statement->fetchArray()) {
-			$premiumGroup = new PremiumGroup($row->premiumGroupID);
-			$user = new UserEditor($row['userID']);
-			$user->removeFromGroups(array($premiumGroup->groupID));
-			$user->resetCache(); 
+                    $sql = "DELETE FROM wcf".WCF_N."_user_to_group_premium
+                    WHERE premiumGroupID = ? AND userID = ?";
+                    $statement = WCF::getDB()->prepareStatement($sql);
+                    $statement->execute(array($row['premiumGroupID'], $row['userID']));
 		}
 	}
 }

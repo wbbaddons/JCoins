@@ -21,6 +21,7 @@
 		<requiredpackage minversion="1.0.0 Alpha 2">com.woltlab.wcf.bbcode</requiredpackage>
 		<requiredpackage minversion="1.0.0 Alpha 1">com.woltlab.wcf.message</requiredpackage>
 		<requiredpackage minversion="1.0.0 Alpha 1">com.woltlab.wcf.conversation</requiredpackage>
+                <requiredpackage minversion="1.0.0">de.joshsboard.tempusergroup</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
