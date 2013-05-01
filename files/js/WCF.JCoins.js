@@ -1,48 +1,5 @@
 WCF.JCoins = { };
 
-WCF.JCoins.Transfer = Class.extend({
-	/**
-	 * action proxy
-	 * @var	WCF.Action.Proxy
-	 */
-	_proxy: null,
-	_userID: null,
-	init: function(userID, link) {
-		this._proxy = new WCF.Action.Proxy({
-			showLoadingOverlay: true
-		});
-                
-                    var clicks = 0;
-                    var _this = this; 
-                    $('#transferButton').live({
-                      click: function() {
-                        node = $(this);
-                        clicks++;
-                        if (clicks == 1) {
-                          setTimeout(function() {
-                            if(clicks == 1) {
-                              window.location=link;
-                            } else {
-                                _this._click();
-                            }
-                            clicks = 0;
-                          }, 300);
-                        }
-                      }      
-                    });
-	}, 
-	
-	_click: function() {
-		this._proxy.setOption('data', {
-			actionName: 'mark',
-			className: 'wcf\\action\\TransferMarkUserAction',
-			objectIDs: [ this._userID ]
-		});
-		
-		this._proxy.sendRequest();
-	}
-});
-
 WCF.JCoins.Buy = Class.extend({
 	/**
 	 * action proxy
