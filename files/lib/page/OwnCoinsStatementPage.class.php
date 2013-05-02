@@ -4,6 +4,13 @@ use wcf\page\AbstractPage;
 use wcf\system\WCF;
 use wcf\data\jCoins\statement\StatementList;
 
+/**
+ * all own statements page
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ * @subpackage	wcf.page
+ */
 class OwnCoinsStatementPage extends AbstractPage {
     
 	/**

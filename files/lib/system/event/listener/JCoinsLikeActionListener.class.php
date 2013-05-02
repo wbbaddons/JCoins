@@ -6,6 +6,12 @@ use wcf\data\like\object\LikeObject;
 use wcf\data\object\type\ObjectTypeCache;
 use wcf\data\like\Like;
 
+/**
+ * add jcoins on like an object
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ */
 class JCoinsLikeActionListener implements IEventListener {
 	/**
 	 * @see	\wcf\system\event\IEventListener::execute()
@@ -19,10 +25,10 @@ class JCoinsLikeActionListener implements IEventListener {
 	    switch ($eventObj->getActionName()) {
 		    case 'like': 
 		    case 'dislike': 
-			break; 
+			    break; 
 		    
 		    default: 
-			return; 
+			    return; 
 	    }
             
 	    $returnValues = $eventObj->getReturnValues();

@@ -10,6 +10,13 @@ use wcf\data\package\PackageCache;
 use wcf\system\exception\PermissionDeniedException; 
 use wcf\data\jCoins\premiumGroup\PremiumGroup;
 
+/**
+ * jcoins Premium Group Add Form
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ * @subpackage	acp.form
+ */
 class JCoinsPremiumAddForm extends AbstractForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$activeMenuItem
@@ -34,14 +41,17 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public $period	    = 0; 
 	public $groups	    = null; 
 	
+	/**
+	 * @see	wcf\page\AbstractPage::readParameters
+	 */
 	public function readParameters() {
-	    parent::readParameters();
+		parent::readParameters();
 	    
-	    if (count(UserGroup::getAccessibleGroups(array(UserGroup::OTHER))) == 0) {
-		throw new PermissionDeniedException(); 
-	    }
-	    
-	    I18nHandler::getInstance()->register('description');
+		if (count(UserGroup::getAccessibleGroups(array(UserGroup::OTHER))) == 0) {
+			throw new PermissionDeniedException(); 
+		}
+
+		I18nHandler::getInstance()->register('description');
 	}
 	
 	/**
@@ -56,8 +66,6 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		if (isset($_POST['jCoins'])) $this->jCoins = intval ($_POST['jCoins']);
 		if (isset($_POST['period'])) $this->period = intval($_POST['period']);
 		if (I18nHandler::getInstance()->isPlainValue('description')) $this->description = I18nHandler::getInstance()->getValue('description');
-		
-		
 	}
 
 	/**
@@ -67,15 +75,15 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		parent::validate();
 		
 		if ($this->jCoins < 0) {
-		    throw new UserInputException('jCoins', 'underZero');
+			throw new UserInputException('jCoins', 'underZero');
 		}
 		
 		if ($this->period < 1) {
-		    throw new UserInputException('period', 'time');
+			throw new UserInputException('period', 'time');
 		}
 		
 		if (!UserGroup::isAccessibleGroup(array($this->groupID))) {
-		    throw new PermissionDeniedException(); 
+			throw new PermissionDeniedException(); 
 		}
 	}
 
@@ -122,7 +130,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public function assignVariables() {
 		parent::assignVariables();
 
-				I18nHandler::getInstance()->assignVariables();
+		I18nHandler::getInstance()->assignVariables();
 		
 		// read groups
 		$this->groups = UserGroup::getGroupsByType(array(4));

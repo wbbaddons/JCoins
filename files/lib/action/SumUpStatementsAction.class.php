@@ -8,6 +8,12 @@ use wcf\system\WCF;
 use wcf\util\HeaderUtil;
 use wcf\system\request\LinkHandler;
 
+/**
+ * sum up all statement entrys from an user
+ * 
+ * @author  Joshua Rüsweg
+ * @package de.joshsboard.jcoin
+ */
 class SumUpStatementsAction extends AbstractAction {
 
 	/**
@@ -15,6 +21,9 @@ class SumUpStatementsAction extends AbstractAction {
 	 */
 	public $loginRequired = true;
 
+	/**
+	 * @see wcf\action\AbstractAction::execute()
+	 */
 	public function execute() {
 		parent::execute();
 
@@ -24,7 +33,7 @@ class SumUpStatementsAction extends AbstractAction {
 		
 		// you cannot execute this action under 2 entrys
 		if ($list->countObjects() < 2) {
-		    throw new PermissionDeniedException(); 
+			throw new PermissionDeniedException(); 
 		}
 		
 		StatementEditor::deleteAll($list->getObjectIDs()); 
@@ -41,10 +50,13 @@ class SumUpStatementsAction extends AbstractAction {
 		$this->executed(); 
 	}
 	
+	/**
+	 * @see wcf\action\AbstractAction::executed()
+	 */
 	public function executed() {
-	    parent::executed();
+		parent::executed();
 	    
-	    HeaderUtil::delayedRedirect(LinkHandler::getInstance()->getLink('OwnCoinsStatement'), WCF::getLanguage()->get('wcf.jCoins.statement.successfullsumup'));
-	    exit; 
+		HeaderUtil::delayedRedirect(LinkHandler::getInstance()->getLink('OwnCoinsStatement'), WCF::getLanguage()->get('wcf.jCoins.statement.successfullsumup'));
+		exit; 
 	}
 }

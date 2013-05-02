@@ -3,6 +3,12 @@ namespace wcf\system\event\listener;
 use wcf\system\event\IEventListener;
 use wcf\data\jCoins\statement\StatementEditor;
 
+/**
+ * add jcoins on registration
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ */
 class JCoinsUserAddListener implements IEventListener {
 	/**
 	 * @see	\wcf\system\event\IEventListener::execute()

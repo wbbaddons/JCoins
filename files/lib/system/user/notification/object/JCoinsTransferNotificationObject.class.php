@@ -1,8 +1,13 @@
 <?php
 namespace wcf\system\user\notification\object;
 use wcf\data\DatabaseObjectDecorator;
-use wcf\system\request\LinkHandler;
 
+/**
+ * transfer-notification object
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ */
 class JCoinsTransferNotificationObject extends DatabaseObjectDecorator implements IUserNotificationObject {
 	/**
 	 * @see	wcf\data\DatabaseObjectDecorator::$baseClass

@@ -4,6 +4,13 @@ use wcf\page\AbstractPage;
 use wcf\system\WCF;
 use wcf\data\jCoins\statement\StatementList;
 
+/**
+ * the global statement list
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcons
+ * @subpackage	wcf.page
+ */
 class JCoinsGlobalActivityPage extends AbstractPage {
 	
 	/**
@@ -16,6 +23,9 @@ class JCoinsGlobalActivityPage extends AbstractPage {
 	 */
 	public $neededPermissions = array('mod.jCoins.canSeeTransferList');
 	
+	/**
+	 * @see	wcf\page\AbstractPage::$templateName
+	 */
 	public $templateName = 'JCoinsGlobalActivity';
 	
 	/**

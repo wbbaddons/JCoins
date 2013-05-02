@@ -4,6 +4,12 @@ use wcf\data\DatabaseObject;
 use wcf\data\user\group\UserGroup;
 use wcf\system\WCF;
 
+/**
+ * premium group database object
+ * 
+ * @author  Joshua Rüsweg
+ * @package de.joshsboard.jcoins
+ */
 class PremiumGroup extends DatabaseObject {
 	/**
 	 * @see	wcf\data\DatabaseObject::$databaseTableName
@@ -15,37 +21,17 @@ class PremiumGroup extends DatabaseObject {
 	 */
 	protected static $databaseTableIndexName = 'premiumGroupID';
 	
-	public function getGroupID() {
-		return $this->groupID; 
-	}
-	
-	public function getPremiumGroupID() {
-	    return $this->premiumGroupID; 
-	}
-	
-	public function getJCoins() {
-		return $this->jCoins; 
-	}
-	
-	public function getPeriod() {
-		return $this->period; 
-	}
-	
-	public function isDisabled() {
-		return $this->isDisabled; 
-	}
-	
-	public function getDescription() {
-		return $this->description; 
-	}
-	
+	/**
+	 * get the group
+	 * @return	wcf\data\user\group\UserGroup
+	 */
 	public function getGroup() {
 		$group = UserGroup::getGroupByID($this->getGroupID());
 		return $group; 
 	}
 	
         /**
-         * return wheter a premium group is deletable 
+         * return true if the group is deletable
          * 
          * @return  bool
          */
@@ -58,6 +44,12 @@ class PremiumGroup extends DatabaseObject {
 		return ($row['members'] > 0) ? false : true; 
 	}
 	
+	/**
+	 * return true if the member is a member of the group
+	 * 
+	 * @param   integer	$userID
+	 * @return  boolean 
+	 */
         public function isMember($userID = null) {
 		if ($userID === null) {
 			$userID = WCF::getSession()->userID; 
@@ -71,6 +63,11 @@ class PremiumGroup extends DatabaseObject {
                 return ($row['members'] > 0) ? true : false; 
         }
 	
+	/**
+	 * returns true if the usergroup is accessible
+	 * 
+	 * @return  boolean
+	 */
 	public function isAccessible() {
 		return UserGroup::isAccessibleGroup(array($this->groupID));
 	}    

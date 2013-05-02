@@ -5,13 +5,21 @@ use wcf\data\DatabaseObjectEditor;
 use wcf\data\user\UserEditor;
 use wcf\data\user\User;
 
-
+/**
+ * a statement editor
+ * 
+ * @author  Joshua Rüsweg
+ * @package de.joshsboard.jcoins
+ */
 class StatementEditor extends DatabaseObjectEditor {
 	/**
 	 * @see	wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
 	protected static $baseClass = 'wcf\data\jCoins\statement\Statement';
 	
+	/**
+	 * @see wcf\data\DatabaseObjectEditor::create()
+	 */
 	public static function create(array $parameters = array()) {
 		$changeBalance = true;
 	    

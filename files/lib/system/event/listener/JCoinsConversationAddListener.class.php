@@ -4,6 +4,12 @@ use wcf\system\event\IEventListener;
 use wcf\data\jCoins\statement\StatementEditor;
 use wcf\system\WCF;
 
+/**
+ * add jcoins on create an conversation
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ */
 class JCoinsConversationAddListener implements IEventListener {
 	/**
 	 * @see	\wcf\system\event\IEventListener::execute()

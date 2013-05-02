@@ -2,6 +2,12 @@
 namespace wcf\system\user\notification\event;
 use wcf\system\user\notification\event\AbstractUserNotificationEvent;
 
+/**
+ * notification event on recive a transfer
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ */
 class JCoinsNotificationEvent extends AbstractUserNotificationEvent {
 	/**
 	 * @see	wcf\system\user\notification\event\IUserNotificationEvent::getMessage()
