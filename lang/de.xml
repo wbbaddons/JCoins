@@ -23,6 +23,7 @@
 		<!-- TRANSFER --> 
 		<item name="wcf.jCoins.transfer.domoderativ"><![CDATA[Moderative Überweisung tätigen]]></item>
 		<item name="wcf.jCoins.transfer"><![CDATA[Überweisung]]></item>
+                <item name="wcf.jCoins.transfer.info"><![CDATA[JCoins an den Benutzer überweisen.]]></item>
 		<item name="wcf.jCoins.transfer.general"><![CDATA[Allgemeine Informationen]]></item>
 
 
