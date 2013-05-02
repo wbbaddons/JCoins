@@ -44,6 +44,11 @@ class PremiumGroup extends DatabaseObject {
 		return $group; 
 	}
 	
+        /**
+         * return wheter a premium group is deletable 
+         * 
+         * @return  bool
+         */
 	public function isDeletable() {
 		$sql = "SELECT COUNT(*) AS members FROM wcf".WCF_N."_user_to_group_premium WHERE premiumGroupID = ?"; 
 		$statement = WCF::getDB()->prepareStatement($sql);
