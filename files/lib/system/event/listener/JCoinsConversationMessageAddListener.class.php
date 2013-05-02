@@ -4,8 +4,12 @@ use wcf\system\event\IEventListener;
 use wcf\data\jCoins\statement\StatementEditor;
 use wcf\system\WCF;
 
-require_once(WCF_DIR."options.inc.php");
-
+/**
+ * add jcoins on create an conversation message
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ */
 class JCoinsConversationMessageAddListener implements IEventListener {
 	/**
 	 * @see	\wcf\system\event\IEventListener::execute()

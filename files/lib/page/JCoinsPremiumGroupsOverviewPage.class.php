@@ -4,6 +4,13 @@ use wcf\page\AbstractPage;
 use wcf\data\jCoins\premiumGroup\PremiumGroupList; 
 use wcf\system\WCF;
 
+/**
+ * list all active premium groups on a page
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ * @subpackage	wcf.page
+ */
 class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
     
 	/**
@@ -16,8 +23,14 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	 */
 	public $neededModules = array('MODULE_JCOINS');
 	
+	/**
+	 * @see	wcf\page\AbstractPage::$templateName
+	 */
 	public $templateName = 'jCoinsPremiumGroupsOverview';
 	
+	/**
+	 * @see	wcf\page\IPage::assignVariables()
+	 */
 	public function assignVariables() {
 	    parent::assignVariables();
 	    

@@ -9,6 +9,12 @@ use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
 use wcf\data\jCoins\statement\StatementEditor;
 
+/**
+ * premium group action 
+ * 
+ * @author  Joshua Rüsweg
+ * @package de.joshsboard.jcoins
+ */
 class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggleAction {
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$className
@@ -54,6 +60,9 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 		}
 	}
 	
+	/**
+	 * validate a buy group action
+	 */
 	public function validateBuyGroup() {
 		if (!MODULE_JCOINS) throw new IllegalLinkException(); 
 	    
@@ -72,6 +81,9 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 		}
 	}
 	
+	/**
+	 * buy a premium group
+	 */
 	public function buyGroup() {
 		foreach ($this->objects as $pGroup) {
                         StatementEditor::create(array(

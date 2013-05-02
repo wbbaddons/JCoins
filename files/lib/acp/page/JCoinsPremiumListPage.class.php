@@ -4,6 +4,13 @@ use wcf\page\SortablePage;
 use wcf\system\WCF;
 use wcf\data\user\group\UserGroup; 
 
+/**
+ * a list of all premium groups
+ * 
+ * @author  Joshua Rüsweg
+ * @package de.joshsboard.jcoins
+ * @subpackage	acp.page
+ */
 class JCoinsPremiumListPage extends SortablePage {
 	/**
 	 * @see	wcf\page\AbstractPage::$activeMenuItem
@@ -44,12 +51,14 @@ class JCoinsPremiumListPage extends SortablePage {
 		$this->objectList->sqlSelects .= "(SELECT COUNT(*) FROM wcf".WCF_N."_user_to_group_premium WHERE premiumGroupID = user_group_premium.premiumGroupID) AS members";
 	}
 	
+	/**
+	 * @see	wcf\page\IPage::assignVariables()
+	 */
 	public function assignVariables() {
-	    parent::assignVariables();
+		parent::assignVariables();
 	    
-	    WCF::getTPL()->assign(array(
+		WCF::getTPL()->assign(array(
 			'canAddNewGroup'	=> (count(UserGroup::getAccessibleGroups(array(UserGroup::OTHER))) > 0) ? true : false
-	    ));
-	    
+		));
 	}
 }

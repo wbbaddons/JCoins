@@ -1,6 +1,12 @@
 <?php
 namespace wcf\system\user\notification\object\type;
 
+/**
+ * object type for transfer-notifications
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ */
 class JCoinsTransferNotificationObjectType extends AbstractUserNotificationObjectType {
 	/**
 	 * @see wcf\system\user\notification\object\type\AbstractUserNotificationObjectType::$decoratorClassName

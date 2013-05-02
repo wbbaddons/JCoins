@@ -3,6 +3,12 @@ namespace wcf\data\jCoins\statement;
 use wcf\data\DatabaseObject;
 use wcf\data\user\User; 
 
+/**
+ * a statement for jcoins
+ * 
+ * @author  Joshua Rüsweg
+ * @package de.joshsboard.jcoins
+ */
 class Statement extends DatabaseObject {
 	/**
 	 * @see	wcf\data\DatabaseObject::$databaseTableName
@@ -14,26 +20,20 @@ class Statement extends DatabaseObject {
 	 */
 	protected static $databaseTableIndexName = 'entryID';
 	
-	public function getTime() {
-		return $this->time; 
-	}
-	
-	public function getReason() {
-		return $this->reason; 
-	}
-	
-	public function getSum() {
-		return $this->sum; 
-	}
-	
-	public function getExecutedUserID() {
-		return $this->executedUserID; 
-	}
-	
-	public function getExcetuedUser() {
+	/**
+	 * returns the executed user
+	 * 
+	 * @return \wcf\data\user\User
+	 */
+	public function getExecutedUser() {
 		return new User($this->executedUserID); 
 	}
 	
+	/**
+	 * returns the user
+	 * 
+	 * @return \wcf\data\user\User
+	 */
 	public function getUser() {
 		return new User($this->userID); 
 	}

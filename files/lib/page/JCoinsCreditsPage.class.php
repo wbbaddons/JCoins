@@ -2,6 +2,13 @@
 namespace wcf\page;
 use wcf\page\AbstractPage;
 
+/**
+ * the credit page
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ * @subpackage	wcf.page
+ */
 class JCoinsCreditsPage extends AbstractPage {
     
 	/**
@@ -14,5 +21,8 @@ class JCoinsCreditsPage extends AbstractPage {
 	 */
 	public $neededModules = array('MODULE_JCOINS');
 	
+	/**
+	 * @see	wcf\page\AbstractPage::$templateName
+	 */
 	public $templateName = 'jCoinsCredits';
 }

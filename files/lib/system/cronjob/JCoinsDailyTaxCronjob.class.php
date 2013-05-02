@@ -4,6 +4,14 @@ use wcf\data\cronjob\Cronjob;
 use wcf\system\WCF;
 use wcf\data\jCoins\statement\StatementEditor; 
 
+/**
+ * adding the daily tax
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ * @subpackage	system.cronjob
+ * @category	Community Framework
+ */
 class JCoinsDailyTaxCronjob extends AbstractCronjob {
 	/**
 	 * @see	wcf\system\cronjob\ICronjob::execute()
@@ -19,8 +27,6 @@ class JCoinsDailyTaxCronjob extends AbstractCronjob {
 			FROM	wcf". WCF_N ."_user";
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute();
-
-		$i = 0; 
 		
 		while ($row = $statement->fetchArray()) {
 			$user = new UserEditor($row['userID']);
@@ -31,10 +37,6 @@ class JCoinsDailyTaxCronjob extends AbstractCronjob {
 				'reason'	=> "DAILYTAX", 
 				'sum'		=> $newCoins
 			));
-			
-			++$i;
-			
-			if ($i > 1000) return; 
 		}
 	}
 }

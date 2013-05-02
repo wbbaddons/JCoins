@@ -8,6 +8,13 @@ use wcf\data\jCoins\statement\StatementEditor;
 use wcf\system\user\notification\UserNotificationHandler;
 use wcf\system\user\notification\object\JCoinsTransferNotificationObject; 
 
+/**
+ * a transfer form for jcoins
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ * @subpackage	wcf.form
+ */
 class JCoinsTransferForm extends AbstractForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$enableTracking

@@ -3,9 +3,10 @@ namespace wcf\data\jCoins\premiumGroup;
 use wcf\data\DatabaseObjectList;
 
 /**
- * the StatementList
+ * the premium group list
  * 
- * @author Joshua Rüsweg
+ * @author  Joshua Rüsweg
+ * @package de.joshsboard.jcoins
  */
 class PremiumGroupList extends DatabaseObjectList {
 	/**

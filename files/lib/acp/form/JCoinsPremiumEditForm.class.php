@@ -3,8 +3,6 @@ namespace wcf\acp\form;
 use wcf\system\exception\UserInputException;
 use wcf\form\AbstractForm;
 use wcf\system\WCF;
-use wcf\data\user\group\UserGroup; 
-use wcf\util\StringUtil; 
 use wcf\data\jCoins\premiumGroup\PremiumGroup; 
 use wcf\system\exception\IllegalLinkException;
 use wcf\data\jCoins\premiumGroup\PremiumGroupAction;  
@@ -12,6 +10,13 @@ use wcf\system\language\I18nHandler;
 use wcf\data\package\PackageCache;
 use wcf\system\exception\PermissionDeniedException;
 
+/**
+ * jcoins Premium Group Edit Form
+ * 
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
+ * @subpackage	acp.form
+ */
 class JCoinsPremiumEditForm extends AbstractForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$activeMenuItem
@@ -35,6 +40,9 @@ class JCoinsPremiumEditForm extends AbstractForm {
 	public $pGroupID    = 0; 
 	public $pGroupObj   = null; 
 	
+	/**
+	 * @see	wcf\page\AbstractPage::readParameters
+	 */
 	public function readParameters() {
 		parent::readParameters();
 
@@ -48,21 +56,21 @@ class JCoinsPremiumEditForm extends AbstractForm {
 	}
 	
 	public function readData() {
-	    parent::readData();
-	    
-	    if (empty($_POST)) {
-		I18nHandler::getInstance()->setOptions('description', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'),  $this->pGroupObj->description, 'wcf.jCoins.premiumGroups.description\d+');
-	    }
+		parent::readData();
+
+		if (empty($_POST)) {
+			I18nHandler::getInstance()->setOptions('description', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'),  $this->pGroupObj->description, 'wcf.jCoins.premiumGroups.description\d+');
+		}
 	}
 	
 	/**
 	 * @see	wcf\form\IForm::readFormParameters()
 	 */
 	public function readFormParameters() {
-		    parent::readFormParameters();
+		parent::readFormParameters();
 		    
-		    I18nHandler::getInstance()->readValues();
-		    if (isset($_POST['jCoins'])) $this->jCoins = intval ($_POST['jCoins']);
+		I18nHandler::getInstance()->readValues();
+		if (isset($_POST['jCoins'])) $this->jCoins = intval ($_POST['jCoins']);
 	}
 
 	/**
@@ -72,7 +80,7 @@ class JCoinsPremiumEditForm extends AbstractForm {
 		parent::validate();
 		
 		if ($this->jCoins < 0) {
-		    throw new UserInputException('jCoins', 'underZero');
+			throw new UserInputException('jCoins', 'underZero');
 		}
 	}
 
