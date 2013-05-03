@@ -7,7 +7,7 @@ CREATE TABLE  `wcf1_statement_entrys` (
 `sum` INT NOT NULL
 ) ENGINE = INNODB ;
 
-ALTER TABLE  `wcf1_user` ADD  `jCoinsBalance` INT NOT NULL DEFAULT  '0';
+ALTER TABLE  wcf1_user ADD  jCoinsBalance INT NOT NULL DEFAULT  '0';
 
 CREATE TABLE  `wcf1_user_group_premium` (
 `premiumGroupID` INT NOT NULL AUTO_INCREMENT ,
