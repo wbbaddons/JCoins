@@ -35,4 +35,11 @@ class JCoinsNotificationEvent extends AbstractUserNotificationEvent {
 			'author' => $this->author
 		));
 	}
+	
+	/**
+	 * @see	wcf\system\user\notification\event\IUserNotificationEvent::getLink()
+	 */
+	public function getLink() {
+		return LinkHandler::getInstance()->getLink('JCoinsCredits', array('object' => $this->userNotificationObject));
+	}
 }
