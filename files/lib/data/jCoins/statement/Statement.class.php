@@ -37,4 +37,9 @@ class Statement extends DatabaseObject {
 	public function getUser() {
 		return new User($this->userID); 
 	}
+	
+	
+	public function getTime() {
+		return $this->time;
+	}
 }
