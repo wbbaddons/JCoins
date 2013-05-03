@@ -22,7 +22,7 @@ class JCoinsConversationMessageAddListener implements IEventListener {
 			'userID'			=> WCF::getUser()->userID,
 			'executedUserID'		=> 0, 
 			'time'				=> TIME_NOW, 
-			'reason'			=> "wcf.jCoins.statement.conversationaddreply.recive",
+			'reason'			=> "wcf.jCoins.statement.conversationreplyadd.recive",
 			'sum'				=> JCOINS_RECEIVECOINS_ADDCONVERSATIONREPLY
 		));
 	}
