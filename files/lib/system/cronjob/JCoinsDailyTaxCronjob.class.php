@@ -1,6 +1,7 @@
 <?php
 namespace wcf\system\cronjob;
 use wcf\data\cronjob\Cronjob;
+use wcf\data\user\UserEditor;
 use wcf\system\WCF;
 use wcf\data\jCoins\statement\StatementEditor; 
 
