@@ -19,7 +19,7 @@
 			<environment>user</environment>
 			<templatename>messageSidebar</templatename>
 			<eventname>userCredits</eventname>
-			<templatecode><![CDATA[{include file='__userMessageSidebarJCoinsDisplaySum.tpl'}]]></templatecode>
+			<templatecode><![CDATA[{include file='__userMessageSidebarJCoinsDisplaySum'}]]></templatecode>
 		</templatelistener>
 
 		<templatelistener name="user">
