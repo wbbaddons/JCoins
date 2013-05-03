@@ -1,7 +1,7 @@
 <?php
 namespace wcf\system\cronjob;
 use wcf\data\cronjob\Cronjob;
-use wcf\data\user\UserEditor;
+use wcf\data\user\User;
 use wcf\system\WCF;
 use wcf\data\jCoins\statement\StatementEditor; 
 
@@ -30,7 +30,7 @@ class JCoinsDailyTaxCronjob extends AbstractCronjob {
 		$statement->execute();
 		
 		while ($row = $statement->fetchArray()) {
-			$user = new UserEditor($row['userID']);
+			$user = new User($row['userID']);
 			$newCoins = $user->jCoinsBalance * $tax / 100 * -1; 
 			StatementEditor::create(array(
 				'userID'	=> $row['userID'], 
