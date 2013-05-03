@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS wcf1_statement_entrys;
 CREATE TABLE wcf1_statement_entrys (
-  entryID			INT(11) 		NOT NULL DEFAULT 0,
+  entryID			INT(11) 		NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	userID 			INT(11) 		NOT NULL DEFAULT 0,
 	executedUserID 	INT(11) 		NOT NULL DEFAULT 0,
 	time 			INT(9) 			NOT NULL DEFAULT 0,
