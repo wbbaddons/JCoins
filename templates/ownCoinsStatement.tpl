@@ -52,7 +52,7 @@
 			<td>{lang}{$item->reason}{/lang}</td>
 			<td>{if $item->executedUserID == 0}{lang}wcf.jcoins.systemuser{/lang}{else}<a href="{link controller='User' object=$item->getExcetuedUser()}{/link}">{$item->getExcetuedUser()->username}</a>{/if}</td>
 			<td>{if $item->sum > 0}<span class="badge green">+{#$item->sum}</span>{else}<span class="badge red">{#$item->sum}</span>{/if}</td>
-			<td>{@$item->getTime()|time} </td>
+			<td>{@$item->time|time} </td>
 		    </tr>
 		    {/foreach}
 	</tbody>
