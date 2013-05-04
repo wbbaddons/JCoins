@@ -19,8 +19,8 @@ class JCoinsRemoveUserPremiumCronjob extends AbstractCronjob {
 		parent::execute($cronjob);
 		
 		$sql = "DELETE FROM wcf".WCF_N."_user_to_group_premium
-			WHERE until < ".TIME_NOW;
+			WHERE until < ?";
 		$statement = WCF::getDB()->prepareStatement($sql);
-		$statement->execute();
+		$statement->execute(array(TIME_NOW));
 	}
 }
