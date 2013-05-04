@@ -1,26 +1,28 @@
-CREATE TABLE  `wcf1_statement_entrys` (
-`entryID` INT NOT NULL ,
-`userID` INT NOT NULL ,
-`executedUserID` INT NOT NULL ,
-`time` INT( 9 ) NOT NULL ,
-`reason` VARCHAR( 255 ) NOT NULL ,
-`sum` INT NOT NULL
-) ENGINE = INNODB ;
+DROP TABLE IF EXISTS wcf1_statement_entrys;
+CREATE TABLE wcf1_statement_entrys (
+  entryID			INT(11) 		NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	userID 			INT(11) 		NOT NULL DEFAULT 0,
+	executedUserID 	INT(11) 		NOT NULL DEFAULT 0,
+	time 			INT(9) 			NOT NULL DEFAULT 0,
+	reason 			VARCHAR(255) 	NOT NULL DEFAULT '',
+	sum 			INT(11) 		NOT NULL DEFAULT 0
+);
 
-ALTER TABLE  `wcf1_user` ADD  `jCoinsBalance` INT NOT NULL DEFAULT  '0';
+DROP TABLE IF EXISTS wcf1_user_group_premium;
+CREATE TABLE wcf1_user_group_premium (
+	premiumGroupID 	INT(11) 		NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	groupID 		INT(11) 		NOT NULL DEFAULT 0,
+	jCoins 			INT(11) 		NOT NULL DEFAULT 0,
+	period 			INT(11) 		NOT NULL DEFAULT 0,
+	isDisabled 		TINYINT(1) 		NOT NULL DEFAULT 0,
+	description 	MEDIUMTEXT		NOT NULL
+);
 
-CREATE TABLE  `wcf1_user_group_premium` (
-`premiumGroupID` INT NOT NULL AUTO_INCREMENT ,
-`groupID` INT NOT NULL ,
-`jCoins` INT NOT NULL ,
-`period` INT NOT NULL ,
-`isDisabled` BOOL NOT NULL ,
-`description` TEXT NOT NULL ,
-PRIMARY KEY (  `premiumGroupID` )
-) ENGINE = INNODB ;
+DROP TABLE IF EXISTS wcf1_user_to_group_premium;
+CREATE TABLE wcf1_user_to_group_premium (
+	userID 			INT(11) 		NOT NULL DEFAULT 0,
+	premiumGroupID 	INT(11) 		NOT NULL DEFAULT 0,
+	until 			INT(11)			NOT NULL
+);
 
-CREATE TABLE  `wcf1_user_to_group_premium` (
-`userID` INT NOT NULL ,
-`premiumGroupID` INT NOT NULL ,
-`until` INT NOT NULL
-) ENGINE = INNODB ;
+ALTER TABLE  wcf1_user ADD  jCoinsBalance INT(11) NOT NULL DEFAULT '0';
