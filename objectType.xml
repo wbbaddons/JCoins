@@ -3,10 +3,10 @@
 	<import>
 
 		<type>
-			<name>de.joshsboard.wcf.JCoins.transfer.notification</name>
+			<name>de.joshsboard.wcf.jcoins.transfer.notification</name>
 			<definitionname>com.woltlab.wcf.notification.objectType</definitionname>
 			<classname>wcf\system\user\notification\object\type\JCoinsTransferNotificationObjectType</classname>
-			<category>de.joshsboard.wcf.JCoins</category>
+			<category>de.joshsboard.wcf.jcoins</category>
 		</type>
 	</import>
 </data>
