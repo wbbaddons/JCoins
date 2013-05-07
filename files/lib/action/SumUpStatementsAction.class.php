@@ -39,11 +39,11 @@ class SumUpStatementsAction extends AbstractAction {
 		StatementEditor::deleteAll($list->getObjectIDs()); 
 		
 		StatementEditor::create(array(
-			'userID'	    => WCF::getSession()->getUser()->userID,
+			'userID'	    => WCF::getUser()->userID,
 			'executedUserID'    => 0, 
 			'time'		    => TIME_NOW, 
 			'reason'	    => "Zusammenfassung alter Kontostände", 
-			'sum'		    => WCF::getSession()->getUser()->jCoinsBalance,
+			'sum'		    => WCF::getUser()->jCoinsBalance,
 			'changeBalance'	    => false
 		));
 
