@@ -5,8 +5,6 @@
 		<packagedescription>A credit system for WCF2.</packagedescription>
 		<version>1.0.0</version>
 		<date>2013-03-02</date>
-		<isunique>1</isunique>
-		<plugin>com.woltlab.wcf</plugin>
 	</packageinformation>
 
 	<authorinformation>
