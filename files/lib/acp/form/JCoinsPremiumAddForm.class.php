@@ -33,25 +33,60 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	 */
 	public $templateName = 'JCoinsPremiumGroupAction';
 
+	/**
+	 * @see wcf\page\AbstractPage::$action
+	 */
 	public $action = 'add'; 
 	
+	/**
+	 * descriptopn of the premium group
+	 * @var string
+	 */
 	public $description = ""; 
-	public $groupID	    = 0; 
-	public $jCoins	    = 0; 
-	public $period	    = 0; 
-	public $groups	    = null; 
+	
+	/**
+	 * the groupid for the premium group 
+	 * @var integer
+	 */
+	public $groupID = 0; 
+	
+	/**
+	 * the coasts of the group
+	 * @var integer 
+	 */
+	public $jCoins = 0; 
+	
+	/**
+	 * the time of beeing in the group
+	 * @var integer
+	 */
+	public $period = 0;
+	
+	/**
+	 * all aviable groups 
+	 * @var array<mixed>
+	 */
+	public $groups = array(); 
 	
 	/**
 	 * @see	wcf\page\AbstractPage::readParameters
 	 */
 	public function readParameters() {
 		parent::readParameters();
-	    
-		if (count(UserGroup::getAccessibleGroups(array(UserGroup::OTHER))) == 0) {
-			throw new PermissionDeniedException(); 
-		}
 
 		I18nHandler::getInstance()->register('description');
+	}
+	
+	/**
+	 * @see wcf\page\AbstractPage::readData
+	 */
+	public function readData() {
+		// read groups
+		$this->groups = UserGroup::getAccessibleGroups(array(UserGroup::OTHER));
+		
+		if (count($this->groups) == 0) {
+			throw new PermissionDeniedException(); 
+		}
 	}
 	
 	/**
@@ -131,9 +166,6 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		parent::assignVariables();
 
 		I18nHandler::getInstance()->assignVariables();
-		
-		// read groups
-		$this->groups = UserGroup::getGroupsByType(array(4));
 		
 		WCF::getTPL()->assign(array(
 			'groupID'	=> $this->groupID,
