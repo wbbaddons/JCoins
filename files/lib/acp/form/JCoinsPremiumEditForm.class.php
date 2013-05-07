@@ -1,14 +1,12 @@
 <?php
 namespace wcf\acp\form;
-use wcf\system\exception\UserInputException;
-use wcf\form\AbstractForm;
+use wcf\acp\form\JCoinsPremiumAddForm; 
 use wcf\system\WCF;
 use wcf\data\jCoins\premiumGroup\PremiumGroup; 
 use wcf\system\exception\IllegalLinkException;
 use wcf\data\jCoins\premiumGroup\PremiumGroupAction;  
 use wcf\system\language\I18nHandler; 
 use wcf\data\package\PackageCache;
-use wcf\system\exception\PermissionDeniedException;
 
 /**
  * jcoins Premium Group Edit Form
@@ -17,7 +15,7 @@ use wcf\system\exception\PermissionDeniedException;
  * @package	de.joshsboard.jcoins
  * @subpackage	acp.form
  */
-class JCoinsPremiumEditForm extends AbstractForm {
+class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$activeMenuItem
 	 */
@@ -33,28 +31,38 @@ class JCoinsPremiumEditForm extends AbstractForm {
 	 */
 	public $templateName = 'JCoinsPremiumGroupAction';
 
-	public $action = 'edit'; 
+	/**
+	 * @see wcf\page\AbstractPage::$action
+	 */
+	public $action = 'edit';
 	
-	public $description = "";
-	public $jCoins	    = 0; 
-	public $pGroupID    = 0; 
+	/**
+	 * the premium group obj
+	 * @var wcf\data\jCoins\premiumGroup\PremiumGroup
+	 */
 	public $pGroupObj   = null; 
+	
+	/**
+	 * the object ID from the premiumgroup
+	 * @var integer
+	 */
+	public $pGroupID = 0; 
 	
 	/**
 	 * @see	wcf\page\AbstractPage::readParameters
 	 */
 	public function readParameters() {
 		parent::readParameters();
-
-		I18nHandler::getInstance()->register('description');
 		
 		$this->pGroupID = (isset($_REQUEST['id'])) ? $_REQUEST['id'] : 0; 
 		$this->pGroupObj = new PremiumGroup($this->pGroupID);
 		
-		if (!$this->pGroupObj->premiumGroupID) throw new IllegalLinkException();
-		if (!UserGroup::isAccessibleGroup(array($this->pGroupObj->groupID))) throw new PermissionDeniedException(); 
+		if (!$this->pGroupObj->premiumGroupID) throw new IllegalLinkException(); 
 	}
 	
+	/**
+	 * @see wcf\page\AbstractPage::readData
+	 */
 	public function readData() {
 		parent::readData();
 
@@ -62,34 +70,11 @@ class JCoinsPremiumEditForm extends AbstractForm {
 			I18nHandler::getInstance()->setOptions('description', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'),  $this->pGroupObj->description, 'wcf.jCoins.premiumGroups.description\d+');
 		}
 	}
-	
-	/**
-	 * @see	wcf\form\IForm::readFormParameters()
-	 */
-	public function readFormParameters() {
-		parent::readFormParameters();
-		    
-		I18nHandler::getInstance()->readValues();
-		if (isset($_POST['jCoins'])) $this->jCoins = intval ($_POST['jCoins']);
-	}
-
-	/**
-	 * @see	wcf\form\IForm::validate()
-	 */
-	public function validate() {
-		parent::validate();
-		
-		if ($this->jCoins < 0) {
-			throw new UserInputException('jCoins', 'underZero');
-		}
-	}
 
 	/**
 	 * @see	wcf\form\IForm::save()
 	 */
 	public function save() {
-		parent::save();
-		
 		if (I18nHandler::getInstance()->isPlainValue('description')) {
 			I18nHandler::getInstance()->remove($this->description, PackageCache::getInstance()->getPackageID('com.woltlab.wcf.user'));
 			$this->description = I18nHandler::getInstance()->getValue('description');
@@ -98,7 +83,7 @@ class JCoinsPremiumEditForm extends AbstractForm {
 			I18nHandler::getInstance()->save('description', $this->description, 'wcf.jCoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'));
 		}
 		
-		// update bbcode
+		// update premiumgroup
 		$this->objectAction = new PremiumGroupAction(array($this->pGroupID), 'update', array('data' => array(
 			'jCoins'	=> $this->jCoins,
 			'description'	=> 'wcf.jCoins.premiumGroups.description'.$this->pGroupID
@@ -118,20 +103,9 @@ class JCoinsPremiumEditForm extends AbstractForm {
 	 */
 	public function assignVariables() {
 		parent::assignVariables();
-
-		I18nHandler::getInstance()->assignVariables();
-
-		
-		// read groups
-		$this->groups = UserGroup::getGroupsByType(array(4));
 		
 		WCF::getTPL()->assign(array(
-			'groupID'		=> $this->pGroupObj->groupID,
-			'jCoins'		=> $this->pGroupObj->jCoins, 
-			'period'		=> $this->pGroupObj->period, 
-			'description'		=> $this->pGroupObj->description, 
-			'groups'		=> $this->groups,
-			'premiumGroupID'	=> $this->pGroupObj->premiumGroupID
+			'premiumGroupID' => $this->pGroupObj->premiumGroupID
 		));
 	}
 }

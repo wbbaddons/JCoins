@@ -73,7 +73,7 @@
 				<dd>
 					<select name="groupID" id="groupID" {if $action == 'edit'}readonly="readonly"{/if}>
 					    {foreach from=$groups item="group"}
-						{if $group->isAccessible()}<option value="{$group->groupID}" {if $groupID == $group->groupID}selected="selected"{/if} >{lang}{$group->groupName}{/lang}</option>{/if}
+						<option value="{$group->groupID}" {if $groupID == $group->groupID}selected="selected"{/if} >{lang}{$group->groupName}{/lang}</option>
 					    {/foreach}
 					</select>
 				</dd>
