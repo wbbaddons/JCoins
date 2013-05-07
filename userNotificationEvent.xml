@@ -3,7 +3,7 @@
 	<import>
 		<event>
 			<name>jCoinsTransfer</name>
-			<objecttype>de.joshsboard.wcf.JCoins.transfer.notification</objecttype>
+			<objecttype>de.joshsboard.wcf.jcoins.transfer.notification</objecttype>
 			<classname>wcf\system\user\notification\event\JCoinsNotificationEvent</classname>
 		</event>
 	</import>
