@@ -157,7 +157,7 @@ class JCoinsTransferForm extends AbstractForm {
 				'changeBalance'		=> true
 			));
 			
-			UserNotificationHandler::getInstance()->fireEvent('jCoinsTransfer', 'de.joshsboard.wcf.JCoins.transfer.notification', new JCoinsTransferNotificationObject($stmt), array($user->userID));
+			UserNotificationHandler::getInstance()->fireEvent('jCoinsTransfer', 'de.joshsboard.wcf.jcoins.transfer.notification', new JCoinsTransferNotificationObject($stmt), array($user->userID));
 
 			if (!$this->isModerativ) {
 				StatementEditor::create(array(
