@@ -71,15 +71,9 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 			$this->readObjects();
 		}
 		
-<<<<<<< Upstream, based on origin/master
-		foreach ($this->objects as $pGroup) {
-			if ($pGroup-isDisabled) throw new IllegalLinkException(); 
-			if (WCF::getUser()->jCoinsBalance < $pGroup->getJCoins()) throw new PermissionDeniedException(); 
-=======
 		foreach ($this->objects as $premiumGroup) {
 			if ($premiumGroup->isDisabled) throw new IllegalLinkException(); 
-			if (WCF::getUser()->jCoinsBalance < $premiumGroup->getJCoins()) throw new PermissionDeniedException(); 
->>>>>>> 6df55a6 Some improvements (WIP)
+			if (WCF::getUser()->jCoinsBalance < $premiumGroup->jCoins) throw new PermissionDeniedException(); 
 		}
 	}
 	
@@ -93,11 +87,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 				'executedUserID'	=> 0, 
 				'time'			=> TIME_NOW,
 				'reason'		=> 'wcf.jCoins.premiumgroups.statement.buy', 
-<<<<<<< Upstream, based on origin/master
-				'sum'			=> $pGroup->jCoins * -1
-=======
 				'sum'			=> $premiumGroup->jCoins * -1
->>>>>>> 6df55a6 Some improvements (WIP)
 			)); 
 			
                         $condition = new PreparedStatementConditionBuilder();
@@ -129,7 +119,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 				
 				$sql = "UPDATE	wcf".WCF_N."_user_to_group_premium
 					SET	
-						until = (until + ".$premiumGroup->getPeriod().") "
+						until = (until + ".$premiumGroup->period.") "
 					.$condition; 
 				$statement = WCF::getDB()->prepareStatement($sql);
 				$statement->execute($condition->getParameters());
@@ -158,7 +148,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
                                     VALUES	(?, ?, ?)";
                                 $statement = WCF::getDB()->prepareStatement($sql);
                                 $statement->execute(array(
-                                        $premiumGroup->getPeriod(),
+                                        $premiumGroup->period,
                                         WCF::getUser()->userID, 
                                         $premiumGroup->groupID
                                 ));
