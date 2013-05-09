@@ -53,7 +53,7 @@
 							<td class="columnIcon">
 							    <span class="icon icon16 icon-{if $group->isDisabled}off{else}circle-blank{/if}{if !$group->isAccessible()} disabled{else} jsToggleButton jsTooltip pointer{/if}" {if $group->isAccessible()}title="{lang}wcf.global.button.{if $group->isDisabled}enable{else}disable{/if}{/lang}" data-object-id="{@$group->premiumGroupID}" data-disable-message="{lang}wcf.global.button.disable{/lang}" data-enable-message="{lang}wcf.global.button.enable{/lang}"{/if}></span>
 							    
-							    {if $group->isAccessible()}<a href="{link controller='JCoinsPremiumEdit' id=$group->premiumGroupID}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip">{/if}<span class="icon icon16 icon-pencil{if !$group->isAccessible()} disabled{/if}"></span>{if $group->isAccessible()}</a>{/if}
+							    {if $group->isAccessible()}<a href="{link controller='JCoinsPremiumEdit' object=$group}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip">{/if}<span class="icon icon16 icon-pencil{if !$group->isAccessible()} disabled{/if}"></span>{if $group->isAccessible()}</a>{/if}
 								
 							    <span class="icon icon16 icon-remove {if !$group->isDeletable() || !$group->isAccessible()}disabled{else}jsDeleteButton jsTooltip{/if}" data-object-id="{@$group->premiumGroupID}" title="{lang}wcf.global.button.delete{/lang}"></span>
 								

@@ -1,6 +1,7 @@
 <?php
 namespace wcf\acp\form;
 use wcf\data\jCoins\premiumGroup\PremiumGroup;
+use wcf\data\jCoins\premiumGroup\PremiumGroupAction;
 use wcf\data\jCoins\premiumGroup\PremiumGroupEditor;
 use wcf\data\package\PackageCache;
 use wcf\data\user\group\UserGroup;
@@ -27,11 +28,6 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	 * @see	wcf\page\AbstractPage::$neededPermissions
 	 */
 	public $neededPermissions = array('admin.jCoins.premiumgroups.canEditPremiumGroups');
-
-	/**
-	 * @see	wcf\page\AbstractPage::$templateName
-	 */
-	public $templateName = 'JCoinsPremiumGroupAction';
 
 	/**
 	 * @see wcf\page\AbstractPage::$action
@@ -73,7 +69,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	 */
 	public function readParameters() {
 		parent::readParameters();
-
+		
 		I18nHandler::getInstance()->register('description');
 	}
 	
@@ -81,6 +77,8 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	 * @see wcf\page\IPage::readData()
 	 */
 	public function readData() {
+		parent::readData();
+		
 		// read groups
 		$this->groups = UserGroup::getAccessibleGroups(array(UserGroup::OTHER));
 		
@@ -109,7 +107,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public function validate() {
 		parent::validate();
 		
-		if (!$this->jCoins) {
+		if ($this->jCoins < 0) {
 			throw new UserInputException('jCoins', 'underZero');
 		}
 		
@@ -128,36 +126,36 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public function save() {
 		parent::save();
 		
-		// @todo use PremiumGroupAction here and below
-		$this->objectAction = PremiumGroupEditor::create(array(
-			'groupID'	=> $this->groupID, 
-			'jCoins'	=> $this->jCoins, 
-			'period'	=> $this->period, 
-			'isDisabled'	=> 0, 
-			'description'	=> $this->description
+		$this->objectAction = new PremiumGroupAction(array(), 'create', array(
+			'data' => array(
+				'groupID' => $this->groupID,
+				'jCoins' => $this->jCoins,
+				'period' => $this->period,
+				'description' => $this->description
+			)
 		));
+		$returnValues = $this->objectAction->executeAction();
 		
+		// save I18n description
 		if (!I18nHandler::getInstance()->isPlainValue('description')) {
-			$returnValues = $this->objectAction;
-			$premiumGroupID = $returnValues->premiumGroupID;
-			I18nHandler::getInstance()->save('description', 'wcf.jCoins.premiumGroups.description'.$premiumGroupID, 'wcf.jCoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'));
+			$premiumGroupID = $returnValues['returnValues']->premiumGroupID;
+			I18nHandler::getInstance()->save('description', 'wcf.jcoins.premiumGroups.description'.$premiumGroupID, 'wcf.jcoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'));
 
 			// update name
-			$group = new PremiumGroupEditor(new PremiumGroup($premiumGroupID));
-			$group->update(array(
-				'description' => 'wcf.jCoins.premiumGroups.description'.$premiumGroupID
+			$editor = new PremiumGroupEditor($returnValues['returnValues']);
+			$editor->update(array(
+				'description' => 'wcf.jcoins.premiumGroups.description'.$premiumGroupID
 			));
 		}
 		
-		$this->groupID = 0; 
-		$this->jCoins = 0; 
-		$this->period = 0; 
+		$this->saved();
+		
+		// reset values
+		$this->groupID = $this->jCoins = $this->period = 0; 
 		$this->description = ""; 
 		
 		// show success
-		WCF::getTPL()->assign(array(
-			'success' => true
-		));
+		WCF::getTPL()->assign('success', true);
 	}
 
 	/**

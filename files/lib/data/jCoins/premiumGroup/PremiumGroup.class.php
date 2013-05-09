@@ -3,6 +3,7 @@ namespace wcf\data\jCoins\premiumGroup;
 use wcf\data\DatabaseObject;
 use wcf\data\user\group\UserGroup;
 use wcf\system\database\util\PreparedStatementConditionBuilder;
+use wcf\system\request\IRouteController;
 use wcf\system\WCF;
 
 /**
@@ -11,7 +12,7 @@ use wcf\system\WCF;
  * @author  Joshua Rüsweg
  * @package de.joshsboard.jcoins
  */
-class PremiumGroup extends DatabaseObject {
+class PremiumGroup extends DatabaseObject implements IRouteController {
 	/**
 	 * @see	wcf\data\DatabaseObject::$databaseTableName
 	 */
@@ -77,5 +78,19 @@ class PremiumGroup extends DatabaseObject {
 	 */
 	public function isAccessible() {
 		return UserGroup::isAccessibleGroup(array($this->groupID));
-	}    
+	}
+	
+	/**
+	 * @see wcf\data\ITitledObject::getTitle()
+	 */
+	public function getTitle() {
+		return $this->getGroup()->getName();
+	}
+	
+	/**
+	 * @see wcf\data\IRouteController::getTitle()
+	 */
+	public function getObjectID() {
+		return $this->premiumGroupID;
+	}
 }

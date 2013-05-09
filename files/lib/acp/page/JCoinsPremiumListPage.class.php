@@ -28,11 +28,6 @@ class JCoinsPremiumListPage extends SortablePage {
 	public $neededPermissions = array('admin.jCoins.premiumgroups.canEditPremiumGroups');
 
 	/**
-	 * @see	wcf\page\AbstractPage::$templateName
-	 */
-	public $templateName = 'JCoinsPremiumList';
-
-	/**
 	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
 	 */
 	public $objectListClassName = 'wcf\data\jCoins\premiumGroup\PremiumGroupList';
@@ -56,9 +51,7 @@ class JCoinsPremiumListPage extends SortablePage {
 	 */
 	public function assignVariables() {
 		parent::assignVariables();
-	    
-		WCF::getTPL()->assign(array(
-			'canAddNewGroup' => (count(UserGroup::getAccessibleGroups(array(UserGroup::OTHER))) > 0) ? true : false
-		));
+		
+		WCF::getTPL()->assign('canAddNewGroup', count(UserGroup::getAccessibleGroups(array(UserGroup::OTHER))));
 	}
 }

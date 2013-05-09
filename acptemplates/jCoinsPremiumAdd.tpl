@@ -6,13 +6,7 @@
 	</hgroup>
 </header>
 
-{if $action == 'add'}
-	<p class="info">{lang}wcf.acp.jcoins.premiumgroups.addinfo{/lang}</p>
-{/if}
-
-{if $action == 'edit'}
-    <p class="info">{lang}wcf.acp.jcoins.premiumgroups.editinfo{/lang}</p>
-{/if}
+<p class="info">{lang}wcf.acp.jcoins.premiumgroups.{$action}info{/lang}</p>
 
 {if $errorField}
 	<p class="error">{lang}wcf.global.form.error{/lang}</p>
@@ -26,7 +20,7 @@
 
 </div>
 
-<form method="post" action="{if $action == 'add'}{link controller='JCoinsPremiumAdd'}{/link}{else}{link controller='JCoinsPremiumEdit'}{/link}{/if}">
+<form method="post" action="{if $action == 'add'}{link controller='JCoinsPremiumAdd'}{/link}{else}{link controller='JCoinsPremiumEdit' object=$premiumGroup}{/link}{/if}">
 	<div class="container containerPadding marginTop">
 		<fieldset>
 			<legend>Benutzergruppeneinstellung</legend>
@@ -83,7 +77,6 @@
 	
 	<div class="formSubmit">
 		<input type="submit" value="{lang}wcf.global.button.submit{/lang}" accesskey="s" />
-		{if $premiumGroupID|isset}<input type="hidden" name="id" value="{@$premiumGroupID}" />{/if}
 	</div>
 </form>
 

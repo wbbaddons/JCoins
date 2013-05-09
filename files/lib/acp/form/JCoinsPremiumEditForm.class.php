@@ -22,11 +22,6 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 	public $activeMenuItem = 'wcf.acp.menu.link.jcoins.premium.edit';
 
 	/**
-	 * @see	wcf\page\AbstractPage::$templateName
-	 */
-	public $templateName = 'JCoinsPremiumGroupAction';
-
-	/**
 	 * @see wcf\page\AbstractPage::$action
 	 */
 	public $action = 'edit';
@@ -49,7 +44,7 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 	public function readParameters() {
 		parent::readParameters();
 		
-		$this->premiumGroupID = (isset($_REQUEST['id'])) ? $_REQUEST['id'] : 0; 
+		if (isset($_REQUEST['id'])) $this->premiumGroupID = intval($_REQUEST['id']);
 		$this->premiumGroup = new PremiumGroup($this->premiumGroupID);
 		
 		if (!$this->premiumGroup->premiumGroupID) throw new IllegalLinkException(); 
@@ -62,7 +57,11 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 		parent::readData();
 
 		if (empty($_POST)) {
-			I18nHandler::getInstance()->setOptions('description', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'),  $this->premiumGroup->description, 'wcf.jCoins.premiumGroups.description\d+');
+			$this->jCoins = $this->premiumGroup->jCoins;
+			$this->period = $this->premiumGroup->period;
+			$this->groupID = $this->premiumGroup->groupID;
+			
+			I18nHandler::getInstance()->setOptions('description', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'),  $this->premiumGroup->description, 'wcf.jcoins.premiumGroups.description\d+');
 		}
 	}
 
@@ -75,23 +74,21 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 			$this->description = I18nHandler::getInstance()->getValue('description');
 		}
 		else {
-			I18nHandler::getInstance()->save('description', $this->description, 'wcf.jCoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'));
+			I18nHandler::getInstance()->save('description', $this->description, 'wcf.jcoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'));
 		}
 		
 		// update premiumgroup
-		$this->objectAction = new PremiumGroupAction(array($this->premiumGroup), 'update', array('data' => array(
-			'jCoins'	=> $this->jCoins,
-			'description'	=> 'wcf.jCoins.premiumGroups.description'.$this->premiumGroupID
-		)));
+		$this->objectAction = new PremiumGroupAction(array($this->premiumGroup), 'update', array(
+			'data' => array(
+				'groupID' => $this->groupID,
+				'jCoins' => $this->jCoins,
+				'description' => 'wcf.jcoins.premiumGroups.description'.$this->premiumGroupID
+			)
+		));
 		$this->objectAction->executeAction();
 		
 		// show success
-		WCF::getTPL()->assign(array(
-			'success' => true
-		));
-		
-		// reload premium-group
-		$this->premiumGroup = new PremiumGroup($this->premiumGroupID);
+		WCF::getTPL()->assign('success', true);
 	}
 
 	/**
@@ -100,8 +97,6 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 	public function assignVariables() {
 		parent::assignVariables();
 		
-		WCF::getTPL()->assign(array(
-			'premiumGroupID' => $this->premiumGroupID
-		));
+		WCF::getTPL()->assign('premiumGroup', $this->premiumGroup);
 	}
 }
