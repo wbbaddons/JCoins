@@ -4,6 +4,7 @@ use wcf\data\DatabaseObject;
 use wcf\data\user\group\UserGroup;
 use wcf\system\database\util\PreparedStatementConditionBuilder;
 use wcf\system\request\IRouteController;
+use wcf\system\user\group\UserPremiumGroupHandler;
 use wcf\system\WCF;
 
 /**
@@ -58,17 +59,22 @@ class PremiumGroup extends DatabaseObject implements IRouteController {
 			$userID = WCF::getUser()->userID; 
 		}
 		
-		$condition = new PreparedStatementConditionBuilder();
-		$condition->add('premiumGroupID = ?', array($this->premiumGroupID));
-		$condition->add('userID = ?', array($userID));
-		
-		$sql = "SELECT 	COUNT(*)
-			FROM 	wcf".WCF_N."_user_to_group_premium "
-			.$condition; 
-		$statement = WCF::getDB()->prepareStatement($sql);
-		$statement->execute($condition->getParameters());
-		
-		return (bool) $statement->fetchColumn();
+		if (WCF::getUser()->userID === $userID) {
+			return UserPremiumGroupHandler::getInstance()->isMember($this->premiumGroupID);
+		}
+		else {
+			$condition = new PreparedStatementConditionBuilder();
+			$condition->add('premiumGroupID = ?', array($this->premiumGroupID));
+			$condition->add('userID = ?', array($userID));
+				
+			$sql = "SELECT 	COUNT(*)
+				FROM 	wcf".WCF_N."_user_to_group_premium "
+				.$condition;
+			$statement = WCF::getDB()->prepareStatement($sql);
+			$statement->execute($condition->getParameters());
+				
+			return (bool) $statement->fetchColumn();
+		}
         }
 	
 	/**

@@ -2,6 +2,7 @@
 namespace wcf\page;
 use wcf\page\AbstractPage;
 use wcf\data\jCoins\premiumGroup\PremiumGroupList; 
+use wcf\system\user\group\UserPremiumGroupHandler;
 use wcf\system\WCF;
 
 /**
@@ -12,7 +13,6 @@ use wcf\system\WCF;
  * @subpackage	wcf.page
  */
 class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
-    
 	/**
 	 * @see	wcf\page\AbstractPage::$loginRequired
 	 */
@@ -24,9 +24,20 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	public $neededModules = array('MODULE_JCOINS');
 	
 	/**
-	 * @see	wcf\page\AbstractPage::$templateName
+	 * list of premium-groups
+	 * @var wcf\data\jCoins\premiumGroup\PremiumGroupList
 	 */
-	public $templateName = 'jCoinsPremiumGroupsOverview';
+	public $premiumGroupList = null;
+	
+	/**
+	 * @see	wcf\page\IPage::readData()
+	 */
+	public function readData() {
+		parent::readData();
+		
+		$this->premiumGroupList = new PremiumGroupList();
+		$this->premiumGroupList->readObjects();
+	}
 	
 	/**
 	 * @see	wcf\page\IPage::assignVariables()
@@ -34,11 +45,6 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	public function assignVariables() {
 	    parent::assignVariables();
 	    
-	    $list = new PremiumGroupList();
-	    $list->readObjects();
-	    
-	    WCF::getTPL()->assign(array(
-		    'pGroups' => $list->getObjects()
-	    ));
+	    WCF::getTPL()->assign('premiumGroups', $this->premiumGroupList);
 	}
 }
