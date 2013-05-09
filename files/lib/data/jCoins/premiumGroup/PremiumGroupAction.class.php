@@ -76,7 +76,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 		}
 		
 		foreach ($this->objects as $pGroup) {
-			if ($pGroup->isDisabled()) throw new IllegalLinkException(); 
+			if ($pGroup-isDisabled) throw new IllegalLinkException(); 
 			if (WCF::getUser()->jCoinsBalance < $pGroup->getJCoins()) throw new PermissionDeniedException(); 
 		}
 	}
@@ -91,7 +91,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 				'executedUserID'	=> 0, 
 				'time'			=> TIME_NOW,
 				'reason'		=> 'wcf.jCoins.premiumgroups.statement.buy', 
-				'sum'			=> $pGroup->getJCoins() * -1
+				'sum'			=> $pGroup->jCoins * -1
 			)); 
 			
 			$sql = "SELECT	COUNT(*) AS count
