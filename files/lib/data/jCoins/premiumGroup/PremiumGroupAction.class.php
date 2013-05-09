@@ -8,6 +8,7 @@ use wcf\data\IToggleAction;
 use wcf\system\database\util\PreparedStatementConditionBuilder;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
+use wcf\system\user\storage\UserStorageHandler;
 use wcf\system\WCF;
 
 /**
@@ -157,6 +158,9 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 			$editor = new UserEditor(WCF::getUser()); 
 			$editor->addToGroup($premiumGroup->groupID);
 			$editor->resetCache(); 
+			
+			// reset storage
+			UserStorageHandler::getInstance()->reset(array(WCF::getUser()->userID), 'premiumGroupIDs');
 		}
 	}
 }
