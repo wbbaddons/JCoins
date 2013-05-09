@@ -15,48 +15,61 @@ use wcf\system\request\LinkHandler;
  * @package de.joshsboard.jcoin
  */
 class SumUpStatementsAction extends AbstractAction {
-
 	/**
 	 * @see wcf\action\AbstractAction::$loginRequired
 	 */
 	public $loginRequired = true;
-
+	
 	/**
-	 * @see wcf\action\AbstractAction::execute()
+	 * statement-action
+	 * @var wcf\data\jCoins\statement\StatementAction
 	 */
-	public function execute() {
-		parent::execute();
-
-		$list = new StatementList(); 
-		$list->getConditionBuilder()->add("statement_entrys.userID = ?", array(WCF::getUser()->userID));
-		$list->readObjectIDs(); 
+	public $statementAction = null;
+	
+	/**
+	 * list of statements to sum up
+	 * @var wcf\data\jCoins\statement\StatementList
+	 */
+	public $statementList = null;
+	
+	/**
+	 * @see wcf\action\IAction::readParameters()
+	 */
+	public function readParameters() {
+		parent::readParameters();
 		
-		// you cannot execute this action under 2 entrys
-		if ($list->countObjects() < 2) {
-			throw new PermissionDeniedException(); 
+		$this->statementList = new StatementList();
+		$this->statementList->getConditionBuilder()->add("statement_entrys.userID = ?", array(WCF::getUser()->userID));
+		
+		if ($this->statementList->countObjects() < 2) {
+			throw new PermissionDeniedException();
 		}
-		
-		StatementEditor::trashAll($list->getObjectIDs()); 
-		
-		StatementEditor::create(array(
-			'userID'	    => WCF::getUser()->userID,
-			'executedUserID'    => 0, 
-			'time'		    => TIME_NOW, 
-			'reason'	    => "Zusammenfassung alter Kontostände", 
-			'sum'		    => WCF::getUser()->jCoinsBalance,
-			'changeBalance'	    => false
-		));
-
-		$this->executed(); 
 	}
 	
 	/**
-	 * @see wcf\action\AbstractAction::executed()
+	 * @see wcf\action\IAction::execute()
 	 */
-	public function executed() {
-		parent::executed();
-	    
-		HeaderUtil::delayedRedirect(LinkHandler::getInstance()->getLink('OwnCoinsStatement'), WCF::getLanguage()->get('wcf.jCoins.statement.successfullsumup'));
-		exit; 
+	public function execute() {
+		parent::execute();
+				
+		// mark as trashed
+		$this->statementAction = new StatementAction(array(), 'trashAll');
+		$this->statementAction->executeAction();
+		
+		$this->statementAction = new StatementAction(array(), 'create', array(
+			'data' => array(
+				'reason' => 'wcf.jcoins.summaryOfAccountBalances',
+				'sum' => WCF::getUser()->jCoinsBalance,
+				'time' => TIME_NOW,
+				'userID' => WCF::getUser()->userID
+			)
+		));
+		$this->statementAction->executeAction();
+
+		$this->executed();
+		
+		$url = LinkHandler::getInstance()->getLink('OwnCoinsStatement');
+		HeaderUtil::delayedRedirect($url, WCF::getLanguage()->get('wcf.jCoins.statement.successfullsumup'));
+		exit;
 	}
 }

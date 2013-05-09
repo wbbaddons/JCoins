@@ -4,7 +4,7 @@ use wcf\data\DatabaseObject;
 use wcf\data\user\User; 
 
 /**
- * a statement for jcoins
+ * Represents a statement in the database.
  * 
  * @author  Joshua Rüsweg
  * @package de.joshsboard.jcoins
@@ -21,20 +21,38 @@ class Statement extends DatabaseObject {
 	protected static $databaseTableIndexName = 'entryID';
 	
 	/**
-	 * returns the executed user
-	 * 
-	 * @return \wcf\data\user\User
+	 * Cotains the user-object which executed the statement.
+	 * @var wcf\data\user\User
+	 */
+	protected static $executedUser = null;
+	
+	/**
+	 * Contains the user-object which received the statement.
+	 * @var wcf\data\user\User
+	 */
+	protected static $user = null;
+	
+	/**
+	 * Returns the user-object which executed this statement.
+	 * @return wcf\data\user\User
 	 */
 	public function getExecutedUser() {
-		return new User($this->executedUserID); 
+		if (static::$executedUser === null) {
+			static::$executedUser = new User($this->executedUserID);
+		}
+		
+		return static::$executedUser; 
 	}
 	
 	/**
-	 * returns the user
-	 * 
-	 * @return \wcf\data\user\User
+	 * Returns the user-object which received this statement.
+	 * @return wcf\data\user\User
 	 */
 	public function getUser() {
-		return new User($this->userID); 
+		if (static::$user === null) {
+			static::$user = new User($this->userID);
+		}
+		
+		return static::$user; 
 	}
 }
