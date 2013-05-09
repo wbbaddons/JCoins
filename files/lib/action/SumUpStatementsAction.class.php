@@ -28,7 +28,7 @@ class SumUpStatementsAction extends AbstractAction {
 		parent::execute();
 
 		$list = new StatementList(); 
-		$list->getConditionBuilder()->add("statement_entrys.userID = ?", array(WCF::getSession()->getUser()->userID));
+		$list->getConditionBuilder()->add("statement_entrys.userID = ?", array(WCF::getUser()->userID));
 		$list->readObjectIDs(); 
 		
 		// you cannot execute this action under 2 entrys
@@ -36,7 +36,7 @@ class SumUpStatementsAction extends AbstractAction {
 			throw new PermissionDeniedException(); 
 		}
 		
-		StatementEditor::deleteAll($list->getObjectIDs()); 
+		StatementEditor::trashAll($list->getObjectIDs()); 
 		
 		StatementEditor::create(array(
 			'userID'	    => WCF::getUser()->userID,

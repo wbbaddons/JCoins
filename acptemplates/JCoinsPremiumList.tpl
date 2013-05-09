@@ -62,7 +62,7 @@
 								{event name='buttons'}
 							</td>
 							<td class="columnID"><p>{@$group->premiumGroupID}</p></td>
-							<td class="columnTitle columnGroupName"><p>{if $group->getGroup()->isEditable()}<a href="{link controller='UserGroupEdit' id=$group->groupID}{/link}">{lang}{$group->getGroup()->getName()}{/lang}</a>{else}{lang}{$group->getGroup()->getName()}{/lang}{/if}</p></td>
+							<td class="columnTitle columnGroupName"><p>{if $group->getGroup()->isEditable()}<a href="{link controller='UserGroupEdit' id=$group->groupID}{/link}">{lang}{$group->getGroup()}{/lang}</a>{else}{$group->getGroup()}{/if}</p></td>
 							<td class="columnText columnJCoins"><p>{#$group->jCoins}</p></td>
 							<td class="columnText columnPeriod"><p>{#$group->period} Tage</p></td>
 							<td class="columnInteger columnActiveMember"><p>{#$group->members}</p></td>

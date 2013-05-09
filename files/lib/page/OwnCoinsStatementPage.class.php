@@ -30,7 +30,7 @@ class OwnCoinsStatementPage extends AbstractPage {
 		parent::assignVariables();
 		
 		$list = new StatementList(); 
-		$list->getConditionBuilder()->add("statement_entrys.userID = ?", array(WCF::getSession()->getUser()->userID));
+		$list->getConditionBuilder()->add("statement_entrys.userID = ? AND statement_entrys.isTrashed = 0", array(WCF::getUser()->userID));
 		$list->readObjects(); 
 		WCF::getTPL()->assign(array(
 			'entrys' => $list->getObjects()

@@ -101,7 +101,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 			$statement = WCF::getDB()->prepareStatement($sql);
 			$statement->execute(array(
 				WCF::getUser()->userID,
-				$pGroup->getPremiumGroupID()
+				$pGroup->premiumGroupID
 			));
 			$row = $statement->fetchArray();
 
@@ -112,8 +112,8 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 				$statement = WCF::getDB()->prepareStatement($sql);
 				$statement->execute(array(
 					WCF::getUser()->userID,
-					$pGroup->getPremiumGroupID(), 
-					TIME_NOW + $pGroup->getPeriod()
+					$pGroup->premiumGroupID, 
+					TIME_NOW + $pGroup->period
 				));
 			} else {
 				// update until
@@ -125,7 +125,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 				$statement = WCF::getDB()->prepareStatement($sql);
 				$statement->execute(array(
 					WCF::getUser()->userID,
-					$pGroup->getPremiumGroupID()
+					$pGroup->premiumGroupID
 				));
 			}
 			
@@ -136,7 +136,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
                         $statement = WCF::getDB()->prepareStatement($sql);
                         $statement->execute(array(
                                 WCF::getUser()->userID, 
-                                $pGroup->getGroupID()
+                                $pGroup->groupID
                         ));
                         $row = $statement->fetchArray();
                         
@@ -144,9 +144,9 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
                                 $sql = "UPDATE wcf".WCF_N."_user_to_group_temp SET until = ? WHERE userID = ? AND groupID = ?";
                                 $statement = WCF::getDB()->prepareStatement($sql);
                                 $statement->execute(array(
-                                        $row['until'] + $pGroup->getPeriod(),
+                                        $row['until'] + $pGroup->period,
                                         WCF::getUser()->userID, 
-                                        $pGroup->getGroupID()
+                                        $pGroup->groupID
                                 ));
                         } else {
                                 $sql = "INSERT INTO wcf".WCF_N."_user_to_group_temp
@@ -157,12 +157,12 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
                                 $statement->execute(array(
                                         $pGroup->getPeriod(),
                                         WCF::getUser()->userID, 
-                                        $pGroup->getGroupID()
+                                        $pGroup->groupID
                                 ));
                         }
                         
 			$editor = new UserEditor(new User(WCF::getUser()->userID)); 
-			$editor->addToGroup($pGroup->getGroupID());
+			$editor->addToGroup($pGroup->groupID);
 			$editor->resetCache(); 
 		}
 	}

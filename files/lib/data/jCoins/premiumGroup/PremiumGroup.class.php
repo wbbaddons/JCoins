@@ -26,8 +26,7 @@ class PremiumGroup extends DatabaseObject {
 	 * @return	wcf\data\user\group\UserGroup
 	 */
 	public function getGroup() {
-		$group = UserGroup::getGroupByID($this->getGroupID());
-		return $group; 
+		return UserGroup::getGroupByID($this->getGroupID());
 	}
 	
         /**
