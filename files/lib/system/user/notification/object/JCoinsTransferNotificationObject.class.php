@@ -25,7 +25,7 @@ class JCoinsTransferNotificationObject extends DatabaseObjectDecorator implement
 	 * @see	wcf\system\user\notification\object\IUserNotificationObject::getURL()
 	 */
 	public function getURL() {
-		return "#";
+		return LinkHandler::getInstance()->getLink('OwnCoinsStatement');
 	}
 
 	/**

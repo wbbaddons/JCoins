@@ -1,7 +1,7 @@
 {include file='documentHeader'}
 
 <head>
-	<title>{lang}wcf.jCoins.premiumgroups.title{/lang} - {PAGE_TITLE|language}</title>
+	<title>{lang}wcf.jcoins.premiumgroups.title{/lang} - {PAGE_TITLE|language}</title>
 	
 	{include file='headInclude'}
 	<script type="text/javascript" src="./wcf/js/WCF.JCoins.js"></script>
@@ -12,7 +12,7 @@
 
 <header class="boxHeadline">
 	<hgroup>
-		<h1>{lang}wcf.jCoins.premiumgroups.title{/lang}</h1>
+		<h1>{lang}wcf.jcoins.premiumgroups.title{/lang}</h1>
 	</hgroup>
 </header>
 
@@ -22,29 +22,29 @@
 	    {hascontent}
 	    {content}
 	    {foreach from=$pGroups item="group"}
-		{if !$group->isDisabled() || $group->isMember()}
+		{if !$group->isDisabled || $group->isMember()}
 		<fieldset>
-			<legend>{lang}{$group->getGroup()->getName()}{/lang}{if $group->isMember()} <span class="badge green">{lang}wcf.jCoins.premiumgroups.active{/lang}</span>{/if}</legend>
+			<legend>{$group->getGroup()}{if $group->isMember()} <span class="badge green">{lang}wcf.jcoins.premiumgroups.active{/lang}</span>{/if}</legend>
 			
 			<dl>
-				<dt>{lang}wcf.jCoins.premiumgroups.description{/lang}</dt>
-				<dd>{lang}{$group->getDescription()}{/lang}</dd>
+				<dt>{lang}wcf.jcoins.premiumgroups.description{/lang}</dt>
+				<dd>{lang}{$group->description}{/lang}</dd>
 			</dl>
 			
 			<dl>
-				<dt>{lang}wcf.jCoins.premiumgroups.costs{/lang}</dt>
-				<dd>{#$group->getJCoins()}</dd>
+				<dt>{lang}wcf.jcoins.premiumgroups.costs{/lang}</dt>
+				<dd>{#$group->jCoins}</dd>
 			</dl>
 			
 			<dl>
-				<dt>{lang}wcf.jCoins.premiumgroups.period{/lang}</dt>
-				<dd>{#$group->getPeriod()} {lang}wcf.jCoins.premiumgroups.day{if $group->getPeriod() > 1}s{/if}{/lang}</dd>
+				<dt>{lang}wcf.jcoins.premiumgroups.period{/lang}</dt>
+				<dd>{#$group->period} {lang}wcf.jcoins.premiumgroups.day{if $group->period > 1}s{/if}{/lang}</dd>
 			</dl>
 			
-			{if !$group->isDisabled()}
+			{if !$group->isDisabled}
 			<dl>
-				<dt>{lang}wcf.jCoins.premiumgroups.buy{/lang}</dt>
-				<dd>{if $group->getJCoins() > $__wcf->user->jCoinsBalance}<span class="badge red">{lang}wcf.jCoins.premiumgroups.notenougthjcoins{/lang}</span>{else}<span class="button" id="buyPremiumGroupButton{$group->premiumGroupID}">{if $group->isMember()}{lang}wcf.jCoins.premiumgroups.renew{/lang}{else}{lang}wcf.jCoins.premiumgroups.buy{/lang}{/if}{/if}</span></dd>
+				<dt>{lang}wcf.jcoins.premiumgroups.buy{/lang}</dt>
+				<dd>{if $group->jCoins > $__wcf->user->jCoinsBalance}<span class="badge red">{lang}wcf.jcoins.premiumgroups.notenougthjcoins{/lang}</span>{else}<span class="button" id="buyPremiumGroupButton{$group->premiumGroupID}">{if $group->isMember()}{lang}wcf.jcoins.premiumgroups.renew{/lang}{else}{lang}wcf.jcoins.premiumgroups.buy{/lang}{/if}{/if}</span></dd>
 			</dl>
 			    <script type="text/javascript">
 				new WCF.JCoins.Buy({$group->premiumGroupID});
@@ -59,7 +59,7 @@
 		
 		{/content}
 		{hascontentelse}
-		<p class="info">{lang}wcf.jCoins.premiumgroups.nogroups{/lang}</p>
+		<p class="info">{lang}wcf.jcoins.premiumgroups.nogroups{/lang}</p>
 		{/hascontent}
 	</div>
 

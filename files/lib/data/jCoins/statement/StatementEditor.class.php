@@ -40,4 +40,22 @@ class StatementEditor extends DatabaseObjectEditor {
 		
 		return $statement;
 	}
+	
+	public static function trashAll($objectIDs) {
+		$sql = "UPDATE ".static::getDatabaseTableName()." SET isTrashed = 1 WHERE entryID IN (?)";
+		$objects = "";
+		
+		foreach ($objectIDs as $id) {
+			if (empty($objects)) {
+				$objects = $id; 
+			} else {
+				$objects .= ", ".$id;
+			}
+		}
+		
+		$statement = WCF::getDB()->prepareStatement($sql);
+		$statement->execute(array(
+			$objects
+		));
+	}
 }

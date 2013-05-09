@@ -34,12 +34,36 @@ class JCoinsTransferForm extends AbstractForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$neededPermissions
 	 */
-	//public $neededPermissions = array('user.jcoins.canTransfer');
+	public $neededPermissions = array('user.jcoins.canTransfer');
 
+	/**
+	 * the sum to transfer
+	 * @var integer
+	 */
 	public $sum = 0; 
+	
+	/**
+	 * a reason for the transfer
+	 * @var string
+	 */
 	public $reason = ''; 
+	
+	/**
+	 * the user
+	 * @var wcf\data\user\UserProfile 
+	 */
 	public $user = array(); 
+	
+	/**
+	 * all user name for the transfer
+	 * @var string
+	 */
 	public $usernames = ""; 
+	
+	/**
+	 * is the transfer moderat
+	 * @var boolean
+	 */
 	public $isModerativ = false; 
 	
 	/**
@@ -51,19 +75,6 @@ class JCoinsTransferForm extends AbstractForm {
 		if (isset($_REQUEST['id']) && !isset($_POST['username'])) {
 			$this->userID = intval($_REQUEST['id']);
 	    		$this->user[] = UserProfile::getUserProfile($this->userID);
-		}
-		
-		// insert all marked user
-		if (!isset($_POST['username'])) {
-			$userIDs = WCF::getSession()->getVar('__markedUserTransferJCoins');
-			
-			if ($userIDs !== null) {
-				foreach ($userIDs AS $userID) {
-					$this->user[] = UserProfile::getUserProfile($userID);
-				}
-				
-				WCF::getSession()->register('__markedUserTransferJCoins', array());
-			}
 		}
 	}
 
@@ -93,13 +104,8 @@ class JCoinsTransferForm extends AbstractForm {
 	 */
 	public function validate() {
 	    
-		// @TODO
-		// search for doubles and remove 
-//		foreach($this->user AS $indexID => $user) {
-//		        if (in_array($user, $this->user)) {
-//				unset($this->user[$indexID]);
-//			}
-//		}
+		// remove user doubles
+		$this->user = array_unique($this->user);
 	    
 		if ($this->sum < 1 && !$this->isModerativ) {
 			throw new UserInputException('sum', 'tooLess');
@@ -119,11 +125,11 @@ class JCoinsTransferForm extends AbstractForm {
 		
 		foreach ($this->user AS $user) {
 			if ($user->isIgnoredUser(WCF::getUser()->userID)) {
-				throw new UserInputException('user', 'isIgnored');
-				
 				WCF::getTPL()->assign(array(
 					'ignoredUsername' => $user->username
 				));
+				
+				throw new UserInputException('user', 'isIgnored');
 			}
 		}
 		
@@ -164,7 +170,16 @@ class JCoinsTransferForm extends AbstractForm {
 				));
 			}
 		}
-
+		
+		$this->saved(); 
+		
+		$this->sum = 0; 
+		$this->reason = "";
+		$this->user = array(); 
+		
+		WCF::getTPL()->assign(array(
+			'success' => true
+		)); 
 	}
 
 	/**
