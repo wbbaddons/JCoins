@@ -2,10 +2,11 @@
 namespace wcf\data\jCoins\premiumGroup; 
 use wcf\data\DatabaseObject;
 use wcf\data\user\group\UserGroup;
+use wcf\system\database\util\PreparedStatementConditionBuilder;
 use wcf\system\WCF;
 
 /**
- * premium group database object
+ * Represents a premium-group in the database.
  * 
  * @author  Joshua Rüsweg
  * @package de.joshsboard.jcoins
@@ -22,48 +23,55 @@ class PremiumGroup extends DatabaseObject {
 	protected static $databaseTableIndexName = 'premiumGroupID';
 	
 	/**
-	 * get the group
-	 * @return	wcf\data\user\group\UserGroup
+	 * Returns a object of the user-group.
+	 * 
+	 * @return wcf\data\user\group\UserGroup
 	 */
 	public function getGroup() {
 		return UserGroup::getGroupByID($this->groupID);
 	}
 	
         /**
-         * return true if the group is deletable
+         * Returns true if the group is deleteable.
          * 
-         * @return  bool
+         * @return  boolean
          */
 	public function isDeletable() {
-		$sql = "SELECT COUNT(*) AS members FROM wcf".WCF_N."_user_to_group_premium WHERE premiumGroupID = ?"; 
+		$sql = "SELECT 	COUNT(*)
+			FROM 	wcf".WCF_N."_user_to_group_premium
+			WHERE 	premiumGroupID = ?"; 
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute(array($this->premiumGroupID));
-		$row = $statement->fetchArray();
 		
-		return ($row['members'] > 0) ? false : true; 
+		return (bool) $statement->fetchColumn();
 	}
 	
 	/**
-	 * return true if the member is a member of the group
+	 * Returns true if the given user is a member of this group.
 	 * 
 	 * @param   integer	$userID
 	 * @return  boolean 
 	 */
         public function isMember($userID = null) {
 		if ($userID === null) {
-			$userID = WCF::getSession()->userID; 
+			$userID = WCF::getUser()->userID; 
 		}
 		
-		$sql = "SELECT COUNT(*) AS members FROM wcf".WCF_N."_user_to_group_premium WHERE premiumGroupID = ? AND userID = ?"; 
-		$statement = WCF::getDB()->prepareStatement($sql);
-		$statement->execute(array($this->premiumGroupID, $userID));
-		$row = $statement->fetchArray();
+		$condition = new PreparedStatementConditionBuilder();
+		$condition->add('premiumGroupID = ?', array($this->premiumGroupID));
+		$condition->add('userID = ?', array($userID));
 		
-                return ($row['members'] > 0) ? true : false; 
+		$sql = "SELECT 	COUNT(*)
+			FROM 	wcf".WCF_N."_user_to_group_premium "
+			.$condition; 
+		$statement = WCF::getDB()->prepareStatement($sql);
+		$statement->execute($condition->getParameters());
+		
+		return (bool) $statement->fetchColumn();
         }
 	
 	/**
-	 * returns true if the usergroup is accessible
+	 * Returns true if this group is accessible by current user.
 	 * 
 	 * @return  boolean
 	 */

@@ -1,16 +1,17 @@
 <?php
 namespace wcf\data\jCoins\premiumGroup;
+use wcf\data\jCoins\statement\StatementEditor;
+use wcf\data\user\User;
 use wcf\data\user\UserEditor;
 use wcf\data\AbstractDatabaseObjectAction;
 use wcf\data\IToggleAction;
-use wcf\data\user\User;
-use wcf\system\WCF;
+use wcf\system\database\util\PreparedStatementConditionBuilder;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
-use wcf\data\jCoins\statement\StatementEditor;
+use wcf\system\WCF;
 
 /**
- * premium group action 
+ * Provides functions to handle premium-groups.
  * 
  * @author  Joshua Rüsweg
  * @package de.joshsboard.jcoins
@@ -42,9 +43,9 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 	 * @see	wcf\data\IToggleAction::toggle()
 	 */
 	public function toggle() {
-		foreach ($this->objects as $pGroup) {
-			$pGroup->update(array(
-				'isDisabled' => $pGroup->isDisabled ? 0 : 1
+		foreach ($this->objects as $premiumGroup) {
+			$premiumGroup->update(array(
+				'isDisabled' => $premiumGroup->isDisabled ? 0 : 1
 			));
 		}
 	}
@@ -55,114 +56,116 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 	public function validateDelete() {
 		parent::validateDelete(); 
 		
-		foreach ($this->objects as $pGroup) {
-			if (!$pGroup->isDeletable()) throw new PermissionDeniedException();
+		foreach ($this->objects as $premiumGroup) {
+			if (!$premiumGroup->isDeletable()) throw new PermissionDeniedException();
 		}
 	}
 	
 	/**
-	 * validate a buy group action
+	 * Validates the purchase of premium-groups.
 	 */
 	public function validateBuyGroup() {
 		if (!MODULE_JCOINS) throw new IllegalLinkException(); 
-	    
-		// read objects
+		
 		if (empty($this->objects)) {
 			$this->readObjects();
-			
-			if (empty($this->objects)) {
-				throw new UserInputException('objectIDs');
-			}
 		}
 		
+<<<<<<< Upstream, based on origin/master
 		foreach ($this->objects as $pGroup) {
 			if ($pGroup-isDisabled) throw new IllegalLinkException(); 
 			if (WCF::getUser()->jCoinsBalance < $pGroup->getJCoins()) throw new PermissionDeniedException(); 
+=======
+		foreach ($this->objects as $premiumGroup) {
+			if ($premiumGroup->isDisabled) throw new IllegalLinkException(); 
+			if (WCF::getUser()->jCoinsBalance < $premiumGroup->getJCoins()) throw new PermissionDeniedException(); 
+>>>>>>> 6df55a6 Some improvements (WIP)
 		}
 	}
 	
 	/**
-	 * buy a premium group
+	 * Does the purchase of premium-groups.
 	 */
 	public function buyGroup() {
-		foreach ($this->objects as $pGroup) {
+		foreach ($this->objects as $premiumGroup) {
                         StatementEditor::create(array(
 				'userID'		=> WCF::getUser()->userID, 
 				'executedUserID'	=> 0, 
 				'time'			=> TIME_NOW,
 				'reason'		=> 'wcf.jCoins.premiumgroups.statement.buy', 
+<<<<<<< Upstream, based on origin/master
 				'sum'			=> $pGroup->jCoins * -1
+=======
+				'sum'			=> $premiumGroup->jCoins * -1
+>>>>>>> 6df55a6 Some improvements (WIP)
 			)); 
 			
-			$sql = "SELECT	COUNT(*) AS count
-				FROM	wcf".WCF_N."_user_to_group_premium
-				WHERE	userID = ?
-					AND premiumGroupID = ?";
+                        $condition = new PreparedStatementConditionBuilder();
+                        $condition->add('userID = ?', array(WCF::getUser()->userID));
+                        $condition->add('premiumGroupID = ?', array($premiumGroup->premiumGroupID));
+                        
+			$sql = "SELECT	COUNT(*)
+				FROM	wcf".WCF_N."_user_to_group_premium ".
+				$condition;
 			$statement = WCF::getDB()->prepareStatement($sql);
-			$statement->execute(array(
-				WCF::getUser()->userID,
-				$pGroup->premiumGroupID
-			));
-			$row = $statement->fetchArray();
+			$statement->execute($condition->getParameters());
 
-			if (!$row['count']) {
+			if (!$statement->fetchColumn()) {
 				$sql = "INSERT INTO	wcf".WCF_N."_user_to_group_premium
 							(userID, premiumGroupID, until)
 					VALUES		(?, ?, ?)";
 				$statement = WCF::getDB()->prepareStatement($sql);
 				$statement->execute(array(
 					WCF::getUser()->userID,
-					$pGroup->premiumGroupID, 
-					TIME_NOW + $pGroup->period
+					$premiumGroup->premiumGroupID, 
+					TIME_NOW + $premiumGroup->period
 				));
-			} else {
+			} 
+			else {
 				// update until
+				$condition = new PreparedStatementConditionBuilder();
+				$condition->add('userID = ?', array(WCF::getUser()->userID));
+				$condition->add('premiumGroupID = ?', array($premiumGroup->premiumGroupID));
+				
 				$sql = "UPDATE	wcf".WCF_N."_user_to_group_premium
 					SET	
-						until = (until + ". $pGroup->getPeriod() .")
-					WHERE 
-						userID = ? AND premiumGroupID = ? "; 
+						until = (until + ".$premiumGroup->getPeriod().") "
+					.$condition; 
 				$statement = WCF::getDB()->prepareStatement($sql);
-				$statement->execute(array(
-					WCF::getUser()->userID,
-					$pGroup->premiumGroupID
-				));
+				$statement->execute($condition->getParameters());
 			}
 			
-                        $sql = "SELECT until
-                            FROM	wcf".WCF_N."_user_to_group_temp
-                            WHERE userID = ? AND groupID = ?";
-                        
+			$condition = new PreparedStatementConditionBuilder();
+			$condition->add('userID = ?', array(WCF::getUser()->userID));
+			$condition->add('groupID = ?', array($premiumGroup->premiumGroupID));
+			
+                        $sql = "SELECT	until
+                            	FROM	wcf".WCF_N."_user_to_group_temp ".
+                            	$condition;
                         $statement = WCF::getDB()->prepareStatement($sql);
-                        $statement->execute(array(
-                                WCF::getUser()->userID, 
-                                $pGroup->groupID
-                        ));
-                        $row = $statement->fetchArray();
+                        $statement->execute($condition->getParameters());
                         
-                        if (isset($row['until'])) {
-                                $sql = "UPDATE wcf".WCF_N."_user_to_group_temp SET until = ? WHERE userID = ? AND groupID = ?";
+                        if ($statement->fetchColumn()) {
+                                $sql = "UPDATE 	wcf".WCF_N."_user_to_group_temp
+                                	SET 	until = ? "
+                                	.$condition;
                                 $statement = WCF::getDB()->prepareStatement($sql);
-                                $statement->execute(array(
-                                        $row['until'] + $pGroup->period,
-                                        WCF::getUser()->userID, 
-                                        $pGroup->groupID
-                                ));
-                        } else {
+                                $statement->execute(array_unshift($condition->getParameters(), $statement->fetchColumn() + $premiumGroup->period));
+                        } 
+                        else {
                                 $sql = "INSERT INTO wcf".WCF_N."_user_to_group_temp
-                                        (until, userID, groupID)
-                                    VALUES
-                                        (?, ?, ?)";
+                                        	(until, userID, groupID)
+                                    VALUES	(?, ?, ?)";
                                 $statement = WCF::getDB()->prepareStatement($sql);
                                 $statement->execute(array(
-                                        $pGroup->getPeriod(),
+                                        $premiumGroup->getPeriod(),
                                         WCF::getUser()->userID, 
-                                        $pGroup->groupID
+                                        $premiumGroup->groupID
                                 ));
                         }
                         
-			$editor = new UserEditor(new User(WCF::getUser()->userID)); 
-			$editor->addToGroup($pGroup->groupID);
+			$editor = new UserEditor(WCF::getUser()); 
+			$editor->addToGroup($premiumGroup->groupID);
 			$editor->resetCache(); 
 		}
 	}

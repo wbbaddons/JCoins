@@ -1,11 +1,11 @@
 <?php
 namespace wcf\acp\page;
+use wcf\data\user\group\UserGroup;
 use wcf\page\SortablePage;
 use wcf\system\WCF;
-use wcf\data\user\group\UserGroup; 
 
 /**
- * a list of all premium groups
+ * Represents a list of all premium-groups.
  * 
  * @author  Joshua Rüsweg
  * @package de.joshsboard.jcoins
@@ -58,7 +58,7 @@ class JCoinsPremiumListPage extends SortablePage {
 		parent::assignVariables();
 	    
 		WCF::getTPL()->assign(array(
-			'canAddNewGroup'	=> (count(UserGroup::getAccessibleGroups(array(UserGroup::OTHER))) > 0) ? true : false
+			'canAddNewGroup' => (count(UserGroup::getAccessibleGroups(array(UserGroup::OTHER))) > 0) ? true : false
 		));
 	}
 }

@@ -1,17 +1,17 @@
 <?php
 namespace wcf\acp\form;
-use wcf\data\jCoins\premiumGroup\PremiumGroupEditor;
-use wcf\system\exception\UserInputException;
-use wcf\form\AbstractForm;
-use wcf\system\WCF;
-use wcf\data\user\group\UserGroup;
-use wcf\system\language\I18nHandler; 
-use wcf\data\package\PackageCache;
-use wcf\system\exception\PermissionDeniedException; 
 use wcf\data\jCoins\premiumGroup\PremiumGroup;
+use wcf\data\jCoins\premiumGroup\PremiumGroupEditor;
+use wcf\data\package\PackageCache;
+use wcf\data\user\group\UserGroup;
+use wcf\form\AbstractForm;
+use wcf\system\exception\UserInputException;
+use wcf\system\exception\PermissionDeniedException;
+use wcf\system\language\I18nHandler; 
+use wcf\system\WCF;
 
 /**
- * jcoins Premium Group Add Form
+ * Shows the premium-group add-form.
  * 
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
@@ -42,7 +42,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	 * descriptopn of the premium group
 	 * @var string
 	 */
-	public $description = ""; 
+	public $description = ''; 
 	
 	/**
 	 * the groupid for the premium group 
@@ -69,7 +69,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public $groups = array(); 
 	
 	/**
-	 * @see	wcf\page\AbstractPage::readParameters
+	 * @see	wcf\page\IPage::readParameters()
 	 */
 	public function readParameters() {
 		parent::readParameters();
@@ -78,13 +78,13 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	}
 	
 	/**
-	 * @see wcf\page\AbstractPage::readData
+	 * @see wcf\page\IPage::readData()
 	 */
 	public function readData() {
 		// read groups
 		$this->groups = UserGroup::getAccessibleGroups(array(UserGroup::OTHER));
 		
-		if (count($this->groups) == 0) {
+		if (empty($this->groups)) {
 			throw new PermissionDeniedException(); 
 		}
 	}
@@ -98,7 +98,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		I18nHandler::getInstance()->readValues();
 		
 		if (isset($_POST['groupID'])) $this->groupID = intval($_POST['groupID']);
-		if (isset($_POST['jCoins'])) $this->jCoins = intval ($_POST['jCoins']);
+		if (isset($_POST['jCoins'])) $this->jCoins = intval($_POST['jCoins']);
 		if (isset($_POST['period'])) $this->period = intval($_POST['period']);
 		if (I18nHandler::getInstance()->isPlainValue('description')) $this->description = I18nHandler::getInstance()->getValue('description');
 	}
@@ -109,11 +109,11 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public function validate() {
 		parent::validate();
 		
-		if ($this->jCoins < 0) {
+		if (!$this->jCoins) {
 			throw new UserInputException('jCoins', 'underZero');
 		}
 		
-		if ($this->period < 1) {
+		if (!$this->period) {
 			throw new UserInputException('period', 'time');
 		}
 		
@@ -128,6 +128,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public function save() {
 		parent::save();
 		
+		// @todo use PremiumGroupAction here and below
 		$this->objectAction = PremiumGroupEditor::create(array(
 			'groupID'	=> $this->groupID, 
 			'jCoins'	=> $this->jCoins, 
@@ -138,13 +139,13 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		
 		if (!I18nHandler::getInstance()->isPlainValue('description')) {
 			$returnValues = $this->objectAction;
-			$ID = $returnValues->premiumGroupID;
-			I18nHandler::getInstance()->save('description', 'wcf.jCoins.premiumGroups.description'.$ID, 'wcf.jCoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'));
+			$premiumGroupID = $returnValues->premiumGroupID;
+			I18nHandler::getInstance()->save('description', 'wcf.jCoins.premiumGroups.description'.$premiumGroupID, 'wcf.jCoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'));
 
 			// update name
-			$group = new PremiumGroupEditor(new PremiumGroup($ID));
+			$group = new PremiumGroupEditor(new PremiumGroup($premiumGroupID));
 			$group->update(array(
-				'description' => 'wcf.jCoins.premiumGroups.description'.$ID
+				'description' => 'wcf.jCoins.premiumGroups.description'.$premiumGroupID
 			));
 		}
 		
@@ -168,11 +169,11 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		I18nHandler::getInstance()->assignVariables();
 		
 		WCF::getTPL()->assign(array(
-			'groupID'	=> $this->groupID,
-			'jCoins'	=> $this->jCoins, 
-			'period'	=> $this->period, 
-			'description'	=> $this->description, 
-			'groups'	=> $this->groups
+			'groupID' => $this->groupID,
+			'jCoins' => $this->jCoins, 
+			'period' => $this->period, 
+			'description' => $this->description, 
+			'groups' => $this->groups
 		));
 	}
 }
