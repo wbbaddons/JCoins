@@ -19,7 +19,7 @@ CREATE TABLE wcf1_user_group_premium (
 	period 			INT(11) 		NOT NULL DEFAULT 0,
 	isDisabled 		TINYINT(1) 		NOT NULL DEFAULT 0,
 	description		MEDIUMTEXT		NOT NULL,
-	KEY group (groupID)
+	KEY userGroup (groupID)
 );
 
 DROP TABLE wcf1_user_to_group_premium;
