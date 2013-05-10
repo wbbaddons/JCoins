@@ -24,24 +24,24 @@ class Statement extends DatabaseObject {
 	 * Cotains the user-object which executed the statement.
 	 * @var wcf\data\user\User
 	 */
-	protected static $executedUser = null;
+	protected $executedUser = null;
 	
 	/**
 	 * Contains the user-object which received the statement.
 	 * @var wcf\data\user\User
 	 */
-	protected static $user = null;
+	protected $user = null;
 	
 	/**
 	 * Returns the user-object which executed this statement.
 	 * @return wcf\data\user\User
 	 */
 	public function getExecutedUser() {
-		if (static::$executedUser === null) {
-			static::$executedUser = new User($this->executedUserID);
+		if ($this->executedUser === null) {
+			$this->executedUser = new User($this->executedUserID);
 		}
 		
-		return static::$executedUser; 
+		return $this->executedUser; 
 	}
 	
 	/**
@@ -49,10 +49,10 @@ class Statement extends DatabaseObject {
 	 * @return wcf\data\user\User
 	 */
 	public function getUser() {
-		if (static::$user === null) {
-			static::$user = new User($this->userID);
+		if ($this->user === null) {
+			$this->user = new User($this->userID);
 		}
 		
-		return static::$user; 
+		return $this->user; 
 	}
 }
