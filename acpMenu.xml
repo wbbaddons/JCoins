@@ -8,14 +8,14 @@
 		<acpmenuitem name="wcf.acp.menu.link.jcoins.premium.list">
 			<controller><![CDATA[wcf\acp\page\JCoinsPremiumList]]></controller>
 			<parent>wcf.acp.menu.link.jcoins</parent>
-			<permissions>admin.jCoins.premiumgroups.canEditPremiumGroups</permissions>
+			<permissions>admin.jcoins.premiumgroups.canEditPremiumGroups</permissions>
 			<showorder>1</showorder>
 		</acpmenuitem>
 
 		<acpmenuitem name="wcf.acp.menu.link.jcoins.premium.add">
 			<controller><![CDATA[wcf\acp\form\JCoinsPremiumAddForm]]></controller>
 			<parent>wcf.acp.menu.link.jcoins</parent>
-			<permissions>admin.jCoins.premiumgroups.canEditPremiumGroups</permissions>
+			<permissions>admin.jcoins.premiumgroups.canEditPremiumGroups</permissions>
 			<showorder>2</showorder>
 		</acpmenuitem>
 	</import>
