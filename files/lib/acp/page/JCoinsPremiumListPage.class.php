@@ -25,7 +25,7 @@ class JCoinsPremiumListPage extends SortablePage {
 	/**
 	 * @see	wcf\page\AbstractPage::$neededPermissions
 	 */
-	public $neededPermissions = array('admin.jCoins.premiumgroups.canEditPremiumGroups');
+	public $neededPermissions = array('admin.jcoins.premiumgroups.canEditPremiumGroups');
 
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
