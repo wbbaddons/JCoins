@@ -4,7 +4,7 @@ use wcf\system\exception\UserInputException;
 use wcf\system\WCF;
 use wcf\util\StringUtil; 
 use wcf\data\user\UserProfile; 
-use wcf\data\jCoins\statement\StatementEditor;
+use wcf\data\jCoins\statement\StatementAction;
 use wcf\system\user\notification\UserNotificationHandler;
 use wcf\system\user\notification\object\JCoinsTransferNotificationObject; 
 
@@ -67,6 +67,12 @@ class JCoinsTransferForm extends AbstractForm {
 	public $isModerativ = false; 
 	
 	/**
+	 * is the transfer success
+	 * @var boolean
+	 */
+	public $success = false; 
+	
+	/**
 	 * @see	wcf\page\IPage::readParameters()
 	 */
 	public function readParameters() {
@@ -87,7 +93,7 @@ class JCoinsTransferForm extends AbstractForm {
 		if (isset($_POST['sum'])) $this->sum = (int) $_POST['sum'];
 		if (isset($_POST['reason'])) $this->reason = StringUtil::trim($_POST['reason']);
 		if (isset($_POST['username'])) $this->usernames = StringUtil::trim($_POST['username']);
-		if (isset($_POST['isModerativ']) && $_POST['isModerativ'] == 1 && WCF::getSession()->getPermission('mod.jCoins.canModTransfer')) $this->isModerativ = true; 
+		if (isset($_POST['isModerativ']) && $_POST['isModerativ'] == 1 && WCF::getSession()->getPermission('mod.jcoins.canModTransfer')) $this->isModerativ = true; 
 		
 		if (count(explode(',', $this->usernames)) > 0) {
 			$users = explode(',', $this->usernames); 
@@ -147,27 +153,28 @@ class JCoinsTransferForm extends AbstractForm {
 		parent::save();
 		
 		foreach ($this->user AS $user) {
-			$stmt = StatementEditor::create(array(
-				'userID'		=> $user->userID,
-				// executed by the System
-				'executedUserID'	=> WCF::getUser()->userID, 
-				'time'			=> TIME_NOW, 
-				'reason'		=> $this->reason, 
-				'sum'			=> $this->sum,
-				'changeBalance'		=> true
+			$this->statementAction = new StatementAction(array(), 'create', array(
+				'data' => array(
+					'reason' => $this->reason,
+					'sum' => $this->sum,
+					'userID' => $user->userID, 
+					'executedUserID' => WCF::getUser()->userID
+				),
+				'changeBalance' => true
 			));
+			$return = $this->statementAction->executeAction();
 			
-			UserNotificationHandler::getInstance()->fireEvent('jCoinsTransfer', 'de.joshsboard.wcf.jcoins.transfer.notification', new JCoinsTransferNotificationObject($stmt), array($user->userID));
+			UserNotificationHandler::getInstance()->fireEvent('jCoinsTransfer', 'de.joshsboard.wcf.jcoins.transfer.notification', new JCoinsTransferNotificationObject($return['returnValues']), array($user->userID));
 
 			if (!$this->isModerativ) {
-				StatementEditor::create(array(
-					'userID'		=> WCF::getUser()->userID,
-					// executed by the System
-					'executedUserID'	=> $user->userID, 
-					'time'			=> TIME_NOW, 
-					'reason'		=> $this->reason, 
-					'sum'			=> $this->sum * -1
+				$this->statementAction = new StatementAction(array(), 'create', array(
+					'data' => array(
+						'reason' => $this->reason,
+						'sum' => $this->sum * -1,
+						'executedUserID' => $user->userID
+					)
 				));
+				$this->statementAction->executeAction();
 			}
 		}
 		
@@ -175,11 +182,8 @@ class JCoinsTransferForm extends AbstractForm {
 		
 		$this->sum = 0; 
 		$this->reason = "";
-		$this->user = array(); 
-		
-		WCF::getTPL()->assign(array(
-			'success' => true
-		)); 
+		$this->user = array();
+		$this->success = true;
 	}
 
 	/**
@@ -191,7 +195,8 @@ class JCoinsTransferForm extends AbstractForm {
 		WCF::getTPL()->assign(array(
 			'user' => $this->user,
 			'sum' => $this->sum,
-			'reason' => $this->reason
+			'reason' => $this->reason, 
+			'success' => $this->success
 		));
 	}
 }

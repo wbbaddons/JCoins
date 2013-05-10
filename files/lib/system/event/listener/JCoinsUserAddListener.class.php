@@ -1,7 +1,7 @@
 <?php
 namespace wcf\system\event\listener;
 use wcf\system\event\IEventListener;
-use wcf\data\jCoins\statement\StatementEditor;
+use wcf\data\jCoins\statement\StatementAction;
 
 /**
  * add jcoins on registration
@@ -19,12 +19,13 @@ class JCoinsUserAddListener implements IEventListener {
 		
 		$return = $eventObj->getReturnValues(); 
 		
-		StatementEditor::create(array(
-			'userID'			=> $return['returnValues']->userID,
-			'executedUserID'		=> 0, 
-			'time'				=> TIME_NOW, 
-			'reason'			=> "wcf.jCoins.statement.useradd.recive",
-			'sum'				=> JCOINS_RECEIVECOINS_USERADD
+		$this->statementAction = new StatementAction(array(), 'create', array(
+			'data' => array(
+				'userID' => $return['returnValues']->userID,
+				'reason' => 'wcf.jCoins.statement.useradd.recive',
+				'sum' => JCOINS_RECEIVECOINS_USERADD
+			)
 		));
+		$this->statementAction->executeAction();
 	}
 }

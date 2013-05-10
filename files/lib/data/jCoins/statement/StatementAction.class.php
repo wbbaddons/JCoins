@@ -43,7 +43,7 @@ class StatementAction extends AbstractDatabaseObjectAction {
 	public function create() {
 		$statement = parent::create();
 		
-		if ($this->parameters['changeBalance']) {
+		if (isset($this->parameters['changeBalance']) && $this->parameters['changeBalance']) {
 			$user = $statement->getUser();
 			$userEditor = new UserEditor($user);
 			$userEditor->updateCounters(array('jCoinsBalance' => $statement->sum));

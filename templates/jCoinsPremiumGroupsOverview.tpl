@@ -28,7 +28,7 @@
 			
 			<dl>
 				<dt>{lang}wcf.jcoins.premiumgroups.description{/lang}</dt>
-				<dd>{lang}{$premiumGroup->description}{/lang}</dd>
+				<dd>{$premiumGroup->description|language}</dd>
 			</dl>
 			
 			<dl>

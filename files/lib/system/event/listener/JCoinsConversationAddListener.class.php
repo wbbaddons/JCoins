@@ -1,8 +1,7 @@
 <?php
 namespace wcf\system\event\listener;
 use wcf\system\event\IEventListener;
-use wcf\data\jCoins\statement\StatementEditor;
-use wcf\system\WCF;
+use wcf\data\jCoins\statement\StatementAction;
 
 /**
  * add jcoins on create an conversation
@@ -18,12 +17,12 @@ class JCoinsConversationAddListener implements IEventListener {
 		if (!MODULE_CONVERSATION || !MODULE_JCOINS || JCOINS_RECEIVECOINS_CREATECONVERSATION == 0) return;
 		if ($eventObj->getActionName() != 'create') return; 
 		
-		StatementEditor::create(array(
-			'userID'			=> WCF::getUser()->userID,
-			'executedUserID'		=> 0, 
-			'time'				=> TIME_NOW, 
-			'reason'			=> "wcf.jCoins.statement.conversationadd.recive",
-			'sum'				=> JCOINS_RECEIVECOINS_CREATECONVERSATION
+		$this->statementAction = new StatementAction(array(), 'create', array(
+			'data' => array(
+				'reason' => 'wcf.jCoins.statement.conversationadd.recive',
+				'sum' => JCOINS_RECEIVECOINS_CREATECONVERSATION
+			)
 		));
+		$this->statementAction->executeAction();
 	}
 }

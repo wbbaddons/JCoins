@@ -21,7 +21,7 @@ class JCoinsGlobalActivityPage extends AbstractPage {
 	/**
 	 * @see	wcf\page\AbstractPage::$neededPermissions
 	 */
-	public $neededPermissions = array('mod.jCoins.canSeeTransferList');
+	public $neededPermissions = array('mod.jcoins.canSeeTransferList');
 	
 	/**
 	 * @see	wcf\page\AbstractPage::$templateName

@@ -1,7 +1,7 @@
 <?php
 namespace wcf\system\event\listener;
 use wcf\system\event\IEventListener;
-use wcf\data\jCoins\statement\StatementEditor;
+use wcf\data\jCoins\statement\StatementAction;
 use wcf\data\like\object\LikeObject;
 use wcf\data\object\type\ObjectTypeCache;
 use wcf\data\like\Like;
@@ -42,56 +42,57 @@ class JCoinsLikeActionListener implements IEventListener {
 		switch ($returnValues['oldValue']) {
 			case Like::LIKE:
                             if (JCOINS_RECEIVECOINS_LIKE != 0) {
-                                    StatementEditor::create(array(
-                                            'userID'			=> $like->objectUserID,
-                                            // executed by the System
-                                            'executedUserID'		=> 0, 
-                                            'time'				=> TIME_NOW, 
-                                            'reason'			=> "wcf.jCoins.statement.like.revoke", // @TODO
-                                            'sum'				=> JCOINS_RECEIVECOINS_LIKE * -1 
-                                    ));
+				    $this->statementAction = new StatementAction(array(), 'create', array(
+					    'data' => array(
+						    'userID' => $like->objectUserID,
+						    'reason' => 'wcf.jCoins.statement.like.revoke',
+						    'sum' => JCOINS_RECEIVECOINS_LIKE * -1 
+					    )
+				    ));
+				    $this->statementAction->executeAction();
                                 }
 				break; 
 		    
 			case Like::DISLIKE: 
                                 if (JCOINS_RECEIVECOINS_DISLIKE != 0) {
-                                    StatementEditor::create(array(
-                                            'userID'			=> $like->objectUserID,
-                                            // executed by the System
-                                            'executedUserID'		=> 0, 
-                                            'time'				=> TIME_NOW, 
-                                            'reason'			=> "wcf.jCoins.statement.dislike.revoke", // @TODO
-                                            'sum'				=> JCOINS_RECEIVECOINS_DISLIKE * -1 
-                                    ));
+					$this->statementAction = new StatementAction(array(), 'create', array(
+						'data' => array(
+							'userID' => $like->objectUserID,
+							'reason' => 'wcf.jCoins.statement.dislike.revoke',
+							'sum' => JCOINS_RECEIVECOINS_DISLIKE * -1 
+						)
+					));
+					$this->statementAction->executeAction();
                                 }
 				break; 
 		}
 	    
-	    switch ($returnValues['newValue']) {
-		    case Like::LIKE: 
-                        if (JCOINS_RECEIVECOINS_LIKE != 0) {
-			StatementEditor::create(array(
-			    'userID'		=> $like->objectUserID,
-			    // executed by the System
-			    'executedUserID'	=> 0, 
-			    'time'		=> TIME_NOW, 
-			    'reason'		=> "wcf.jCoins.statement.like.recive",
-			    'sum'		=> JCOINS_RECEIVECOINS_LIKE
-			));
-                        }
-			break; 
+		switch ($returnValues['newValue']) {
+			case Like::LIKE: 
+				if (JCOINS_RECEIVECOINS_LIKE != 0) {
+					$this->statementAction = new StatementAction(array(), 'create', array(
+						'data' => array(
+							'userID' => $like->objectUserID,
+							'reason' => 'wcf.jCoins.statement.like.recive',
+							'sum' => JCOINS_RECEIVECOINS_LIKE
+						)
+					));
+					$this->statementAction->executeAction();
+				}
+				break; 
 		    
 			case Like::DISLIKE:
 				if (JCOINS_RECEIVECOINS_DISLIKE != 0) {
-				    StatementEditor::create(array(
-					'userID'		=> $like->objectUserID,
-					'executedUserID'	=> 0, 
-					'time'		=> TIME_NOW, 
-					'reason'		=> "wcf.jCoins.statement.dislike.recive",
-					'sum'		=> JCOINS_RECEIVECOINS_DISLIKE
-				    ));
-			    }
-			    break;
-	    }
+					$this->statementAction = new StatementAction(array(), 'create', array(
+						    'data' => array(
+							    'userID' => $like->objectUserID,
+							    'reason' => 'wcf.jCoins.statement.dislike.recive',
+							    'sum' => JCOINS_RECEIVECOINS_DISLIKE
+						    )
+					    ));
+					$this->statementAction->executeAction();
+				}
+				break;
+		}
 	}
 }
