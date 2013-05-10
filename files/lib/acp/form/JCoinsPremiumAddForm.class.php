@@ -27,7 +27,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$neededPermissions
 	 */
-	public $neededPermissions = array('admin.jCoins.premiumgroups.canEditPremiumGroups');
+	public $neededPermissions = array('admin.jcoins.premiumgroups.canEditPremiumGroups');
 
 	/**
 	 * @see wcf\page\AbstractPage::$action
@@ -139,7 +139,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		// save I18n description
 		if (!I18nHandler::getInstance()->isPlainValue('description')) {
 			$premiumGroupID = $returnValues['returnValues']->premiumGroupID;
-			I18nHandler::getInstance()->save('description', 'wcf.jcoins.premiumGroups.description'.$premiumGroupID, 'wcf.jcoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'));
+			I18nHandler::getInstance()->save('description', 'wcf.jcoins.premiumGroups.description'.$premiumGroupID, 'wcf.jcoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jcoins'));
 
 			// update name
 			$editor = new PremiumGroupEditor($returnValues['returnValues']);
