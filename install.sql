@@ -5,6 +5,7 @@ CREATE TABLE wcf1_statement_entrys (
 	executedUserID		INT(11) 		DEFAULT NULL,
 	time 			INT(9) 			NOT NULL DEFAULT 0,
 	reason 			VARCHAR(255)		NOT NULL DEFAULT '',
+	link			VARCHAR(255)		NOT NULL DEFAULT '',
 	sum 			INT(11) 		NOT NULL DEFAULT 0, 
 	isTrashed		BOOLEAN			NOT NULL DEFAULT 0,
 	KEY user (userID),
