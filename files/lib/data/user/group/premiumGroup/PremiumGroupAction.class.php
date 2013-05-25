@@ -1,7 +1,7 @@
 <?php
-namespace wcf\data\jCoins\premiumGroup;
+namespace wcf\data\user\group\premiumGroup; 
+
 use wcf\data\jCoins\statement\StatementEditor;
-use wcf\data\user\User;
 use wcf\data\user\UserEditor;
 use wcf\data\AbstractDatabaseObjectAction;
 use wcf\data\IToggleAction;
