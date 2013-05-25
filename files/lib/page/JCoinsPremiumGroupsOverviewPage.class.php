@@ -1,8 +1,7 @@
 <?php
 namespace wcf\page;
 use wcf\page\AbstractPage;
-use wcf\data\jCoins\premiumGroup\PremiumGroupList; 
-use wcf\system\user\group\UserPremiumGroupHandler;
+use wcf\data\user\group\premiumGroup\PremiumGroupList;
 use wcf\system\WCF;
 
 /**

@@ -1,8 +1,8 @@
 <?php
 namespace wcf\acp\form;
 use wcf\acp\form\JCoinsPremiumAddForm; 
-use wcf\data\jCoins\premiumGroup\PremiumGroup;
-use wcf\data\jCoins\premiumGroup\PremiumGroupAction;
+use wcf\data\user\group\premiumGroup\PremiumGroupAction;
+use wcf\data\user\group\premiumGroup\PremiumGroupEditor;
 use wcf\data\package\PackageCache;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\language\I18nHandler;

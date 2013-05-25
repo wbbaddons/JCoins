@@ -1,5 +1,6 @@
 <?php
-namespace wcf\data\jCoins\premiumGroup;
+namespace wcf\data\user\group\premiumGroup; 
+
 use wcf\data\DatabaseObjectEditor;
 
 /**

@@ -46,7 +46,7 @@ WCF.JCoins.Buy = Class.extend({
 	_click: function(event) {
 		this._proxy.setOption('data', {
 			actionName: 'buyGroup',
-			className: 'wcf\\data\\jCoins\\premiumGroup\\PremiumGroupAction',
+			className: 'wcf\\data\\user\\group\\premiumGroup\\PremiumGroupAction',
 			objectIDs: [ this._premiumGroupID ]
 		});
 		

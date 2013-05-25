@@ -1,8 +1,7 @@
 <?php
 namespace wcf\acp\form;
-use wcf\data\jCoins\premiumGroup\PremiumGroup;
-use wcf\data\jCoins\premiumGroup\PremiumGroupAction;
-use wcf\data\jCoins\premiumGroup\PremiumGroupEditor;
+use wcf\data\user\group\premiumGroup\PremiumGroupAction;
+use wcf\data\user\group\premiumGroup\PremiumGroupEditor;
 use wcf\data\package\PackageCache;
 use wcf\data\user\group\UserGroup;
 use wcf\form\AbstractForm;
