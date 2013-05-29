@@ -1,6 +1,7 @@
 <?php
 namespace wcf\data\jCoins\statement;
 use wcf\data\user\UserEditor;
+use wcf\data\user\User;
 use wcf\data\AbstractDatabaseObjectAction;
 use wcf\system\WCF;
 
@@ -44,7 +45,7 @@ class StatementAction extends AbstractDatabaseObjectAction {
 		$statement = parent::create();
 		
 		if (isset($this->parameters['changeBalance']) && $this->parameters['changeBalance']) {
-			$user = $statement->getUser();
+			$user = new User($this->parameters['data']['userID']);
 			$userEditor = new UserEditor($user);
 			$userEditor->updateCounters(array('jCoinsBalance' => $statement->sum));
 		}
