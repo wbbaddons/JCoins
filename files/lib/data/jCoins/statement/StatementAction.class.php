@@ -21,8 +21,6 @@ class StatementAction extends AbstractDatabaseObjectAction {
 	 * @see	wcf\data\AbstractDatabaseObjectAction::validateCreate()
 	 */
 	public function validateCreate() {
-		parent::validateCreate();
-		
 		$this->readBoolean('changeBalance', true);
 		$this->readInteger('executedUserID', true, 'data');
 		$this->readInteger('sum', false, 'data');
@@ -35,6 +33,9 @@ class StatementAction extends AbstractDatabaseObjectAction {
 		}
 		if (!$this->parameters['data']['userID']) {
 			$this->parameters['data']['userID'] = WCF::getUser()->userID;
+		}
+		if ($this->parameters['data']['executedUserID'] == 0) {
+			$this->parameters['data']['executedUserID'] = null;
 		}
 	}
 	

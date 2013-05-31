@@ -1,7 +1,7 @@
 <?php
 namespace wcf\data\user\group\premiumGroup; 
 
-use wcf\data\jCoins\statement\StatementEditor;
+use wcf\data\jCoins\statement\StatementAction;
 use wcf\data\user\UserEditor;
 use wcf\data\AbstractDatabaseObjectAction;
 use wcf\data\IToggleAction;
@@ -83,14 +83,16 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 	 */
 	public function buyGroup() {
 		foreach ($this->objects as $premiumGroup) {
-                        StatementEditor::create(array(
-				'userID'		=> WCF::getUser()->userID, 
-				'executedUserID'	=> 0, 
-				'time'			=> TIME_NOW,
-				'reason'		=> 'wcf.jCoins.premiumgroups.statement.buy', 
-				'sum'			=> $premiumGroup->jCoins * -1
-			)); 
-			
+			$this->statementAction = new StatementAction(array(), 'create', array(
+				'data' => array(
+					'reason' => 'wcf.jCoins.premiumgroups.statement.buy',
+					'sum' => $premiumGroup->jCoins * -1, 
+				), 
+				'changeBalance' => 1
+			));
+			$this->statementAction->validateAction();
+			$this->statementAction->executeAction();
+                       
                         $condition = new PreparedStatementConditionBuilder();
                         $condition->add('userID = ?', array(WCF::getUser()->userID));
                         $condition->add('premiumGroupID = ?', array($premiumGroup->premiumGroupID));
