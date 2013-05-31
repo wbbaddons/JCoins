@@ -2,6 +2,7 @@
 namespace wcf\acp\form;
 use wcf\acp\form\JCoinsPremiumAddForm; 
 use wcf\data\user\group\premiumGroup\PremiumGroupAction;
+use wcf\data\user\group\premiumGroup\PremiumGroup;
 use wcf\data\package\PackageCache;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\language\I18nHandler;

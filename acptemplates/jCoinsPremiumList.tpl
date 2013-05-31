@@ -1,15 +1,13 @@
 {include file='header' pageTitle='wcf.acp.jcoins.premiumgroups.list'}
 
 <header class="boxHeadline">
-	<hgroup>
-		<h1>{lang}wcf.acp.jcoins.premiumgroups.list{/lang}</h1>
-	</hgroup>
+	<h1>{lang}wcf.acp.jcoins.premiumgroups.list{/lang}</h1>
 	
 	<script type="text/javascript">
 		//<![CDATA[
 		$(function() {
-			new WCF.Action.Delete('wcf\\data\\jCoins\\premiumGroup\\PremiumGroupAction', $('.jsBBCodeRow'));
-			new WCF.Action.Toggle('wcf\\data\\jCoins\\premiumGroup\\PremiumGroupAction', $('.jsBBCodeRow'));
+			new WCF.Action.Delete('wcf\\data\\user\\group\\premiumGroup\\PremiumGroupAction', '.jsBBCodeRow');
+			new WCF.Action.Toggle('wcf\\data\\user\\group\\premiumGroup\\PremiumGroupAction', $('.jsBBCodeRow'));
 		});
 		//]]>
 	</script>
@@ -29,9 +27,9 @@
 
 {hascontent}
 	<div class="tabularBox tabularBoxTitle marginTop">
-		<hgroup>
-			<h1>{lang}wcf.acp.jcoins.premiumgroups.list{/lang} <span class="badge badgeInverse">{#$items}</span></h1>
-		</hgroup>
+		<header>
+			<h2>{lang}wcf.acp.jcoins.premiumgroups.list{/lang} <span class="badge badgeInverse">{#$items}</span></h2>
+		</header>
 		
 		<table class="table">
 			<thead>
