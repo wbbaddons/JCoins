@@ -65,11 +65,15 @@
 			<dl{if $errorField == 'groupID'} class="formError"{/if}>
 				<dt><label for="groupID">Gruppe</label></dt>
 				<dd>
-					<select name="groupID" id="groupID" {if $action == 'edit'}readonly="readonly"{/if}>
+				    {if $action == 'edit'}
+					{if $group->getGroup()->isEditable()}<a href="{link controller='UserGroupEdit' id=$group->groupID}{/link}">{lang}{$group->getGroup()}{/lang}</a>{else}{$group->getGroup()}{/if}
+				    {else}
+					<select name="groupID" id="groupID">
 					    {foreach from=$groups item="group"}
-						<option value="{$group->groupID}" {if $groupID == $group->groupID}selected="selected"{/if} >{lang}{$group->groupName}{/lang}</option>
+						<option value="{$group->groupID}">{lang}{$group->groupName}{/lang}</option>
 					    {/foreach}
 					</select>
+				    {/if}
 				</dd>
 			</dl>
 		</fieldset>
