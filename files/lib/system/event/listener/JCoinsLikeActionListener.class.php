@@ -45,7 +45,7 @@ class JCoinsLikeActionListener implements IEventListener {
 				    $this->statementAction = new StatementAction(array(), 'create', array(
 					    'data' => array(
 						    'userID' => $like->objectUserID,
-						    'reason' => 'wcf.jCoins.statement.like.revoke',
+						    'reason' => 'wcf.jcoins.statement.like.revoke',
 						    'sum' => JCOINS_RECEIVECOINS_LIKE * -1
 					    ),
                                             'changeBalance' => 1
@@ -60,7 +60,7 @@ class JCoinsLikeActionListener implements IEventListener {
 					$this->statementAction = new StatementAction(array(), 'create', array(
 						'data' => array(
 							'userID' => $like->objectUserID,
-							'reason' => 'wcf.jCoins.statement.dislike.revoke',
+							'reason' => 'wcf.jcoins.statement.dislike.revoke',
 							'sum' => JCOINS_RECEIVECOINS_DISLIKE * -1
 						),
                                                 'changeBalance' => 1
@@ -77,7 +77,7 @@ class JCoinsLikeActionListener implements IEventListener {
 					$this->statementAction = new StatementAction(array(), 'create', array(
 						'data' => array(
 							'userID' => $like->objectUserID,
-							'reason' => 'wcf.jCoins.statement.like.recive',
+							'reason' => 'wcf.jcoins.statement.like.recive',
 							'sum' => JCOINS_RECEIVECOINS_LIKE
 						),
                                                 'changeBalance' => 1
@@ -92,7 +92,7 @@ class JCoinsLikeActionListener implements IEventListener {
 					$this->statementAction = new StatementAction(array(), 'create', array(
 						    'data' => array(
 							    'userID' => $like->objectUserID,
-							    'reason' => 'wcf.jCoins.statement.dislike.recive',
+							    'reason' => 'wcf.jcoins.statement.dislike.recive',
 							    'sum' => JCOINS_RECEIVECOINS_DISLIKE
 						    ),
                                                     'changeBalance' => 1
