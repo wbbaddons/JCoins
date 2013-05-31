@@ -8,7 +8,7 @@
 			</category>
 
 			<category name="jcoins.general">
-				    <parent>jCoins</parent>
+				    <parent>jcoins</parent>
 			</category>
 
 			<category name="jcoins.receiveCoins">
