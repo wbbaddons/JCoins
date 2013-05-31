@@ -46,9 +46,11 @@ class JCoinsLikeActionListener implements IEventListener {
 					    'data' => array(
 						    'userID' => $like->objectUserID,
 						    'reason' => 'wcf.jCoins.statement.like.revoke',
-						    'sum' => JCOINS_RECEIVECOINS_LIKE * -1 
-					    )
+						    'sum' => JCOINS_RECEIVECOINS_LIKE * -1
+					    ),
+                                            'changeBalance' => 1
 				    ));
+                                    $this->statementAction->validateAction();
 				    $this->statementAction->executeAction();
                                 }
 				break; 
@@ -59,9 +61,11 @@ class JCoinsLikeActionListener implements IEventListener {
 						'data' => array(
 							'userID' => $like->objectUserID,
 							'reason' => 'wcf.jCoins.statement.dislike.revoke',
-							'sum' => JCOINS_RECEIVECOINS_DISLIKE * -1 
-						)
+							'sum' => JCOINS_RECEIVECOINS_DISLIKE * -1
+						),
+                                                'changeBalance' => 1
 					));
+                                        $this->statementAction->validateAction();
 					$this->statementAction->executeAction();
                                 }
 				break; 
@@ -75,8 +79,10 @@ class JCoinsLikeActionListener implements IEventListener {
 							'userID' => $like->objectUserID,
 							'reason' => 'wcf.jCoins.statement.like.recive',
 							'sum' => JCOINS_RECEIVECOINS_LIKE
-						)
+						),
+                                                'changeBalance' => 1
 					));
+                                        $this->statementAction->validateAction();
 					$this->statementAction->executeAction();
 				}
 				break; 
@@ -88,9 +94,11 @@ class JCoinsLikeActionListener implements IEventListener {
 							    'userID' => $like->objectUserID,
 							    'reason' => 'wcf.jCoins.statement.dislike.recive',
 							    'sum' => JCOINS_RECEIVECOINS_DISLIKE
-						    )
+						    ),
+                                                    'changeBalance' => 1
 					    ));
-					$this->statementAction->executeAction();
+                                            $this->statementAction->validateAction();
+                                            $this->statementAction->executeAction();
 				}
 				break;
 		}

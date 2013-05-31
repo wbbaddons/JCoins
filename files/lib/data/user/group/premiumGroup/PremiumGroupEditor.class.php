@@ -13,5 +13,5 @@ class PremiumGroupEditor extends DatabaseObjectEditor {
 	/**
 	 * @see	wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
-	protected static $baseClass = 'wcf\data\jCoins\premiumGroup\PremiumGroup';
+	protected static $baseClass = 'wcf\data\user\group\premiumGroup\PremiumGroup';
 }

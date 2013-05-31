@@ -1,12 +1,12 @@
 <?php
 namespace wcf\action;
 use wcf\action\AbstractAction;
-use wcf\data\jCoins\statement\StatementEditor;
 use wcf\data\jCoins\statement\StatementList;
 use wcf\system\exception\PermissionDeniedException;
 use wcf\system\WCF;
 use wcf\util\HeaderUtil;
 use wcf\system\request\LinkHandler;
+use wcf\data\jCoins\statement\StatementAction; 
 
 /**
  * sum up all statement entrys from an user
@@ -44,6 +44,8 @@ class SumUpStatementsAction extends AbstractAction {
 		if ($this->statementList->countObjects() < 2) {
 			throw new PermissionDeniedException();
 		}
+		
+		$this->statementList->readObjectIDs(); 
 	}
 	
 	/**
@@ -51,9 +53,9 @@ class SumUpStatementsAction extends AbstractAction {
 	 */
 	public function execute() {
 		parent::execute();
-				
+		
 		// mark as trashed
-		$this->statementAction = new StatementAction(array(), 'trashAll');
+		$this->statementAction = new StatementAction($this->statementList->objectIDs, 'trashAll');
 		$this->statementAction->executeAction();
 		
 		$this->statementAction = new StatementAction(array(), 'create', array(

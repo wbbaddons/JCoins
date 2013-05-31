@@ -21,7 +21,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$className
 	 */
-	protected $className = 'wcf\data\jCoins\premiumGroup\PremiumGroupEditor';
+	protected $className = 'wcf\data\user\group\premiumGroup\PremiumGroupEditor';
 
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$permissionsDelete

@@ -20,9 +20,11 @@ class JCoinsConversationAddListener implements IEventListener {
 		$this->statementAction = new StatementAction(array(), 'create', array(
 			'data' => array(
 				'reason' => 'wcf.jCoins.statement.conversationadd.recive',
-				'sum' => JCOINS_RECEIVECOINS_CREATECONVERSATION
-			)
+				'sum' => JCOINS_RECEIVECOINS_CREATECONVERSATION, 
+                        ), 
+                        'changeBalance' => 1
 		));
+                $this->statementAction->validateAction();
 		$this->statementAction->executeAction();
 	}
 }

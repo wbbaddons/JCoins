@@ -160,8 +160,9 @@ class JCoinsTransferForm extends AbstractForm {
 					'userID' => $user->userID, 
 					'executedUserID' => WCF::getUser()->userID
 				),
-				'changeBalance' => true
+				'changeBalance' => 1
 			));
+			$this->statementAction->validateAction();
 			$return = $this->statementAction->executeAction();
 			
 			UserNotificationHandler::getInstance()->fireEvent('jCoinsTransfer', 'de.joshsboard.wcf.jcoins.transfer.notification', new JCoinsTransferNotificationObject($return['returnValues']), array($user->userID));
@@ -174,6 +175,7 @@ class JCoinsTransferForm extends AbstractForm {
 						'executedUserID' => $user->userID
 					)
 				));
+				$this->statementAction->validateAction();
 				$this->statementAction->executeAction();
 			}
 		}
