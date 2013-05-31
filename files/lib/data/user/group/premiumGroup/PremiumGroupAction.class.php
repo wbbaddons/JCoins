@@ -26,12 +26,12 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$permissionsDelete
 	 */
-	protected $permissionsDelete = array('admin.jCoins.premiumgroups.canEditPremiumGroups');
+	protected $permissionsDelete = array('admin.jcoins.premiumgroups.canEditPremiumGroups');
 
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$permissionsUpdate
 	 */
-	protected $permissionsUpdate = array('admin.jCoins.premiumgroups.canEditPremiumGroups');
+	protected $permissionsUpdate = array('admin.jcoins.premiumgroups.canEditPremiumGroups');
 
 	/**
 	 * @see	wcf\data\IToggleAction::validateToggle()
