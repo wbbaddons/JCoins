@@ -1,6 +1,7 @@
 <?php
 namespace wcf\system\user\notification\event;
 use wcf\system\user\notification\event\AbstractUserNotificationEvent;
+use wcf\system\request\LinkHandler;
 
 /**
  * notification event on recive a transfer
