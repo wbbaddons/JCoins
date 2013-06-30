@@ -83,7 +83,7 @@ class JCoinsTransferForm extends AbstractForm {
 	    		$this->user[] = UserProfile::getUserProfile($this->userID);
 		}
 	}
-
+	
 	/**
 	 * @see	wcf\form\IForm::readFormParameters()
 	 */
