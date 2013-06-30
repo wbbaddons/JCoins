@@ -4,12 +4,12 @@ use wcf\system\event\IEventListener;
 use wcf\system\exception\UserInputException;
 
 /**
- * add jcoins mass proccesssing
+ * add jcoins mass processsing
  * 
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class JCoinsConversationAddListener implements IEventListener {
+class JCoinsAddMassProcessingListener implements IEventListener {
 	/**
 	 * @see	\wcf\system\event\IEventListener::execute()
 	 */
