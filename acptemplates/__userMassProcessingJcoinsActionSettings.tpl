@@ -1,4 +1,4 @@
-{if $__wcf->session->getPermission('admin.jCoins.canExecuteMassProcessing')}
+{if $__wcf->session->getPermission('admin.jcoins.canExecuteMassProcessing')}
 		<div id="addJCoinsDiv">
 			<fieldset>
 				<legend>{lang}wcf.acp.jcoins.massprocessing.general{/lang}</legend>

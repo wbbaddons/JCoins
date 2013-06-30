@@ -2,6 +2,7 @@
 namespace wcf\system\event\listener;
 use wcf\system\event\IEventListener;
 use wcf\system\exception\UserInputException;
+use wcf\system\WCF;
 
 /**
  * add jcoins mass processsing
@@ -43,7 +44,7 @@ class JCoinsAddMassProcessingListener implements IEventListener {
 					'sum' => $eventObj->sum,
 					'reason' => $eventObj->reason,
 					'fromUser' => $eventObj->fromUser, 
-					'userIDs' => $this->fetchUsers()
+					'userIDs' => $eventObj->fetchUsers()
 				);
 				WCF::getSession()->register('userTransferData', $userTransferData);
 
@@ -52,9 +53,9 @@ class JCoinsAddMassProcessingListener implements IEventListener {
 				
 			case 'assignVariables': 
 				WCF::getTPL()->assign(array(
-					'sum' => $eventObj->sum, 
-					'reason' => $eventObj->reason, 
-					'fromUser' => $eventObj->fromUser
+					'sum' => (isset($eventObj->sum)) ? $eventObj->sum : 0, 
+					'reason' => (isset($eventObj->reason)) ? $eventObj->reason : 0, 
+					'fromUser' => (isset($eventObj->fromUser)) ? $eventObj->fromUser : 0
 				)); 
 				break; 
 		}
