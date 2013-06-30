@@ -53,7 +53,7 @@
 							    
 							    {if $group->isAccessible()}<a href="{link controller='JCoinsPremiumEdit' object=$group}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip">{/if}<span class="icon icon16 icon-pencil{if !$group->isAccessible()} disabled{/if}"></span>{if $group->isAccessible()}</a>{/if}
 								
-							    <span class="icon icon16 icon-remove {if !$group->isDeletable() || !$group->isAccessible()}disabled{else}jsDeleteButton jsTooltip{/if}" data-object-id="{@$group->premiumGroupID}" title="{lang}wcf.global.button.delete{/lang}"></span>
+							    <span class="icon icon16 icon-remove {if $group->isDeletable() && $group->isAccessible()}disabled{else}jsDeleteButton jsTooltip{/if}" data-object-id="{@$group->premiumGroupID}" title="{lang}wcf.global.button.delete{/lang}"></span>
 								
 							    
 							    
