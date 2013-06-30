@@ -6,8 +6,8 @@
 	<script type="text/javascript">
 		//<![CDATA[
 		$(function() {
-			new WCF.Action.Delete('wcf\\data\\user\\group\\premiumGroup\\PremiumGroupAction', '.jsBBCodeRow');
-			new WCF.Action.Toggle('wcf\\data\\user\\group\\premiumGroup\\PremiumGroupAction', $('.jsBBCodeRow'));
+			new WCF.Action.Delete('wcf\\data\\user\\group\\premiumGroup\\PremiumGroupAction', '.jsJCPRow');
+			new WCF.Action.Toggle('wcf\\data\\user\\group\\premiumGroup\\PremiumGroupAction', $('.jsJCPRow'));
 		});
 		//]]>
 	</script>
@@ -34,7 +34,7 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th class="columnID columnPremiumGroupID{if $sortField == 'premiumGroupID'} active {@$sortOrder}{/if}" colspan="2"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=bbcodeID&sortOrder={if $sortField == 'premiumGroupID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.global.objectID{/lang}</a></th>
+					<th class="columnID columnPremiumGroupID{if $sortField == 'premiumGroupID'} active {@$sortOrder}{/if}" colspan="2"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=premiumGroupID&sortOrder={if $sortField == 'premiumGroupID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.global.objectID{/lang}</a></th>
 					<th class="columnTitle columnGroupName">Gruppe</th>
 					<th class="columnInteger columnJCoins{if $sortField == 'jCoins'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=jCoins&sortOrder={if $sortField == 'jCoins' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.acp.jcoins.premiumgroups.jcoins{/lang}</a></th>
 					<th class="columnInteger columnPeriod{if $sortField == 'period'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=period&sortOrder={if $sortField == 'period' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.acp.jcoins.premiumgroups.period{/lang}</a></th>
@@ -47,7 +47,7 @@
 			<tbody>
 				{content}
 					{foreach from=$objects item=group}
-						<tr class="jsBBCodeRow">
+						<tr class="jsJCPRow">
 							<td class="columnIcon">
 							    <span class="icon icon16 icon-{if $group->isDisabled}off{else}circle-blank{/if}{if !$group->isAccessible()} disabled{else} jsToggleButton jsTooltip pointer{/if}" {if $group->isAccessible()}title="{lang}wcf.global.button.{if $group->isDisabled}enable{else}disable{/if}{/lang}" data-object-id="{@$group->premiumGroupID}" data-disable-message="{lang}wcf.global.button.disable{/lang}" data-enable-message="{lang}wcf.global.button.enable{/lang}"{/if}></span>
 							    
