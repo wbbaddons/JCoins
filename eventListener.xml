@@ -30,28 +30,28 @@
 
 		<!-- UserMassProcessing --> 
 		<eventlistener>
-			<eventclassname>wcf\acp\form\UsersMassProcessingForm</eventclassname>
-			<eventname>readFormParameters</eventname>
-			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
-			<environment>admin</environment>
-		</eventlistener>
-
-		<eventlistener>
-			<eventclassname>wcf\acp\form\UsersMassProcessingForm</eventclassname>
+			<eventclassname>wcf\acp\form\UserBulkProcessingForm</eventclassname>
 			<eventname>validate</eventname>
 			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
 			<environment>admin</environment>
 		</eventlistener>
 
 		<eventlistener>
-			<eventclassname>wcf\acp\form\UsersMassProcessingForm</eventclassname>
+			<eventclassname>wcf\acp\form\UserBulkProcessingForm</eventclassname>
+			<eventname>readFormParameters</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
+			<environment>admin</environment>
+		</eventlistener>
+
+		<eventlistener>
+			<eventclassname>wcf\acp\form\UserBulkProcessingForm</eventclassname>
 			<eventname>saved</eventname>
 			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
 			<environment>admin</environment>
 		</eventlistener>
 
 		<eventlistener>
-			<eventclassname>wcf\acp\form\UsersMassProcessingForm</eventclassname>
+			<eventclassname>wcf\acp\form\UserBulkProcessingForm</eventclassname>
 			<eventname>assignVariables</eventname>
 			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
 			<environment>admin</environment>

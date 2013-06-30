@@ -31,16 +31,23 @@
 
 		<templatelistener name="usersMassProcessingAddJCoinsAction">
 			<environment>admin</environment>
-			<templatename>usersMassProcessing</templatename>
-			<eventname>additionalActions</eventname>
+			<templatename>userBulkProcessing</templatename>
+			<eventname>actions</eventname>
 			<templatecode><![CDATA[{include file='__userMassProcessingJcoinsAction'}]]></templatecode>
 		</templatelistener>
 
 		<templatelistener name="usersMassProcessingAddJCoinsActionSettings">
 			<environment>admin</environment>
-			<templatename>usersMassProcessing</templatename>
-			<eventname>additionalActionSettings</eventname>
+			<templatename>userBulkProcessing</templatename>
+			<eventname>actionFieldsets</eventname>
 			<templatecode><![CDATA[{include file='__userMassProcessingJcoinsActionSettings'}]]></templatecode>
+		</templatelistener>
+
+		<templatelistener name="usersMassProcessingAddJCoinsJS">
+			<environment>admin</environment>
+			<templatename>userBulkProcessing</templatename>
+			<eventname>javascriptInclude</eventname>
+			<templatecode><![CDATA[{include file='__userMassProcessingJcoinsJS'}]]></templatecode>
 		</templatelistener>
 	</import>
 </data>
