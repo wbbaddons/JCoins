@@ -19,7 +19,7 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$activeMenuItem
 	 */
-	public $activeMenuItem = 'wcf.acp.menu.link.jcoins.premium.edit';
+	public $activeMenuItem = 'wcf.acp.menu.link.jcoins.premium.add';
 
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules

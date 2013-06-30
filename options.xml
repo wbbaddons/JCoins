@@ -4,7 +4,7 @@
 		<categories>
 			<category name="jcoins">
 				    <showorder>4</showorder>
-				    
+				    <options>module_jcoins</options>
 			</category>
 
 			<category name="jcoins.general">

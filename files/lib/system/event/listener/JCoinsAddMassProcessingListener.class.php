@@ -3,6 +3,7 @@ namespace wcf\system\event\listener;
 use wcf\system\event\IEventListener;
 use wcf\system\exception\UserInputException;
 use wcf\system\WCF;
+use wcf\util\StringUtil;
 
 /**
  * add jcoins mass processsing
@@ -54,7 +55,7 @@ class JCoinsAddMassProcessingListener implements IEventListener {
 			case 'assignVariables': 
 				WCF::getTPL()->assign(array(
 					'sum' => (isset($eventObj->sum)) ? $eventObj->sum : 0, 
-					'reason' => (isset($eventObj->reason)) ? $eventObj->reason : 0, 
+					'reason' => (isset($eventObj->reason)) ? $eventObj->reason : "", 
 					'fromUser' => (isset($eventObj->fromUser)) ? $eventObj->fromUser : 0
 				)); 
 				break; 

@@ -66,7 +66,8 @@
 				<dt><label for="groupID">Gruppe</label></dt>
 				<dd>
 				    {if $action == 'edit'}
-					{if $premiumGroup->getGroup()->isEditable()}<a href="{link controller='UserGroupEdit' id=$premiumGroup->getGroup()}{/link}">{lang}{$premiumGroup->getGroup()}{/lang}</a>{else}{$premiumGroup->getGroup()}{/if}
+					{if $premiumGroup->getGroup()->isEditable()}<a href="{link controller='UserGroupEdit' id=$premiumGroup->getGroup()->groupID}{/link}">{lang}{$premiumGroup->getGroup()}{/lang}</a>{else}{$premiumGroup->getGroup()}{/if}
+					<input type="hidden" name="groupID" value="{$premiumGroup->getGroup()->groupID}" />
 				    {else}
 					<select name="groupID" id="groupID">
 					    {foreach from=$groups item="group"}
