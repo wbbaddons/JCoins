@@ -18,7 +18,7 @@
 	{hascontent}
 	<nav>
 	    {content}
-		    {if $canAddNewGroup}<ul><li><a href="{link controller='JCoinsPremiumAdd'}{/link}" title="" class="button"><span class="icon icon16 icon-plus"></span> <span>{lang}wcf.acp.jcoins.premiumgroups.add{/lang}</span></a></li></ul>{/if}
+		    {if $canAddNewGroup && $__wcf->session->getPermission('admin.jcoins.premiumgroups.canAddPremiumGroups')}<ul><li><a href="{link controller='JCoinsPremiumAdd'}{/link}" title="" class="button"><span class="icon icon16 icon-plus"></span> <span>{lang}wcf.acp.jcoins.premiumgroups.add{/lang}</span></a></li></ul>{/if}
 		    {event name='additonalNavigationLinks'}
 	    {/content}
 	</nav>
@@ -83,7 +83,7 @@
 		{hascontent}
 		<nav>
 		    {content}
-			    {if $canAddNewGroup}<ul><li><a href="{link controller='JCoinsPremiumAdd'}{/link}" title="" class="button"><span class="icon icon16 icon-plus"></span> <span>{lang}wcf.acp.jcoins.premiumgroups.add{/lang}</span></a></li></ul>{/if}
+			    {if $canAddNewGroup && $__wcf->session->getPermission('admin.jcoins.premiumgroups.canAddPremiumGroups')}<ul><li><a href="{link controller='JCoinsPremiumAdd'}{/link}" title="" class="button"><span class="icon icon16 icon-plus"></span> <span>{lang}wcf.acp.jcoins.premiumgroups.add{/lang}</span></a></li></ul>{/if}
 			    {event name='additonalNavigationLinks'}
 		    {/content}
 		</nav>

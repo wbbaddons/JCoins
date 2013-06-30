@@ -83,6 +83,24 @@
 		</item>
 	</category>
 
+	<!-- GROUP OPTIONS --> 
+	<category name="wcf.acp.group">
+	    <item name="wcf.acp.group.option.category.user.jcoins"><![CDATA[JCoins]]></item>
+	    <item name="wcf.acp.group.option.category.user.jcoins.general"><![CDATA[Allgemein]]></item>
+	    <item name="wcf.acp.group.option.user.jcoins.canTransfer"><![CDATA[Kann JCoins überweisen]]></item>
+	    <item name="wcf.acp.group.option.category.mod.jcoins"><![CDATA[JCoins]]></item>
+	    <item name="wcf.acp.group.option.category.mod.jcoins.general"><![CDATA[Allgemein]]></item>
+	    <item name="wcf.acp.group.option.mod.jcoins.canModTransfer"><![CDATA[Kann moderative Überweisungen tätigen]]></item>
+	    <item name="wcf.acp.group.option.mod.jcoins.canSeeModTransfer"><![CDATA[Kann einsehen, ob eine Überweisungen moderativ ist]]></item>
+	    <item name="wcf.acp.group.option.mod.jcoins.canSeeTransferList"><![CDATA[Kann alle Transaktionen sehen]]></item>
+	    <item name="wcf.acp.group.option.category.admin.jcoins"><![CDATA[JCoins]]></item>	    
+	    <item name="wcf.acp.group.option.category.admin.jcoins.general"><![CDATA[Allgemein]]></item>
+	    <item name="wcf.acp.group.option.category.admin.jcoins.premiumgroups"><![CDATA[Premiumgruppen]]></item>
+	    <item name="wcf.acp.group.option.admin.jcoins.canExecuteMassProcessing"><![CDATA[Kann Massenüberweisungen tätigen]]></item>
+	    <item name="wcf.acp.group.option.admin.jcoins.premiumgroups.canEditPremiumGroups"><![CDATA[Kann Premiumbenutzergruppen bearbeiten]]></item>
+	    <item name="wcf.acp.group.option.admin.jcoins.premiumgroups.canAddPremiumGroups"><![CDATA[Kann Premiumbenutzergruppen erstellen]]></item>
+	</category>
+
 	<!-- ACP OPTIONS -->
 	<category name="wcf.acp.option">
 	    <item name="wcf.acp.option.category.jcoins"><![CDATA[JCoins]]></item>
