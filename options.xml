@@ -25,7 +25,7 @@
 			</option>
 
 			<option name="jcoins_statements_autocompress">
-				<categoryname>jCoins.general</categoryname>
+				<categoryname>jcoins.general</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 			</option>
