@@ -18,6 +18,11 @@ class JCoinsPremiumListPage extends SortablePage {
 	public $activeMenuItem = 'wcf.acp.menu.link.jcoins.premium.list';
 
 	/**
+	 * @see	wcf\page\AbstractPage::$neededModules
+	 */
+	public $neededModules = array('MODULE_JCOINS', 'JCOINS_PREMIUMGROUPS_ACTIVE');
+	
+	/**
 	 * @see	wcf\page\MultipleLinkPage::$defaultSortField
 	 */
 	public $defaultSortField = 'premiumGroupID';

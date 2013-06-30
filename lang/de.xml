@@ -86,8 +86,11 @@
 	<!-- ACP OPTIONS -->
 	<category name="wcf.acp.option">
 	    <item name="wcf.acp.option.category.jcoins"><![CDATA[JCoins]]></item>
+	    <item name="wcf.acp.option.category.module.jcoins"><![CDATA[JCoins]]></item>
 
 	    <item name="wcf.acp.option.module_jcoins"><![CDATA[JCoins]]></item>
+	    <item name="wcf.acp.option.module_jcoins_premiumgroups"><![CDATA[Premiumgruppen]]></item>
+
 
 	    <item name="wcf.acp.option.jcoins_coins_tax"><![CDATA[tägliche Steuer]]></item>
 	    <item name="wcf.acp.option.jcoins_coins_tax.description"><![CDATA[Ist hier ein Wert definiert, wird täglich ein Steuer abgezogen. Der angegebene Wert ist hiertbei der Prozentwert, welcher vom Vermögen abgezogen wird.]]></item>

@@ -15,13 +15,22 @@
 					<parent>jcoins</parent>
 			</category>
 			
+			<category name="module.jcoins">
+					<parent>module</parent>
+			</category>
 		</categories>
 		<options>
 			<option name="module_jcoins">
-				<categoryname>module.community</categoryname>
+				<categoryname>module.jcoins</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 				<enableoptions><![CDATA[jcoins]]></enableoptions>
+			</option>
+
+			<option name="module_jcoins_premiumgroups">
+				<categoryname>module.jcoins</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
 			</option>
 
 			<option name="jcoins_statements_autocompress">

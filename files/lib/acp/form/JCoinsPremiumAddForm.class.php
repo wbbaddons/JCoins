@@ -29,6 +29,11 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public $neededPermissions = array('admin.jcoins.premiumgroups.canEditPremiumGroups');
 
 	/**
+	 * @see	wcf\page\AbstractPage::$neededModules
+	 */
+	public $neededModules = array('MODULE_JCOINS', 'JCOINS_PREMIUMGROUPS_ACTIVE');
+	
+	/**
 	 * @see wcf\page\AbstractPage::$action
 	 */
 	public $action = 'add'; 
