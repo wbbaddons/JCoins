@@ -4,30 +4,37 @@
 		<categories>
 			<category name="user.jcoins">
 				<parent>user</parent>
+				<options>module_jcoins</options>
 			</category>
 
 			<category name="user.jcoins.general">
 				<parent>user.jcoins</parent>
+				<options>module_jcoins</options>
 			</category>
 
 			<category name="mod.jcoins">
 				<parent>mod</parent>
+				<options>module_jcoins</options>
 			</category>
 
 			<category name="mod.jcoins.general">
 				<parent>mod.jcoins</parent>
+				<options>module_jcoins</options>
 			</category>
 
 			<category name="admin.jcoins">
 				<parent>admin</parent>
+				<options>module_jcoins</options>
 			</category>
 			
 			<category name="admin.jcoins.general">
 				<parent>admin.jcoins</parent>
+				<options>module_jcoins</options>
 			</category>
 
 			<category name="admin.jcoins.premiumgroups">
 				<parent>admin.jcoins</parent>
+				<options>module_jcoins_premiumgroups</options>
 			</category>
 		</categories>
 

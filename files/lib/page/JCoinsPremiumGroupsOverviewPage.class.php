@@ -20,7 +20,7 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules
 	 */
-	public $neededModules = array('MODULE_JCOINS', 'JCOINS_PREMIUMGROUPS_ACTIVE');
+	public $neededModules = array('MODULE_JCOINS', 'MODULE_JCOINS_PREMIUMGROUPS');
 	
 	/**
 	 * list of premium-groups

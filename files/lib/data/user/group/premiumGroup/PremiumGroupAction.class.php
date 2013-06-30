@@ -66,7 +66,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 	 * Validates the purchase of premium-groups.
 	 */
 	public function validateBuyGroup() {
-		if (!MODULE_JCOINS) throw new IllegalLinkException(); 
+		if (!MODULE_JCOINS || !MODULE_JCOINS_PREMIUMGROUPS) throw new IllegalLinkException(); 
 		
 		if (empty($this->objects)) {
 			$this->readObjects();

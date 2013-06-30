@@ -10,6 +10,7 @@
 			<parent>wcf.acp.menu.link.jcoins</parent>
 			<permissions>admin.jcoins.premiumgroups.canEditPremiumGroups</permissions>
 			<showorder>1</showorder>
+			<options>module_jcoins_premiumgroups</options>
 		</acpmenuitem>
 
 		<acpmenuitem name="wcf.acp.menu.link.jcoins.premium.add">
@@ -17,6 +18,7 @@
 			<parent>wcf.acp.menu.link.jcoins</parent>
 			<permissions>admin.jcoins.premiumgroups.canEditPremiumGroups</permissions>
 			<showorder>2</showorder>
+			<options>module_jcoins_premiumgroups</options>
 		</acpmenuitem>
 	</import>
 </data>

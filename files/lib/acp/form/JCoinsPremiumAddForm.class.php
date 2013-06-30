@@ -31,7 +31,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules
 	 */
-	public $neededModules = array('MODULE_JCOINS', 'JCOINS_PREMIUMGROUPS_ACTIVE');
+	public $neededModules = array('MODULE_JCOINS', 'MODULE_JCOINS_PREMIUMGROUPS');
 	
 	/**
 	 * @see wcf\page\AbstractPage::$action
