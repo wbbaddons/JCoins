@@ -17,26 +17,37 @@
 		
 {include file='userNotice'}
 
+<div class="contentNavigation">
+    {pages print=true assign=pagesLinks controller='JCoinsGlobalActivity' link="pageNo=%dpageNo=%d&sortField=$sortField&sortOrder=$sortOrder"}
+    {hascontent}
+    <nav>
+	<ul id="jCoinsStatementButtonContainer" class="">
+	    {content}
+		{event name='largeButtonsTop'}
+	    {/content}
+	</ul>
+    </nav>
+    {/hascontent}
+</div>
+
 <div class="marginTop statementBox">
-    {if $entrys|count == 0}
+    {if $objects|count == 0}
 	<p class="info">{lang}wcf.jcoins.globalactivity.noresults{/lang}</p>
     {else}
 	    
     <table class="table">
 	<thead>
 		<tr>
-			<th class="columnID">{lang}wcf.jcoins.statement.id{/lang}</th>
-			<th class="columnText">{lang}wcf.jcoins.statement.reciveuser{/lang}</th>
-			<th class="columnText">{lang}wcf.jcoins.statement.reason{/lang}</th>
-			<th class="columnText">{lang}wcf.jcoins.statement.user{/lang}</th>
-			<th class="columnSum">{lang}wcf.jcoins.statement.sum{/lang}</th>
-			<th class="columnDate">{lang}wcf.jcoins.statement.date{/lang}</th>
-
-
+			<th class="columnID{if $sortField == 'entryID'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsGlobalActivity'}pageNo={@$pageNo}&sortField=entryID&sortOrder={if $sortField == 'entryID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.id{/lang}</a></th>
+			<th class="columnText{if $sortField == 'userID'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsGlobalActivity'}pageNo={@$pageNo}&sortField=userID&sortOrder={if $sortField == 'userID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.reciveuser{/lang}</a></th>
+			<th class="columnText{if $sortField == 'reason'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsGlobalActivity'}pageNo={@$pageNo}&sortField=reason&sortOrder={if $sortField == 'reason' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.reason{/lang}</a></th>
+			<th class="columnText{if $sortField == 'executedUserID'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsGlobalActivity'}pageNo={@$pageNo}&sortField=executedUserID&sortOrder={if $sortField == 'executedUserID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.user{/lang}</a></th>
+			<th class="columnSum{if $sortField == 'sum'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsGlobalActivity'}pageNo={@$pageNo}&sortField=sum&sortOrder={if $sortField == 'sum' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.sum{/lang}</a></th>
+			<th class="columnDate{if $sortField == 'time'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsGlobalActivity'}pageNo={@$pageNo}&sortField=time&sortOrder={if $sortField == 'time' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.date{/lang}</a></th>
 		</tr>
 	</thead>
 	<tbody>
-		{foreach from=$entrys item=item}
+		{foreach from=$objects item=item}
 		    <tr class="statementTableRow">
 			<td>{#$item->entryID}{if $item->isTrashed} <span class="icon icon16 icon-trash"></span>{/if}</td>
 			<td>{if $item->userID == 0}{lang}wcf.jcoins.systemuser{/lang}{else}<a href="{link controller='User' object=$item->getUser()}{/link}">{$item->getUser()->username}</a>{/if}</td>
@@ -51,6 +62,19 @@
     {/if}
 </div>
     
+<div class="contentNavigation">
+    {@$pages}
+    {hascontent}
+    <nav>
+	<ul id="jCoinsStatementButtonContainer" class="">
+	    {content}
+		{event name='largeButtonsBottom'}
+	    {/content}
+	</ul>
+    </nav>
+    {/hascontent}
+</div>
+
     <div class="copyright"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
 		
 {include file='footer' sandbox=false}

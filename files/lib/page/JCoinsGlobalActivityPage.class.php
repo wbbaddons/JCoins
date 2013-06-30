@@ -1,8 +1,6 @@
 <?php
 namespace wcf\page;
-use wcf\page\AbstractPage;
-use wcf\system\WCF;
-use wcf\data\jCoins\statement\StatementList;
+use wcf\page\SortablePage;
 
 /**
  * the global statement list
@@ -11,7 +9,7 @@ use wcf\data\jCoins\statement\StatementList;
  * @package	de.joshsboard.jcons
  * @subpackage	wcf.page
  */
-class JCoinsGlobalActivityPage extends AbstractPage {
+class JCoinsGlobalActivityPage extends SortablePage {
 	
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules
@@ -29,15 +27,27 @@ class JCoinsGlobalActivityPage extends AbstractPage {
 	public $templateName = 'jCoinsGlobalActivity';
 	
 	/**
-	 * @see	wcf\page\IPage::assignVariables()
+	 * @see	wcf\page\MultipleLinkPage::$itemsPerPage
 	 */
-	public function assignVariables() {
-		parent::assignVariables();
-		
-		$list = new StatementList(); 
-		$list->readObjects(); 
-		WCF::getTPL()->assign(array(
-			'entrys' => $list->getObjects()
-		));
-	}
+	public $itemsPerPage = 25;
+
+	/**
+	 * @see	wcf\page\SortablePage::$defaultSortField
+	 */
+	public $defaultSortField = 'time';
+
+	/**
+	 * @see	wcf\page\SortablePage::$defaultSortOrder
+	 */
+	public $defaultSortOrder = 'DESC';
+
+	/**
+	 * @see	wcf\page\SortablePage::$validSortFields
+	 */
+	public $validSortFields = array('entryID', 'executedUserID', 'reason', 'sum', 'time', 'userID');
+
+	/**
+	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
+	 */
+	public $objectListClassName = 'wcf\data\jCoins\statement\StatementList';
 }
