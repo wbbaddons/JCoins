@@ -26,7 +26,7 @@ class JCoinsGlobalActivityPage extends AbstractPage {
 	/**
 	 * @see	wcf\page\AbstractPage::$templateName
 	 */
-	public $templateName = 'JCoinsGlobalActivity';
+	public $templateName = 'jCoinsGlobalActivity';
 	
 	/**
 	 * @see	wcf\page\IPage::assignVariables()
