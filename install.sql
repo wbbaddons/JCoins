@@ -8,6 +8,7 @@ CREATE TABLE wcf1_statement_entrys (
 	link			VARCHAR(255)		NOT NULL DEFAULT '',
 	sum 			INT(11) 		NOT NULL DEFAULT 0, 
 	isTrashed		BOOLEAN			NOT NULL DEFAULT 0,
+	isModTransfer		BOOLEAN			NOT NULL DEFAULT 0,
 	KEY user (userID),
 	KEY executedUser (executedUserID)
 );
