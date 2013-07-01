@@ -45,7 +45,7 @@
 
 		<templatelistener name="usersMassProcessingAddJCoinsJS">
 			<environment>admin</environment>
-			<templatename>userBulkProcessing</templatename>
+			<templatename>header</templatename>
 			<eventname>javascriptInclude</eventname>
 			<templatecode><![CDATA[{include file='__userMassProcessingJcoinsJS'}]]></templatecode>
 		</templatelistener>

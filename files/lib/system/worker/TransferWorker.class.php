@@ -5,6 +5,7 @@ use wcf\system\database\util\PreparedStatementConditionBuilder;
 use wcf\system\exception\SystemException;
 use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
+use wcf\data\jCoins\statement\StatementAction;
 
 /**
  * Worker implementation for transfer jcoins.
@@ -83,9 +84,9 @@ class TransferWorker extends AbstractWorker {
 
 		if ($progress == 100) {
 			// clear session
-			$userMailData = WCF::getSession()->getVar('userTransferData');
-			unset($userMailData[$this->parameters['transferID']]);
-			WCF::getSession()->register('userTransferData', $userMailData);
+			$userTransferData = WCF::getSession()->getVar('userTransferData');
+			unset($userTransferData[$this->parameters['transferID']]);
+			WCF::getSession()->register('userTransferData', $userTransferData);
 		}
 
 		return $progress;
