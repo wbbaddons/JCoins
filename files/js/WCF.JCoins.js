@@ -31,7 +31,6 @@ WCF.JCoins.Buy = Class.extend({
 		this._premiumGroupID = premiumGroupID;
 		
 		this._proxy = new WCF.Action.Proxy({
-			failure: $.proxy(this._failure, this),
 			showLoadingOverlay: true,
 			success: $.proxy(this._success, this)
 		});
@@ -60,18 +59,7 @@ WCF.JCoins.Buy = Class.extend({
 	 * @param	jQuery		jqXHR
 	 */
 	_success: function(data, textStatus, jqXHR) {
-		var $notification = new WCF.System.Notification(data.returnValues.successMessage);
-		$notification.show();
-	},
-	
-	/**
-	 * Shows a notification on failure.
-	 * @param	object		data
-	 * @param	string		textStatus
-	 * @param	jQuery		jqXHR
-	 */
-	_failure: function(data, textStatus, jqXHR) {
-		var $notification = new WCF.System.Notification(data.returnValues.falseMessage);
+		var $notification = new WCF.System.Notification(WCF.Language.get('wcf.global.success'));
 		$notification.show();
 	}
 });

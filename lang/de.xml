@@ -113,8 +113,10 @@
 	    <item name="wcf.acp.option.jcoins_coins_tax"><![CDATA[tägliche Steuer]]></item>
 	    <item name="wcf.acp.option.jcoins_coins_tax.description"><![CDATA[Ist hier ein Wert definiert, wird täglich ein Steuer abgezogen. Der angegebene Wert ist hiertbei der Prozentwert, welcher vom Vermögen abgezogen wird.]]></item>
 	    <item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
-	    <item name="wcf.acp.option.jcoins_statements_autocompress"><![CDATA[Automatische Kompremierung von Kontoauszügen]]></item>
-	    <item name="wcf.acp.option.jcoins_statements_autocompress.description"><![CDATA[Ist diese Option aktiviert, werden Kontoauszüge automatisch nach 30 Tagen gelöscht. Dies geschieht alle zwei Tage und wird mit einem neuen Eintrag protokolliert.]]></item>
+	    <item name="wcf.acp.option.jcoins_statements_deleteafter"><![CDATA[Kontoauszüge löschen]]></item>
+	    <item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Lege hier fest nach wie vielen Tagen ein Kontoauszug gelöscht werden soll.]]></item>
+	    <item name="wcf.acp.option.jcoins_statements_deleteonlytrashed"><![CDATA[Nur vom Benutzer gelöschte Kontoauszüge löschen]]></item>
+	    <item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[Aktivierst du diese Option, werden nur Kontoauszüge gelöscht, welche bereits vom Benutzer durch "Kontoauszüge kombremieren" gelöscht worden sind.]]></item>
 	    <item name="wcf.acp.option.category.jcoins.receiveCoins"><![CDATA[Einkünfte]]></item>
 	    <item name="wcf.acp.option.jcoins_receiveCoins_like"><![CDATA[jcoins für einen Like]]></item>
 	    <item name="wcf.acp.option.jcoins_receiveCoins_like.description"><![CDATA[Wie viele jcoins soll der Benutzer bekommen, wenn ein Objekt von ihm geliked wird?]]></item>

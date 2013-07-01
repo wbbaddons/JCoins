@@ -18,7 +18,7 @@
 {include file='userNotice'}
 
 <div class="contentNavigation">
-    {pages print=true assign=pagesLinks controller='JCoinsGlobalActivity' link="pageNo=%dpageNo=%d&sortField=$sortField&sortOrder=$sortOrder"}
+    {pages print=true assign=pagesLinks controller='JCoinsGlobalActivity' link="pageNo=%d&sortField=$sortField&sortOrder=$sortOrder"}
     {hascontent}
     <nav>
 	<ul id="jCoinsStatementButtonContainer" class="">
@@ -63,7 +63,7 @@
 </div>
     
 <div class="contentNavigation">
-    {@$pages}
+    {@$pagesLinks}
     {hascontent}
     <nav>
 	<ul id="jCoinsStatementButtonContainer" class="">

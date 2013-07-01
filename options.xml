@@ -33,7 +33,13 @@
 				<defaultvalue>1</defaultvalue>
 			</option>
 
-			<option name="jcoins_statements_autocompress">
+			<option name="jcoins_statements_deleteafter">
+				<categoryname>jcoins.general</categoryname>
+				<optiontype>int</optiontype>
+				<defaultvalue>30</defaultvalue>
+			</option>
+
+			<option name="jcoins_statements_deleteonlytrashed">
 				<categoryname>jcoins.general</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
