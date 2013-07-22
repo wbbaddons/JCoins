@@ -85,7 +85,7 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 		foreach ($this->objects as $premiumGroup) {
 			$this->statementAction = new StatementAction(array(), 'create', array(
 				'data' => array(
-					'reason' => 'wcf.jCoins.premiumgroups.statement.buy',
+					'reason' => 'wcf.jcoins.premiumgroups.statement.buy',
 					'sum' => $premiumGroup->jCoins * -1, 
 				), 
 				'changeBalance' => 1

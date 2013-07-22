@@ -85,7 +85,6 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 		// update premiumgroup
 		$this->objectAction = new PremiumGroupAction(array($this->premiumGroup), 'update', array(
 			'data' => array(
-				'groupID' => $this->groupID,
 				'jCoins' => $this->jCoins,
 				'description' => 'wcf.jcoins.premiumGroups.description'.$this->premiumGroupID
 			)
@@ -103,5 +102,12 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign('premiumGroup', $this->premiumGroup);
+	}
+	
+	/**
+	 * @see wcf\acp\form\JCoinsPremiumAddForm::validateGroup()
+	 */
+	public function validateGroup() {
+	    // the group can not be changed, therefore it must not be checked
 	}
 }

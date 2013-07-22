@@ -35,10 +35,10 @@
 			<thead>
 				<tr>
 					<th class="columnID columnPremiumGroupID{if $sortField == 'premiumGroupID'} active {@$sortOrder}{/if}" colspan="2"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=premiumGroupID&sortOrder={if $sortField == 'premiumGroupID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.global.objectID{/lang}</a></th>
-					<th class="columnTitle columnGroupName">Gruppe</th>
-					<th class="columnInteger columnJCoins{if $sortField == 'jCoins'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=jCoins&sortOrder={if $sortField == 'jCoins' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.acp.jcoins.premiumgroups.jcoins{/lang}</a></th>
-					<th class="columnInteger columnPeriod{if $sortField == 'period'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=period&sortOrder={if $sortField == 'period' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.acp.jcoins.premiumgroups.period{/lang}</a></th>
-					<th class="columnInteger columnMembers{if $sortField == 'members'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=members&sortOrder={if $sortField == 'members' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.acp.jcoins.premiumgroups.members{/lang}</a></th>
+					<th class="columnTitle columnGroupName{if $sortField == 'group'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=group&sortOrder={if $sortField == 'group' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.acp.jcoins.group{/lang}</a></th>
+					<th class="columnInteger columnJCoins{if $sortField == 'jCoins'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=jCoins&sortOrder={if $sortField == 'jCoins' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.acp.jcoins.jcoins{/lang}</a></th>
+					<th class="columnInteger columnPeriod{if $sortField == 'period'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=period&sortOrder={if $sortField == 'period' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.acp.jcoins.period{/lang}</a></th>
+					<th class="columnInteger columnMembers{if $sortField == 'members'} active {@$sortOrder}{/if}"><a href="{link controller='JCoinsPremiumList'}pageNo={@$pageNo}&sortField=members&sortOrder={if $sortField == 'members' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.acp.jcoins.members{/lang}</a></th>
 
 					{event name='headColumns'}
 				</tr>
@@ -53,7 +53,7 @@
 							    
 							    {if $group->isAccessible()}<a href="{link controller='JCoinsPremiumEdit' object=$group}{/link}" title="{lang}wcf.global.button.edit{/lang}" class="jsTooltip">{/if}<span class="icon icon16 icon-pencil{if !$group->isAccessible()} disabled{/if}"></span>{if $group->isAccessible()}</a>{/if}
 								
-							    <span class="icon icon16 icon-remove {if $group->isDeletable() && $group->isAccessible()}disabled{else}jsDeleteButton jsTooltip{/if}" data-object-id="{@$group->premiumGroupID}" title="{lang}wcf.global.button.delete{/lang}"></span>
+							    <span class="icon icon16 icon-remove {if !$group->isDeletable() || !$group->isAccessible()}disabled{else}jsDeleteButton jsTooltip{/if}" data-object-id="{@$group->premiumGroupID}" title="{lang}wcf.global.button.delete{/lang}"></span>
 								
 							    
 							    

@@ -3,7 +3,7 @@
  * the 'de.joshsboard.jCoins'-package.
  * 
  * @author 		Joshua Ruesweg
- * @copyright	JoshsBoard 2013
+ * @copyright		JoshsBoard 2013
  * @package		de.joshsboard.jCoins	
  */
 WCF.JCoins = { };

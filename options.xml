@@ -2,21 +2,25 @@
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/option.xsd">
 	<import>
 		<categories>
+			<category name="module.jcoins">
+				<parent>module</parent>
+			</category>
+
 			<category name="jcoins">
-				    <showorder>4</showorder>
-				    <options>module_jcoins</options>
+				<showorder>4</showorder>
+				<options>module_jcoins</options>
 			</category>
 
 			<category name="jcoins.general">
-				    <parent>jcoins</parent>
+				<parent>jcoins</parent>
 			</category>
 
 			<category name="jcoins.receiveCoins">
-					<parent>jcoins</parent>
+				<parent>jcoins</parent>
 			</category>
-			
-			<category name="module.jcoins">
-					<parent>module</parent>
+
+			<category name="jcoins.receiveCoins.general">
+				<parent>jcoins.receiveCoins</parent>
 			</category>
 		</categories>
 		<options>
@@ -46,37 +50,37 @@
 			</option>
 
 			<option name="jcoins_coins_tax">
-				<categoryname>jcoins.receiveCoins</categoryname>
+				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>5</defaultvalue>
 			</option>
 
 			<option name="jcoins_receiveCoins_like">
-				<categoryname>jcoins.receiveCoins</categoryname>
+				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>10</defaultvalue>
 			</option>
 
 			<option name="jcoins_receiveCoins_dislike">
-				<categoryname>jcoins.receiveCoins</categoryname>
+				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>-5</defaultvalue>
 			</option>
 
 			<option name="jcoins_receiveCoins_createconversation">
-				<categoryname>jcoins.receiveCoins</categoryname>
+				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>5</defaultvalue>
 			</option>
 
 			<option name="jcoins_receiveCoins_addconversationreply">
-				<categoryname>jcoins.receiveCoins</categoryname>
+				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>2</defaultvalue>
 			</option>
 
 			<option name="jcoins_receiveCoins_useradd">
-				<categoryname>jcoins.receiveCoins</categoryname>
+				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>50</defaultvalue>
 			</option>

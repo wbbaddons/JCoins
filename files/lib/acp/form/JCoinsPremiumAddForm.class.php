@@ -119,11 +119,18 @@ class JCoinsPremiumAddForm extends AbstractForm {
 			throw new UserInputException('period', 'time');
 		}
 		
+		$this->validateGroup(); 
+	}
+
+	/**
+	 * validating the group
+	 */
+	public function validateGroup() {
 		if (!UserGroup::isAccessibleGroup(array($this->groupID))) {
 			throw new PermissionDeniedException(); 
 		}
 	}
-
+	
 	/**
 	 * @see	wcf\form\IForm::save()
 	 */

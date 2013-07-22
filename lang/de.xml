@@ -67,7 +67,7 @@
 		<item name="wcf.jcoins.premiumgroups.link"><![CDATA[Meine Premiumgruppen]]></item>
                 <item name="wcf.jcoins.premiumgroups.nogroups"><![CDATA[Momentan kannst du keine Premiumgruppen kaufen, da keine verfügbar sind.]]></item>
                 
-		<item name="wcf.jcoins.premiumgroups.statement.buy"><![CDATA[Eine Premiumbenutzergruppe gekauft.]]></item>
+		<item name="wcf.jcoins.premiumgroups.statement.buy"><![CDATA[Es wurde eine Premiumbenutzergruppe gekauft.]]></item>
 	</category>
 
 	<!-- NOTIFICATIONS -->
@@ -118,6 +118,7 @@
 	    <item name="wcf.acp.option.jcoins_statements_deleteonlytrashed"><![CDATA[Nur vom Benutzer gelöschte Kontoauszüge löschen]]></item>
 	    <item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[Aktivierst du diese Option, werden nur Kontoauszüge gelöscht, welche bereits vom Benutzer durch "Kontoauszüge kombremieren" gelöscht worden sind.]]></item>
 	    <item name="wcf.acp.option.category.jcoins.receiveCoins"><![CDATA[Einkünfte]]></item>
+	    <item name="wcf.acp.option.category.jcoins.receiveCoins.general"><![CDATA[Allgemein]]></item>
 	    <item name="wcf.acp.option.jcoins_receiveCoins_like"><![CDATA[jcoins für einen Like]]></item>
 	    <item name="wcf.acp.option.jcoins_receiveCoins_like.description"><![CDATA[Wie viele jcoins soll der Benutzer bekommen, wenn ein Objekt von ihm geliked wird?]]></item>
 	    <item name="wcf.acp.option.jcoins_receiveCoins_dislike"><![CDATA[jcoins für einen Dislike]]></item>
@@ -150,6 +151,7 @@
 	    <item name="wcf.acp.jcoins.reason"><![CDATA[Grund]]></item>
 	    <item name="wcf.acp.jcoins.period"><![CDATA[Dauer]]></item>
 	    <item name="wcf.acp.jcoins.members"><![CDATA[Mitglieder]]></item>
+	    <item name="wcf.acp.jcoins.group"><![CDATA[Benutzergruppe]]></item>
 
 	    <!-- MassProcessing --> 
 	    <item name="wcf.acp.jcoins.massprocessing.addjcoins"><![CDATA[JCoins überweisen]]></item>
