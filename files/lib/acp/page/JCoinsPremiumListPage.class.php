@@ -40,7 +40,7 @@ class JCoinsPremiumListPage extends SortablePage {
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$validSortFields
 	 */
-	public $validSortFields = array('premiumGroupID', 'jCoins', 'period', 'members', 'group');
+	public $validSortFields = array('premiumGroupID', 'jCoins', 'period', 'members', 'groupID');
 	
 	/**
 	 * @see	wcf\page\MultipleLinkPage::initObjectList()
