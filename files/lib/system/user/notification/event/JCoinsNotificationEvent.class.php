@@ -30,7 +30,7 @@ class JCoinsNotificationEvent extends AbstractUserNotificationEvent {
 	/**
 	 * @see	wcf\system\user\notification\event\IUserNotificationEvent::getEmailMessage()
 	 */
-	public function getEmailMessage() {
+	public function getEmailMessage($notificationType = 'instant') {
 		return $this->getLanguage()->getDynamicVariable('wcf.user.notification.jcoins.mail', array(
 			'statement' => $this->userNotificationObject,
 			'author' => $this->author
