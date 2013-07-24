@@ -25,6 +25,7 @@
 		<item name="wcf.jcoins.transfer"><![CDATA[Überweisung]]></item>
                 <item name="wcf.jcoins.transfer.info"><![CDATA[JCoins an den Benutzer überweisen.]]></item>
 		<item name="wcf.jcoins.transfer.general"><![CDATA[Allgemeine Informationen]]></item>
+		<item name="wcf.jcoins.transfer.moderativDisplay"><![CDATA[Moderativ]]></item>
 
 
 		<!-- TRANSFER ERRORS --> 

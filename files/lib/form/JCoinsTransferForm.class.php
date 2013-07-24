@@ -158,7 +158,8 @@ class JCoinsTransferForm extends AbstractForm {
 					'reason' => $this->reason,
 					'sum' => $this->sum,
 					'userID' => $user->userID, 
-					'executedUserID' => WCF::getUser()->userID
+					'executedUserID' => WCF::getUser()->userID, 
+					'isModTransfer' => $this->isModerativ
 				),
 				'changeBalance' => 1
 			));

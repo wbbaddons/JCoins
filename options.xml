@@ -39,7 +39,7 @@
 
 			<option name="jcoins_statements_deleteafter">
 				<categoryname>jcoins.general</categoryname>
-				<optiontype>int</optiontype>
+				<optiontype>integer</optiontype>
 				<defaultvalue>30</defaultvalue>
 			</option>
 
