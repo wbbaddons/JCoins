@@ -46,7 +46,7 @@ class PremiumGroup extends DatabaseObject implements IRouteController {
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute(array($this->premiumGroupID));
 		
-		return (bool) $statement->fetchColumn();
+		return  ($statement->fetchColumn() == 0) ? true : false;
 	}
 	
 	/**
