@@ -173,7 +173,8 @@ class JCoinsTransferForm extends AbstractForm {
 						'reason' => $this->reason,
 						'sum' => $this->sum * -1,
 						'executedUserID' => $user->userID
-					)
+					),
+					'changeBalance' => 1
 				));
 				$this->statementAction->validateAction();
 				$this->statementAction->executeAction();
