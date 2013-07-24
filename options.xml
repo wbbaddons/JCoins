@@ -49,12 +49,6 @@
 				<defaultvalue>0</defaultvalue>
 			</option>
 
-			<option name="jcoins_coins_tax">
-				<categoryname>jcoins.receiveCoins.general</categoryname>
-				<optiontype>integer</optiontype>
-				<defaultvalue>5</defaultvalue>
-			</option>
-
 			<option name="jcoins_receiveCoins_like">
 				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
