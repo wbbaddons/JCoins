@@ -20,7 +20,7 @@ class JCoinsRemoveOldStatementsCronjob extends AbstractCronjob {
 		parent::execute($cronjob);
 		
 		$conditions = new PreparedStatementConditionBuilder();
-		$conditions->add("time < ?", TIME_NOW - 86400 * JCOINS_STATEMENT_DELETEAFTER);
+		$conditions->add("time < ?", array(TIME_NOW - 86400 * JCOINS_STATEMENTS_DELETEAFTER));
 		
 		if (JCOINS_STATEMENTS_DELETEONLYTRASHED) {
 		    $conditions->add("isTrashed = ?", true);
