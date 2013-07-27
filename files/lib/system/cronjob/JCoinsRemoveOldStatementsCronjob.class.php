@@ -24,6 +24,8 @@ class JCoinsRemoveOldStatementsCronjob extends AbstractCronjob {
 		if (JCOINS_STATEMENTS_DELETEONLYTRASHED) $statementList->getConditionBuilder()->add('statement_entrys.isTrashed = ?', array(1));
 		$statementList->readObjects();
 		
+		if (!$statementList->count()) return;
+		
 		$statementAction = new StatementAction($statementList->getObjects(), 'delete');
 		$statementAction->executeAction();
 	}
