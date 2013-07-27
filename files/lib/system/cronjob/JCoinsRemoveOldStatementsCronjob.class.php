@@ -1,8 +1,8 @@
 <?php
 namespace wcf\system\cronjob;
 use wcf\data\cronjob\Cronjob;
-use wcf\system\WCF;
-use wcf\system\database\util\PreparedStatementConditionBuilder;
+use wcf\data\jCoins\statement\StatementAction;
+use wcf\data\jCoins\statement\StatementList;
 
 /**
  * removing old statements
@@ -19,15 +19,12 @@ class JCoinsRemoveOldStatementsCronjob extends AbstractCronjob {
 	public function execute(Cronjob $cronjob) {
 		parent::execute($cronjob);
 		
-		$conditions = new PreparedStatementConditionBuilder();
-		$conditions->add("time < ?", array(TIME_NOW - 86400 * JCOINS_STATEMENTS_DELETEAFTER));
+		$statementList = new StatementList();
+		$statementList->getConditionBuilder()->add('statement_entrys.time < ?', array(TIME_NOW - 86400 * JCOINS_STATEMENTS_DELETEAFTER));
+		if (JCOINS_STATEMENTS_DELETEONLYTRASHED) $statementList->getConditionBuilder()->add('statement_entrys.isTrashed = ?', array(1));
+		$statementList->readObjects();
 		
-		if (JCOINS_STATEMENTS_DELETEONLYTRASHED) {
-		    $conditions->add("isTrashed = ?", true);
-		}
-		
-		$sql = "DELETE FROM wcf". WCF_N ."_statement_entrys";
-		$statement = WCF::getDB()->prepareStatement($sql);
-		$statement->execute($conditions->getParameters());
+		$statementAction = new StatementAction($statementList->getObjects(), 'delete');
+		$statementAction->executeAction();
 	}
 }
