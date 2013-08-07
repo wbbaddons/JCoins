@@ -4,7 +4,7 @@ use wcf\system\user\notification\event\AbstractUserNotificationEvent;
 use wcf\system\request\LinkHandler;
 
 /**
- * notification event on recive a transfer
+ * Notification event on receive a transfer
  * 
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
@@ -16,7 +16,7 @@ class JCoinsNotificationEvent extends AbstractUserNotificationEvent {
 	public function getTitle() {
 		return $this->getLanguage()->get('wcf.user.notification.jcoins.title');
 	}
-
+	
 	/**
 	 * @see	wcf\system\user\notification\event\IUserNotificationEvent::getMessage()
 	 */
@@ -24,7 +24,7 @@ class JCoinsNotificationEvent extends AbstractUserNotificationEvent {
 		return $this->getLanguage()->getDynamicVariable('wcf.user.notification.jcoins.message', array(
 			'statement' => $this->userNotificationObject,
 			'author' => $this->author
-		));	
+		));
 	}
 	
 	/**

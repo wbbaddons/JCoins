@@ -7,27 +7,27 @@
 			<eventname>finalizeAction</eventname>
 			<listenerclassname>wcf\system\event\listener\JCoinsLikeActionListener</listenerclassname>
 		</eventlistener>
-
+		
 		<!-- Conversation -->
 		<eventlistener>
 			<eventclassname>wcf\data\conversation\ConversationAction</eventclassname>
 			<eventname>finalizeAction</eventname>
 			<listenerclassname>wcf\system\event\listener\JCoinsConversationAddListener</listenerclassname>
 		</eventlistener>
-
+		
 		<eventlistener>
 			<eventclassname>wcf\data\conversation\message\ConversationMessageAction</eventclassname>
 			<eventname>finalizeAction</eventname>
 			<listenerclassname>wcf\system\event\listener\JCoinsConversationMessageAddListener</listenerclassname>
 		</eventlistener>
-
+		
 		<!-- User --> 
 		<eventlistener>
 			<eventclassname>wcf\data\user\UserAction</eventclassname>
 			<eventname>finalizeAction</eventname>
 			<listenerclassname>wcf\system\event\listener\JCoinsUserAddListener</listenerclassname>
 		</eventlistener>
-
+		
 		<!-- UserMassProcessing --> 
 		<eventlistener>
 			<eventclassname>wcf\acp\form\UserBulkProcessingForm</eventclassname>
@@ -35,21 +35,21 @@
 			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
 			<environment>admin</environment>
 		</eventlistener>
-
+		
 		<eventlistener>
 			<eventclassname>wcf\acp\form\UserBulkProcessingForm</eventclassname>
 			<eventname>readFormParameters</eventname>
 			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
 			<environment>admin</environment>
 		</eventlistener>
-
+		
 		<eventlistener>
 			<eventclassname>wcf\acp\form\UserBulkProcessingForm</eventclassname>
 			<eventname>saved</eventname>
 			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
 			<environment>admin</environment>
 		</eventlistener>
-
+		
 		<eventlistener>
 			<eventclassname>wcf\acp\form\UserBulkProcessingForm</eventclassname>
 			<eventname>assignVariables</eventname>

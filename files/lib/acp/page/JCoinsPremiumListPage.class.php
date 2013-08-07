@@ -7,8 +7,8 @@ use wcf\system\WCF;
 /**
  * Represents a list of all premium-groups.
  * 
- * @author  Joshua Rüsweg
- * @package de.joshsboard.jcoins
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
  * @subpackage	acp.page
  */
 class JCoinsPremiumListPage extends SortablePage {
@@ -16,7 +16,7 @@ class JCoinsPremiumListPage extends SortablePage {
 	 * @see	wcf\page\AbstractPage::$activeMenuItem
 	 */
 	public $activeMenuItem = 'wcf.acp.menu.link.jcoins.premium.list';
-
+	
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules
 	 */
@@ -26,17 +26,17 @@ class JCoinsPremiumListPage extends SortablePage {
 	 * @see	wcf\page\MultipleLinkPage::$defaultSortField
 	 */
 	public $defaultSortField = 'premiumGroupID';
-
+	
 	/**
 	 * @see	wcf\page\AbstractPage::$neededPermissions
 	 */
 	public $neededPermissions = array('admin.jcoins.premiumgroups.canEditPremiumGroups', 'admin.jcoins.premiumgroups.canAddPremiumGroups');
-
+	
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
 	 */
 	public $objectListClassName = 'wcf\data\user\group\premiumGroup\PremiumGroupList';
-
+	
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$validSortFields
 	 */
@@ -47,7 +47,7 @@ class JCoinsPremiumListPage extends SortablePage {
 	 */
 	protected function initObjectList() {
 		parent::initObjectList();
-
+		
 		$this->objectList->sqlSelects .= "(SELECT COUNT(*) FROM wcf".WCF_N."_user_to_group_premium WHERE premiumGroupID = user_group_premium.premiumGroupID) AS members";
 	}
 	

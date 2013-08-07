@@ -5,20 +5,20 @@
 			<category name="module.jcoins">
 				<parent>module</parent>
 			</category>
-
+			
 			<category name="jcoins">
 				<showorder>4</showorder>
 				<options>module_jcoins</options>
 			</category>
-
+			
 			<category name="jcoins.general">
 				<parent>jcoins</parent>
 			</category>
-
+			
 			<category name="jcoins.receiveCoins">
 				<parent>jcoins</parent>
 			</category>
-
+			
 			<category name="jcoins.receiveCoins.general">
 				<parent>jcoins.receiveCoins</parent>
 			</category>
@@ -30,49 +30,49 @@
 				<defaultvalue>1</defaultvalue>
 				<enableoptions><![CDATA[jcoins]]></enableoptions>
 			</option>
-
+			
 			<option name="module_jcoins_premiumgroups">
 				<categoryname>module.jcoins</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>
-
+			
 			<option name="jcoins_statements_deleteafter">
 				<categoryname>jcoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>30</defaultvalue>
 			</option>
-
+			
 			<option name="jcoins_statements_deleteonlytrashed">
 				<categoryname>jcoins.general</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 			</option>
-
+			
 			<option name="jcoins_receiveCoins_like">
 				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>10</defaultvalue>
 			</option>
-
+			
 			<option name="jcoins_receiveCoins_dislike">
 				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>-5</defaultvalue>
 			</option>
-
+			
 			<option name="jcoins_receiveCoins_createconversation">
 				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>5</defaultvalue>
 			</option>
-
+			
 			<option name="jcoins_receiveCoins_addconversationreply">
 				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>2</defaultvalue>
 			</option>
-
+			
 			<option name="jcoins_receiveCoins_useradd">
 				<categoryname>jcoins.receiveCoins.general</categoryname>
 				<optiontype>integer</optiontype>

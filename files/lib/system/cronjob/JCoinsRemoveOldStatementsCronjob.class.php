@@ -5,7 +5,7 @@ use wcf\data\jCoins\statement\StatementAction;
 use wcf\data\jCoins\statement\StatementList;
 
 /**
- * removing old statements
+ * Removing old statements
  * 
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins

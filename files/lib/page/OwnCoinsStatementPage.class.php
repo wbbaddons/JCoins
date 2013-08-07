@@ -1,6 +1,5 @@
 <?php
 namespace wcf\page;
-use wcf\page\SortablePage;
 use wcf\system\WCF;
 
 /**
@@ -11,7 +10,6 @@ use wcf\system\WCF;
  * @subpackage	wcf.page
  */
 class OwnCoinsStatementPage extends SortablePage {
-    
 	/**
 	 * @see	wcf\page\AbstractPage::$loginRequired
 	 */
@@ -26,22 +24,22 @@ class OwnCoinsStatementPage extends SortablePage {
 	 * @see	wcf\page\MultipleLinkPage::$itemsPerPage
 	 */
 	public $itemsPerPage = 25;
-
+	
 	/**
 	 * @see	wcf\page\SortablePage::$defaultSortField
 	 */
 	public $defaultSortField = 'time';
-
+	
 	/**
 	 * @see	wcf\page\SortablePage::$defaultSortOrder
 	 */
 	public $defaultSortOrder = 'DESC';
-
+	
 	/**
 	 * @see	wcf\page\SortablePage::$validSortFields
 	 */
 	public $validSortFields = array('entryID', 'executedUserID', 'reason', 'sum', 'time');
-
+	
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
 	 */
@@ -52,7 +50,7 @@ class OwnCoinsStatementPage extends SortablePage {
 	 */
 	protected function initObjectList() {
 		parent::initObjectList();
-
+		
 		$this->objectList->getConditionBuilder()->add("statement_entrys.userID = ? AND statement_entrys.isTrashed = 0", array(WCF::getUser()->userID));
 	}
 }

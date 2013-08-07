@@ -9,15 +9,15 @@ use wcf\system\WCF;
  * @author	Dennis Kraffczyk
  * @package	de.joshsboard.jcoins
  */
- class UserPremiumGroupHandler extends SingletonFactory {	
+class UserPremiumGroupHandler extends SingletonFactory {
 	/**
 	 * ids of premium-groups in which the current user is member
-	 * @var array<integer>
+	 * @var	array<integer>
 	 */
 	protected $premiumGroupIDs = array();
 	
 	/**
-	 * @see wcf\system\SingletonFactory::init()
+	 * @see	wcf\system\SingletonFactory::init()
 	 */
 	protected function init() {
 		UserStorageHandler::getInstance()->loadStorage(array(WCF::getUser()->userID));
@@ -42,7 +42,7 @@ use wcf\system\WCF;
 	
 	/**
 	 * Returns a list of premium-group-ids in which the current user is member.
-	 * @return array<integer>
+	 * @return	array<integer>
 	 */
 	public function getAccessiblePremiumGroupIDs() {
 		return $this->premiumGroupIDs;
@@ -51,10 +51,9 @@ use wcf\system\WCF;
 	/**
 	 * Returns true if current user is member in given premium-group.
 	 * @param	integer		$premiumGroupID
-	 * @return boolean
+	 * @return	boolean
 	 */
 	public function isMember($premiumGroupID) {
 		return in_array($premiumGroupID, $this->premiumGroupIDs);
 	}
- }
- 
+}

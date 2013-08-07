@@ -3,10 +3,10 @@ namespace wcf\data\jCoins\statement;
 use wcf\data\DatabaseObjectList;
 
 /**
- * a statement list
+ * Represents a statement list.
  * 
- * @author  Joshua Rüsweg
- * @package de.joshsboard.jcoins
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
  */
 class StatementList extends DatabaseObjectList {
 	/**

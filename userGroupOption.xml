@@ -6,22 +6,22 @@
 				<parent>user</parent>
 				<options>module_jcoins</options>
 			</category>
-
+			
 			<category name="user.jcoins.general">
 				<parent>user.jcoins</parent>
 				<options>module_jcoins</options>
 			</category>
-
+			
 			<category name="mod.jcoins">
 				<parent>mod</parent>
 				<options>module_jcoins</options>
 			</category>
-
+			
 			<category name="mod.jcoins.general">
 				<parent>mod.jcoins</parent>
 				<options>module_jcoins</options>
 			</category>
-
+			
 			<category name="admin.jcoins">
 				<parent>admin</parent>
 				<options>module_jcoins</options>
@@ -31,13 +31,13 @@
 				<parent>admin.jcoins</parent>
 				<options>module_jcoins</options>
 			</category>
-
+			
 			<category name="admin.jcoins.premiumgroups">
 				<parent>admin.jcoins</parent>
 				<options>module_jcoins_premiumgroups</options>
 			</category>
 		</categories>
-
+		
 		<options>
 			<option name="mod.jcoins.canModTransfer">
 				<categoryname>mod.jcoins.general</categoryname>
@@ -45,42 +45,42 @@
 				<defaultvalue>0</defaultvalue>
 				<admindefaultvalue>1</admindefaultvalue>
 			</option>
-
+			
 			<option name="mod.jcoins.canSeeModTransfer">
 				<categoryname>mod.jcoins.general</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 				<admindefaultvalue>1</admindefaultvalue>
 			</option>
-
+			
 			<option name="mod.jcoins.canSeeTransferList">
 				<categoryname>mod.jcoins.general</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 				<admindefaultvalue>1</admindefaultvalue>
 			</option>
-
+			
 			<option name="admin.jcoins.premiumgroups.canEditPremiumGroups">
 				<categoryname>admin.jcoins.premiumgroups</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 				<admindefaultvalue>1</admindefaultvalue>
 			</option>
-
+			
 			<option name="admin.jcoins.premiumgroups.canAddPremiumGroups">
 				<categoryname>admin.jcoins.premiumgroups</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 				<admindefaultvalue>1</admindefaultvalue>
 			</option>
-
+			
 			<option name="admin.jcoins.canExecuteMassProcessing">
 				<categoryname>admin.jcoins.general</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>0</defaultvalue>
 				<admindefaultvalue>1</admindefaultvalue>
 			</option>
-
+			
 			<option name="user.jcoins.canTransfer">
 				<categoryname>user.jcoins.general</categoryname>
 				<optiontype>boolean</optiontype>

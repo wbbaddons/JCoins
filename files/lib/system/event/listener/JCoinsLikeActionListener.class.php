@@ -7,72 +7,70 @@ use wcf\data\object\type\ObjectTypeCache;
 use wcf\data\like\Like;
 
 /**
- * add jcoins on like an object
+ * Adds jCoins on like an object
  * 
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
 class JCoinsLikeActionListener implements IEventListener {
 	/**
-	 * @see	\wcf\system\event\IEventListener::execute()
+	 * @see	wcf\system\event\IEventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
-	    
-	    if (MODULE_JCOINS == 0 || MODULE_LIKE == 0) {
-		    return; 
-	    }
-	    
-	    switch ($eventObj->getActionName()) {
-		    case 'like': 
-		    case 'dislike': 
-			    break; 
-		    
-		    default: 
-			    return; 
-	    }
-            
-	    $returnValues = $eventObj->getReturnValues();
-            $returnValues = $returnValues['returnValues']; 
-	    $objectID = $eventObj->getParameters();
-            
-	    $objTID = ObjectTypeCache::getInstance()->getObjectTypeByName('com.woltlab.wcf.like.likeableObject', $objectID['data']['objectType']);
-            
-	    $like = LikeObject::getLikeObject($objTID->objectTypeID, $objectID['data']['objectID']);
-	    
+		
+		if (MODULE_JCOINS == 0 || MODULE_LIKE == 0) {
+			return; 
+		}
+		
+		switch ($eventObj->getActionName()) {
+			case 'like':
+			case 'dislike':
+				break;
+			default:
+				return;
+		}
+		
+		$returnValues = $eventObj->getReturnValues();
+		$returnValues = $returnValues['returnValues'];
+		$objectID = $eventObj->getParameters();
+
+		$objTID = ObjectTypeCache::getInstance()->getObjectTypeByName('com.woltlab.wcf.like.likeableObject', $objectID['data']['objectType']);
+		$like = LikeObject::getLikeObject($objTID->objectTypeID, $objectID['data']['objectID']);
+		
 		switch ($returnValues['oldValue']) {
 			case Like::LIKE:
-                            if (JCOINS_RECEIVECOINS_LIKE != 0) {
-				    $this->statementAction = new StatementAction(array(), 'create', array(
-					    'data' => array(
-						    'userID' => $like->objectUserID,
-						    'reason' => 'wcf.jcoins.statement.like.revoke',
-						    'sum' => JCOINS_RECEIVECOINS_LIKE * -1
-					    ),
-                                            'changeBalance' => 1
-				    ));
-                                    $this->statementAction->validateAction();
-				    $this->statementAction->executeAction();
-                                }
-				break; 
-		    
-			case Like::DISLIKE: 
-                                if (JCOINS_RECEIVECOINS_DISLIKE != 0) {
+				if (JCOINS_RECEIVECOINS_LIKE != 0) {
+					$this->statementAction = new StatementAction(array(), 'create', array(
+						'data' => array(
+							'userID' => $like->objectUserID,
+							'reason' => 'wcf.jcoins.statement.like.revoke',
+							'sum' => JCOINS_RECEIVECOINS_LIKE * -1
+						),
+						'changeBalance' => 1
+					));
+					$this->statementAction->validateAction();
+					$this->statementAction->executeAction();
+				}
+				break;
+			
+			case Like::DISLIKE:
+				if (JCOINS_RECEIVECOINS_DISLIKE != 0) {
 					$this->statementAction = new StatementAction(array(), 'create', array(
 						'data' => array(
 							'userID' => $like->objectUserID,
 							'reason' => 'wcf.jcoins.statement.dislike.revoke',
 							'sum' => JCOINS_RECEIVECOINS_DISLIKE * -1
 						),
-                                                'changeBalance' => 1
+						'changeBalance' => 1
 					));
-                                        $this->statementAction->validateAction();
+					$this->statementAction->validateAction();
 					$this->statementAction->executeAction();
-                                }
-				break; 
+				}
+				break;
 		}
-	    
+		
 		switch ($returnValues['newValue']) {
-			case Like::LIKE: 
+			case Like::LIKE:
 				if (JCOINS_RECEIVECOINS_LIKE != 0) {
 					$this->statementAction = new StatementAction(array(), 'create', array(
 						'data' => array(
@@ -80,25 +78,25 @@ class JCoinsLikeActionListener implements IEventListener {
 							'reason' => 'wcf.jcoins.statement.like.recive',
 							'sum' => JCOINS_RECEIVECOINS_LIKE
 						),
-                                                'changeBalance' => 1
+						'changeBalance' => 1
 					));
-                                        $this->statementAction->validateAction();
+					$this->statementAction->validateAction();
 					$this->statementAction->executeAction();
 				}
-				break; 
-		    
+				break;
+				
 			case Like::DISLIKE:
 				if (JCOINS_RECEIVECOINS_DISLIKE != 0) {
 					$this->statementAction = new StatementAction(array(), 'create', array(
-						    'data' => array(
-							    'userID' => $like->objectUserID,
-							    'reason' => 'wcf.jcoins.statement.dislike.recive',
-							    'sum' => JCOINS_RECEIVECOINS_DISLIKE
-						    ),
-                                                    'changeBalance' => 1
-					    ));
-                                            $this->statementAction->validateAction();
-                                            $this->statementAction->executeAction();
+						'data' => array(
+							'userID' => $like->objectUserID,
+							'reason' => 'wcf.jcoins.statement.dislike.recive',
+							'sum' => JCOINS_RECEIVECOINS_DISLIKE
+						),
+						'changeBalance' => 1
+					));
+					$this->statementAction->validateAction();
+					$this->statementAction->executeAction();
 				}
 				break;
 		}

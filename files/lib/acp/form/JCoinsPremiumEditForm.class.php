@@ -1,6 +1,5 @@
 <?php
 namespace wcf\acp\form;
-use wcf\acp\form\JCoinsPremiumAddForm; 
 use wcf\data\user\group\premiumGroup\PremiumGroupAction;
 use wcf\data\user\group\premiumGroup\PremiumGroup;
 use wcf\data\package\PackageCache;
@@ -20,28 +19,28 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 	 * @see	wcf\page\AbstractPage::$activeMenuItem
 	 */
 	public $activeMenuItem = 'wcf.acp.menu.link.jcoins.premium.add';
-
+	
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules
 	 */
 	public $neededModules = array('MODULE_JCOINS', 'MODULE_JCOINS_PREMIUMGROUPS');
 	
 	/**
-	 * @see wcf\page\AbstractPage::$action
+	 * @see	wcf\page\AbstractPage::$action
 	 */
 	public $action = 'edit';
 	
 	/**
 	 * premium group
-	 * @var wcf\data\jCoins\premiumGroup\PremiumGroup
+	 * @var	wcf\data\jCoins\premiumGroup\PremiumGroup
 	 */
 	public $premiumGroup = null;
 	
 	/**
 	 * premium-group id
-	 * @var integer
+	 * @var	integer
 	 */
-	public $premiumGroupID = 0; 
+	public $premiumGroupID = 0;
 	
 	/**
 	 * @see	wcf\page\IPage::readParameters()
@@ -52,15 +51,15 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 		if (isset($_REQUEST['id'])) $this->premiumGroupID = intval($_REQUEST['id']);
 		$this->premiumGroup = new PremiumGroup($this->premiumGroupID);
 		
-		if (!$this->premiumGroup->premiumGroupID) throw new IllegalLinkException(); 
+		if (!$this->premiumGroup->premiumGroupID) throw new IllegalLinkException();
 	}
 	
 	/**
-	 * @see wcf\page\IPage::readData()
+	 * @see	wcf\page\IPage::readData()
 	 */
 	public function readData() {
 		parent::readData();
-
+		
 		if (empty($_POST)) {
 			$this->jCoins = $this->premiumGroup->jCoins;
 			$this->period = $this->premiumGroup->period;
@@ -69,7 +68,7 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 			I18nHandler::getInstance()->setOptions('description', PackageCache::getInstance()->getPackageID('de.joshsboard.jCoins'),  $this->premiumGroup->description, 'wcf.jcoins.premiumGroups.description\d+');
 		}
 	}
-
+	
 	/**
 	 * @see	wcf\form\IForm::save()
 	 */
@@ -94,7 +93,7 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 		// show success
 		WCF::getTPL()->assign('success', true);
 	}
-
+	
 	/**
 	 * @see	wcf\page\IPage::assignVariables()
 	 */
@@ -105,9 +104,9 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 	}
 	
 	/**
-	 * @see wcf\acp\form\JCoinsPremiumAddForm::validateGroup()
+	 * @see	wcf\acp\form\JCoinsPremiumAddForm::validateGroup()
 	 */
 	public function validateGroup() {
-	    // the group can not be changed, therefore it must not be checked
+		// the group can not be changed, therefore it must not be checked
 	}
 }

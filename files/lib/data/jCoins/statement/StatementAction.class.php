@@ -8,8 +8,8 @@ use wcf\system\WCF;
 /**
  * Provides functions to handle statements.
  * 
- * @author  Joshua Rüsweg
- * @package de.joshsboard.jcoins
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
  */
 class StatementAction extends AbstractDatabaseObjectAction {
 	/**

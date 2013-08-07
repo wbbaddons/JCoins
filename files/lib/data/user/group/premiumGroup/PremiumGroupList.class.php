@@ -1,13 +1,12 @@
 <?php
-namespace wcf\data\user\group\premiumGroup; 
-
+namespace wcf\data\user\group\premiumGroup;
 use wcf\data\DatabaseObjectList;
 
 /**
  * Represents a list of premium-groups.
  * 
- * @author  Joshua Rüsweg
- * @package de.joshsboard.jcoins
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
  */
 class PremiumGroupList extends DatabaseObjectList {
 	/**

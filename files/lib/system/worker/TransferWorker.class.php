@@ -8,7 +8,7 @@ use wcf\system\WCF;
 use wcf\data\jCoins\statement\StatementAction;
 
 /**
- * Worker implementation for transfer jcoins.
+ * Worker implementation for transfer jCoins.
  * 
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
@@ -21,33 +21,33 @@ class TransferWorker extends AbstractWorker {
 	 * @var	wcf\system\database\util\PreparedStatementConditionBuilder
 	 */
 	protected $conditions = null;
-
+	
 	/**
 	 * @see	wcf\system\worker\AbstractWorker::$limit
 	 */
 	protected $limit = 50;
-
+	
 	/**
 	 * mail data
 	 * @var	array
 	 */
 	protected $transferData = null;
-
+	
 	/**
 	 * @see	wcf\system\worker\IWorker::validate()
 	 */
 	public function validate() {
 		WCF::getSession()->checkPermissions(array('admin.jcoins.canExecuteMassProcessing'));
-
+		
 		if (!isset($this->parameters['transferID'])) {
 			throw new SystemException("transferID missing");
 		}
-
+		
 		$userTransferData = WCF::getSession()->getVar('userTransferData');
 		if (!isset($userTransferData[$this->parameters['transferID']])) {
 			throw new SystemException("transferID '" . $this->parameters['transferID'] . "' is invalid");
 		}
-
+		
 		if (!isset($userTransferData[$this->parameters['transferID']]['sum'])) {
 			throw new SystemException("sum of '" . $this->parameters['transferID'] . "' is invalid");
 		}
@@ -58,14 +58,14 @@ class TransferWorker extends AbstractWorker {
 		
 		$this->transferData = $userTransferData[$this->parameters['transferID']];
 	}
-
+	
 	/**
 	 * @see	wcf\system\worker\IWorker::countObjects()
 	 */
 	public function countObjects() {
 		$this->conditions = new PreparedStatementConditionBuilder();
 		$this->conditions->add("user.userID IN (?)", array($this->transferData['userIDs']));
-
+		
 		$sql = "SELECT	COUNT(*) AS count
 			FROM	wcf".WCF_N."_user user
 			".$this->conditions;
@@ -75,23 +75,23 @@ class TransferWorker extends AbstractWorker {
 
 		$this->count = $row['count'];
 	}
-
+	
 	/**
 	 * @see	wcf\system\worker\IWorker::getProgress()
 	 */
 	public function getProgress() {
 		$progress = parent::getProgress();
-
+		
 		if ($progress == 100) {
 			// clear session
 			$userTransferData = WCF::getSession()->getVar('userTransferData');
 			unset($userTransferData[$this->parameters['transferID']]);
 			WCF::getSession()->register('userTransferData', $userTransferData);
 		}
-
+		
 		return $progress;
 	}
-
+	
 	/**
 	 * @see	wcf\system\worker\IWorker::execute()
 	 */
@@ -111,17 +111,17 @@ class TransferWorker extends AbstractWorker {
 			$this->statementAction = new StatementAction(array(), 'create', array(
 				'data' => array(
 					'reason' => $this->transferData['reason'],
-					'sum' => $this->transferData['sum'], 
-					'userID' => $user->userID, 
+					'sum' => $this->transferData['sum'],
+					'userID' => $user->userID,
 					'executedUserID' => $this->transferData['fromUser']
-				), 
+				),
 				'changeBalance' => 1
 			));
 			$this->statementAction->validateAction();
 			$this->statementAction->executeAction();
 		}
 	}
-
+	
 	/**
 	 * @see	wcf\system\worker\IWorker::getProceedURL()
 	 */

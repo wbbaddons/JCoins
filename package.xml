@@ -6,18 +6,18 @@
 		<version>1.0.0</version>
 		<date>2013-03-02</date>
 	</packageinformation>
-
+	
 	<authorinformation>
 		<author>Joshua Ruesweg</author>
 		<authorurl>http://www.joshsboard.de/</authorurl>
 	</authorinformation>
-
+	
 	<requiredpackages>
 		<requiredpackage minversion="2.0.0 Beta 1">com.woltlab.wcf</requiredpackage>
 		<requiredpackage minversion="2.0.0 Beta 1">com.woltlab.wcf.conversation</requiredpackage>
 		<requiredpackage minversion="1.0.0">de.joshsboard.tempusergroup</requiredpackage>
 	</requiredpackages>
-
+	
 	<instructions type="install">
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="file">files.tar</instruction>
@@ -33,7 +33,7 @@
 		<instruction type="acpTemplate">acptemplates.tar</instruction>
 		<instruction type="language">lang/*.xml</instruction>
 	</instructions>
-
+	
 	<instructions type="update" fromversion="*">
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="acpMenu">acpMenu.xml</instruction>

@@ -1,6 +1,5 @@
 <?php
 namespace wcf\page;
-use wcf\page\SortablePage;
 
 /**
  * the global statement list
@@ -10,7 +9,6 @@ use wcf\page\SortablePage;
  * @subpackage	wcf.page
  */
 class JCoinsGlobalActivityPage extends SortablePage {
-	
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules
 	 */
@@ -30,22 +28,22 @@ class JCoinsGlobalActivityPage extends SortablePage {
 	 * @see	wcf\page\MultipleLinkPage::$itemsPerPage
 	 */
 	public $itemsPerPage = 25;
-
+	
 	/**
 	 * @see	wcf\page\SortablePage::$defaultSortField
 	 */
 	public $defaultSortField = 'time';
-
+	
 	/**
 	 * @see	wcf\page\SortablePage::$defaultSortOrder
 	 */
 	public $defaultSortOrder = 'DESC';
-
+	
 	/**
 	 * @see	wcf\page\SortablePage::$validSortFields
 	 */
 	public $validSortFields = array('entryID', 'executedUserID', 'reason', 'sum', 'time', 'userID');
-
+	
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
 	 */

@@ -7,7 +7,7 @@ use wcf\data\user\group\UserGroup;
 use wcf\form\AbstractForm;
 use wcf\system\exception\UserInputException;
 use wcf\system\exception\PermissionDeniedException;
-use wcf\system\language\I18nHandler; 
+use wcf\system\language\I18nHandler;
 use wcf\system\WCF;
 
 /**
@@ -22,51 +22,51 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	 * @see	wcf\page\AbstractPage::$activeMenuItem
 	 */
 	public $activeMenuItem = 'wcf.acp.menu.link.jcoins.premium.add';
-
+	
 	/**
 	 * @see	wcf\page\AbstractPage::$neededPermissions
 	 */
 	public $neededPermissions = array('admin.jcoins.premiumgroups.canAddPremiumGroups');
-
+	
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules
 	 */
 	public $neededModules = array('MODULE_JCOINS', 'MODULE_JCOINS_PREMIUMGROUPS');
 	
 	/**
-	 * @see wcf\page\AbstractPage::$action
+	 * @see	wcf\page\AbstractPage::$action
 	 */
-	public $action = 'add'; 
+	public $action = 'add';
 	
 	/**
 	 * descriptopn of the premium group
-	 * @var string
+	 * @var	string
 	 */
-	public $description = ''; 
+	public $description = '';
 	
 	/**
-	 * the groupid for the premium group 
-	 * @var integer
+	 * the groupid for the premium group
+	 * @var	integer
 	 */
 	public $groupID = 0; 
 	
 	/**
 	 * the coasts of the group
-	 * @var integer 
+	 * @var	integer 
 	 */
-	public $jCoins = 0; 
+	public $jCoins = 0;
 	
 	/**
 	 * the time of beeing in the group
-	 * @var integer
+	 * @var	integer
 	 */
 	public $period = 0;
 	
 	/**
-	 * all aviable groups 
-	 * @var array<mixed>
+	 * all available groups 
+	 * @var	array<mixed>
 	 */
-	public $groups = array(); 
+	public $groups = array();
 	
 	/**
 	 * @see	wcf\page\IPage::readParameters()
@@ -78,7 +78,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	}
 	
 	/**
-	 * @see wcf\page\IPage::readData()
+	 * @see	wcf\page\IPage::readData()
 	 */
 	public function readData() {
 		parent::readData();
@@ -87,7 +87,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		$this->groups = UserGroup::getAccessibleGroups(array(UserGroup::OTHER));
 		
 		if (empty($this->groups)) {
-			throw new PermissionDeniedException(); 
+			throw new PermissionDeniedException();
 		}
 	}
 	
@@ -104,7 +104,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		if (isset($_POST['period'])) $this->period = intval($_POST['period']);
 		if (I18nHandler::getInstance()->isPlainValue('description')) $this->description = I18nHandler::getInstance()->getValue('description');
 	}
-
+	
 	/**
 	 * @see	wcf\form\IForm::validate()
 	 */
@@ -119,15 +119,15 @@ class JCoinsPremiumAddForm extends AbstractForm {
 			throw new UserInputException('period', 'time');
 		}
 		
-		$this->validateGroup(); 
+		$this->validateGroup();
 	}
-
+	
 	/**
 	 * validating the group
 	 */
 	public function validateGroup() {
 		if (!UserGroup::isAccessibleGroup(array($this->groupID))) {
-			throw new PermissionDeniedException(); 
+			throw new PermissionDeniedException();
 		}
 	}
 	
@@ -151,7 +151,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		if (!I18nHandler::getInstance()->isPlainValue('description')) {
 			$premiumGroupID = $returnValues['returnValues']->premiumGroupID;
 			I18nHandler::getInstance()->save('description', 'wcf.jcoins.premiumGroups.description'.$premiumGroupID, 'wcf.jcoins', PackageCache::getInstance()->getPackageID('de.joshsboard.jcoins'));
-
+			
 			// update name
 			$editor = new PremiumGroupEditor($returnValues['returnValues']);
 			$editor->update(array(
@@ -162,26 +162,26 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		$this->saved();
 		
 		// reset values
-		$this->groupID = $this->jCoins = $this->period = 0; 
-		$this->description = ""; 
+		$this->groupID = $this->jCoins = $this->period = 0;
+		$this->description = "";
 		
 		// show success
 		WCF::getTPL()->assign('success', true);
 	}
-
+	
 	/**
 	 * @see	wcf\page\IPage::assignVariables()
 	 */
 	public function assignVariables() {
 		parent::assignVariables();
-
+		
 		I18nHandler::getInstance()->assignVariables();
 		
 		WCF::getTPL()->assign(array(
 			'groupID' => $this->groupID,
-			'jCoins' => $this->jCoins, 
-			'period' => $this->period, 
-			'description' => $this->description, 
+			'jCoins' => $this->jCoins,
+			'period' => $this->period,
+			'description' => $this->description,
 			'groups' => $this->groups
 		));
 	}

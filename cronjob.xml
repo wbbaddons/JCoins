@@ -15,7 +15,7 @@
 			<canbedisabled>0</canbedisabled>
 			<execmultiple>0</execmultiple>
 		</cronjob>
-
+		
 		<cronjob>
 			<classname>wcf\system\cronjob\JCoinsRemoveOldStatementsCronjob</classname>
 			<description><![CDATA[remove old statements]]></description>

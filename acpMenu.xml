@@ -4,7 +4,7 @@
 		<acpmenuitem name="wcf.acp.menu.link.jcoins">
 			<parent>wcf.acp.menu.link.content</parent>
 		</acpmenuitem>
-
+		
 		<acpmenuitem name="wcf.acp.menu.link.jcoins.premium.list">
 			<controller><![CDATA[wcf\acp\page\JCoinsPremiumList]]></controller>
 			<parent>wcf.acp.menu.link.jcoins</parent>
@@ -12,7 +12,7 @@
 			<showorder>1</showorder>
 			<options>module_jcoins_premiumgroups</options>
 		</acpmenuitem>
-
+		
 		<acpmenuitem name="wcf.acp.menu.link.jcoins.premium.add">
 			<controller><![CDATA[wcf\acp\form\JCoinsPremiumAddForm]]></controller>
 			<parent>wcf.acp.menu.link.jcoins</parent>

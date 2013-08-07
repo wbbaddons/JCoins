@@ -3,10 +3,10 @@ namespace wcf\data\jCoins\statement;
 use wcf\data\DatabaseObjectEditor;
 
 /**
- * a statement editor
+ * Provides functions to edit statements.
  * 
- * @author  Joshua Rüsweg
- * @package de.joshsboard.jcoins
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
  */
 class StatementEditor extends DatabaseObjectEditor {
 	/**

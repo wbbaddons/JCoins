@@ -1,6 +1,5 @@
 <?php
-namespace wcf\data\user\group\premiumGroup; 
-
+namespace wcf\data\user\group\premiumGroup;
 use wcf\data\DatabaseObject;
 use wcf\data\user\group\UserGroup;
 use wcf\system\database\util\PreparedStatementConditionBuilder;
@@ -11,8 +10,8 @@ use wcf\system\WCF;
 /**
  * Represents a premium-group in the database.
  * 
- * @author  Joshua Rüsweg
- * @package de.joshsboard.jcoins
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoins
  */
 class PremiumGroup extends DatabaseObject implements IRouteController {
 	/**
@@ -28,34 +27,34 @@ class PremiumGroup extends DatabaseObject implements IRouteController {
 	/**
 	 * Returns a object of the user-group.
 	 * 
-	 * @return wcf\data\user\group\UserGroup
+	 * @return	wcf\data\user\group\UserGroup
 	 */
 	public function getGroup() {
 		return UserGroup::getGroupByID($this->groupID);
 	}
 	
-        /**
-         * Returns true if the group is deleteable.
-         * 
-         * @return  boolean
-         */
+	/**
+	 * Returns true if the group is deleteable.
+	 * 
+	 * @return	boolean
+	 */
 	public function isDeletable() {
-		$sql = "SELECT 	COUNT(*)
-			FROM 	wcf".WCF_N."_user_to_group_premium
-			WHERE 	premiumGroupID = ?"; 
+		$sql = "SELECT	COUNT(*)
+			FROM	wcf".WCF_N."_user_to_group_premium
+			WHERE	premiumGroupID = ?"; 
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute(array($this->premiumGroupID));
 		
-		return  ($statement->fetchColumn() == 0) ? true : false;
+		return (bool) $statement->fetchColumn();
 	}
 	
 	/**
 	 * Returns true if the given user is a member of this group.
 	 * 
-	 * @param   integer	$userID
-	 * @return  boolean 
+	 * @param	integer	$userID
+	 * @return	boolean 
 	 */
-        public function isMember($userID = null) {
+	public function isMember($userID = null) {
 		if ($userID === null) {
 			$userID = WCF::getUser()->userID; 
 		}
@@ -76,26 +75,26 @@ class PremiumGroup extends DatabaseObject implements IRouteController {
 				
 			return (bool) $statement->fetchColumn();
 		}
-        }
+	}
 	
 	/**
 	 * Returns true if this group is accessible by current user.
 	 * 
-	 * @return  boolean
+	 * @return	boolean
 	 */
 	public function isAccessible() {
 		return UserGroup::isAccessibleGroup(array($this->groupID));
 	}
 	
 	/**
-	 * @see wcf\data\ITitledObject::getTitle()
+	 * @see	wcf\data\ITitledObject::getTitle()
 	 */
 	public function getTitle() {
 		return $this->getGroup()->getName();
 	}
 	
 	/**
-	 * @see wcf\data\IRouteController::getTitle()
+	 * @see	wcf\data\IRouteController::getTitle()
 	 */
 	public function getObjectID() {
 		return $this->premiumGroupID;

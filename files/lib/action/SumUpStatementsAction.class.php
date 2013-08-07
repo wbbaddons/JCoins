@@ -1,55 +1,54 @@
 <?php
 namespace wcf\action;
-use wcf\action\AbstractAction;
+use wcf\data\jCoins\statement\StatementAction;
 use wcf\data\jCoins\statement\StatementList;
-use wcf\system\exception\PermissionDeniedException;
-use wcf\system\WCF;
 use wcf\util\HeaderUtil;
+use wcf\system\exception\PermissionDeniedException;
 use wcf\system\request\LinkHandler;
-use wcf\data\jCoins\statement\StatementAction; 
+use wcf\system\WCF;
 
 /**
  * sum up all statement entrys from an user
  * 
- * @author  Joshua Rüsweg
- * @package de.joshsboard.jcoin
+ * @author	Joshua Rüsweg
+ * @package	de.joshsboard.jcoin
  */
 class SumUpStatementsAction extends AbstractAction {
 	/**
-	 * @see wcf\action\AbstractAction::$loginRequired
+	 * @see	wcf\action\AbstractAction::$loginRequired
 	 */
 	public $loginRequired = true;
 	
 	/**
 	 * statement-action
-	 * @var wcf\data\jCoins\statement\StatementAction
+	 * @var	wcf\data\jCoins\statement\StatementAction
 	 */
 	public $statementAction = null;
 	
 	/**
 	 * list of statements to sum up
-	 * @var wcf\data\jCoins\statement\StatementList
+	 * @var	wcf\data\jCoins\statement\StatementList
 	 */
 	public $statementList = null;
 	
 	/**
-	 * @see wcf\action\IAction::readParameters()
+	 * @see	wcf\action\IAction::readParameters()
 	 */
 	public function readParameters() {
 		parent::readParameters();
 		
 		$this->statementList = new StatementList();
-		$this->statementList->getConditionBuilder()->add("statement_entrys.userID = ?", array(WCF::getUser()->userID));
+		$this->statementList->getConditionBuilder()->add('statement_entrys.userID = ?', array(WCF::getUser()->userID));
 		
 		if ($this->statementList->countObjects() < 2) {
 			throw new PermissionDeniedException();
 		}
 		
-		$this->statementList->readObjectIDs(); 
+		$this->statementList->readObjectIDs();
 	}
 	
 	/**
-	 * @see wcf\action\IAction::execute()
+	 * @see	wcf\action\IAction::execute()
 	 */
 	public function execute() {
 		parent::execute();
@@ -67,7 +66,7 @@ class SumUpStatementsAction extends AbstractAction {
 			)
 		));
 		$this->statementAction->executeAction();
-
+		
 		$this->executed();
 		
 		$url = LinkHandler::getInstance()->getLink('OwnCoinsStatement');

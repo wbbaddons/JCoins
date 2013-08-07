@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/templateListener.xsd">
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/templateListener.xsd">
 	<import>
 		<templatelistener name="userPanel">
 			<environment>user</environment>
@@ -7,42 +7,42 @@
 			<eventname>menuItems</eventname>
 			<templatecode><![CDATA[{include file='__userPanelJCoinsLink'}]]></templatecode>
 		</templatelistener>
-
+		
 		<templatelistener name="userSidebar">
 			<environment>user</environment>
 			<templatename>userSidebar</templatename>
 			<eventname>statistics</eventname>
 			<templatecode><![CDATA[{include file='__userSidebarJCoinsDisplaySum'}]]></templatecode>
 		</templatelistener>
-                
-                <templatelistener name="messageSidebarJCoins">
+		
+		<templatelistener name="messageSidebarJCoins">
 			<environment>user</environment>
 			<templatename>messageSidebar</templatename>
 			<eventname>userCredits</eventname>
 			<templatecode><![CDATA[{include file='__userMessageSidebarJCoinsDisplaySum'}]]></templatecode>
 		</templatelistener>
-
+		
 		<templatelistener name="user">
 			<environment>user</environment>
 			<templatename>user</templatename>
 			<eventname>buttons</eventname>
 			<templatecode><![CDATA[{include file='__userJCoinsDisplayTransfer'}]]></templatecode>
 		</templatelistener>
-
+		
 		<templatelistener name="usersMassProcessingAddJCoinsAction">
 			<environment>admin</environment>
 			<templatename>userBulkProcessing</templatename>
 			<eventname>actions</eventname>
 			<templatecode><![CDATA[{include file='__userMassProcessingJcoinsAction'}]]></templatecode>
 		</templatelistener>
-
+		
 		<templatelistener name="usersMassProcessingAddJCoinsActionSettings">
 			<environment>admin</environment>
 			<templatename>userBulkProcessing</templatename>
 			<eventname>actionFieldsets</eventname>
 			<templatecode><![CDATA[{include file='__userMassProcessingJcoinsActionSettings'}]]></templatecode>
 		</templatelistener>
-
+		
 		<templatelistener name="usersMassProcessingAddJCoinsJS">
 			<environment>admin</environment>
 			<templatename>header</templatename>

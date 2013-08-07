@@ -2,14 +2,14 @@
 namespace wcf\form;
 use wcf\system\exception\UserInputException;
 use wcf\system\WCF;
-use wcf\util\StringUtil; 
-use wcf\data\user\UserProfile; 
+use wcf\util\StringUtil;
+use wcf\data\user\UserProfile;
 use wcf\data\jCoins\statement\StatementAction;
 use wcf\system\user\notification\UserNotificationHandler;
-use wcf\system\user\notification\object\JCoinsTransferNotificationObject; 
+use wcf\system\user\notification\object\JCoinsTransferNotificationObject;
 
 /**
- * a transfer form for jcoins
+ * A transfer form for jcoins
  * 
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
@@ -20,67 +20,67 @@ class JCoinsTransferForm extends AbstractForm {
 	 * @see	wcf\page\AbstractPage::$enableTracking
 	 */
 	public $enableTracking = true;
-
+	
 	/**
 	 * @see	wcf\page\AbstractPage::$loginRequired
 	 */
 	public $loginRequired = true;
-
+	
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules
 	 */
 	//public $neededModules = array('MODULE_JCOINS');
-
+	
 	/**
 	 * @see	wcf\page\AbstractPage::$neededPermissions
 	 */
 	public $neededPermissions = array('user.jcoins.canTransfer');
-
+	
 	/**
 	 * the sum to transfer
-	 * @var integer
+	 * @var	integer
 	 */
-	public $sum = 0; 
+	public $sum = 0;
 	
 	/**
 	 * a reason for the transfer
-	 * @var string
+	 * @var	string
 	 */
-	public $reason = ''; 
+	public $reason = '';
 	
 	/**
 	 * the user
-	 * @var wcf\data\user\UserProfile 
+	 * @var	wcf\data\user\UserProfile
 	 */
-	public $user = array(); 
+	public $user = array();
 	
 	/**
 	 * all user name for the transfer
-	 * @var string
+	 * @var	string
 	 */
-	public $usernames = ""; 
+	public $usernames = "";
 	
 	/**
-	 * is the transfer moderat
-	 * @var boolean
+	 * is the transfer moderate
+	 * @var	boolean
 	 */
-	public $isModerativ = false; 
+	public $isModerativ = false;
 	
 	/**
-	 * is the transfer success
-	 * @var boolean
+	 * true if transfer is succeded
+	 * @var	boolean
 	 */
-	public $success = false; 
+	public $success = false;
 	
 	/**
 	 * @see	wcf\page\IPage::readParameters()
 	 */
 	public function readParameters() {
 		parent::readParameters();
-
+		
 		if (isset($_REQUEST['id']) && !isset($_POST['username'])) {
 			$this->userID = intval($_REQUEST['id']);
-	    		$this->user[] = UserProfile::getUserProfile($this->userID);
+			$this->user[] = UserProfile::getUserProfile($this->userID);
 		}
 	}
 	
@@ -96,23 +96,23 @@ class JCoinsTransferForm extends AbstractForm {
 		if (isset($_POST['isModerativ']) && $_POST['isModerativ'] == 1 && WCF::getSession()->getPermission('mod.jcoins.canModTransfer')) $this->isModerativ = true; 
 		
 		if (count(explode(',', $this->usernames)) > 0) {
-			$users = explode(',', $this->usernames); 
+			$users = explode(',', $this->usernames);
 
 			foreach($users AS $user) {
-				$user = StringUtil::trim($user); 
+				$user = StringUtil::trim($user);
 				if (!empty($user)) $this->user[] = UserProfile::getUserProfileByUsername($user);
 			}
 		}
 	}
-
+	
 	/**
 	 * @see	wcf\form\IForm::validate()
 	 */
 	public function validate() {
-	    
+		
 		// remove user doubles
 		$this->user = array_unique($this->user);
-	    
+		
 		if ($this->sum < 1 && !$this->isModerativ) {
 			throw new UserInputException('sum', 'tooLess');
 		}
@@ -120,7 +120,7 @@ class JCoinsTransferForm extends AbstractForm {
 		if (StringUtil::length($this->reason) > 255) {
 			throw new UserInputException('reason', 'tooLong');
 		}
-
+		
 		if (StringUtil::length($this->reason) < 3) {
 			throw new UserInputException('reason', 'tooShort');
 		}
@@ -140,12 +140,12 @@ class JCoinsTransferForm extends AbstractForm {
 		}
 		
 		if (WCF::getUser()->jCoinsBalance < ($this->sum * count($this->user)) && !$this->isModerativ) {
-			throw new UserInputException('sum', 'tooMuch');  
+			throw new UserInputException('sum', 'tooMuch');
 		}
 		
 		parent::validate();
 	}
-
+	
 	/**
 	 * @see	wcf\form\IForm::save()
 	 */
@@ -157,8 +157,8 @@ class JCoinsTransferForm extends AbstractForm {
 				'data' => array(
 					'reason' => $this->reason,
 					'sum' => $this->sum,
-					'userID' => $user->userID, 
-					'executedUserID' => WCF::getUser()->userID, 
+					'userID' => $user->userID,
+					'executedUserID' => WCF::getUser()->userID,
 					'isModTransfer' => $this->isModerativ
 				),
 				'changeBalance' => 1
@@ -182,24 +182,24 @@ class JCoinsTransferForm extends AbstractForm {
 			}
 		}
 		
-		$this->saved(); 
+		$this->saved();
 		
-		$this->sum = 0; 
+		$this->sum = 0;
 		$this->reason = "";
 		$this->user = array();
 		$this->success = true;
 	}
-
+	
 	/**
 	 * @see	wcf\page\IPage::assignVariables()
 	 */
 	public function assignVariables() {
 		parent::assignVariables();
-
+		
 		WCF::getTPL()->assign(array(
 			'user' => $this->user,
 			'sum' => $this->sum,
-			'reason' => $this->reason, 
+			'reason' => $this->reason,
 			'success' => $this->success
 		));
 	}

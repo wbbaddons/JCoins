@@ -24,7 +24,7 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	
 	/**
 	 * list of premium-groups
-	 * @var wcf\data\jCoins\premiumGroup\PremiumGroupList
+	 * @var	wcf\data\jCoins\premiumGroup\PremiumGroupList
 	 */
 	public $premiumGroupList = null;
 	
@@ -42,8 +42,8 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	 * @see	wcf\page\IPage::assignVariables()
 	 */
 	public function assignVariables() {
-	    parent::assignVariables();
-	    
-	    WCF::getTPL()->assign('premiumGroups', $this->premiumGroupList);
+		parent::assignVariables();
+		
+		WCF::getTPL()->assign('premiumGroups', $this->premiumGroupList);
 	}
 }

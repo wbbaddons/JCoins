@@ -1,6 +1,5 @@
 <?php
 namespace wcf\page;
-use wcf\page\AbstractPage;
 
 /**
  * the credit page
@@ -10,7 +9,6 @@ use wcf\page\AbstractPage;
  * @subpackage	wcf.page
  */
 class JCoinsCreditsPage extends AbstractPage {
-    
 	/**
 	 * @see	wcf\page\AbstractPage::$loginRequired
 	 */

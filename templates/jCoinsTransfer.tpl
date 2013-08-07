@@ -2,6 +2,7 @@
 
 <head>
 	<title>{lang}wcf.jcoins.transfer{/lang} - {PAGE_TITLE|language}</title>
+	
 	{include file='headInclude'}
 </head>
 
@@ -10,13 +11,10 @@
 {include file='header'}
 
 <header class="boxHeadline">
-	<hgroup>
-		<h1>{lang}wcf.jcoins.transfer{/lang}</h1>
-	</hgroup>
+	<h1>{lang}wcf.jcoins.transfer{/lang}</h1>
 </header>
 
 {include file='userNotice'}
-
 
 {if $errorField}
 	<p class="error">{lang}wcf.global.form.error{/lang}</p>
@@ -36,7 +34,7 @@
 					<label for="usernameInput">{lang}wcf.user.username{/lang}</label>
 				</dt>
 				<dd>
-				    <input type="text" id="usernameInput" name="username" value="{foreach from=$user item=$cUser}{$cUser->username}, {/foreach}" class="medium" />
+					<input type="text" id="usernameInput" name="username" value="{foreach from=$user item=$cUser}{$cUser->username}, {/foreach}" class="medium" />
 					{if $errorField == 'username'}
 						<small class="innerError">
 							{if $errorType == 'empty'}{lang}wcf.global.form.error.empty{/lang}{/if}
@@ -47,7 +45,7 @@
 				</dd>
 			</dl>
 				
-			<script type="text/javascript">
+			<script data-relocate="true">
 				new WCF.Search.User('#usernameInput', null, false, null, true);
 			</script>
 			
@@ -65,9 +63,7 @@
 					{/if}
 				</dd>
 			</dl>
-				
-				
-				
+			
 			<dl id="reasonDiv"{if $errorField == 'reson'} class="formError"{/if}>
 				<dt>
 					<label for="reasonInput">{lang}wcf.jcoins.statement.reason{/lang}</label>
@@ -83,24 +79,25 @@
 				</dd>
 			</dl>
 			{if $__wcf->session->getPermission('mod.jcoins.canModTransfer')}
-			<dl id="isModTransferDiv">
-				<dd>
-					<label>
-					    <input type="checkbox" name="isModerativ" id="isModerativ" value="1">
-					    {lang}wcf.jcoins.transfer.domoderativ{/lang}
-					</label>
-				</dd>
-			</dl>
+				<dl id="isModTransferDiv">
+					<dd>
+						<label>
+							<input type="checkbox" name="isModerativ" id="isModerativ" value="1">
+							{lang}wcf.jcoins.transfer.domoderativ{/lang}
+						</label>
+					</dd>
+				</dl>
 			{/if}
 		</fieldset>
 	</div>
-		
+	
 	<div class="formSubmit">
 		<input type="submit" value="{lang}wcf.global.button.submit{/lang}" accesskey="s" />
 	</div>
 </form>
-		    <div class="copyright"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
-		
+
+<div class="copyright"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
+
 {include file='footer'}
 
 </body>

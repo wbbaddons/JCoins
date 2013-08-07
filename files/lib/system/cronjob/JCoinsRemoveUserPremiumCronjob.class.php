@@ -7,7 +7,7 @@ use wcf\system\WCF;
 /**
  * Removes users from premium groups. 
  * 
- * @author      Joshua Rüsweg
+ * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  * @subpackage	system.cronjob
  * @category	Community Framework
