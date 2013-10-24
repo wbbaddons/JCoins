@@ -1,7 +1,7 @@
 {include file='documentHeader'}
 
 <head>
-	<title>wcf.jcoins.statement.title - {PAGE_TITLE|language}</title>
+	<title>{lang}wcf.jcoins.statement.title{/lang} - {PAGE_TITLE|language}</title>
 	
 	{include file='headInclude' sandbox=false}
 </head>
