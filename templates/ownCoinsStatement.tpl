@@ -1,7 +1,7 @@
 {include file='documentHeader'}
 
 <head>
-	<title>TODO - {PAGE_TITLE|language}</title>
+	<title>wcf.jcoins.statement.title - {PAGE_TITLE|language}</title>
 	
 	{include file='headInclude' sandbox=false}
 </head>
@@ -31,7 +31,7 @@
 	{/hascontent}
 </div>
 
-<div class="marginTop statementBox">
+<div class="marginTop tabularBox statementBox">
 	{if $objects|count == 0}
 		<p class="info">{lang}wcf.jcoins.statement.noresults{/lang}</p>
 	{else}
