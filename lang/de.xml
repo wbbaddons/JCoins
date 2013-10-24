@@ -4,6 +4,7 @@
 		<!-- JCOINS -->
 		<item name="wcf.jcoins.title"><![CDATA[jCoins]]></item>
 		<item name="wcf.jcoins.systemuser"><![CDATA[System]]></item>
+		<item name="wcf.jcoins.summaryOfAccountBalances"><![CDATA[Kontoauszüge zusammengefasst.]]></item>
 		
 		<!-- STATEMENTS -->
 		<item name="wcf.jcoins.statement.title"><![CDATA[Kontoauszüge]]></item>
