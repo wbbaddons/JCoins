@@ -16,6 +16,9 @@ class JCoinsConversationMessageAddListener implements IEventListener {
 	public function execute($eventObj, $className, $eventName) {
 		if (!MODULE_CONVERSATION || !MODULE_JCOINS || JCOINS_RECEIVECOINS_ADDCONVERSATIONREPLY == 0) return;
 		if ($eventObj->getActionName() != 'create' && $eventObj->getActionName() != 'quickReply') return;
+                
+                $parameters = $eventObj->getParameters();
+                if(isset($parameters['isFirstPost'])) return;
 		
 		$this->statementAction = new StatementAction(array(), 'create', array(
 			'data' => array(

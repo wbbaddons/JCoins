@@ -70,7 +70,7 @@ class SumUpStatementsAction extends AbstractAction {
 		$this->executed();
 		
 		$url = LinkHandler::getInstance()->getLink('OwnCoinsStatement');
-		HeaderUtil::delayedRedirect($url, WCF::getLanguage()->get('wcf.jCoins.statement.successfullsumup'));
+		HeaderUtil::delayedRedirect($url, WCF::getLanguage()->get('wcf.jcoins.statement.successfullsumup'));
 		exit;
 	}
 }
