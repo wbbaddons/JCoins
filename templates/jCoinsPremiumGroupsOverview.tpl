@@ -4,7 +4,31 @@
 	<title>{lang}wcf.jcoins.premiumgroups.title{/lang} - {PAGE_TITLE|language}</title>
 	
 	{include file='headInclude'}
-	<script type="text/javascript" src="{@$__wcf->getPath()}js/WCF.JCoins.js"></script>
+	<script data-relocate="true" type="text/javascript" src="{@$__wcf->getPath()}js/WCF.JCoins.js"></script>
+        <script data-relocate="true" type="text/javascript">
+            //<![CDATA[
+                $(function() {
+                    new WCF.JCoins.Buy($('.jCoinsPremiumList > li'));
+                });
+            //]]>
+        </script>
+        <style type="text/css">
+            .premiumButton {
+                z-index: 1;
+            }
+
+            .containerList.doubleColumned > li {
+                height: auto;
+            }
+        
+            .jCoinsPremiumList > li > .details > dl > dt {
+                width: 100px;
+            }
+        
+            .jCoinsPremiumList > li > .details > dl > dd {
+                margin-left: 110px;
+            }
+        </style>
 </head>
 
 <body id="tpl{$templateName|ucfirst}">
@@ -18,50 +42,59 @@
 
 {include file='userNotice'}
 
-<div class="container containerPadding marginTop">
-	{hascontent}
-		{content}
-			{foreach from=$premiumGroups item=premiumGroup}
-				{if !$premiumGroup->isDisabled || $premiumGroup->isMember()}
-					<fieldset>
-						<legend>{$premiumGroup->getGroup()}{if $premiumGroup->isMember()} <span class="badge green">{lang}wcf.jcoins.premiumgroups.active{/lang}</span>{/if}</legend>
+{hascontent}
+    <div class="container containerPadding marginTop shadow">
+        {content}
+            {foreach from=$premiumGroups item=premiumGroup}
+                <fieldset>
+                    <legend>{$premiumGroup.groupName}{if $premiumGroup.isMember} <span class="badge green">{lang}wcf.jcoins.premiumgroups.active{/lang}</span>{/if}</legend>
+                    <div class="container">
+                        <ol class="containerList doubleColumned jCoinsPremiumList">
+                            {foreach from=$premiumGroup.data item=premium}
+                                <li>
+                                    <div class="details">
+                                        <div class="premiumButton">
+                                            <nav class="jsMobileNavigation buttonGroupNavigation">
+                                                <ul class="buttonList smallButtons iconList">
+                                                    <li class="jsOnly">
+                                                        {if $premium->jCoins > $__wcf->user->jCoinsBalance}
+                                                            <span class="badge red">{lang}wcf.jcoins.premiumgroups.notenougthjcoins{/lang}</span>
+                                                        {else if $premiumGroup.isMember}
+                                                            <span class="badge yellow jsPremiumGroupButton pointer" data-premium-group-id="{$premium->premiumGroupID}" data-is-member="1">{lang}wcf.jcoins.premiumgroups.renew{/lang}</span>
+                                                        {else}
+                                                            <span class="badge green jsPremiumGroupButton pointer" data-premium-group-id="{$premium->premiumGroupID}" data-is-member="0">{lang}wcf.jcoins.premiumgroups.buy{/lang}</span>
+                                                        {/if}
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
 						
-						<dl>
-							<dt>{lang}wcf.jcoins.premiumgroups.description{/lang}</dt>
-							<dd>{$premiumGroup->description|language}</dd>
-						</dl>
+                                        <dl>
+                                            <dt>{lang}wcf.jcoins.premiumgroups.costs{/lang}</dt>
+                                            <dd>{#$premium->jCoins} jCoins</dd>
+                                        </dl>
 						
-						<dl>
-							<dt>{lang}wcf.jcoins.premiumgroups.costs{/lang}</dt>
-							<dd>{#$premiumGroup->jCoins}</dd>
-						</dl>
-						
-						<dl>
-							<dt>{lang}wcf.jcoins.premiumgroups.period{/lang}</dt>
-							<dd>{#$premiumGroup->period} {lang}wcf.jcoins.premiumgroups.day{if $premiumGroup->period > 1}s{/if}{/lang}</dd>
-						</dl>
-						
-						{if !$premiumGroup->isDisabled}
-						<dl>
-							<dt>{lang}wcf.jcoins.premiumgroups.buy{/lang}</dt>
-							<dd>{if $premiumGroup->jCoins > $__wcf->user->jCoinsBalance}<span class="badge red">{lang}wcf.jcoins.premiumgroups.notenougthjcoins{/lang}</span>{else}<span class="button" id="buyPremiumGroupButton{$premiumGroup->premiumGroupID}">{if $premiumGroup->isMember()}{lang}wcf.jcoins.premiumgroups.renew{/lang}{else}{lang}wcf.jcoins.premiumgroups.buy{/lang}{/if}{/if}</span></dd>
-						</dl>
-						
-						<script data-relocate="true">
-							new WCF.JCoins.Buy({$premiumGroup->premiumGroupID});
-						</script>
-						{/if}
-					</fieldset>
-				{/if}
-			{/foreach}
-			
-			{event name='additionalPremiumGroups'}
-			
-		{/content}
-	{hascontentelse}
-		<p class="info">{lang}wcf.jcoins.premiumgroups.nogroups{/lang}</p>
-	{/hascontent}
-</div>
+                                        <dl>
+                                            <dt>{lang}wcf.jcoins.premiumgroups.period{/lang}</dt>
+                                            <dd>{#$premium->period} {lang}wcf.jcoins.premiumgroups.day{if $premium->period > 1}s{/if}{/lang}</dd>
+                                        </dl>
+
+                                        <dl>
+                                            <dt>{lang}wcf.jcoins.premiumgroups.description{/lang}</dt>
+                                            <dd>{@$premium->description|language|newlineToBreak}</dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            {/foreach}
+                        </ol>
+                    </div>      
+                </fieldset>
+            {/foreach}
+        {/content}
+    </div>
+{hascontentelse}
+    <p class="info">{lang}wcf.jcoins.premiumgroups.nogroups{/lang}</p>
+{/hascontent}
 
 {include file='footer'}
 

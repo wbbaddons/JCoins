@@ -14,29 +14,29 @@ class UserPremiumGroupHandler extends SingletonFactory {
 	 * ids of premium-groups in which the current user is member
 	 * @var	array<integer>
 	 */
-	protected $premiumGroupIDs = array();
+	protected $groupIDs = array();
 	
 	/**
 	 * @see	wcf\system\SingletonFactory::init()
 	 */
 	protected function init() {
 		UserStorageHandler::getInstance()->loadStorage(array(WCF::getUser()->userID));
-		$data = UserStorageHandler::getInstance()->getStorage(array(WCF::getUser()->userID), 'premiumGroupIDs');
+		$data = UserStorageHandler::getInstance()->getStorage(array(WCF::getUser()->userID), 'jCoinsPremiumGroupIDs');
 		
 		if ($data[WCF::getUser()->userID] === null) {
-			$sql = "SELECT	premiumGroupID
+			$sql = "SELECT	groupID
 				FROM	wcf".WCF_N."_user_to_group_premium
 				WHERE	userID = ?";
 			$statement = WCF::getDB()->prepareStatement($sql);
 			$statement->execute(array(WCF::getUser()->userID));
 			while ($row = $statement->fetchArray()) {
-				$this->premiumGroupIDs[] = $row['premiumGroupID'];
+				$this->groupIDs[] = $row['groupID'];
 			}
 			
-			UserStorageHandler::getInstance()->update(WCF::getUser()->userID, 'premiumGroupIDs', serialize($this->premiumGroupIDs));
+			UserStorageHandler::getInstance()->update(WCF::getUser()->userID, 'jCoinsPremiumGroupIDs', serialize($this->groupIDs));
 		}
 		else {
-			$this->purchasedProducts = unserialize($data[WCF::getUser()->userID]);
+			$this->groupIDs = unserialize($data[WCF::getUser()->userID]);
 		}
 	}
 	
@@ -45,15 +45,15 @@ class UserPremiumGroupHandler extends SingletonFactory {
 	 * @return	array<integer>
 	 */
 	public function getAccessiblePremiumGroupIDs() {
-		return $this->premiumGroupIDs;
+		return $this->groupIDs;
 	}
 	
 	/**
 	 * Returns true if current user is member in given premium-group.
-	 * @param	integer		$premiumGroupID
+	 * @param	integer		$groupID
 	 * @return	boolean
 	 */
-	public function isMember($premiumGroupID) {
-		return in_array($premiumGroupID, $this->premiumGroupIDs);
+	public function isMember($groupID) {
+		return in_array($groupID, $this->groupIDs);
 	}
 }

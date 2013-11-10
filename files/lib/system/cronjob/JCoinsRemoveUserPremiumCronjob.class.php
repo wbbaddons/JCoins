@@ -25,6 +25,6 @@ class JCoinsRemoveUserPremiumCronjob extends AbstractCronjob {
 		$statement->execute(array(TIME_NOW));
 		
 		// reset storage
-		UserStorageHandler::getInstance()->resetAll('premiumGroupIDs');
+		UserStorageHandler::getInstance()->resetAll('jCoinsPremiumGroupIDs');
 	}
 }

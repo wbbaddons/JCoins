@@ -1,4 +1,6 @@
 {include file='header' pageTitle='test'}
+				
+{include file='multipleLanguageInputJavascript' elementIdentifier='description' forceSelection=false}
 
 <header class="boxHeadline">
 	<hgroup>
@@ -8,9 +10,7 @@
 
 <p class="info">{lang}wcf.acp.jcoins.premiumgroups.{$action}info{/lang}</p>
 
-{if $errorField}
-	<p class="error">{lang}wcf.global.form.error{/lang}</p>
-{/if}
+{include file='formError'}
 
 {if $success|isset}
 	<p class="success">{lang}wcf.global.success.{$action}{/lang}</p>	
@@ -26,7 +26,7 @@
 			<legend>Benutzergruppeneinstellung</legend>
 			
 			<dl{if $errorField == 'jCoins'} class="formError"{/if}>
-				<dt><label for="jCoins">jCoins</label></dt>
+				<dt><label for="jCoins">{lang}wcf.acp.jcoins.premiumgroups.jCoins{/lang}</label></dt>
 				<dd>
 					<input type="integer" id="jCoins" name="jCoins" value="{$jCoins}" required="required" autofocus="autofocus" class="medium" />
 					{if $errorField == 'jCoins'}
@@ -40,7 +40,7 @@
 			</dl>
 				
 			<dl{if $errorField == 'period'} class="formError"{/if}>
-				<dt><label for="period">Länge</label></dt>
+				<dt><label for="period">{lang}wcf.acp.jcoins.premiumgroups.period{/lang}</label></dt>
 				<dd>
 					<input type="integer" id="period" name="period" value="{$period}" {if $action == 'edit'}readonly="readonly"{/if} class="medium" />
 					{if $errorField == 'period'}
@@ -50,24 +50,23 @@
 							{/if}
 						</small>
 					{/if}
+
+                                        <small>{lang}wcf.acp.jcoins.premiumgroups.period.description{/lang}</small>
 				</dd>
 			</dl>
 				
 			<dl>
-				<dt><label for="description">Beschriebung</label></dt>
+				<dt><label for="description">{lang}wcf.acp.jcoins.premiumgroups.description{/lang}</label></dt>
 				<dd>
-					<textarea cols="40" rows="10" name="description" id="description">{$description}</textarea>
+					<textarea cols="40" rows="10" name="description" id="description">{$i18nPlainValues['description']}</textarea>
 				</dd>
 			</dl>
 				
-			{include file='multipleLanguageInputJavascript' elementIdentifier='description' forceSelection=false}
-				
 			<dl{if $errorField == 'groupID'} class="formError"{/if}>
-				<dt><label for="groupID">Gruppe</label></dt>
+				<dt><label for="groupID">{lang}wcf.acp.jcoins.premiumgroups.groupID{/lang}</label></dt>
 				<dd>
 				    {if $action == 'edit'}
 					{if $premiumGroup->getGroup()->isEditable()}<a href="{link controller='UserGroupEdit' id=$premiumGroup->getGroup()->groupID}{/link}">{lang}{$premiumGroup->getGroup()}{/lang}</a>{else}{$premiumGroup->getGroup()}{/if}
-					<input type="hidden" name="groupID" value="{$premiumGroup->getGroup()->groupID}" />
 				    {else}
 					<select name="groupID" id="groupID">
 					    {foreach from=$groups item="group"}
