@@ -3,8 +3,8 @@
 	<packageinformation>
 		<packagename>jCoins</packagename>
 		<packagedescription>A credit system for WCF2.</packagedescription>
-		<version>1.0.0</version>
-		<date>2013-03-02</date>
+		<version>1.0.0 Beta 2</version>
+		<date>2013-11-11</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -15,7 +15,7 @@
 	<requiredpackages>
 		<requiredpackage minversion="2.0.0 RC 1">com.woltlab.wcf</requiredpackage>
 		<requiredpackage minversion="2.0.0 Beta 9">com.woltlab.wcf.conversation</requiredpackage>
-		<requiredpackage minversion="1.0.0">de.joshsboard.tempusergroup</requiredpackage>
+		<requiredpackage minversion="1.0.0 Beta 1">de.joshsboard.tempusergroup</requiredpackage>
 	</requiredpackages>
 	
 	<instructions type="install">
