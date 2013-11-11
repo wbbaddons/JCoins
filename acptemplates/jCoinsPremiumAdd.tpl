@@ -1,4 +1,4 @@
-{include file='header' pageTitle='test'}
+{include file='header' pageTitle='wcf.acp.jcoins.premiumgroups.add'}
 
 {include file='multipleLanguageInputJavascript' elementIdentifier='description' forceSelection=false}
 
