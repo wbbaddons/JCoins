@@ -1,5 +1,6 @@
 <?php
 namespace wcf\data\jCoins\statement;
+
 use wcf\data\user\UserEditor;
 use wcf\data\user\User;
 use wcf\data\AbstractDatabaseObjectAction;
@@ -12,11 +13,12 @@ use wcf\system\WCF;
  * @package	de.joshsboard.jcoins
  */
 class StatementAction extends AbstractDatabaseObjectAction {
+
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$className
 	 */
 	protected $className = 'wcf\data\jCoins\statement\StatementEditor';
-	
+
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::validateCreate()
 	 */
@@ -27,7 +29,7 @@ class StatementAction extends AbstractDatabaseObjectAction {
 		$this->readInteger('time', true, 'data');
 		$this->readInteger('userID', true, 'data');
 		$this->readString('reason', false, 'data');
-		
+
 		if (!$this->parameters['data']['time']) {
 			$this->parameters['data']['time'] = TIME_NOW;
 		}
@@ -38,22 +40,22 @@ class StatementAction extends AbstractDatabaseObjectAction {
 			$this->parameters['data']['executedUserID'] = null;
 		}
 	}
-	
+
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::create()
 	 */
 	public function create() {
 		$statement = parent::create();
-		
+
 		if (isset($this->parameters['changeBalance']) && $this->parameters['changeBalance']) {
 			$user = new User($this->parameters['data']['userID']);
 			$userEditor = new UserEditor($user);
 			$userEditor->updateCounters(array('jCoinsBalance' => $statement->sum));
 		}
-		
+
 		return $statement;
 	}
-	
+
 	/**
 	 * Validates the trashing of statements.
 	 */
@@ -61,17 +63,17 @@ class StatementAction extends AbstractDatabaseObjectAction {
 		if (empty($this->objectIDs)) {
 			throw new UserInputException('objectIDs');
 		}
-		
+
 		if (empty($this->objects)) {
 			$this->readObjects();
 		}
 		foreach ($this->objects as $statement) {
 			if ($statement->userID != WCF::getUser()->userID) {
-				throw new PremissionDeniedException(); 
+				throw new PremissionDeniedException();
 			}
 		}
 	}
-	
+
 	/**
 	 * Marks the given statements as trashed.
 	 */
@@ -79,4 +81,5 @@ class StatementAction extends AbstractDatabaseObjectAction {
 		$this->parameters['data']['isTrashed'] = 1;
 		parent::update();
 	}
+
 }

@@ -1,5 +1,6 @@
 <?php
 namespace wcf\system\cronjob;
+
 use wcf\data\cronjob\Cronjob;
 use wcf\system\user\storage\UserStorageHandler;
 use wcf\system\WCF;
@@ -13,18 +14,20 @@ use wcf\system\WCF;
  * @category	Community Framework
  */
 class JCoinsRemoveUserPremiumCronjob extends AbstractCronjob {
+
 	/**
 	 * @see	wcf\system\cronjob\ICronjob::execute()
 	 */
 	public function execute(Cronjob $cronjob) {
 		parent::execute($cronjob);
-		
-		$sql = "DELETE FROM wcf".WCF_N."_user_to_group_premium
+
+		$sql = "DELETE FROM wcf" . WCF_N . "_user_to_group_premium
 			WHERE until < ?";
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute(array(TIME_NOW));
-		
+
 		// reset storage
 		UserStorageHandler::getInstance()->resetAll('jCoinsPremiumGroupIDs');
 	}
+
 }

@@ -1,5 +1,6 @@
 <?php
 namespace wcf\data\jCoins\statement;
+
 use wcf\data\DatabaseObjectEditor;
 
 /**
@@ -9,8 +10,10 @@ use wcf\data\DatabaseObjectEditor;
  * @package	de.joshsboard.jcoins
  */
 class StatementEditor extends DatabaseObjectEditor {
+
 	/**
 	 * @see	wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
 	protected static $baseClass = 'wcf\data\jCoins\statement\Statement';
+
 }

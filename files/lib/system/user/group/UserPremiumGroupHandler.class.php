@@ -1,5 +1,6 @@
 <?php
 namespace wcf\system\user\group;
+
 use wcf\system\user\storage\UserStorageHandler;
 use wcf\system\SingletonFactory;
 use wcf\system\WCF;
@@ -10,36 +11,36 @@ use wcf\system\WCF;
  * @package	de.joshsboard.jcoins
  */
 class UserPremiumGroupHandler extends SingletonFactory {
+
 	/**
 	 * ids of premium-groups in which the current user is member
 	 * @var	array<integer>
 	 */
 	protected $groupIDs = array();
-	
+
 	/**
 	 * @see	wcf\system\SingletonFactory::init()
 	 */
 	protected function init() {
 		UserStorageHandler::getInstance()->loadStorage(array(WCF::getUser()->userID));
 		$data = UserStorageHandler::getInstance()->getStorage(array(WCF::getUser()->userID), 'jCoinsPremiumGroupIDs');
-		
+
 		if ($data[WCF::getUser()->userID] === null) {
 			$sql = "SELECT	groupID
-				FROM	wcf".WCF_N."_user_to_group_premium
+				FROM	wcf" . WCF_N . "_user_to_group_premium
 				WHERE	userID = ?";
 			$statement = WCF::getDB()->prepareStatement($sql);
 			$statement->execute(array(WCF::getUser()->userID));
 			while ($row = $statement->fetchArray()) {
 				$this->groupIDs[] = $row['groupID'];
 			}
-			
+
 			UserStorageHandler::getInstance()->update(WCF::getUser()->userID, 'jCoinsPremiumGroupIDs', serialize($this->groupIDs));
-		}
-		else {
+		} else {
 			$this->groupIDs = unserialize($data[WCF::getUser()->userID]);
 		}
 	}
-	
+
 	/**
 	 * Returns a list of premium-group-ids in which the current user is member.
 	 * @return	array<integer>
@@ -47,7 +48,7 @@ class UserPremiumGroupHandler extends SingletonFactory {
 	public function getAccessiblePremiumGroupIDs() {
 		return $this->groupIDs;
 	}
-	
+
 	/**
 	 * Returns true if current user is member in given premium-group.
 	 * @param	integer		$groupID
@@ -56,4 +57,5 @@ class UserPremiumGroupHandler extends SingletonFactory {
 	public function isMember($groupID) {
 		return in_array($groupID, $this->groupIDs);
 	}
+
 }

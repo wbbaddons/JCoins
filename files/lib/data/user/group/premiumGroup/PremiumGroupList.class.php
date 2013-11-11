@@ -1,5 +1,6 @@
 <?php
 namespace wcf\data\user\group\premiumGroup;
+
 use wcf\data\DatabaseObjectList;
 
 /**
@@ -9,8 +10,10 @@ use wcf\data\DatabaseObjectList;
  * @package	de.joshsboard.jcoins
  */
 class PremiumGroupList extends DatabaseObjectList {
+
 	/**
 	 * @see	wcf\data\DatabaseObjectList::$sqlOrderBy
 	 */
 	public $sqlOrderBy = "user_group_premium.premiumGroupID ASC";
+
 }
