@@ -97,7 +97,7 @@
 </div>
 </form>
 
-<div class="copyright"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
+<div class="copyright marginTop"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
 
 {include file='footer'}
 

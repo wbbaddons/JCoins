@@ -28,6 +28,7 @@
 								<h2>
 									<ul class="dataList">
 										<li>Entwickelt von <a href="http://www.joshsboard.de/">Joshua Rüsweg</a></li>
+										<li><a href="https://github.com/JoshsBoard/de.joshsboard.jcoins">JCoins auf Github</a></li>
 									</ul>
 								</h2>
 							</hgroup>	

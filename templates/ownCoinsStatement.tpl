@@ -32,8 +32,6 @@
 </div>
 
 {hascontent}
-<div class="container containerPadding marginTop shadow">
-        <fieldset>
 		<div class="tabularBox tabularBoxTitle marginTop">
 			<table class="table">
 				<thead>
@@ -59,8 +57,6 @@
 					{/content}
 				</tbody>
 			</table>
-		</div>
-        </fieldset>
 </div>
 {hascontentelse}
 <p class="info">{lang}wcf.jcoins.statement.noresults{/lang}</p>
@@ -82,7 +78,7 @@
 {/hascontent}
 </div>
 
-<div class="copyright"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
+<div class="copyright marginTop"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
 
 {include file='footer'}
 

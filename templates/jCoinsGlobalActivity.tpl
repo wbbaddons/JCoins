@@ -34,6 +34,7 @@
 		{if $objects|count == 0}
 			<p class="info">{lang}wcf.jcoins.globalactivity.noresults{/lang}</p>
 		{else}
+			<div class="tabularBox tabularBoxTitle marginTop">
 			<table class="table">
 				<thead>
 					<tr>
@@ -48,7 +49,7 @@
 				<tbody>
 					{foreach from=$objects item=item}
 						<tr class="statementTableRow">
-							<td>{#$item->entryID}{if $item->isTrashed}<span class="icon icon16 icon-trash"></span>{/if}{if $item->isModTransfer}<span class="badge green">{lang}wcf.jcoins.transfer.moderativDisplay{/lang}</span>{/if}</td>
+							<td>{#$item->entryID}{if $item->isTrashed} <span class="icon icon16 icon-trash"></span>{/if}{if $item->isModTransfer} <span class="badge green">{lang}wcf.jcoins.transfer.moderativDisplay{/lang}</span>{/if}</td>
 							<td>{if $item->userID == 0}{lang}wcf.jcoins.systemuser{/lang}{else}<a href="{link controller='User' object=$item->getUser()}{/link}">{$item->getUser()->username}</a>{/if}</td>
 							<td>{if $item->link != ""}<a href="{$item->link}">{/if}{$item->reason|language}{if $item->link != ""}</a>{/if}</td>
 							<td>{if $item->executedUserID == 0}{lang}wcf.jcoins.systemuser{/lang}{else}<a href="{link controller='User' object=$item->getExecutedUser()}{/link}">{$item->getExecutedUser()->username}</a>{/if}</td>
@@ -58,6 +59,7 @@
 					{/foreach}
 				</tbody>
 			</table>
+				</div>
 		{/if}
 	</div>
 
@@ -75,7 +77,7 @@
 		{/hascontent}
 	</div>
 
-	<div class="copyright"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
+	<div class="copyright marginTop"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
 
 	{include file='footer' sandbox=false}
 
