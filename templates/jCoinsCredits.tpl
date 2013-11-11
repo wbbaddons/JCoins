@@ -1,7 +1,7 @@
 {include file='documentHeader'}
 
 <head>
-	<title>TODO - {PAGE_TITLE|language}</title>
+	<title>{lang}wcf.jcoins.copyright.title{/lang} - {PAGE_TITLE|language}</title>
 
 	{include file='headInclude' sandbox=false}
 </head>
@@ -11,7 +11,7 @@
 
 	<header class="boxHeadline">
 		<hgroup>
-			<h1>Entwicklung jCoins</h1>
+			<h1>{lang}wcf.jcoins.copyright.title{/lang}</h1>
 		</hgroup>
 	</header>
 
@@ -21,14 +21,15 @@
 		<div class="container marginTop">
 			<ol class="containerList doubleColumned userList">
 				<li>
-					<div class="">
+					<div class="jcoins">
 						<div class="details userInformation">
 							<hgroup class="containerHeadline">
-								<h1>jCoins</h1> 
+								<h1>{lang}wcf.jcoins.title{/lang}</h1> 
 								<h2>
 									<ul class="dataList">
-										<li>Entwickelt von <a href="http://www.joshsboard.de/">Joshua Rüsweg</a></li>
-										<li><a href="https://github.com/JoshsBoard/de.joshsboard.jcoins">JCoins auf Github</a></li>
+										<li>{lang}wcf.jcoins.copyright.from{/lang}</li>
+										<li>{lang}wcf.jcoins.copyright.github{/lang}</li>
+										<li>{lang}wcf.jcoins.copyright.with{/lang}</li>
 									</ul>
 								</h2>
 							</hgroup>	
@@ -40,8 +41,6 @@
 
 		{event name='additionalPackages'}
 	</div>
-
-	<div class="copyright"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
 
 	{include file='footer' sandbox=false}
 </body>

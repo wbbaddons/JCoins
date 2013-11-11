@@ -96,7 +96,7 @@
 	<p class="info">{lang}wcf.jcoins.premiumgroups.nogroups{/lang}</p>
 	{/hascontent}
 
-	<div class="copyright marginTop"><a href="{link controller='JCoinsCredits'}{/link}">jCoins entwickelt von <strong>Joshua Rüsweg</strong></a></div>
+	<div class="copyright marginTop"><a href="{link controller='JCoinsCredits'}{/link}">{lang}wcf.jcoins.copyright{/lang}</a></div>
 	
 	{include file='footer'}
 
