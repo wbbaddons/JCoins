@@ -63,6 +63,7 @@
 		<!-- PREMIUM GROUPS -->
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.jcoins.premiumgroups.active"><![CDATA[AKTIV]]></item>
+		<item name="wcf.jcoins.premiumgroups.until"><![CDATA[Läuft bis: {$premiumGroup.until|date}]]></item>
 		<item name="wcf.jcoins.premiumgroups.description"><![CDATA[Beschreibung]]></item>
 		<item name="wcf.jcoins.premiumgroups.costs"><![CDATA[Kosten]]></item>
 		<item name="wcf.jcoins.premiumgroups.period"><![CDATA[Laufzeit]]></item>

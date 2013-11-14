@@ -47,7 +47,7 @@
 		{content}
 		{foreach from=$premiumGroups item=premiumGroup}
 			<fieldset>
-				<legend>{$premiumGroup.groupName}{if $premiumGroup.isMember} <span class="badge green">{lang}wcf.jcoins.premiumgroups.active{/lang}</span>{/if}</legend>
+				<legend>{$premiumGroup.groupName}{if $premiumGroup.isMember} <span class="badge green">{lang}wcf.jcoins.premiumgroups.active{/lang}</span> <small>({lang}wcf.jcoins.premiumgroups.until{/lang})</small>{/if}</legend>
 				<div class="container">
 					<ol class="containerList doubleColumned jCoinsPremiumList">
 						{foreach from=$premiumGroup.data item=premium}

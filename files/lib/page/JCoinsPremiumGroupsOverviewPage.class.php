@@ -58,6 +58,7 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 		if (!empty($groupIDs)) {
 			foreach ($groupIDs as $groupID) {
 				$this->premiumGroupList[$groupID]['isMember'] = UserPremiumGroupHandler::getInstance()->isMember($groupID);
+				$this->premiumGroupList[$groupID]['until'] = UserPremiumGroupHandler::getInstance()->getUntil($groupID);
 			}
 		}
 	}
