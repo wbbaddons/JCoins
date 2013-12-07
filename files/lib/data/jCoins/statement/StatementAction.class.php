@@ -20,6 +20,11 @@ class StatementAction extends AbstractDatabaseObjectAction {
 	protected $className = 'wcf\data\jCoins\statement\StatementEditor';
 
 	/**
+	 * @see	wcf\data\AbstractDatabaseObjectAction::$allowGuestAccess
+	 */
+	protected $allowGuestAccess = array('create');
+
+	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::validateCreate()
 	 */
 	public function validateCreate() {
