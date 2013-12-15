@@ -66,7 +66,7 @@ class JCoinsTransferForm extends AbstractForm {
 	 * is the transfer moderate
 	 * @var	boolean
 	 */
-	public $isModerativ = false;
+	public $isModerativ = 0;
 
 	/**
 	 * true if transfer is succeded
@@ -95,7 +95,7 @@ class JCoinsTransferForm extends AbstractForm {
 		if (isset($_POST['sum'])) $this->sum = (int) $_POST['sum'];
 		if (isset($_POST['reason'])) $this->reason = StringUtil::trim($_POST['reason']);
 		if (isset($_POST['username'])) $this->usernames = StringUtil::trim($_POST['username']);
-		if (isset($_POST['isModerativ']) && $_POST['isModerativ'] == 1 && WCF::getSession()->getPermission('mod.jcoins.canModTransfer')) $this->isModerativ = true;
+		if (isset($_POST['isModerativ']) && $_POST['isModerativ'] == 1 && WCF::getSession()->getPermission('mod.jcoins.canModTransfer')) $this->isModerativ = 1;
 
 		if (count(explode(',', $this->usernames)) > 0) {
 			$users = explode(',', $this->usernames);
