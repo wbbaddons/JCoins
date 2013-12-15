@@ -5,7 +5,7 @@
 		<item name="wcf.jcoins.title"><![CDATA[jCoins]]></item>
 		<item name="wcf.jcoins.systemuser"><![CDATA[System]]></item>
 		<item name="wcf.jcoins.summaryOfAccountBalances"><![CDATA[Kontoauszüge zusammengefasst.]]></item>
-		<item name="wcf.jcoins.copyright"><![CDATA[Guthabensystem: jCoins, entwickelt von <strong><a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>JoshsBoard</a></strong>]]></item>
+		<item name="wcf.jcoins.copyright"><![CDATA[<a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Guthabensystem: jCoins, entwickelt von <strong>JoshsBoard</strong></a>]]></item>
 		
 		
 		<!-- STATEMENTS -->
