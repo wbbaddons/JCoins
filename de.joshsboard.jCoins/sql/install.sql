@@ -1,4 +1,4 @@
-DROP TABLE wcf1_user_jcoins_statement;
+DROP TABLE IF EXISTS wcf1_user_jcoins_statement;
 CREATE TABLE wcf1_user_jcoins_statement (
 	entryID			INT(10) 		NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	userID 			INT(10),
@@ -13,7 +13,7 @@ CREATE TABLE wcf1_user_jcoins_statement (
 	KEY executedUser (executedUserID)
 );
 
-DROP TABLE wcf1_user_group_premium;
+DROP TABLE IF EXISTS wcf1_user_group_premium;
 CREATE TABLE wcf1_user_group_premium (
 	premiumGroupID		INT(10)			NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	groupID 		INT(10),
