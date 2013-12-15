@@ -67,7 +67,7 @@
 
 	{hascontent}
 	<nav>
-		<ul id="jCoinsStatementButtonContainer" class="">
+		<ul id="jCoinsStatementButtonContainer">
 			{content}
 		{if $objects|count > 1}<li><a class="button" href="{link controller='SumUpStatements'}{/link}" title="{link controller='SumUpStatements'}{/link}"><span>{lang}wcf.jcoins.statement.compress{/lang}</span></a></li>{/if}
 
@@ -78,7 +78,7 @@
 {/hascontent}
 </div>
 
-<div class="copyright marginTop">{lang}wcf.jcoins.copyright{/lang}</div>
+<address class="copyright marginTop">{lang}wcf.jcoins.copyright{/lang}</address>
 
 {include file='footer'}
 
