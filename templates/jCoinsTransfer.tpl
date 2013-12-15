@@ -96,9 +96,7 @@
 			{@SECURITY_TOKEN_INPUT_TAG}
 		</div>
 	</form>
-
-	<address class="copyright marginTop">{lang}wcf.jcoins.copyright{/lang}</address>
-
+		
 	{include file='footer'}
 
 </body>

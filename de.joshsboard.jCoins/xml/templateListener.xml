@@ -49,5 +49,12 @@
 			<eventname>javascriptInclude</eventname>
 			<templatecode><![CDATA[{include file='__userMassProcessingJcoinsJS'}]]></templatecode>
 		</templatelistener>
+		
+		<templatelistener name="jcoinsCopyright">
+			<environment>user</environment>
+			<templatename>footer</templatename>
+			<eventname>copyright</eventname>
+			<templatecode><![CDATA[{include file='__jcoinsCopyright'}]]></templatecode>
+		</templatelistener>
 	</import>
 </data>

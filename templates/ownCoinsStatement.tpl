@@ -77,9 +77,7 @@
 	</nav>
 	{/hascontent}
 	</div>
-
-	<address class="copyright marginTop">{lang}wcf.jcoins.copyright{/lang}</address>
-
+	
 	{include file='footer'}
 
 </body>
