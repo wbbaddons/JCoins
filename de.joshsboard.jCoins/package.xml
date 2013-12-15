@@ -42,9 +42,9 @@
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.0 Beta 3">
-           	<instruction type="template">files/templates.tar</instruction>
+		<instruction type="template">files/templates.tar</instruction>
 		<instruction type="file">files/files.tar</instruction>
 		<instruction type="acpTemplate">files/acptemplates.tar</instruction>
-            	<instruction type="language">lang/*.xml</instruction>
+		<instruction type="language">lang/*.xml</instruction>
         </instructions>
 </package>
