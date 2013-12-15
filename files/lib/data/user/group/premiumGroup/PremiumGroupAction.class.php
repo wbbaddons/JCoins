@@ -3,7 +3,7 @@ namespace wcf\data\user\group\premiumGroup;
 
 use wcf\data\AbstractDatabaseObjectAction;
 use wcf\data\IToggleAction;
-use wcf\data\jCoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\StatementAction;
 use wcf\data\user\UserEditor;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;

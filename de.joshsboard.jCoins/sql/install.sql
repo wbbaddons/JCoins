@@ -1,5 +1,5 @@
-DROP TABLE wcf1_statement_entrys;
-CREATE TABLE wcf1_statement_entrys (
+DROP TABLE wcf1_user_jcoins_statement;
+CREATE TABLE wcf1_user_jcoins_statement (
 	entryID			INT(10) 		NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	userID 			INT(10),
 	executedUserID		INT(10),

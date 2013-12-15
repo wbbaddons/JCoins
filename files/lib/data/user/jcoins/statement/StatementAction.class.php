@@ -1,5 +1,5 @@
 <?php
-namespace wcf\data\jCoins\statement;
+namespace wcf\data\user\jcoins\statement;
 
 use wcf\data\user\UserEditor;
 use wcf\data\user\User;
@@ -17,7 +17,7 @@ class StatementAction extends AbstractDatabaseObjectAction {
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$className
 	 */
-	protected $className = 'wcf\data\jCoins\statement\StatementEditor';
+	protected $className = 'wcf\data\user\jcoins\statement\StatementEditor';
 
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$allowGuestAccess

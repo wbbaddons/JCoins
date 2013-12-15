@@ -45,7 +45,7 @@ class OwnCoinsStatementPage extends SortablePage {
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
 	 */
-	public $objectListClassName = 'wcf\data\jCoins\statement\StatementList';
+	public $objectListClassName = 'wcf\data\user\jcoins\statement\StatementList';
 
 	/**
 	 * @see	wcf\page\MultipleLinkPage::initObjectList()
@@ -53,7 +53,7 @@ class OwnCoinsStatementPage extends SortablePage {
 	protected function initObjectList() {
 		parent::initObjectList();
 
-		$this->objectList->getConditionBuilder()->add("statement_entrys.userID = ? AND statement_entrys.isTrashed = 0", array(WCF::getUser()->userID));
+		$this->objectList->getConditionBuilder()->add("user_jcoins_statement.userID = ? AND user_jcoins_statement.isTrashed = 0", array(WCF::getUser()->userID));
 	}
 
 }

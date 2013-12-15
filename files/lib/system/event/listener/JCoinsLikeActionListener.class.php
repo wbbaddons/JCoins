@@ -2,7 +2,7 @@
 namespace wcf\system\event\listener;
 
 use wcf\system\event\IEventListener;
-use wcf\data\jCoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\StatementAction;
 use wcf\data\like\object\LikeObject;
 use wcf\data\object\type\ObjectTypeCache;
 use wcf\data\like\Like;

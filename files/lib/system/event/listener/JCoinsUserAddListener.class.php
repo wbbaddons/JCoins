@@ -2,7 +2,7 @@
 namespace wcf\system\event\listener;
 
 use wcf\system\event\IEventListener;
-use wcf\data\jCoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\StatementAction;
 
 /**
  * Adds jCoins on registration

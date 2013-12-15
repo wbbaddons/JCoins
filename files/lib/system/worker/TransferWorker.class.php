@@ -6,7 +6,7 @@ use wcf\system\database\util\PreparedStatementConditionBuilder;
 use wcf\system\exception\SystemException;
 use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
-use wcf\data\jCoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\StatementAction;
 
 /**
  * Worker implementation for transfer jCoins.

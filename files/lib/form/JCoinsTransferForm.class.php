@@ -5,7 +5,7 @@ use wcf\system\exception\UserInputException;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
 use wcf\data\user\UserProfile;
-use wcf\data\jCoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\StatementAction;
 use wcf\system\user\notification\UserNotificationHandler;
 use wcf\system\user\notification\object\JCoinsTransferNotificationObject;
 

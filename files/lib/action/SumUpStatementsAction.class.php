@@ -1,8 +1,8 @@
 <?php
 namespace wcf\action;
 
-use wcf\data\jCoins\statement\StatementAction;
-use wcf\data\jCoins\statement\StatementList;
+use wcf\data\user\jcoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\StatementList;
 use wcf\util\HeaderUtil;
 use wcf\system\exception\PermissionDeniedException;
 use wcf\system\request\LinkHandler;

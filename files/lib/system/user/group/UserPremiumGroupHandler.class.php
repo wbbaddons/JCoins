@@ -29,7 +29,7 @@ class UserPremiumGroupHandler extends SingletonFactory {
 
                 if ($data[WCF::getUser()->userID] === null) {
                         $sql = "SELECT	groupID
-				FROM	wcf" . WCF_N . "_user_to_group_premium
+				FROM	wcf" . WCF_N . "_user_to_group_temp
 				WHERE	userID = ?";
                         $statement = WCF::getDB()->prepareStatement($sql);
                         $statement->execute(array(WCF::getUser()->userID));
@@ -64,7 +64,7 @@ class UserPremiumGroupHandler extends SingletonFactory {
                 if ($this->isMember($groupID)) {
                         if (!isset($this->untils[$groupID])) {
                                 $sql = "SELECT	until
-                                        FROM	wcf" . WCF_N . "_user_to_group_premium
+                                        FROM	wcf" . WCF_N . "_user_to_group_temp
                                         WHERE	userID = ? AND groupID = ?";
                                 $statement = WCF::getDB()->prepareStatement($sql);
                                 $statement->execute(array(WCF::getUser()->userID, $groupID));

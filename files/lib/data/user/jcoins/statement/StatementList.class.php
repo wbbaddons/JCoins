@@ -1,5 +1,5 @@
 <?php
-namespace wcf\data\jCoins\statement;
+namespace wcf\data\user\jcoins\statement;
 
 use wcf\data\DatabaseObjectList;
 
@@ -14,11 +14,11 @@ class StatementList extends DatabaseObjectList {
 	/**
 	 * @see	wcf\data\DatabaseObjectList::$className
 	 */
-	public $className = 'wcf\data\jCoins\statement\Statement';
+	public $className = 'wcf\data\user\jcoins\statement\Statement';
 
 	/**
 	 * @see	wcf\data\DatabaseObjectList::$sqlOrderBy
 	 */
-	public $sqlOrderBy = "statement_entrys.time DESC";
+	public $sqlOrderBy = "user_jcoins_statement.time DESC";
 
 }

@@ -2,8 +2,8 @@
 namespace wcf\system\cronjob;
 
 use wcf\data\cronjob\Cronjob;
-use wcf\data\jCoins\statement\StatementAction;
-use wcf\data\jCoins\statement\StatementList;
+use wcf\data\user\jcoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\StatementList;
 
 /**
  * Removing old statements
@@ -22,8 +22,8 @@ class JCoinsRemoveOldStatementsCronjob extends AbstractCronjob {
 		parent::execute($cronjob);
 
 		$statementList = new StatementList();
-		$statementList->getConditionBuilder()->add('statement_entrys.time < ?', array(TIME_NOW - 86400 * JCOINS_STATEMENTS_DELETEAFTER));
-		if (JCOINS_STATEMENTS_DELETEONLYTRASHED) $statementList->getConditionBuilder()->add('statement_entrys.isTrashed = ?', array(1));
+		$statementList->getConditionBuilder()->add('user_jcoins_statement.time < ?', array(TIME_NOW - 86400 * JCOINS_STATEMENTS_DELETEAFTER));
+		if (JCOINS_STATEMENTS_DELETEONLYTRASHED) $statementList->getConditionBuilder()->add('user_jcoins_statement.isTrashed = ?', array(1));
 		$statementList->readObjects();
 
 		if (!$statementList->count()) return;

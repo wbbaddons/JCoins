@@ -2,21 +2,6 @@
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/cronjob.xsd">
 	<import>
 		<cronjob>
-			<classname>wcf\system\cronjob\JCoinsRemoveUserPremiumCronjob</classname>
-			<description><![CDATA[remove premium user groups]]></description>
-			<description language="de"><![CDATA[Löscht User aus den Premiumbenutzergruppen]]></description>
-			<startminute>0</startminute>
-			<starthour>0</starthour>
-			<startdom>*</startdom>
-			<startmonth>*</startmonth>
-			<startdow>*</startdow>
-			<active>1</active>
-			<canbeedited>0</canbeedited>
-			<canbedisabled>0</canbedisabled>
-			<execmultiple>0</execmultiple>
-		</cronjob>
-		
-		<cronjob>
 			<classname>wcf\system\cronjob\JCoinsRemoveOldStatementsCronjob</classname>
 			<description><![CDATA[remove old statements]]></description>
 			<description language="de"><![CDATA[Löscht alte Kontoauszüge]]></description>

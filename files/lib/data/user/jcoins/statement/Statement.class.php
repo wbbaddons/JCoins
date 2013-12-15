@@ -1,5 +1,5 @@
 <?php
-namespace wcf\data\jCoins\statement;
+namespace wcf\data\user\jcoins\statement;
 
 use wcf\data\DatabaseObject;
 use wcf\data\user\User;
@@ -15,7 +15,7 @@ class Statement extends DatabaseObject {
 	/**
 	 * @see	wcf\data\DatabaseObject::$databaseTableName
 	 */
-	protected static $databaseTableName = 'statement_entrys';
+	protected static $databaseTableName = 'user_jcoins_statement';
 
 	/**
 	 * @see	wcf\data\DatabaseObject::$databaseIndexName

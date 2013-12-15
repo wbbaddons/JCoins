@@ -17,11 +17,11 @@ class JCoinsTransferNotificationObjectType extends AbstractUserNotificationObjec
 	/**
 	 * @see	wcf\system\user\notification\object\type\AbstractUserNotificationObjectType::$objectClassName
 	 */
-	protected static $objectClassName = 'wcf\data\jCoins\statement\Statement';
+	protected static $objectClassName = 'wcf\data\user\jcoins\statement\Statement';
 
 	/**
 	 * @see	wcf\system\user\notification\object\type\AbstractUserNotificationObjectType::$objectListClassName
 	 */
-	protected static $objectListClassName = 'wcf\data\jCoins\statement\StatementList';
-
+	protected static $objectListClassName = 'wcf\data\user\jcoins\statement\StatementList';
+	
 }
