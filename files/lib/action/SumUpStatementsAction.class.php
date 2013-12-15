@@ -40,7 +40,7 @@ class SumUpStatementsAction extends AbstractAction {
 		parent::readParameters();
 
 		$this->statementList = new StatementList();
-		$this->statementList->getConditionBuilder()->add('statement_entrys.userID = ?', array(WCF::getUser()->userID));
+		$this->statementList->getConditionBuilder()->add('user_jcoins_statement.userID = ?', array(WCF::getUser()->userID));
 
 		if ($this->statementList->countObjects() < 2) {
 			throw new PermissionDeniedException();
