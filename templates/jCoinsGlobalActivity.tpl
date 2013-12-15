@@ -77,7 +77,7 @@
 		{/hascontent}
 	</div>
 
-	<div class="copyright marginTop"><a href="{link controller='JCoinsCredits'}{/link}">{lang}wcf.jcoins.copyright{/lang}</a></div>
+	<div class="copyright marginTop">{lang}wcf.jcoins.copyright{/lang}</div>
 
 	{include file='footer' sandbox=false}
 
