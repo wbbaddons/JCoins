@@ -27,7 +27,7 @@ CREATE TABLE wcf1_user_group_premium (
 ALTER TABLE  wcf1_user ADD  jCoinsBalance INT(11) NOT NULL DEFAULT '0';
 
 -- foreign keys
-ALTER TABLE wcf1_statement_entrys ADD FOREIGN KEY (executedUserID) REFERENCES wcf1_user (userID) ON DELETE SET NULL;
-ALTER TABLE wcf1_statement_entrys ADD FOREIGN KEY (userID) REFERENCES wcf1_user (userID) ON DELETE CASCADE;
+ALTER TABLE wcf1_user_jcoins_statement ADD FOREIGN KEY (executedUserID) REFERENCES wcf1_user (userID) ON DELETE SET NULL;
+ALTER TABLE wcf1_user_jcoins_statement ADD FOREIGN KEY (userID) REFERENCES wcf1_user (userID) ON DELETE CASCADE;
 
 ALTER TABLE wcf1_user_group_premium ADD FOREIGN KEY (groupID) REFERENCES wcf1_user_group (groupID) ON DELETE CASCADE;
