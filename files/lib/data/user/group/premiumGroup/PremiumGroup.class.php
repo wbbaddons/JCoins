@@ -42,7 +42,7 @@ class PremiumGroup extends DatabaseObject implements IRouteController {
 	 */
 	public function isDeletable() {
 		$sql = "SELECT	COUNT(*) as count
-			FROM	wcf" . WCF_N . "_user_to_group_premium
+			FROM	wcf" . WCF_N . "_user_to_group_temp
 			WHERE	groupID = ?";
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute(array($this->groupID));
@@ -69,7 +69,7 @@ class PremiumGroup extends DatabaseObject implements IRouteController {
 			$condition->add('userID = ?', array($userID));
 
 			$sql = "SELECT 	COUNT(*)
-				FROM 	wcf" . WCF_N . "_user_to_group_premium "
+				FROM 	wcf" . WCF_N . "_user_to_group_temp "
 				. $condition;
 			$statement = WCF::getDB()->prepareStatement($sql);
 			$statement->execute($condition->getParameters());
