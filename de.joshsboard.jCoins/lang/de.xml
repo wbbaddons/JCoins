@@ -81,8 +81,8 @@
 	
 	<!-- NOTIFICATIONS -->
 	<category name="wcf.user.notification">
-		<item name="wcf.user.notification.de.joshsboard.wcf.jCoins"><![CDATA[jCoins]]></item>
-		<item name="wcf.user.notification.de.joshsboard.wcf.jCoins.transfer.notification.jcoinsTransfer"><![CDATA[Überweisung erhalten]]></item>
+		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins"><![CDATA[jCoins]]></item>
+		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins.transfer.notification.jcoinsTransfer"><![CDATA[Neue Überweisung erhalten]]></item>
 		<item name="wcf.user.notification.jcoins.title"><![CDATA[Überweisung eingegangen]]></item>
 		<item name="wcf.user.notification.jcoins.message"><![CDATA[Hat Ihnen {#$statement->sum} jCoins überwiesen.]]></item>
 		<item name="wcf.user.notification.jcoins.mail"><![CDATA[{@$author->username} hat Ihnen {#$statement->sum} jCoins überwiesen.
