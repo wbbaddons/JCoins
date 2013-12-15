@@ -28,7 +28,7 @@
                 <item name="wcf.jcoins.transfer"><![CDATA[Transfer]]></item>
                 <item name="wcf.jcoins.transfer.info"><![CDATA[Send jCoins to this user.]]></item>
                 <item name="wcf.jcoins.transfer.general"><![CDATA[General Information]]></item>
-                <item name="wcf.jcoins.transfer.moderativDisplay"><![CDATA[Moderativ]]></item>  <!-- BITTE HIER NOCH PRÜFEN -->
+                <item name="wcf.jcoins.transfer.moderativDisplay"><![CDATA[Moderativ]]></item>
                 
                 <!-- TRANSFER ERRORS -->
                 <item name="wcf.jcoins.transfer.error.tooshort"><![CDATA[The reason has to contain at least three characters.]]></item>
@@ -41,10 +41,10 @@
                 <item name="wcf.jcoins.globalactivity.noresults"><![CDATA[There are no activities yet.]]></item>
                 
                 <!-- LIKES -->
-                <item name="wcf.jcoins.statement.like.recive"><![CDATA[Es wurde was von dir geliked.]]></item> <!-- BITTE HIER NOCH PRÜFEN -->
-                <item name="wcf.jcoins.statement.like.revoke"><![CDATA[Es wurde was von dir ungeliked.]]></item> <!-- BITTE HIER NOCH PRÜFEN -->
-                <item name="wcf.jcoins.statement.dislike.recive"><![CDATA[Es wurde was von dir gedisliked.]]></item> <!-- BITTE HIER NOCH PRÜFEN -->
-                <item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[Es wurde was von dir ungedisliked.]]></item> <!-- BITTE HIER NOCH PRÜFEN -->
+                <item name="wcf.jcoins.statement.like.recive"><![CDATA[Someone likes something from you.]]></item>
+                <item name="wcf.jcoins.statement.like.revoke"><![CDATA[Someone likes something not any more from you.]]></item>
+                <item name="wcf.jcoins.statement.dislike.recive"><![CDATA[Someone dislikes something from you.]]></item>
+                <item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[Someone dislikes something not any more from you.]]></item>
                 
                 <!-- CONVERSATIONS -->
                 <item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[You have started a conversation.]]></item>
@@ -111,7 +111,7 @@
                 <item name="wcf.acp.option.module_jcoins_premiumgroups"><![CDATA[Premium group]]></item>
                 <item name="wcf.acp.option.category.jcoins.general"><![CDATA[General]]></item>
                 <item name="wcf.acp.option.jcoins_statements_deleteafter"><![CDATA[Delete statements]]></item> 
-                <item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Set here afer how many days the statements will be deleted.]]></item> <!-- Bin ich mir nicht ganz sicher -->
+                <item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Set here afer how many days the statements will be deleted.]]></item>
                 <item name="wcf.acp.option.jcoins_statements_deleteonlytrashed"><![CDATA[Only delete statements, which the user deleted already.]]></item>
                 <item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[If you activate this, only statements will be deleted which already got combined by a user.]]></item>
                 <item name="wcf.acp.option.category.jcoins.receiveCoins"><![CDATA[Einkünfte]]></item>
