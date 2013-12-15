@@ -5,7 +5,7 @@
 		<item name="wcf.jcoins.title"><![CDATA[jCoins]]></item>
 		<item name="wcf.jcoins.systemuser"><![CDATA[System]]></item>
 		<item name="wcf.jcoins.summaryOfAccountBalances"><![CDATA[Kontoauszüge zusammengefasst.]]></item>
-		<item name="wcf.jcoins.copyright"><![CDATA[jCoins wurde entwickelt von <strong><a href="http://www.joshsboard.de/">Joshua Rüsweg</a></strong>]]></item>
+		<item name="wcf.jcoins.copyright"><![CDATA[Guthabensystem: jCoins, entwickelt von <strong><a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>JoshsBoard</a></strong>]]></item>
 		
 		
 		<!-- STATEMENTS -->
@@ -109,8 +109,6 @@
 		<item name="wcf.acp.option.category.module.jcoins"><![CDATA[jCoins]]></item>
 		<item name="wcf.acp.option.module_jcoins"><![CDATA[jCoins]]></item>
 		<item name="wcf.acp.option.module_jcoins_premiumgroups"><![CDATA[Premiumgruppen]]></item>
-		<item name="wcf.acp.option.jcoins_coins_tax"><![CDATA[tägliche Steuer]]></item>
-		<item name="wcf.acp.option.jcoins_coins_tax.description"><![CDATA[Ist hier ein Wert definiert, wird täglich ein Steuer abgezogen. Der angegebene Wert ist hiertbei der Prozentwert, welcher vom Vermögen abgezogen wird.]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteafter"><![CDATA[Kontoauszüge löschen]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Lege hier fest nach wie vielen Tagen ein Kontoauszug gelöscht werden soll.]]></item>
@@ -160,7 +158,6 @@
 		
 		<!-- MassProcessing -->
 		<item name="wcf.acp.jcoins.massprocessing.addjcoins"><![CDATA[jCoins überweisen]]></item>
-		<item name="wcf.acp.jcoins.massprocessing.general"><![CDATA[Allgemeine Einstellungen]]></item>
 		<item name="wcf.acp.jcoins.massprocessing.fromuser"><![CDATA[Ausführender Benutzer]]></item>
 		<item name="wcf.acp.jcoins.massprocessing.fromuser.system"><![CDATA[Systembenutzer]]></item>
 		<item name="wcf.acp.jcoins.massprocessing.fromuser.own"><![CDATA[eigenes Benutzeraccount]]></item>
