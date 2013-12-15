@@ -50,7 +50,7 @@ class JCoinsPremiumListPage extends SortablePage {
 	protected function initObjectList() {
 		parent::initObjectList();
 
-		$this->objectList->sqlSelects .= "(SELECT COUNT(*) FROM wcf" . WCF_N . "_user_to_group_premium WHERE premiumGroupID = user_group_premium.premiumGroupID) AS members";
+		$this->objectList->sqlSelects .= "(SELECT COUNT(*) FROM wcf" . WCF_N . "_user_to_group_temp WHERE groupID = user_group_premium.premiumGroupID) AS members";
 	}
 
 	/**
