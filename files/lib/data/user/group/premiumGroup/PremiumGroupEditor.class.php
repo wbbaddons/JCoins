@@ -18,7 +18,7 @@ class PremiumGroupEditor extends DatabaseObjectEditor {
 	protected static $baseClass = 'wcf\data\user\group\premiumGroup\PremiumGroup';
 
 	public function insertPremiumGroup() {
-		$sql = "INSERT INTO wcf" . WCF_N . "_user_to_group_premium
+		$sql = "INSERT INTO wcf" . WCF_N . "_user_to_group_temp
                             (userID, groupID, until)
 		VALUES      (?, ?, ?)";
 		$statement = WCF::getDB()->prepareStatement($sql);
@@ -30,7 +30,7 @@ class PremiumGroupEditor extends DatabaseObjectEditor {
 	}
 
 	public function updatePremiumGroup() {
-		$sql = "UPDATE  wcf" . WCF_N . "_user_to_group_premium
+		$sql = "UPDATE  wcf" . WCF_N . "_user_to_group_temp
                 SET     until = (until + ?)
                 WHERE   groupID = ?
                     AND userID = ?";
