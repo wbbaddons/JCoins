@@ -1,0 +1,3 @@
+ALTER TABLE wcf1_statement_entrys RENAME wcf1_user_jcoins_statement;
+
+DROP TABLE wcf1_user_to_group_premium;
