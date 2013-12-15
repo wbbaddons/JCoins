@@ -1,1 +1,1 @@
-<address class="copyright marginTop">{lang}wcf.jcoins.copyright{/lang}</address>
+<address class="copyright">{lang}wcf.jcoins.copyright{/lang}</address>
