@@ -114,18 +114,18 @@
                 <item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Set here afer how many days the statements will be deleted.]]></item>
                 <item name="wcf.acp.option.jcoins_statements_deleteonlytrashed"><![CDATA[Only delete statements, which the user deleted already.]]></item>
                 <item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[If you activate this, only statements will be deleted which already got combined by a user.]]></item>
-                <item name="wcf.acp.option.category.jcoins.receiveCoins"><![CDATA[Einkünfte]]></item>
-                <item name="wcf.acp.option.category.jcoins.receiveCoins.general"><![CDATA[General]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_like"><![CDATA[jCoins for a like]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_like.description"><![CDATA[How many jCoins shall the user get, if an object by him will get liked?]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_dislike"><![CDATA[jCoins for a dislike]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_dislike.description"><![CDATA[How many jCoins shall the user get, if an object by him will get disliked?]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_createconversation"><![CDATA[jCoins for a conversation]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_createconversation.description"><![CDATA[How many jCoins shall the user get, if he starts a new conversation.]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_addconversationreply"><![CDATA[jCoins for an answer in a conversation]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_addconversationreply.description"><![CDATA[How many jCoins shall the user get if he answers a conversation?]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_useradd"><![CDATA[jCoins on join]]></item>
-                <item name="wcf.acp.option.jcoins_receiveCoins_useradd.description"><![CDATA[How many jCoins shall the user get, if he joins the community.]]></item>
+                <item name="wcf.acp.option.category.jcoins.receivecoins"><![CDATA[Einkünfte]]></item>
+                <item name="wcf.acp.option.category.jcoins.receivecoins.general"><![CDATA[General]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_like"><![CDATA[jCoins for a like]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_like.description"><![CDATA[How many jCoins shall the user get, if an object by him will get liked?]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_dislike"><![CDATA[jCoins for a dislike]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_dislike.description"><![CDATA[How many jCoins shall the user get, if an object by him will get disliked?]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_createconversation"><![CDATA[jCoins for a conversation]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_createconversation.description"><![CDATA[How many jCoins shall the user get, if he starts a new conversation.]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_addconversationreply"><![CDATA[jCoins for an answer in a conversation]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_addconversationreply.description"><![CDATA[How many jCoins shall the user get if he answers a conversation?]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_useradd"><![CDATA[jCoins on join]]></item>
+                <item name="wcf.acp.option.jcoins_receivecoins_useradd.description"><![CDATA[How many jCoins shall the user get, if he joins the community.]]></item>
                 <item name="wcf.acp.option.category.jcoins.general"><![CDATA[General]]></item>
         </category>
         
