@@ -12,23 +12,6 @@
 		});
 		//]]>
         </script>
-        <style type="text/css">
-		.premiumButton {
-			z-index: 1;
-		}
-
-		.containerList.doubleColumned > li {
-			height: auto;
-		}
-
-		.jCoinsPremiumList > li > .details > dl > dt {
-			width: 100px;
-		}
-
-		.jCoinsPremiumList > li > .details > dl > dd {
-			margin-left: 110px;
-		}
-        </style>
 </head>
 
 <body id="tpl{$templateName|ucfirst}">
