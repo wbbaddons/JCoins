@@ -1,7 +1,7 @@
 <?php
 namespace wcf\page;
 
-use wcf\data\user\group\premium\PremiumList;
+use wcf\data\user\group\premium\PremiumCache;
 use wcf\page\AbstractPage;
 use wcf\system\user\group\UserPremiumGroupHandler;
 use wcf\system\WCF;
@@ -37,12 +37,10 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	public function readData() {
 		parent::readData();
 
-		$premiumGroupList = new PremiumList();
-		$premiumGroupList->getConditionBuilder()->add("user_group_premium.isDisabled = ?", array(0));
-		$premiumGroupList->readObjects();
-
+		$groups = PremiumCache::getInstance()->getActiveGroups(); 
+		
 		$groupIDs = array();
-		foreach ($premiumGroupList->getObjects() as $premiumGroupID => $premiumGroup) {
+		foreach ($groups as $premiumGroupID => $premiumGroup) {
 			// remove admin groups
 			if ($premiumGroup->getGroup()->isAdminGroup()) continue; 
 			

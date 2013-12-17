@@ -2,6 +2,7 @@
 namespace wcf\data\user\group\premium;
 
 use wcf\data\DatabaseObjectEditor;
+use chat\system\cache\builder\PremiumCacheBuilder; 
 use wcf\system\WCF;
 
 /**
@@ -10,7 +11,7 @@ use wcf\system\WCF;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class PremiumEditor extends DatabaseObjectEditor {
+class PremiumEditor extends DatabaseObjectEditor implements \wcf\data\IEditableCachedObject {
 
 	/**
 	 * @see	\wcf\data\DatabaseObjectDecorator::$baseClass
@@ -42,4 +43,11 @@ class PremiumEditor extends DatabaseObjectEditor {
 		));
 	}
 
+	/**
+	 * clears the premium-group cache
+	 */
+	public static function resetCache() {
+		PremiumCacheBuilder::getInstance()->reset(); 
+	}
+	
 }

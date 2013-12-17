@@ -2,7 +2,7 @@
 namespace wcf\system\event\listener;
 
 use wcf\system\event\IEventListener;
-use wcf\data\user\group\premium\PremiumList;
+use wcf\data\user\group\premium\PremiumCache; 
 use wcf\system\WCF;
 
 /**
@@ -19,11 +19,8 @@ class PremiumMenuListener implements IEventListener {
 	public function execute($eventObj, $className, $eventName) {
 		if (!MODULE_JCOINS || !MODULE_JCOINS_PREMIUMGROUPS) return; 
 		
-		$premiumList = new PremiumList(); 
-		$premiumList->getConditionBuilder()->add("user_group_premium.isDisabled = ?", array(0));
-		
 		WCF::getTPL()->assign(array(
-		    'premiumGroupsAvailable' => ($premiumList->countObjects() > 0) ? true : false
+		    'premiumGroupsAvailable' => (count(PremiumCache::getInstance()->getActiveGroups()) > 0) ? true : false
 		));
 	}
 
