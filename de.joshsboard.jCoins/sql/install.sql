@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS wcf1_user_jcoins_statement;
 CREATE TABLE wcf1_user_jcoins_statement (
 	entryID			INT(10) 		NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	userID 			INT(10),
+	userID 			INT(10)			NOT NULL,
 	executedUserID		INT(10),
 	time 			INT(10)			NOT NULL DEFAULT 0,
 	reason 			VARCHAR(255)		NOT NULL DEFAULT '',
@@ -24,7 +24,7 @@ CREATE TABLE wcf1_user_group_premium (
 	KEY userGroup (groupID)
 );
 
-ALTER TABLE  wcf1_user ADD  jCoinsBalance INT(11) NOT NULL DEFAULT '0';
+ALTER TABLE  wcf1_user ADD  jCoinsBalance INT(10) NOT NULL DEFAULT '0';
 
 -- foreign keys
 ALTER TABLE wcf1_user_jcoins_statement ADD FOREIGN KEY (executedUserID) REFERENCES wcf1_user (userID) ON DELETE SET NULL;
