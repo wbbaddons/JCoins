@@ -4,7 +4,7 @@
 	<title>{lang}wcf.jcoins.premiumgroups.title{/lang} - {PAGE_TITLE|language}</title>
 
 	{include file='headInclude'}
-	<script data-relocate="true" type="text/javascript" src="{@$__wcf->getPath()}js/WCF.JCoins.js"></script>
+	<script data-relocate="true" type="text/javascript" src="{@$__wcf->getPath()}js/WCF.JCoins{if !ENABLE_DEBUG_MODE}.min{/if}.js"></script>
         <script data-relocate="true" type="text/javascript">
 		//<![CDATA[
 		$(function() {
