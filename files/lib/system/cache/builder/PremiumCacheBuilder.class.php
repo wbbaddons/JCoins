@@ -1,5 +1,5 @@
 <?php
-namespace chat\system\cache\builder;
+namespace wcf\system\cache\builder;
 
 use wcf\data\user\group\premium\PremiumList;
 
