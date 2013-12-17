@@ -109,7 +109,6 @@ class PremiumAction extends AbstractDatabaseObjectAction implements IToggleActio
 				'addDefaultGroups' => false,
 				'deleteOldGroups' => false
 			));
-			$action->validateAction(); 
 			$action->executeAction();
 
 			// reset storage
