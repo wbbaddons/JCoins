@@ -9,7 +9,7 @@ use wcf\data\DatabaseObjectList;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class PremiumGroupList extends DatabaseObjectList {
+class PremiumList extends DatabaseObjectList {
 
 	/**
 	 * @see	wcf\data\DatabaseObjectList::$sqlOrderBy

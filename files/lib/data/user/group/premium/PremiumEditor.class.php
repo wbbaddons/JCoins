@@ -10,7 +10,7 @@ use wcf\system\WCF;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class PremiumGroupEditor extends DatabaseObjectEditor {
+class PremiumEditor extends DatabaseObjectEditor {
 
 	/**
 	 * @see	\wcf\data\DatabaseObjectDecorator::$baseClass
