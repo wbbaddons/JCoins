@@ -56,5 +56,12 @@
 			<listenerclassname>wcf\system\event\listener\JCoinsAddMassProcessingListener</listenerclassname>
 			<environment>admin</environment>
 		</eventlistener>
+		
+		<eventlistener>
+			<eventclassname>wcf\page\AbstractPage</eventclassname>
+			<eventname>assignVariables</eventname>
+			<listenerclassname>wcf\system\event\listener\PremiumMenuListener</listenerclassname>
+			<environment>user</environment>
+		</eventlistener>
 	</import>
 </data>

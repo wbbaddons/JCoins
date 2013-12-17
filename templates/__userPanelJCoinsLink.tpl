@@ -4,7 +4,9 @@
 
 		<ul class="dropdownMenu">
 			<li><a href="{link controller='OwnCoinsStatement'}{/link}">{lang}wcf.jcoins.statement.title{/lang}</a></li>
-		{if MODULE_JCOINS_PREMIUMGROUPS}<li><a href="{link controller='JCoinsPremiumGroupsOverview'}{/link}">{lang}wcf.jcoins.premiumgroups.link{/lang}</a></li>{/if}
+		{if MODULE_JCOINS_PREMIUMGROUPS && $premiumGroupsAvailable}
+			<li><a href="{link controller='JCoinsPremiumGroupsOverview'}{/link}">{lang}wcf.jcoins.premiumgroups.link{/lang}</a></li>
+		{/if}
 
 		{event name='additionalJCoinsLinks'}
 
