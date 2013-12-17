@@ -23,7 +23,7 @@ class PremiumMenuListener implements IEventListener {
 		$premiumList->getConditionBuilder()->add("user_group_premium.isDisabled = ?", array(0));
 		
 		WCF::getTPL()->assign(array(
-		    'premiumGroupsAvailable' => ($premiumList->count() > 0) ? true : false
+		    'premiumGroupsAvailable' => ($premiumList->countObjects() > 0) ? true : false
 		));
 	}
 
