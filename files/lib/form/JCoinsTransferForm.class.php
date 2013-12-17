@@ -1,6 +1,7 @@
 <?php
 namespace wcf\form;
 
+use wcf\util\ArrayUtil; 
 use wcf\system\exception\UserInputException;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
@@ -100,10 +101,7 @@ class JCoinsTransferForm extends AbstractForm {
 		if (count(explode(',', $this->usernames)) > 0) {
 			$users = explode(',', $this->usernames);
 
-			foreach ($users AS $user) {
-				$user = StringUtil::trim($user);
-				if (!empty($user)) $this->user[] = UserProfile::getUserProfileByUsername($user);
-			}
+			$this->user = UserProfile::getUserProfilesByUsername(ArrayUtil::trim(explode(',', $this->usernames))); 
 		}
 	}
 
