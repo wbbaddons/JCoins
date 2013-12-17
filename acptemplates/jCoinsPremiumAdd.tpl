@@ -28,7 +28,7 @@
 			<dl{if $errorField == 'jCoins'} class="formError"{/if}>
 				<dt><label for="jCoins">{lang}wcf.acp.jcoins.premiumgroups.jCoins{/lang}</label></dt>
 				<dd>
-					<input type="integer" id="jCoins" name="jCoins" value="{$jCoins}" required="required" autofocus="autofocus" class="medium" />
+					<input type="number" id="jCoins" name="jCoins" value="{$jCoins}" required="required" autofocus="autofocus" class="medium" />
 					{if $errorField == 'jCoins'}
 						<small class="innerError">
 							{if $errorType == 'underZero'}
@@ -42,7 +42,7 @@
 			<dl{if $errorField == 'period'} class="formError"{/if}>
 				<dt><label for="period">{lang}wcf.acp.jcoins.premiumgroups.period{/lang}</label></dt>
 				<dd>
-					<input type="integer" id="period" name="period" value="{$period}" {if $action == 'edit'}readonly="readonly"{/if} class="medium" />
+					<input type="number" id="period" name="period" value="{$period}" {if $action == 'edit'}readonly="readonly"{/if} class="medium" />
 					{if $errorField == 'period'}
 						<small class="innerError">
 							{if $errorType == 'notValid'}
