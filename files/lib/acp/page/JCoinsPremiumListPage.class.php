@@ -37,7 +37,7 @@ class JCoinsPremiumListPage extends SortablePage {
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
 	 */
-	public $objectListClassName = 'wcf\data\user\group\premiumGroup\PremiumGroupList';
+	public $objectListClassName = 'wcf\data\user\group\premium\PremiumList';
 
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$validSortFields
