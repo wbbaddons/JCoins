@@ -43,7 +43,9 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 
 		$groupIDs = array();
 		foreach ($premiumGroupList->getObjects() as $premiumGroupID => $premiumGroup) {
-
+			// remove admin groups
+			if ($premiumGroup->getGroup()->isAdminGroup()) continue; 
+			
 			if (!isset($this->premiumGroupList[$premiumGroup->groupID]['groupName'])) {
 				$this->premiumGroupList[$premiumGroup->groupID]['groupName'] = $premiumGroup->getGroup()->getName();
 			}

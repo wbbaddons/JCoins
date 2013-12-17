@@ -75,6 +75,13 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		// read groups
 		$this->groups = UserGroup::getAccessibleGroups(array(UserGroup::OTHER));
 
+		// remove admin groups
+		foreach ($this->groups as $key => $group) {
+			if ($group->isAdminGroup()) {
+				unset($this->groups[$key]);
+			}
+		}
+		
 		if (empty($this->groups)) {
 			throw new PermissionDeniedException();
 		}

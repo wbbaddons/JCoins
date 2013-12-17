@@ -77,6 +77,11 @@ class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggle
 		foreach ($this->objects as $premiumGroup) {
 			if ($premiumGroup->isDisabled)
 				throw new IllegalLinkException();
+			
+			// admin groups can not be bought
+			if ($premiumGroup->getGroup()->isAdminGroup())
+				throw new PermissionDeniedException(); 
+			
 			if (WCF::getUser()->jCoinsBalance < $premiumGroup->jCoins)
 				throw new PermissionDeniedException();
 		}
