@@ -61,7 +61,7 @@
 			<eventclassname>wcf\page\AbstractPage</eventclassname>
 			<eventname>assignVariables</eventname>
 			<listenerclassname>wcf\system\event\listener\PremiumMenuListener</listenerclassname>
-			<environment>user</environment>
+			<inherit>1</inherit>
 		</eventlistener>
 	</import>
 </data>
