@@ -1,7 +1,7 @@
 <?php
 namespace wcf\data\user\group\premium;
 
-use chat\system\cache\builder\PremiumCacheBuilder;
+use wcf\system\cache\builder\PremiumCacheBuilder;
 
 /**
  * Manages the premium cache
