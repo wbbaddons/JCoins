@@ -44,7 +44,7 @@ WCF.JCoins.Buy = Class.extend({
 
 		this._proxy.setOption('data', {
 			actionName: ($isMember ? 'updateGroup' : 'buyGroup'),
-			className: 'wcf\\data\\user\\group\\premiumGroup\\PremiumGroupAction',
+			className: 'wcf\\data\\user\\group\\premium\\PremiumAction',
 			objectIDs: [$premiumGroupID]
 		});
 

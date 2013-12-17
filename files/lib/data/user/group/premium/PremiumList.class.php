@@ -1,5 +1,5 @@
 <?php
-namespace wcf\data\user\group\premiumGroup;
+namespace wcf\data\user\group\premium;
 
 use wcf\data\DatabaseObjectList;
 

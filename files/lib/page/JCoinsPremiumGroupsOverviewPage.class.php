@@ -1,7 +1,7 @@
 <?php
 namespace wcf\page;
 
-use wcf\data\user\group\premiumGroup\PremiumGroupList;
+use wcf\data\user\group\premium\PremiumList;
 use wcf\page\AbstractPage;
 use wcf\system\user\group\UserPremiumGroupHandler;
 use wcf\system\WCF;
@@ -27,7 +27,7 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 
 	/**
 	 * list of premium-groups
-	 * @var	\wcf\data\jCoins\premiumGroup\PremiumGroupList
+	 * @var	\wcf\data\jCoins\premium\PremiumList
 	 */
 	public $premiumGroupList = null;
 
@@ -37,7 +37,7 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	public function readData() {
 		parent::readData();
 
-		$premiumGroupList = new PremiumGroupList();
+		$premiumGroupList = new PremiumList();
 		$premiumGroupList->getConditionBuilder()->add("user_group_premium.isDisabled = ?", array(0));
 		$premiumGroupList->readObjects();
 

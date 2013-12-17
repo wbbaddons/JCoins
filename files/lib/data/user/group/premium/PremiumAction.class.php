@@ -1,5 +1,5 @@
 <?php
-namespace wcf\data\user\group\premiumGroup;
+namespace wcf\data\user\group\premium;
 
 use wcf\data\AbstractDatabaseObjectAction;
 use wcf\data\IToggleAction;
@@ -16,12 +16,12 @@ use wcf\system\WCF;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class PremiumGroupAction extends AbstractDatabaseObjectAction implements IToggleAction {
+class PremiumAction extends AbstractDatabaseObjectAction implements IToggleAction {
 
 	/**
 	 * @see	\wcf\data\AbstractDatabaseObjectAction::$className
 	 */
-	protected $className = 'wcf\data\user\group\premiumGroup\PremiumGroupEditor';
+	protected $className = 'wcf\data\user\group\premium\PremiumEditor';
 
 	/**
 	 * @see	\wcf\data\AbstractDatabaseObjectAction::$permissionsDelete

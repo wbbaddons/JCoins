@@ -1,5 +1,5 @@
 <?php
-namespace wcf\data\user\group\premiumGroup;
+namespace wcf\data\user\group\premium;
 
 use wcf\data\DatabaseObject;
 use wcf\data\user\group\UserGroup;
@@ -14,7 +14,7 @@ use wcf\system\WCF;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class PremiumGroup extends DatabaseObject implements IRouteController {
+class Premium extends DatabaseObject implements IRouteController {
 
 	/**
 	 * @see	\wcf\data\DatabaseObject::$databaseTableName
