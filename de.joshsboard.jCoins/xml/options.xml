@@ -15,12 +15,12 @@
 				<parent>jcoins</parent>
 			</category>
 			
-			<category name="jcoins.receiveCoins">
+			<category name="jcoins.receivecoins">
 				<parent>jcoins</parent>
 			</category>
 			
-			<category name="jcoins.receiveCoins.general">
-				<parent>jcoins.receiveCoins</parent>
+			<category name="jcoins.receivecoins.general">
+				<parent>jcoins.receivecoins</parent>
 			</category>
 		</categories>
 		<options>
@@ -49,32 +49,32 @@
 				<defaultvalue>0</defaultvalue>
 			</option>
 			
-			<option name="jcoins_receiveCoins_like">
-				<categoryname>jcoins.receiveCoins.general</categoryname>
+			<option name="jcoins_receivecoins_like">
+				<categoryname>jcoins.receivecoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>10</defaultvalue>
 			</option>
 			
-			<option name="jcoins_receiveCoins_dislike">
-				<categoryname>jcoins.receiveCoins.general</categoryname>
+			<option name="jcoins_receivecoins_dislike">
+				<categoryname>jcoins.receivecoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>-5</defaultvalue>
 			</option>
 			
-			<option name="jcoins_receiveCoins_createconversation">
-				<categoryname>jcoins.receiveCoins.general</categoryname>
+			<option name="jcoins_receivecoins_createconversation">
+				<categoryname>jcoins.receivecoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>5</defaultvalue>
 			</option>
 			
-			<option name="jcoins_receiveCoins_addconversationreply">
-				<categoryname>jcoins.receiveCoins.general</categoryname>
+			<option name="jcoins_receivecoins_addconversationreply">
+				<categoryname>jcoins.receivecoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>2</defaultvalue>
 			</option>
 			
-			<option name="jcoins_receiveCoins_useradd">
-				<categoryname>jcoins.receiveCoins.general</categoryname>
+			<option name="jcoins_receivecoins_useradd">
+				<categoryname>jcoins.receivecoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>50</defaultvalue>
 			</option>
