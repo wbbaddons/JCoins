@@ -5,8 +5,8 @@
 		<packagename language="de"><![CDATA[Guthabensystem jCoins]]></packagename>
 		<packagedescription><![CDATA[A credit system for WCF2.]]></packagedescription>
 		<packagedescription language="de"><![CDATA[Ein Guthabensystem für das Woltlab Community Framework.]]></packagedescription>
-		<version>1.0.0</version>
-		<date>2013-12-15</date>
+		<version>1.0.0 pl 1</version>
+		<date>2013-12-17</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -17,7 +17,7 @@
 	<requiredpackages>
 		<requiredpackage minversion="2.0.0 RC 3">com.woltlab.wcf</requiredpackage>
 		<requiredpackage minversion="2.0.0 Beta 9">com.woltlab.wcf.conversation</requiredpackage>
-		<requiredpackage minversion="1.0.0">de.joshsboard.tempusergroup</requiredpackage>
+		<requiredpackage minversion="1.0.0" file="requirements/de.joshsboard.tempusergroup.tar">de.joshsboard.tempusergroup</requiredpackage>
 	</requiredpackages>
 	
 	<instructions type="install">
