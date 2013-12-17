@@ -4,7 +4,7 @@ namespace wcf\data\user\group\premium;
 use wcf\data\AbstractDatabaseObjectAction;
 use wcf\data\IToggleAction;
 use wcf\data\user\jcoins\statement\StatementAction;
-use wcf\data\user\UserEditor;
+use wcf\data\user\UserAction;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
 use wcf\system\user\storage\UserStorageHandler;
@@ -104,9 +104,13 @@ class PremiumAction extends AbstractDatabaseObjectAction implements IToggleActio
 
 			$premiumGroupEditor->insertPremiumGroup();
 
-			$editor = new UserEditor(WCF::getUser());
-			$editor->addToGroup($premiumGroupEditor->groupID);
-			$editor->resetCache();
+			$action = new UserAction(array(WCF::getUser()), 'addToGroups', array(
+				'groups' => array($premiumGroupEditor->groupID),
+				'addDefaultGroups' => false,
+				'deleteOldGroups' => false
+			));
+			$action->validateAction(); 
+			$action->executeAction();
 
 			// reset storage
 			UserStorageHandler::getInstance()->reset(array(WCF::getUser()->userID), 'jCoinsPremiumGroupIDs');
