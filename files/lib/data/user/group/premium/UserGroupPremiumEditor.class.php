@@ -2,7 +2,7 @@
 namespace wcf\data\user\group\premium;
 
 use wcf\data\DatabaseObjectEditor;
-use chat\system\cache\builder\UserGroupPremiumCacheBuilder; 
+use wcf\system\cache\builder\UserGroupPremiumCacheBuilder; 
 use wcf\system\WCF;
 
 /**
