@@ -14,7 +14,7 @@ use wcf\system\WCF;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class Premium extends DatabaseObject implements IRouteController {
+class UserGroupPremium extends DatabaseObject implements IRouteController {
 
 	/**
 	 * @see	\wcf\data\DatabaseObject::$databaseTableName

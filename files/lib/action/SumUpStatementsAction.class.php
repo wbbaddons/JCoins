@@ -1,8 +1,8 @@
 <?php
 namespace wcf\action;
 
-use wcf\data\user\jcoins\statement\StatementAction;
-use wcf\data\user\jcoins\statement\StatementList;
+use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
+use wcf\data\user\jcoins\statement\UserJcoinsStatementList;
 use wcf\util\HeaderUtil;
 use wcf\system\exception\PermissionDeniedException;
 use wcf\system\request\LinkHandler;
@@ -23,13 +23,13 @@ class SumUpStatementsAction extends AbstractAction {
 
 	/**
 	 * statement-action
-	 * @var	wcf\data\jCoins\statement\StatementAction
+	 * @var	wcf\data\jCoins\statement\UserJcoinsStatementAction
 	 */
 	public $statementAction = null;
 
 	/**
 	 * list of statements to sum up
-	 * @var	wcf\data\jCoins\statement\StatementList
+	 * @var	wcf\data\jCoins\statement\UserJcoinsStatementList
 	 */
 	public $statementList = null;
 
@@ -39,7 +39,7 @@ class SumUpStatementsAction extends AbstractAction {
 	public function readParameters() {
 		parent::readParameters();
 
-		$this->statementList = new StatementList();
+		$this->statementList = new UserJcoinsStatementList();
 		$this->statementList->getConditionBuilder()->add('user_jcoins_statement.userID = ?', array(WCF::getUser()->userID));
 
 		if ($this->statementList->countObjects() < 2) {
@@ -56,10 +56,10 @@ class SumUpStatementsAction extends AbstractAction {
 		parent::execute();
 
 		// mark as trashed
-		$this->statementAction = new StatementAction($this->statementList->objectIDs, 'trashAll');
+		$this->statementAction = new UserJcoinsStatementAction($this->statementList->objectIDs, 'trashAll');
 		$this->statementAction->executeAction();
 
-		$this->statementAction = new StatementAction(array(), 'create', array(
+		$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 		    'data' => array(
 			'reason' => 'wcf.jcoins.summaryOfAccountBalances',
 			'sum' => WCF::getUser()->jCoinsBalance,

@@ -9,11 +9,11 @@ use wcf\data\DatabaseObjectEditor;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class StatementEditor extends DatabaseObjectEditor {
+class UserJcoinsStatementEditor extends DatabaseObjectEditor {
 
 	/**
 	 * @see	wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
-	protected static $baseClass = 'wcf\data\user\jcoins\statement\Statement';
+	protected static $baseClass = 'wcf\data\user\jcoins\statement\UserJcoinsStatement';
 
 }

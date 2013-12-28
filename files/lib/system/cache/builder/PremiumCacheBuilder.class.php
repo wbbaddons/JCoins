@@ -1,7 +1,7 @@
 <?php
 namespace chat\system\cache\builder;
 
-use wcf\data\user\group\premium\PremiumList;
+use wcf\data\user\group\premium\UserGroupPremiumList;
 
 /**
  * Caches the Premium groups
@@ -10,12 +10,12 @@ use wcf\data\user\group\premium\PremiumList;
  * @package        de.joshsboard.jcoins
  * @subpackage        system.cache.builder
  */
-class PremiumCacheBuilder extends \wcf\system\cache\builder\AbstractCacheBuilder {
+class UserGroupPremiumCacheBuilder extends \wcf\system\cache\builder\AbstractCacheBuilder {
         /**
          * @see wcf\system\cache\AbstractCacheBuilder::rebuild()
          */
         public function rebuild(array $parameters) {
-                $premiumList = new PremiumList(); 
+                $premiumList = new UserGroupPremiumList(); 
 		
 		if (isset($parameters['onlyActive']) && $parameters['onlyActive'])
 			$premiumList->getConditionBuilder()->add("user_group_premium.isDisabled = ?", array(0));

@@ -2,7 +2,7 @@
 namespace wcf\system\event\listener;
 
 use wcf\system\event\IEventListener;
-use wcf\data\user\jcoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
 use wcf\data\like\object\LikeObject;
 use wcf\data\object\type\ObjectTypeCache;
 use wcf\data\like\Like;
@@ -42,7 +42,7 @@ class JCoinsLikeActionListener implements IEventListener {
 		switch ($returnValues['oldValue']) {
 			case Like::LIKE:
 				if (JCOINS_RECEIVECOINS_LIKE != 0) {
-					$this->statementAction = new StatementAction(array(), 'create', array(
+					$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 					    'data' => array(
 						'userID' => $like->objectUserID,
 						'reason' => 'wcf.jcoins.statement.like.revoke',
@@ -57,7 +57,7 @@ class JCoinsLikeActionListener implements IEventListener {
 
 			case Like::DISLIKE:
 				if (JCOINS_RECEIVECOINS_DISLIKE != 0) {
-					$this->statementAction = new StatementAction(array(), 'create', array(
+					$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 					    'data' => array(
 						'userID' => $like->objectUserID,
 						'reason' => 'wcf.jcoins.statement.dislike.revoke',
@@ -74,7 +74,7 @@ class JCoinsLikeActionListener implements IEventListener {
 		switch ($returnValues['newValue']) {
 			case Like::LIKE:
 				if (JCOINS_RECEIVECOINS_LIKE != 0) {
-					$this->statementAction = new StatementAction(array(), 'create', array(
+					$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 					    'data' => array(
 						'userID' => $like->objectUserID,
 						'reason' => 'wcf.jcoins.statement.like.recive',
@@ -89,7 +89,7 @@ class JCoinsLikeActionListener implements IEventListener {
 
 			case Like::DISLIKE:
 				if (JCOINS_RECEIVECOINS_DISLIKE != 0) {
-					$this->statementAction = new StatementAction(array(), 'create', array(
+					$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 					    'data' => array(
 						'userID' => $like->objectUserID,
 						'reason' => 'wcf.jcoins.statement.dislike.recive',

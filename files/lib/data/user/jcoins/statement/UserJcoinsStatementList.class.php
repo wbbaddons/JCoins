@@ -9,12 +9,12 @@ use wcf\data\DatabaseObjectList;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class StatementList extends DatabaseObjectList {
+class UserJcoinsStatementList extends DatabaseObjectList {
 
 	/**
 	 * @see	wcf\data\DatabaseObjectList::$className
 	 */
-	public $className = 'wcf\data\user\jcoins\statement\Statement';
+	public $className = 'wcf\data\user\jcoins\statement\UserJcoinsStatement';
 
 	/**
 	 * @see	wcf\data\DatabaseObjectList::$sqlOrderBy

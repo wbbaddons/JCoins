@@ -2,7 +2,7 @@
 namespace wcf\data\user\group\premium;
 
 use wcf\data\DatabaseObjectEditor;
-use chat\system\cache\builder\PremiumCacheBuilder; 
+use chat\system\cache\builder\UserGroupPremiumCacheBuilder; 
 use wcf\system\WCF;
 
 /**
@@ -11,12 +11,12 @@ use wcf\system\WCF;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class PremiumEditor extends DatabaseObjectEditor implements \wcf\data\IEditableCachedObject {
+class UserGroupPremiumEditor extends DatabaseObjectEditor implements \wcf\data\IEditableCachedObject {
 
 	/**
 	 * @see	\wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
-	protected static $baseClass = 'wcf\data\user\group\premium\Premium';
+	protected static $baseClass = 'wcf\data\user\group\premium\UserGroupPremium';
 
 	public function insertPremiumGroup() {
 		$sql = "INSERT INTO wcf" . WCF_N . "_user_to_group_temp
@@ -47,7 +47,7 @@ class PremiumEditor extends DatabaseObjectEditor implements \wcf\data\IEditableC
 	 * clears the premium-group cache
 	 */
 	public static function resetCache() {
-		PremiumCacheBuilder::getInstance()->reset(); 
+		UserGroupPremiumCacheBuilder::getInstance()->reset(); 
 	}
 	
 }

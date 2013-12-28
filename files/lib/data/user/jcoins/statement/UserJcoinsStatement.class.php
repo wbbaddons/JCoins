@@ -10,7 +10,7 @@ use wcf\data\user\User;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class Statement extends DatabaseObject {
+class UserJcoinsStatement extends DatabaseObject {
 
 	/**
 	 * @see	wcf\data\DatabaseObject::$databaseTableName

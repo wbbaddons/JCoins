@@ -1,7 +1,7 @@
 <?php
 namespace wcf\data\user\group\premium;
 
-use chat\system\cache\builder\PremiumCacheBuilder;
+use chat\system\cache\builder\UserGroupPremiumCacheBuilder;
 
 /**
  * Manages the premium cache
@@ -9,7 +9,7 @@ use chat\system\cache\builder\PremiumCacheBuilder;
  * @author         Joshua Rüsweg
  * @package        de.joshsboard.jcoins
  */
-class PremiumCache extends \wcf\system\SingletonFactory {
+class UserGroupPremiumCache extends \wcf\system\SingletonFactory {
 	/**
 	 * list of cached rooms
 	 * @var        array<wcf\data\user\group\premium>
@@ -25,15 +25,15 @@ class PremiumCache extends \wcf\system\SingletonFactory {
 	 * @see        wcf\system\SingletonFactory::init()
 	 */
 	protected function init() {
-		$this->groups = PremiumCacheBuilder::getInstance()->getData();
-		$this->active_groups = PremiumCacheBuilder::getInstance()->getData(array('onlyActive' => true));
+		$this->groups = UserGroupPremiumCacheBuilder::getInstance()->getData();
+		$this->active_groups = UserGroupPremiumCacheBuilder::getInstance()->getData(array('onlyActive' => true));
 	}
 	
 	/**
          * Returns a specific group
          * 
          * @param        integer                $groupID
-         * @return        wcf\data\user\group\premium\Premium
+         * @return        wcf\data\user\group\premium\UserGroupPremium
          */
 	public function getGroup($groupID) {
 		if (isset($this->groups[$groupID]))
@@ -46,7 +46,7 @@ class PremiumCache extends \wcf\system\SingletonFactory {
          * Returns all groups
          * 
          * @param        integer                $groupID
-         * @return        array<wcf\data\user\group\premium\Premium>
+         * @return        array<wcf\data\user\group\premium\UserGroupPremium>
          */
 	public function getGroups() {
 		return $this->groups; 
@@ -56,7 +56,7 @@ class PremiumCache extends \wcf\system\SingletonFactory {
          * Returns all active groups
          * 
          * @param        integer                $groupID
-         * @return        array<wcf\data\user\group\premium\Premium>
+         * @return        array<wcf\data\user\group\premium\UserGroupPremium>
          */
 	public function getActiveGroups() {
 		return $this->active_groups; 

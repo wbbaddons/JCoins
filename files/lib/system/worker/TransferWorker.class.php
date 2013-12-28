@@ -6,7 +6,7 @@ use wcf\system\database\util\PreparedStatementConditionBuilder;
 use wcf\system\exception\SystemException;
 use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
-use wcf\data\user\jcoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
 
 /**
  * Worker implementation for transfer jCoins.
@@ -110,7 +110,7 @@ class TransferWorker extends AbstractWorker {
 		while ($row = $statement->fetchArray()) {
 			$user = new User(null, $row);
 
-			$this->statementAction = new StatementAction(array(), 'create', array(
+			$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 			    'data' => array(
 				'reason' => $this->transferData['reason'],
 				'sum' => $this->transferData['sum'],

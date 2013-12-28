@@ -16,12 +16,12 @@ use wcf\system\WCF;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class PremiumAction extends AbstractDatabaseObjectAction implements IToggleAction {
+class UserGroupPremiumAction extends AbstractDatabaseObjectAction implements IToggleAction {
 
 	/**
 	 * @see	\wcf\data\AbstractDatabaseObjectAction::$className
 	 */
-	protected $className = 'wcf\data\user\group\premium\PremiumEditor';
+	protected $className = 'wcf\data\user\group\premium\UserGroupPremiumEditor';
 
 	/**
 	 * @see	\wcf\data\AbstractDatabaseObjectAction::$permissionsDelete

@@ -1,8 +1,8 @@
 <?php
 namespace wcf\acp\form;
 
-use wcf\data\user\group\premium\PremiumAction;
-use wcf\data\user\group\premium\PremiumEditor;
+use wcf\data\user\group\premium\UserGroupPremiumAction;
+use wcf\data\user\group\premium\UserGroupPremiumEditor;
 use wcf\data\user\group\UserGroup;
 use wcf\form\AbstractForm;
 use wcf\system\exception\PermissionDeniedException;
@@ -132,7 +132,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public function save() {
 		parent::save();
 
-		$this->objectAction = new PremiumAction(array(), 'create', array(
+		$this->objectAction = new UserGroupPremiumAction(array(), 'create', array(
 		    'data' => array(
 			'groupID' => $this->groupID,
 			'jCoins' => $this->jCoins,
@@ -152,7 +152,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 				I18nHandler::getInstance()->save('description', $updateData['description'], 'wcf.jcoins');
 			}
 			// update name
-			$editor = new PremiumEditor($returnValues['returnValues']);
+			$editor = new UserGroupPremiumEditor($returnValues['returnValues']);
 			$editor->update($updateData);
 		}
 

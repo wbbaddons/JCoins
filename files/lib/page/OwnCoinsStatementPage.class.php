@@ -45,7 +45,7 @@ class OwnCoinsStatementPage extends SortablePage {
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
 	 */
-	public $objectListClassName = 'wcf\data\user\jcoins\statement\StatementList';
+	public $objectListClassName = 'wcf\data\user\jcoins\statement\UserJcoinsStatementList';
 
 	/**
 	 * @see	wcf\page\MultipleLinkPage::initObjectList()

@@ -1,8 +1,8 @@
 <?php
 namespace wcf\acp\form;
 
-use wcf\data\user\group\premium\Premium;
-use wcf\data\user\group\premium\PremiumAction;
+use wcf\data\user\group\premium\UserGroupPremium;
+use wcf\data\user\group\premium\UserGroupPremiumAction;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\language\I18nHandler;
 use wcf\system\WCF;
@@ -33,7 +33,7 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 
 	/**
 	 * premium group
-	 * @var	\wcf\data\jCoins\premium\Premium
+	 * @var	\wcf\data\jCoins\premium\UserGroupPremium
 	 */
 	public $premiumGroup = null;
 
@@ -51,7 +51,7 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 
 		if (isset($_REQUEST['id']))
 			$this->premiumGroupID = intval($_REQUEST['id']);
-		$this->premiumGroup = new Premium($this->premiumGroupID);
+		$this->premiumGroup = new UserGroupPremium($this->premiumGroupID);
 
 		if (!$this->premiumGroup->premiumGroupID)
 			throw new IllegalLinkException();
@@ -86,7 +86,7 @@ class JCoinsPremiumEditForm extends JCoinsPremiumAddForm {
 		}
 
 		// update premiumgroup
-		$this->objectAction = new PremiumAction(array($this->premiumGroup), 'update', array(
+		$this->objectAction = new UserGroupPremiumAction(array($this->premiumGroup), 'update', array(
 		    'data' => array(
 			'jCoins' => $this->jCoins,
 			'description' => $description

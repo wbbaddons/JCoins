@@ -6,7 +6,7 @@ use wcf\system\exception\UserInputException;
 use wcf\system\WCF;
 use wcf\util\StringUtil;
 use wcf\data\user\UserProfile;
-use wcf\data\user\jcoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
 use wcf\system\user\notification\UserNotificationHandler;
 use wcf\system\user\notification\object\JCoinsTransferNotificationObject;
 
@@ -153,7 +153,7 @@ class JCoinsTransferForm extends AbstractForm {
 		parent::save();
 
 		foreach ($this->user AS $user) {
-			$this->statementAction = new StatementAction(array(), 'create', array(
+			$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 			    'data' => array(
 				'reason' => $this->reason,
 				'sum' => $this->sum,
@@ -169,7 +169,7 @@ class JCoinsTransferForm extends AbstractForm {
 			UserNotificationHandler::getInstance()->fireEvent('jCoinsTransfer', 'de.joshsboard.wcf.jcoins.transfer.notification', new JCoinsTransferNotificationObject($return['returnValues']), array($user->userID));
 
 			if (!$this->isModerativ) {
-				$this->statementAction = new StatementAction(array(), 'create', array(
+				$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 				    'data' => array(
 					'reason' => $this->reason,
 					'sum' => $this->sum * -1,

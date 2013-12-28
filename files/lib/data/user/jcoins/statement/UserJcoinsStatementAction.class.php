@@ -12,12 +12,12 @@ use wcf\system\WCF;
  * @author	Joshua Rüsweg
  * @package	de.joshsboard.jcoins
  */
-class StatementAction extends AbstractDatabaseObjectAction {
+class UserJcoinsStatementAction extends AbstractDatabaseObjectAction {
 
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$className
 	 */
-	protected $className = 'wcf\data\user\jcoins\statement\StatementEditor';
+	protected $className = 'wcf\data\user\jcoins\statement\UserJcoinsStatementEditor';
 
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$allowGuestAccess

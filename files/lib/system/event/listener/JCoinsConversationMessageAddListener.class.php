@@ -2,7 +2,7 @@
 namespace wcf\system\event\listener;
 
 use wcf\system\event\IEventListener;
-use wcf\data\user\jcoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
 
 /**
  * Adds jCoins on create a conversation message
@@ -22,7 +22,7 @@ class JCoinsConversationMessageAddListener implements IEventListener {
 		$parameters = $eventObj->getParameters();
 		if (isset($parameters['isFirstPost'])) return;
 
-		$this->statementAction = new StatementAction(array(), 'create', array(
+		$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 		    'data' => array(
 			'reason' => 'wcf.jcoins.statement.conversationreplyadd.recive',
 			'sum' => JCOINS_RECEIVECOINS_ADDCONVERSATIONREPLY
