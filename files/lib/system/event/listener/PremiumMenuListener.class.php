@@ -2,7 +2,7 @@
 namespace wcf\system\event\listener;
 
 use wcf\system\event\IEventListener;
-use wcf\data\user\group\premium\PremiumCache; 
+use wcf\data\user\group\premium\UserGroupPremiumCache; 
 use wcf\system\WCF;
 
 /**
@@ -20,7 +20,7 @@ class PremiumMenuListener implements IEventListener {
 		if (!MODULE_JCOINS || !MODULE_JCOINS_PREMIUMGROUPS) return; 
 		
 		WCF::getTPL()->assign(array(
-		    'premiumGroupsAvailable' => (count(PremiumCache::getInstance()->getActiveGroups()) > 0) ? true : false
+		    'premiumGroupsAvailable' => (count(UserGroupPremiumCache::getInstance()->getActiveGroups()) > 0) ? true : false
 		));
 	}
 
