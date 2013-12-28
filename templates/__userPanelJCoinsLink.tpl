@@ -1,6 +1,9 @@
 {if MODULE_JCOINS && $__wcf->user->userID}
 	<li id="jCoinsUserPanelLink" class="dropdown">
-		<a class="dropdownToggle framed" data-toggle="userMenu" href="{link controller='OwnCoinsStatement'}{/link}"><span>{lang}wcf.jcoins.title{/lang}</span> <span class="badge badgeInverse">{#$__wcf->user->jCoinsBalance}</span></a>
+		<a class="dropdownToggle" data-toggle="userMenu" href="{link controller='OwnCoinsStatement'}{/link}">
+			<span class="icon icon16 icon-money"></span>
+			<span>{lang}wcf.jcoins.title{/lang}</span> <span class="badge badgeInverse">{#$__wcf->user->jCoinsBalance}</span>
+		</a>
 
 		<ul class="dropdownMenu">
 			<li><a href="{link controller='OwnCoinsStatement'}{/link}">{lang}wcf.jcoins.statement.title{/lang}</a></li>
