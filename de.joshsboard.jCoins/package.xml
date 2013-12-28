@@ -5,8 +5,8 @@
 		<packagename language="de"><![CDATA[Guthabensystem jCoins]]></packagename>
 		<packagedescription><![CDATA[A credit system for WCF2.]]></packagedescription>
 		<packagedescription language="de"><![CDATA[Ein Guthabensystem für das Woltlab Community Framework.]]></packagedescription>
-		<version>1.0.0 pl 1</version>
-		<date>2013-12-17</date>
+		<version>1.0.1</version>
+		<date>2013-12-28</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -41,5 +41,10 @@
                 
 		<!-- lng -->
 		<instruction type="language">lang/*.xml</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.0 pl 1">
+		<instruction type="file">files/files.tar</instruction>
+		<instruction type="template">files/templates.tar</instruction>
 	</instructions>
 </package>
