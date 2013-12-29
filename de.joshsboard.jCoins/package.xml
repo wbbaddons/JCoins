@@ -4,7 +4,7 @@
 		<packagename><![CDATA[Creditsystem jCoins]]></packagename>
 		<packagename language="de"><![CDATA[Guthabensystem jCoins]]></packagename>
 		<packagedescription><![CDATA[A credit system for WCF2.]]></packagedescription>
-		<packagedescription language="de"><![CDATA[Ein Guthabensystem für das Woltlab Community Framework.]]></packagedescription>
+		<packagedescription language="de"><![CDATA[Ein Guthabensystem für das Woltlab Community Framework 2.]]></packagedescription>
 		<version>1.0.1</version>
 		<date>2013-12-28</date>
 	</packageinformation>
