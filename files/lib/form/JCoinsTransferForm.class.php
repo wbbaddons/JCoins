@@ -32,7 +32,7 @@ class JCoinsTransferForm extends AbstractForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$neededModules
 	 */
-	//public $neededModules = array('MODULE_JCOINS');
+	public $neededModules = array('MODULE_JCOINS');
 
 	/**
 	 * @see	wcf\page\AbstractPage::$neededPermissions
