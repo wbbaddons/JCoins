@@ -1,7 +1,7 @@
 <?php
 namespace wcf\page;
 
-use wcf\data\user\group\premium\PremiumCache;
+use wcf\data\user\group\premium\UserGroupPremiumCache;
 use wcf\page\AbstractPage;
 use wcf\system\user\group\UserPremiumGroupHandler;
 use wcf\system\WCF;
@@ -37,7 +37,7 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	public function readData() {
 		parent::readData();
 
-		$groups = PremiumCache::getInstance()->getActiveGroups(); 
+		$groups = UserGroupPremiumCache::getInstance()->getActiveGroups(); 
 		
 		$groupIDs = array();
 		foreach ($groups as $premiumGroupID => $premiumGroup) {
