@@ -3,6 +3,7 @@ namespace wcf\system\event\listener;
 
 use wcf\system\event\IEventListener;
 use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
+use wcf\system\WCF;
 
 /**
  * Adds jCoins on create a conversation
