@@ -38,9 +38,15 @@ class UserJcoinsStatementAction extends AbstractDatabaseObjectAction {
 		if (!$this->parameters['data']['time']) {
 			$this->parameters['data']['time'] = TIME_NOW;
 		}
+		
 		if (!$this->parameters['data']['userID']) {
 			$this->parameters['data']['userID'] = WCF::getUser()->userID;
 		}
+		
+		if ($this->parameters['data']['userID'] == 0) {
+			throw new UserInputException('userID');
+		}
+		
 		if ($this->parameters['data']['executedUserID'] == 0) {
 			$this->parameters['data']['executedUserID'] = null;
 		}

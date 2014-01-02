@@ -18,7 +18,10 @@ class JCoinsConversationAddListener implements IEventListener {
 	public function execute($eventObj, $className, $eventName) {
 		if (!MODULE_CONVERSATION || !MODULE_JCOINS || JCOINS_RECEIVECOINS_CREATECONVERSATION == 0) return;
 		if ($eventObj->getActionName() != 'create') return;
-
+		
+		// catch 3rdparty plugins, which creates Conversations without an logged in user
+		if (WCF::getUser()->userID == 0) return; 
+		
 		$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 		    'data' => array(
 			'reason' => 'wcf.jcoins.statement.conversationadd.recive',

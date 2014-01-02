@@ -19,6 +19,9 @@ class JCoinsConversationMessageAddListener implements IEventListener {
 		if (!MODULE_CONVERSATION || !MODULE_JCOINS || JCOINS_RECEIVECOINS_ADDCONVERSATIONREPLY == 0) return;
 		if ($eventObj->getActionName() != 'create' && $eventObj->getActionName() != 'quickReply') return;
 
+		// catch 3rdparty plugins, which creates Conversations without an logged in user
+		if (WCF::getUser()->userID == 0) return; 
+		
 		$parameters = $eventObj->getParameters();
 		if (isset($parameters['isFirstPost'])) return;
 
