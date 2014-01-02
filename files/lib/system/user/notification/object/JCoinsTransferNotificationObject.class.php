@@ -15,7 +15,7 @@ class JCoinsTransferNotificationObject extends DatabaseObjectDecorator implement
 	/**
 	 * @see	wcf\data\DatabaseObjectDecorator::$baseClass
 	 */
-	protected static $baseClass = 'wcf\data\user\jcoins\statement\Statement';
+	protected static $baseClass = 'wcf\data\user\jcoins\statement\UserJcoinsStatement';
 
 	/**
 	 * @see	wcf\system\user\notification\object\IUserNotificationObject::getTitle()
