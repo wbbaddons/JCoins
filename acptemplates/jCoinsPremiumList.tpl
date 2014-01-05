@@ -6,8 +6,8 @@
 	<script data-relocate="true" type="text/javascript">
 		//<![CDATA[
 		$(function() {
-			new WCF.Action.Delete('wcf\\data\\user\\group\\premium\\PremiumAction', '.jsJCPRow');
-			new WCF.Action.Toggle('wcf\\data\\user\\group\\premium\\PremiumAction', $('.jsJCPRow'));
+			new WCF.Action.Delete('wcf\\data\\user\\group\\premium\\UserGroupPremiumAction', '.jsJCPRow');
+			new WCF.Action.Toggle('wcf\\data\\user\\group\\premium\\UserGroupPremiumAction', $('.jsJCPRow'));
 		});
 		//]]>
 	</script>
