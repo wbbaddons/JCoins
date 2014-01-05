@@ -50,10 +50,12 @@
 	<instructions type="update" fromversion="1.0.0 pl 1">
 		<instruction type="file">files/files.tar</instruction>
 		<instruction type="template">files/templates.tar</instruction>
+		<instruction type="acpTemplate">files/acptemplates.tar</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.1">
 		<instruction type="file">files/files.tar</instruction>
 		<instruction type="template">files/templates.tar</instruction>
+		<instruction type="acpTemplate">files/acptemplates.tar</instruction>
 	</instructions>
 </package>
