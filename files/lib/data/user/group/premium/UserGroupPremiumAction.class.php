@@ -3,7 +3,7 @@ namespace wcf\data\user\group\premium;
 
 use wcf\data\AbstractDatabaseObjectAction;
 use wcf\data\IToggleAction;
-use wcf\data\user\jcoins\statement\StatementAction;
+use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
 use wcf\data\user\UserAction;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
@@ -92,7 +92,7 @@ class UserGroupPremiumAction extends AbstractDatabaseObjectAction implements ITo
 	 */
 	public function buyGroup() {
 		foreach ($this->objects as $premiumGroupEditor) {
-			$this->statementAction = new StatementAction(array(), 'create', array(
+			$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 			    'data' => array(
 				'reason' => 'wcf.jcoins.premiumgroups.statement.buy',
 				'sum' => -$premiumGroupEditor->jCoins,
@@ -122,7 +122,7 @@ class UserGroupPremiumAction extends AbstractDatabaseObjectAction implements ITo
 
 	public function updateGroup() {
 		foreach ($this->objects as $premiumGroupEditor) {
-			$this->statementAction = new StatementAction(array(), 'create', array(
+			$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 			    'data' => array(
 				'reason' => 'wcf.jcoins.premiumgroups.statement.update',
 				'sum' => -$premiumGroupEditor->jCoins,
