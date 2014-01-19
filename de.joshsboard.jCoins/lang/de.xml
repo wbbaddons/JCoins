@@ -113,7 +113,7 @@
 		<item name="wcf.acp.option.jcoins_statements_deleteafter"><![CDATA[Kontoauszüge löschen]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Lege hier fest nach wie vielen Tagen ein Kontoauszug gelöscht werden soll.]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed"><![CDATA[Nur vom Benutzer gelöschte Kontoauszüge löschen]]></item>
-		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[Aktivierst du diese Option, werden nur Kontoauszüge gelöscht, welche bereits vom Benutzer durch "Kontoauszüge kombremieren" gelöscht worden sind.]]></item>
+		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[Aktivierst du diese Option, werden nur Kontoauszüge gelöscht, welche bereits vom Benutzer durch "Kontoauszüge zusammenfassen" gelöscht worden sind.]]></item>
 		<item name="wcf.acp.option.category.jcoins.receivecoins"><![CDATA[Einkünfte]]></item>
 		<item name="wcf.acp.option.category.jcoins.receivecoins.general"><![CDATA[Allgemein]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_like"><![CDATA[jCoins für einen Like]]></item>
