@@ -24,7 +24,7 @@ class JCoinsUserAddListener implements IEventListener {
 		$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 		    'data' => array(
 			'userID' => $return['returnValues']->userID,
-			'reason' => 'wcf.jcoins.statement.useradd.recive',
+			'reason' => 'wcf.jcoins.statement.useradd.receive',
 			'sum' => JCOINS_RECEIVECOINS_USERADD
 		    ),
 		    'changeBalance' => 1
