@@ -28,6 +28,13 @@
 			<listenerclassname>wcf\system\event\listener\JCoinsUserAddListener</listenerclassname>
 		</eventlistener>
 		
+		<!-- clear cache -->
+		<eventlistener>
+			<eventclassname>wcf\system\cronjob\RemoveUserFromGroupCronjob</eventclassname>
+			<eventname>executed</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsClearPremiumGroupCacheListener</listenerclassname>
+		</eventlistener>
+		
 		<!-- UserMassProcessing --> 
 		<eventlistener>
 			<eventclassname>wcf\acp\form\UserBulkProcessingForm</eventclassname>
