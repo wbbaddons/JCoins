@@ -32,7 +32,7 @@ class JCoinsAddMassProcessingListener implements IEventListener {
 				
 				$eventObj->availableActions[] = "addJCoins";
 				
-				if ($eventObj->reason == "") {
+				if (empty($eventObj->reason)) {
 					throw new UserInputException('reason');
 				}
 				break;
