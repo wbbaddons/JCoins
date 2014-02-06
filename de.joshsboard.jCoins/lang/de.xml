@@ -154,7 +154,9 @@
 		<item name="wcf.acp.jcoins.period"><![CDATA[Dauer]]></item>
 		<item name="wcf.acp.jcoins.members"><![CDATA[Mitglieder]]></item>
 		<item name="wcf.acp.jcoins.group"><![CDATA[Benutzergruppe]]></item>
-		
+		<item name="wcf.acp.jcoins.groupsettings"><![CDATA[Benutzergruppeneinstellung]]></item>
+		<item name="wcf.acp.jcoins.underzero"><![CDATA[Die Gruppe muss mindestens 1 JCoin kosten.]]></item>
+		<item name="wcf.acp.jcoins.period.invalid"><![CDATA[Die Dauer muss in ganzen Tagen eingegeben werden.]]></item>
 		
 		<!-- MassProcessing -->
 		<item name="wcf.acp.jcoins.massprocessing.addjcoins"><![CDATA[jCoins überweisen]]></item>

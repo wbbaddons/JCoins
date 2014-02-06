@@ -23,7 +23,7 @@
 <form method="post" action="{if $action == 'add'}{link controller='JCoinsPremiumAdd'}{/link}{else}{link controller='JCoinsPremiumEdit' object=$premiumGroup}{/link}{/if}">
 	<div class="container containerPadding marginTop">
 		<fieldset>
-			<legend>Benutzergruppeneinstellung</legend>
+			<legend>{lang}wcf.acp.jcoins.groupsettings{/lang}</legend>
 
 			<dl{if $errorField == 'jCoins'} class="formError"{/if}>
 				<dt><label for="jCoins">{lang}wcf.acp.jcoins.premiumgroups.jCoins{/lang}</label></dt>
@@ -32,7 +32,7 @@
 					{if $errorField == 'jCoins'}
 						<small class="innerError">
 							{if $errorType == 'underZero'}
-								kleiner als null
+								{lang}wcf.acp.jcoins.underzero{/lang}
 							{/if}
 						</small>
 					{/if}
@@ -46,7 +46,7 @@
 					{if $errorField == 'period'}
 						<small class="innerError">
 							{if $errorType == 'notValid'}
-								Die Eingabe muss eine ganzzahl sein.. 
+								{lang}wcf.acp.jcoins.period.invalid{/lang}
 							{/if}
 						</small>
 					{/if}
