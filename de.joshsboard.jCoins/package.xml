@@ -17,7 +17,7 @@
 	<requiredpackages>
 		<requiredpackage minversion="2.0.0 RC 3">com.woltlab.wcf</requiredpackage>
 		<requiredpackage minversion="2.0.0 Beta 9">com.woltlab.wcf.conversation</requiredpackage>
-		<requiredpackage minversion="1.0.0" file="requirements/de.joshsboard.tempusergroup.tar">de.joshsboard.tempusergroup</requiredpackage>
+		<requiredpackage minversion="1.0.1" file="requirements/de.joshsboard.tempusergroup.tar">de.joshsboard.tempusergroup</requiredpackage>
 	</requiredpackages>
 	
 	<optionalpackages>
