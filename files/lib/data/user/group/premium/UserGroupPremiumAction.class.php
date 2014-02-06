@@ -9,6 +9,7 @@ use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
 use wcf\system\user\storage\UserStorageHandler;
 use wcf\system\WCF;
+use wcf\data\user\UserProfile; 
 
 /**
  * Provides functions to handle premium-groups.
@@ -104,7 +105,7 @@ class UserGroupPremiumAction extends AbstractDatabaseObjectAction implements ITo
 
 			$premiumGroupEditor->insertPremiumGroup();
 
-			$action = new UserAction(array(WCF::getUser()), 'addToGroups', array(
+			$action = new UserAction(array(new UserProfile(WCF::getUser())), 'addToGroups', array(
 				'groups' => array($premiumGroupEditor->groupID),
 				'addDefaultGroups' => false,
 				'deleteOldGroups' => false
