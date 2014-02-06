@@ -54,7 +54,7 @@
 
 									<dl>
 										<dt>{lang}wcf.jcoins.premiumgroups.costs{/lang}</dt>
-										<dd>{#$premium->jCoins} jCoins</dd>
+										<dd>{#$premium->jCoins} {lang}wcf.jcoins.title{/lang}</dd>
 									</dl>
 
 									<dl>
