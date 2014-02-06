@@ -9,7 +9,9 @@ use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
 use wcf\system\user\storage\UserStorageHandler;
 use wcf\system\WCF;
-use wcf\data\user\UserProfile; 
+use wcf\data\user\UserEditor; 
+use wcf\data\user\UserProfileAction;
+use wcf\data\user\User; 
 
 /**
  * Provides functions to handle premium-groups.
@@ -111,6 +113,22 @@ class UserGroupPremiumAction extends AbstractDatabaseObjectAction implements ITo
 				'deleteOldGroups' => false
 			));
 			$action->executeAction();
+
+			UserEditor::resetCache();
+			
+			// update user rank
+			$editor = new UserEditor(new User(WCF::getUser()->userID));
+			
+			if (MODULE_USER_RANK) {
+			        $action = new UserProfileAction(array($editor), 'updateUserRank');
+			        $action->executeAction();
+			}
+			
+			if (MODULE_USERS_ONLINE) {
+			        $action = new UserProfileAction(array($editor), 'updateUserOnlineMarking');
+			        $action->executeAction();
+			} 
+
 
 			// reset storage
 			UserStorageHandler::getInstance()->reset(array(WCF::getUser()->userID), 'jCoinsPremiumGroupIDs');
