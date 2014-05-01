@@ -55,7 +55,7 @@ class TransferWorker extends AbstractWorker {
 		}
 
 		if (!isset($userTransferData[$this->parameters['transferID']]['reason'])) {
-			throw new SystemException("sum of '" . $this->parameters['transferID'] . "' is invalid");
+			throw new SystemException("reason of '" . $this->parameters['transferID'] . "' is invalid");
 		}
 
 		$this->transferData = $userTransferData[$this->parameters['transferID']];
