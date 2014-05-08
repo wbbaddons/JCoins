@@ -19,7 +19,7 @@ class JCoinsClearPremiumGroupCacheListener implements IEventListener {
 		if (count($eventObj->user) == 0) return; 
 		
 		// reset storage
-		UserStorageHandler::getInstance()->reset(array(array_keys($eventObj->userToGroups)), 'jCoinsPremiumGroupIDs');
+		UserStorageHandler::getInstance()->reset(array_keys($eventObj->userToGroups), 'jCoinsPremiumGroupIDs');
 	}
 
 }
