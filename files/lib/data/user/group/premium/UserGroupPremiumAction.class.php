@@ -108,7 +108,7 @@ class UserGroupPremiumAction extends AbstractDatabaseObjectAction implements ITo
 
 			$premiumGroupEditor->insertPremiumGroup();
 
-			$action = new UserAction(array(new UserProfile(WCF::getUser())), 'addToGroups', array(
+			$action = new UserAction(array(WCF::getUser()), 'addToGroups', array(
 				'groups' => array($premiumGroupEditor->groupID),
 				'addDefaultGroups' => false,
 				'deleteOldGroups' => false
