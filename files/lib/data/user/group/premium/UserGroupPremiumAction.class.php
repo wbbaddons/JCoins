@@ -11,7 +11,6 @@ use wcf\system\user\storage\UserStorageHandler;
 use wcf\system\WCF;
 use wcf\data\user\User;
 use wcf\data\user\UserEditor;
-use wcf\data\user\UserProfile;
 use wcf\data\user\UserProfileAction;
 
 /**
