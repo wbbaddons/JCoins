@@ -9,9 +9,10 @@ use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
 use wcf\system\user\storage\UserStorageHandler;
 use wcf\system\WCF;
-use wcf\data\user\UserEditor; 
+use wcf\data\user\User;
+use wcf\data\user\UserEditor;
+use wcf\data\user\UserProfile;
 use wcf\data\user\UserProfileAction;
-use wcf\data\user\User; 
 
 /**
  * Provides functions to handle premium-groups.
