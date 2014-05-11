@@ -5,8 +5,8 @@
 		<packagename language="de"><![CDATA[Guthabensystem jCoins]]></packagename>
 		<packagedescription><![CDATA[A credit system for WCF2.]]></packagedescription>
 		<packagedescription language="de"><![CDATA[Ein Guthabensystem für das Woltlab Community Framework 2.]]></packagedescription>
-		<version>1.0.5</version>
-		<date>2014-05-01</date>
+		<version>1.0.5 pl 1</version>
+		<date>2014-05-11</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -52,6 +52,7 @@
 		<instruction type="template">files/templates.tar</instruction>
 		<instruction type="acpTemplate">files/acptemplates.tar</instruction>
 		<instruction type="eventListener">xml/eventListener.xml</instruction>
+		<instruction type="language">lang/*.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.1">
@@ -59,25 +60,35 @@
 		<instruction type="template">files/templates.tar</instruction>
 		<instruction type="acpTemplate">files/acptemplates.tar</instruction>
 		<instruction type="eventListener">xml/eventListener.xml</instruction>
+		<instruction type="language">lang/*.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.2">
 		<instruction type="file">files/files.tar</instruction>
 		<instruction type="eventListener">xml/eventListener.xml</instruction>
+		<instruction type="language">lang/*.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.3">
 		<instruction type="file">files/files.tar</instruction>
 		<instruction type="eventListener">xml/eventListener.xml</instruction>
+		<instruction type="language">lang/*.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.4">
 		<instruction type="file">files/files.tar</instruction>
 		<instruction type="eventListener">xml/eventListener.xml</instruction>
+		<instruction type="language">lang/*.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.4 pl 1">
 		<instruction type="file">files/files.tar</instruction>
 		<instruction type="eventListener">xml/eventListener.xml</instruction>
+		<instruction type="language">lang/*.xml</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.5">
+		<instruction type="file">files/files.tar</instruction>
+		<instruction type="language">lang/*.xml</instruction>
 	</instructions>
 </package>
