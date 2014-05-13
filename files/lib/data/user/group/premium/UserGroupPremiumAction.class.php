@@ -11,7 +11,6 @@ use wcf\system\user\storage\UserStorageHandler;
 use wcf\system\WCF;
 use wcf\data\user\User;
 use wcf\data\user\UserEditor;
-use wcf\data\user\UserProfile;
 use wcf\data\user\UserProfileAction;
 
 /**
@@ -108,7 +107,7 @@ class UserGroupPremiumAction extends AbstractDatabaseObjectAction implements ITo
 
 			$premiumGroupEditor->insertPremiumGroup();
 
-			$action = new UserAction(array(new UserProfile(WCF::getUser())), 'addToGroups', array(
+			$action = new UserAction(array(WCF::getUser()), 'addToGroups', array(
 				'groups' => array($premiumGroupEditor->groupID),
 				'addDefaultGroups' => false,
 				'deleteOldGroups' => false
