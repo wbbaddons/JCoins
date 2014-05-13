@@ -70,5 +70,12 @@
 			<listenerclassname>wcf\system\event\listener\PremiumMenuListener</listenerclassname>
 			<inherit>1</inherit>
 		</eventlistener>
+		
+		<!-- sortable member list -->
+		<eventlistener>
+			<eventclassname>wcf\page\MembersList</eventclassname>
+			<eventname>validateSortField</eventname>
+			<listenerclassname>wcf\system\event\listener\SortableJCoinsMemberListListener</listenerclassname>
+		</eventlistener>
 	</import>
 </data>

@@ -56,5 +56,12 @@
 			<eventname>copyright</eventname>
 			<templatecode><![CDATA[{include file='__jcoinsCopyright'}]]></templatecode>
 		</templatelistener>
+		
+		<templatelistener name="jcoinsMemberlist">
+			<environment>user</environment>
+			<templatename>membersList</templatename>
+			<eventname>sortField</eventname>
+			<templatecode><![CDATA[<option value="jCoinsBalance"{if $sortField == 'jCoinsBalance'} selected="selected"{/if}>{lang}wcf.jcoins.title{/lang}</option>]]></templatecode>
+		</templatelistener>
 	</import>
 </data>
