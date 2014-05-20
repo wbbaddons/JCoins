@@ -2,10 +2,10 @@
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de" languagename="Deutsch" countrycode="de">
 	<category name="wcf.jcoins">
 		<!-- JCOINS -->
-		<item name="wcf.jcoins.title"><![CDATA[jCoins]]></item>
+		<item name="wcf.jcoins.title"><![CDATA[JCoins]]></item>
 		<item name="wcf.jcoins.systemuser"><![CDATA[System]]></item>
 		<item name="wcf.jcoins.summaryOfAccountBalances"><![CDATA[Kontoauszüge zusammengefasst.]]></item>
-		<item name="wcf.jcoins.copyright"><![CDATA[<a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Guthabensystem: jCoins, entwickelt von <strong>JoshsBoard</strong></a>]]></item>
+		<item name="wcf.jcoins.copyright"><![CDATA[<a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Guthabensystem: JCoins, entwickelt von <strong>JoshsBoard</strong></a>]]></item>
 		
 		
 		<!-- STATEMENTS -->
@@ -26,25 +26,25 @@
 		<!-- TRANSFER -->
 		<item name="wcf.jcoins.transfer.domoderativ"><![CDATA[Moderative Überweisung tätigen]]></item>
 		<item name="wcf.jcoins.transfer"><![CDATA[Überweisung]]></item>
-		<item name="wcf.jcoins.transfer.info"><![CDATA[jCoins an den Benutzer überweisen.]]></item>
+		<item name="wcf.jcoins.transfer.info"><![CDATA[JCoins an den Benutzer überweisen.]]></item>
 		<item name="wcf.jcoins.transfer.general"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.jcoins.transfer.moderativDisplay"><![CDATA[Moderativ]]></item>
 		
 		<!-- TRANSFER ERRORS -->
 		<item name="wcf.jcoins.transfer.error.tooshort"><![CDATA[Der Grund muss mindestens drei Zeichen enthalten.]]></item>
 		<item name="wcf.jcoins.transfer.error.toolong"><![CDATA[Der Grund darf maximal 255 Zeichen enthalten.]]></item>
-		<item name="wcf.jcoins.transfer.error.toomuch"><![CDATA[Du kannst nicht mehr überweisen, als du besitzt.]]></item>
-		<item name="wcf.jcoins.transfer.error.tooless"><![CDATA[Du musst mindestens 1 JCoin überweisen.]]></item>
+		<item name="wcf.jcoins.transfer.error.toomuch"><![CDATA[Sie können nicht mehr überweisen, als Sie besitzen.]]></item>
+		<item name="wcf.jcoins.transfer.error.tooless"><![CDATA[Sie müssen mindestens 1 JCoin überweisen.]]></item>
 
 		<!-- GLOBAL ACTIVITY -->
-		<item name="wcf.jcoins.globalactivity.title"><![CDATA[Globale jCoins Aktivitäten]]></item>
+		<item name="wcf.jcoins.globalactivity.title"><![CDATA[Globale JCoins Aktivitäten]]></item>
 		<item name="wcf.jcoins.globalactivity.noresults"><![CDATA[Es sind noch keine Aktivitäten vorhanden.]]></item>
 		
 		<!-- LIKES -->
-		<item name="wcf.jcoins.statement.like.recive"><![CDATA[Es wurde was von dir geliked.]]></item>
-		<item name="wcf.jcoins.statement.like.revoke"><![CDATA[Es wurde was von dir ungeliked.]]></item>
-		<item name="wcf.jcoins.statement.dislike.recive"><![CDATA[Es wurde was von dir gedisliked.]]></item>
-		<item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[Es wurde was von dir ungedisliked.]]></item>
+		<item name="wcf.jcoins.statement.like.recive"><![CDATA[Es wurde etwas von Ihnen geliked.]]></item>
+		<item name="wcf.jcoins.statement.like.revoke"><![CDATA[Es wurde etwas von Ihnen ungeliked.]]></item>
+		<item name="wcf.jcoins.statement.dislike.recive"><![CDATA[Es wurde etwas von Ihnen gedisliked.]]></item>
+		<item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[Es wurde etwas von Ihnen ungedisliked.]]></item>
 		
 		<!-- CONVERSATIONS -->
 		<item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[Sie haben eine Konversation begonnen.]]></item>
@@ -52,7 +52,7 @@
 		<item name="wcf.jcoins.statement.conversationreplyadd.revoke"><![CDATA[Ihre Antwort in einer Konversation wurde gelöscht.]]></item>
 		
 		<!-- USERADD -->
-		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[jCoins Bonus für neuen Nutzeraccount.]]></item>
+		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[JCoins Bonus für neuen Nutzeraccount.]]></item>
 		
 		<!-- PREMIUM GROUPS -->
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
@@ -63,7 +63,7 @@
 		<item name="wcf.jcoins.premiumgroups.period"><![CDATA[Laufzeit]]></item>
 		<item name="wcf.jcoins.premiumgroups.days"><![CDATA[Tage]]></item>
 		<item name="wcf.jcoins.premiumgroups.day"><![CDATA[Tag]]></item>
-		<item name="wcf.jcoins.premiumgroups.notenougthjcoins"><![CDATA[Nicht genügend jCoins]]></item>
+		<item name="wcf.jcoins.premiumgroups.notenougthjcoins"><![CDATA[Nicht genügend JCoins]]></item>
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.jcoins.premiumgroups.buy"><![CDATA[Kaufen]]></item>
 		<item name="wcf.jcoins.premiumgroups.renew"><![CDATA[Verlängern]]></item>
@@ -75,7 +75,7 @@
 	
 	<!-- NOTIFICATIONS -->
 	<category name="wcf.user.notification">
-		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins"><![CDATA[jCoins]]></item>
+		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins.transfer.notification.jCoinsTransfer"><![CDATA[Neue Überweisung erhalten]]></item>
 		<item name="wcf.user.notification.jcoins.title"><![CDATA[Überweisung eingegangen]]></item>
 		<item name="wcf.user.notification.jcoins.message"><![CDATA[Hat Ihnen {#$statement->sum} jCoins überwiesen.]]></item>
@@ -87,15 +87,15 @@
 	
 	<!-- GROUP OPTIONS -->
 	<category name="wcf.acp.group">
-		<item name="wcf.acp.group.option.category.user.jcoins"><![CDATA[jCoins]]></item>
+		<item name="wcf.acp.group.option.category.user.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.group.option.category.user.jcoins.general"><![CDATA[Allgemein]]></item>
-		<item name="wcf.acp.group.option.user.jcoins.canTransfer"><![CDATA[Kann jCoins überweisen]]></item>
-		<item name="wcf.acp.group.option.category.mod.jcoins"><![CDATA[jCoins]]></item>
+		<item name="wcf.acp.group.option.user.jcoins.canTransfer"><![CDATA[Kann JCoins überweisen]]></item>
+		<item name="wcf.acp.group.option.category.mod.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.group.option.category.mod.jcoins.general"><![CDATA[Allgemein]]></item>
 		<item name="wcf.acp.group.option.mod.jcoins.canModTransfer"><![CDATA[Kann moderative Überweisungen tätigen]]></item>
 		<item name="wcf.acp.group.option.mod.jcoins.canSeeModTransfer"><![CDATA[Kann einsehen, ob eine Überweisungen moderativ ist]]></item>
 		<item name="wcf.acp.group.option.mod.jcoins.canSeeTransferList"><![CDATA[Kann alle Transaktionen sehen]]></item>
-		<item name="wcf.acp.group.option.category.admin.jcoins"><![CDATA[jCoins]]></item>
+		<item name="wcf.acp.group.option.category.admin.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.group.option.category.admin.jcoins.general"><![CDATA[Allgemein]]></item>
 		<item name="wcf.acp.group.option.category.admin.jcoins.premiumgroups"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.acp.group.option.admin.jcoins.canExecuteMassProcessing"><![CDATA[Kann Massenüberweisungen tätigen]]></item>
@@ -105,32 +105,32 @@
 
 	<!-- ACP OPTIONS -->
 	<category name="wcf.acp.option">
-		<item name="wcf.acp.option.category.jcoins"><![CDATA[jCoins]]></item>
-		<item name="wcf.acp.option.category.module.jcoins"><![CDATA[jCoins]]></item>
-		<item name="wcf.acp.option.module_jcoins"><![CDATA[jCoins]]></item>
+		<item name="wcf.acp.option.category.jcoins"><![CDATA[JCoins]]></item>
+		<item name="wcf.acp.option.category.module.jcoins"><![CDATA[JCoins]]></item>
+		<item name="wcf.acp.option.module_jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.option.module_jcoins_premiumgroups"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteafter"><![CDATA[Kontoauszüge löschen]]></item>
-		<item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Lege hier fest nach wie vielen Tagen ein Kontoauszug gelöscht werden soll.]]></item>
+		<item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Legen Sie hier fest nach wie vielen Tagen ein Kontoauszug gelöscht werden soll.]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed"><![CDATA[Nur vom Benutzer gelöschte Kontoauszüge löschen]]></item>
-		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[Aktivierst du diese Option, werden nur Kontoauszüge gelöscht, welche bereits vom Benutzer durch "Kontoauszüge zusammenfassen" gelöscht worden sind.]]></item>
+		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[Aktivieren Sie diese Option, werden nur Kontoauszüge gelöscht, welche bereits vom Benutzer durch "Kontoauszüge zusammenfassen" gelöscht worden sind.]]></item>
 		<item name="wcf.acp.option.category.jcoins.receivecoins"><![CDATA[Einkünfte]]></item>
 		<item name="wcf.acp.option.category.jcoins.receivecoins.general"><![CDATA[Allgemein]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_like"><![CDATA[jCoins für einen Like]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_like.description"><![CDATA[Wie viele jCoins soll der Benutzer bekommen, wenn ein Objekt von ihm geliked wird?]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_dislike"><![CDATA[jCoins für einen Dislike]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_dislike.description"><![CDATA[Wie viele jCoins soll der Benutzer bekommen, wenn ein Objekt von ihm gedisliked wird?]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_createconversation"><![CDATA[jCoins für eine Konversation]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_createconversation.description"><![CDATA[Wie viele jCoins soll der Benutzer bekommen, wenn der Benutzer eine Konversation startet?]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_addconversationreply"><![CDATA[jCoins für einen Antwort in einer Konversation]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_addconversationreply.description"><![CDATA[Wie viele jCoins soll der Benutzer bekommen, wenn er in einer Konversation eine Antwort verfasst?]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_useradd"><![CDATA[jCoins bei Beitritt]]></item>
-		<item name="wcf.acp.option.jcoins_receivecoins_useradd.description"><![CDATA[Wie viele jCoins soll der Benutzer bekommen, wenn der Benutzer der Community beitritt? Dabei ist es egal, ob der Benutzer im Administrationspanal erstellt wird, oder sich ganz normal registriert.]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_like"><![CDATA[JCoins für einen Like]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_like.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn ein Objekt von ihm geliked wird?]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_dislike"><![CDATA[JCoins für einen Dislike]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_dislike.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn ein Objekt von ihm gedisliked wird?]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_createconversation"><![CDATA[JCoins für eine Konversation]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_createconversation.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn der Benutzer eine Konversation startet?]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_addconversationreply"><![CDATA[JCoins für einen Antwort in einer Konversation]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_addconversationreply.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn er in einer Konversation eine Antwort verfasst?]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_useradd"><![CDATA[JCoins bei Beitritt]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_useradd.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn der Benutzer der Community beitritt? Dabei ist es egal, ob der Benutzer im Administrationspanal erstellt wird, oder sich ganz normal registriert.]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
 	</category>
 	
 	<category name="wcf.acp.menu">
-		<item name="wcf.acp.menu.link.jcoins"><![CDATA[jCoins]]></item>
+		<item name="wcf.acp.menu.link.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.menu.link.jcoins.premium.list"><![CDATA[Premiumgruppen auflisten]]></item>
 		<item name="wcf.acp.menu.link.jcoins.premium.add"><![CDATA[Premiumgruppe hinzufügen]]></item>
 	</category>
@@ -138,11 +138,11 @@
 	<category name="wcf.acp.jcoins">
 		<item name="wcf.acp.jcoins.premiumgroups.edit"><![CDATA[Premiumgruppe bearbeiten]]></item>
 		<item name="wcf.acp.jcoins.premiumgroups.add"><![CDATA[Premiumgruppe hinzufügen]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.editinfo"><![CDATA[Beachte, dass nur die Beschreibung und die Anzahl der jCoins geändert werden können. Möchtest du die Gruppe oder die Länge ändern, so erstelle doch ein neues Angebot. Möchtest du dieses dabei nicht mehr kaufbar machen, so kannst du das Angebot deaktivieren oder löschen.]]></item>
+		<item name="wcf.acp.jcoins.premiumgroups.editinfo"><![CDATA[Beachte, dass nur die Beschreibung und die Anzahl der jCoins geändert werden können. Möchten Sie die Gruppe oder die Länge ändern, so müssen Sie ein neues Angebot erstellen. Möchten Sie dieses dabei nicht mehr kaufbar machen, so kannst müssen Sie das Angebot deaktivieren oder löschen.]]></item>
 		<item name="wcf.acp.jcoins.premiumgroups.addinfo"><![CDATA[Beachte, dass Premiumgruppen erst wieder gelöscht werden können, wenn alle Abonnements ausgelaufen sind!]]></item>
 		<item name="wcf.acp.jcoins.premiumgroups.list"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.acp.jcoins.premiumgroups.nogroups"><![CDATA[Es wurden noch keine Premiumgruppen angelegt.]]></item>        
-		<item name="wcf.acp.jcoins.premiumgroups.jCoins"><![CDATA[jCoins]]></item>
+		<item name="wcf.acp.jcoins.premiumgroups.jCoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.jcoins.premiumgroups.period"><![CDATA[Dauer]]></item>
 		<item name="wcf.acp.jcoins.premiumgroups.period.description"><![CDATA[Geben Sie hier die Dauer in Tagen an.]]></item>
 		<item name="wcf.acp.jcoins.premiumgroups.description"><![CDATA[Beschreibung]]></item>
@@ -159,7 +159,7 @@
 		<item name="wcf.acp.jcoins.period.invalid"><![CDATA[Die Dauer muss in ganzen Tagen eingegeben werden.]]></item>
 		
 		<!-- MassProcessing -->
-		<item name="wcf.acp.jcoins.massprocessing.addjcoins"><![CDATA[jCoins überweisen]]></item>
+		<item name="wcf.acp.jcoins.massprocessing.addjcoins"><![CDATA[JCoins überweisen]]></item>
 		<item name="wcf.acp.jcoins.massprocessing.fromuser"><![CDATA[Ausführender Benutzer]]></item>
 		<item name="wcf.acp.jcoins.massprocessing.fromuser.system"><![CDATA[Systembenutzer]]></item>
 		<item name="wcf.acp.jcoins.massprocessing.fromuser.own"><![CDATA[eigenes Benutzeraccount]]></item>
