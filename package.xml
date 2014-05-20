@@ -26,23 +26,23 @@
 	
 	<instructions type="install">
 		<!-- files -->
-		<instruction type="template">files/templates.tar</instruction>
-		<instruction type="file">files/files.tar</instruction>
-		<instruction type="acpTemplate">files/acptemplates.tar</instruction>
+		<instruction type="template">templates.tar</instruction>
+		<instruction type="file">files.tar</instruction>
+		<instruction type="acpTemplate">acptemplates.tar</instruction>
                 
 		<!-- sql -->
-		<instruction type="sql">sql/install.sql</instruction>
+		<instruction type="sql">install.sql</instruction>
                 
 		<!-- xml -->
-		<instruction type="templateListener">xml/templateListener.xml</instruction>
-		<instruction type="option">xml/options.xml</instruction>
-		<instruction type="eventListener">xml/eventListener.xml</instruction>
-		<instruction type="cronjob">xml/cronjob.xml</instruction>
-		<instruction type="objectType">xml/objectType.xml</instruction>
-		<instruction type="userNotificationEvent">xml/userNotificationEvent.xml</instruction>
-		<instruction type="userGroupOption">xml/userGroupOption.xml</instruction>
-		<instruction type="acpMenu">xml/acpMenu.xml</instruction>
-                <instruction type="dashboardBox">xml/dashboardBox.xml</instruction>
+		<instruction type="templateListener">templateListener.xml</instruction>
+		<instruction type="option">options.xml</instruction>
+		<instruction type="eventListener">eventListener.xml</instruction>
+		<instruction type="cronjob">cronjob.xml</instruction>
+		<instruction type="objectType">objectType.xml</instruction>
+		<instruction type="userNotificationEvent">userNotificationEvent.xml</instruction>
+		<instruction type="userGroupOption">userGroupOption.xml</instruction>
+		<instruction type="acpMenu">acpMenu.xml</instruction>
+                <instruction type="dashboardBox">dashboardBox.xml</instruction>
 		
 		<!-- lng -->
 		<instruction type="language">lang/*.xml</instruction>
