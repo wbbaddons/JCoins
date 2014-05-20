@@ -49,6 +49,12 @@
 				<defaultvalue>0</defaultvalue>
 			</option>
 			
+			<option name="jcoins_dashboard_sidebar_richest_num">
+				<categoryname>jcoins.general</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>5</defaultvalue>
+			</option>
+			
 			<option name="jcoins_receivecoins_like">
 				<categoryname>jcoins.receivecoins.general</categoryname>
 				<optiontype>integer</optiontype>
