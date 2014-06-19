@@ -21,7 +21,7 @@
 	</requiredpackages>
 	
 	<optionalpackages>
-		<optionalpackage file="optionals/de.joshsboard.jcoinswbb.tar">de.joshsboard.jcoinswbb</optionalpackage>
+		<!-- <optionalpackage file="optionals/de.joshsboard.jcoinswbb.tar">de.joshsboard.jcoinswbb</optionalpackage> --> 
 	</optionalpackages>
 	
 	<instructions type="install">
