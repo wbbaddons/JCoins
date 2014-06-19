@@ -4,7 +4,7 @@ use wcf\data\dashboard\box\DashboardBox;
 use wcf\page\IPage;
 use wcf\system\dashboard\box\AbstractSidebarDashboardBox;
 use wcf\system\WCF;
-use wcf\data\user\UserList; 
+use wcf\data\user\UserProfileList; 
 
 class RichestUserSidebarDashboardBox extends AbstractSidebarDashboardBox {
 	/**
@@ -19,7 +19,7 @@ class RichestUserSidebarDashboardBox extends AbstractSidebarDashboardBox {
 	public function init(DashboardBox $box, IPage $page) {
 		parent::init($box, $page);
 		
-		$this->member = new UserList();
+		$this->member = new UserProfileList();
 		$this->member->sqlOrderBy = 'user_table.jCoinsBalance DESC'; 
 		$this->member->sqlLimit = JCOINS_DASHBOARD_SIDEBAR_RICHEST_NUM;
 		$this->member->readObjects(); 

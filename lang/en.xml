@@ -170,4 +170,8 @@
 		<item name="wcf.clipboard.item.com.woltlab.wcf.user.resetJCoins"><![CDATA[Reset JCoins ({#$count})]]></item>
 		<item name="wcf.clipboard.item.com.woltlab.wcf.user.resetJCoins.confirmMessage"><![CDATA[Do you really want the JCoins from {if $count == 1}a{else}{#$count}{/if} user{if $count > 1}s{/if} reset?]]></item>
 	</category>
+        
+        <category name="wcf.dashboard.box">
+		<item name="wcf.dashboard.box.de.joshsboard.jcoins.richestUser"><![CDATA[Richest user]]></item>
+	</category>
 </language>

@@ -47,5 +47,8 @@
                 
 		<!-- lng -->
 		<instruction type="language">lang/*.xml</instruction>
+                
+                <!-- script -->
+                <instruction type="script">acp/install.php</instruction>
 	</instructions>
 </package>
