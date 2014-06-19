@@ -4,6 +4,7 @@ namespace wcf\data\user\jcoins\statement;
 use wcf\data\user\UserEditor;
 use wcf\data\user\User;
 use wcf\data\AbstractDatabaseObjectAction;
+use wcf\system\exception\UserInputException;
 use wcf\system\WCF;
 
 /**
