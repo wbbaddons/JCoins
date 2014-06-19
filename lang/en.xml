@@ -165,4 +165,9 @@
                 <item name="wcf.acp.jcoins.massprocessing.fromuser.system"><![CDATA[System user]]></item>
                 <item name="wcf.acp.jcoins.massprocessing.fromuser.own"><![CDATA[own user account]]></item>
         </category>
+        
+        <category name="wcf.clipboard">
+		<item name="wcf.clipboard.item.com.woltlab.wcf.user.resetJCoins"><![CDATA[Reset JCoins ({#$count})]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.wcf.user.resetJCoins.confirmMessage"><![CDATA[Do you really want the JCoins from {if $count == 1}a{else}{#$count}{/if} user{if $count > 1}s{/if} reset?]]></item>
+	</category>
 </language>

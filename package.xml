@@ -43,7 +43,8 @@
 		<instruction type="userGroupOption">userGroupOption.xml</instruction>
 		<instruction type="acpMenu">acpMenu.xml</instruction>
                 <instruction type="dashboardBox">dashboardBox.xml</instruction>
-		
+		<instruction type="clipboardAction">clipboardAction.xml</instruction>
+                
 		<!-- lng -->
 		<instruction type="language">lang/*.xml</instruction>
 	</instructions>

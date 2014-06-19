@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/clipboardAction.xsd">
+	<import>
+		<action name="resetJCoins">
+			<actionclassname><![CDATA[wcf\system\clipboard\action\JCoinsUserClipboardAction]]></actionclassname>
+			<pages>
+				<page><![CDATA[wcf\acp\page\UserListPage]]></page>
+			</pages>
+		</action>
+	</import>
+</data>
