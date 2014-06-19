@@ -3,6 +3,7 @@ namespace wcf\system\clipboard\action;
 
 use wcf\data\clipboard\action\ClipboardAction;
 use wcf\system\clipboard\action\UserClipboardAction; 
+use wcf\system\WCF; 
 
 /**
  * Prepares clipboard editor for jcoins actions
