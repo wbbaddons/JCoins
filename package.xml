@@ -47,6 +47,7 @@
 		<instruction type="acpMenu">acpMenu.xml</instruction>
                 <instruction type="dashboardBox">dashboardBox.xml</instruction>
 		<instruction type="clipboardAction">clipboardAction.xml</instruction>
+                <instruction type="jcoinsshopitemtype">JCoinsShopItemType.xml</instruction>
                 
 		<!-- lng -->
 		<instruction type="language">lang/*.xml</instruction>
