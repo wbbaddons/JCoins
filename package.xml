@@ -25,6 +25,9 @@
 	</optionalpackages>
 	
 	<instructions type="install">
+                <!-- my pips -->
+                <instruction type="packageInstallationPlugin">packageInstallationPlugin.xml</instruction>
+                
 		<!-- files -->
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="file">files.tar</instruction>

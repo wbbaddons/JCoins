@@ -37,6 +37,12 @@
 				<defaultvalue>1</defaultvalue>
 			</option>
 			
+                        <option name="module_jcoins_shop">
+				<categoryname>module.jcoins</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+                        
                         <option name="module_jcoins_showcopyright">
 				<categoryname>module.jcoins</categoryname>
 				<optiontype>boolean</optiontype>
