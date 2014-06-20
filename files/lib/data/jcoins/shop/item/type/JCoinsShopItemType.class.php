@@ -2,6 +2,7 @@
 namespace wcf\data\jcoins\shop\item\type;
 
 use wcf\data\DatabaseObject;
+use wcf\system\WCF; 
 
 /**
  * Represents a shop item type. 
