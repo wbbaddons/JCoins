@@ -82,7 +82,7 @@ class JCoinsShopItemTypeInstallationPlugin extends AbstractXMLPackageInstallatio
 		$object = parent::import($row, $data);
 
 		// store pages for later import
-		$this->params[$object->itemID] = $params;
+		$this->params[$object->getObjectID()] = $params;
 	}
 	
 	/**
@@ -107,7 +107,7 @@ class JCoinsShopItemTypeInstallationPlugin extends AbstractXMLPackageInstallatio
 					$statement->execute(array(
 						$itemID,
 						$param['name'], 
-						$param['regex'], 
+						(isset($param['regex'])) ? $param['regex'] : '', 
 						$param['type'], 
 						$this->installation->getPackageID()
 					));
