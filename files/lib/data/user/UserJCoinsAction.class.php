@@ -1,7 +1,8 @@
 <?php
 namespace wcf\data\user; 
 
-use wcf\system\database\util\ConditionBuilder; 
+use wcf\data\user\jcoins\statement\UserJcoinsStatementList; 
+use wcf\data\user\jcoins\statement\UserJcoinsStatementAction; 
 use wcf\system\database\util\PreparedStatementConditionBuilder; 
 use wcf\system\WCF; 
 
@@ -29,6 +30,17 @@ class UserJCoinsAction extends \wcf\data\user\UserAction {
 		// reset it, without set transfer-log
 		$stmt = WCF::getDB()->prepareStatement('UPDATE wcf'.WCF_N.'_user user SET user.jCoinsBalance = 0 '.$condition);
 		$stmt->execute($condition->getParameters());
+		
+		// trash statements
+		$list = new UserJcoinsStatementList();
+		$list->getConditionBuilder()->add('user_jcoins_statement.userID IN (?)', $this->objectIDs);
+		$list->readObjectIDs();
+		
+		// trash statements
+		$action = new UserJcoinsStatementAction($list->objectIDs, 'trashAll');
+		$action->executeAction();
+		
+		$this->unmarkItems();
 	}
 	
 	/**
