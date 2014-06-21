@@ -99,7 +99,7 @@ class JCoinsShopItemTypeInstallationPlugin extends AbstractXMLPackageInstallatio
 			// insert pages
 			$sql = "INSERT INTO	wcf".WCF_N."_jcoins_shop_item_type_parameter
 						(itemTypeID, name, regex, type, packageID)
-				VALUES		(?, ?, ?)";
+				VALUES		(?, ?, ?, ?, ?)";
 			$statement = WCF::getDB()->prepareStatement($sql);
 			foreach ($this->params as $itemID => $params) {
 				foreach ($params as $param) {
