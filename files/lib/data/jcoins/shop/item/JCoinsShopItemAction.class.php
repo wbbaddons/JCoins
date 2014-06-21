@@ -17,7 +17,7 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$className
 	 */
-	protected $className = 'wcf\data\jcoins\shop\item\JCoinsShopItem';
+	protected $className = 'wcf\data\jcoins\shop\item\JCoinsShopItemEditor';
 	
 	/**
 	 * @see	\wcf\data\AbstractDatabaseObjectAction::$permissionsDelete
@@ -105,6 +105,19 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 		$itemEditor = new JCoinsShopItemEditor($item);
 		$itemEditor->setShowOrder($showOrder);
 
+		$type = $item->getType();
+		
+		$sql = "INSERT INTO wcf". WCF_N ."_jcoins_shop_item_parameter (itemID, parameterID, value) VALUES (?, ?, ?)";
+		$statement = WCF::getDB()->prepareStatement($sql);
+			
+		foreach ($type->getParameters() as $parameter) {
+			if (!isset($this->parameters['parameters'][$parameter['name']])) {
+				$this->parameters['parameters'][$parameter['name']] = ''; 
+			}
+			
+			$statement->execute(array($item->getObjectID(), $parameter['parameterID'], $this->parameters['parameters'][$parameter['name']]));
+		}
+		
 		return new JCoinsShopItem($item->getObjectID());
 	}
 }

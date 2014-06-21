@@ -1,7 +1,7 @@
 <?php
 namespace wcf\system\jcoins\shop\item\type; 
 
-class ExampleItem extends \wcf\system\jcoins\shop\item\ShopItem {
+class ExampleItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 	
 	public static function getIdentifer() {
 		return 'de.joshsboard.jcoins.shop.item.example';

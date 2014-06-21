@@ -2,9 +2,20 @@
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/acpMenu.xsd">
 	<import>
 		<jcoinsshopitemtype>
-                        <identifer>de.joshsboard.jcoins.shop.item.example</identifer>
+                        <identifer>example</identifer>
 			<classname>\wcf\system\jcoins\shop\item\ExampleItem</classname>
                         <multiple>1</multiple>
+                        <parameters>
+                                <parameter>
+                                        <name>test</name>
+                                        <type>integer</type>
+                                </parameter>
+                                
+                                <parameter>
+                                        <name>testtwo</name>
+                                        <type>text</type>
+                                </parameter>
+                        </parameters>
 		</jcoinsshopitemtype>
 	</import>
 </data>

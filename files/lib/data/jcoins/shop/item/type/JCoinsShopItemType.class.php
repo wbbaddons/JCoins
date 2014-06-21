@@ -37,4 +37,21 @@ class JCoinsShopItemType extends DatabaseObject {
 
 		return new self(null, $row);
 	}
+	
+	public function getParameters() {
+		$sql = "SELECT	*
+			FROM	wcf".WCF_N."_jcoins_shop_item_type_parameter
+			WHERE	itemTypeID = ?";
+		
+		$statement = WCF::getDB()->prepareStatement($sql);
+		$statement->execute(array($this->getObjectID()));
+		
+		$param = array(); 
+		
+		while ($row = $statement->fetchArray()) {
+			$param[] = $row; 
+		}
+		
+		return $param; 
+	}
 }

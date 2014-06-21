@@ -14,5 +14,5 @@ class JCoinsShopItemTypeAction extends AbstractDatabaseObjectAction {
 	/**
 	 * @see	wcf\data\AbstractDatabaseObjectAction::$className
 	 */
-	protected $className = 'wcf\data\jcoins\shop\item\type\JCoinsShopItemType';
+	protected $className = 'wcf\data\jcoins\shop\item\type\JCoinsShopItemTypeEditor';
 }

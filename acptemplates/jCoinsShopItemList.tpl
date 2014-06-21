@@ -3,9 +3,9 @@
 <script data-relocate="true">
 	//<![CDATA[
 	$(function() {
-		new WCF.Action.Delete('wcf\\data\\user\\group\\premium\\UserGroupPremiumAction', '.jsNotice');
-		new WCF.Action.Toggle('wcf\\data\\user\\group\\premium\\UserGroupPremiumAction', '.jsNotice');
-		new WCF.Sortable.List('itemList', 'wcf\\data\\user\\group\\premium\\UserGroupPremiumAction', {@$startIndex});
+		new WCF.Action.Delete('wcf\\data\\jcoins\\shop\\item\\JCoinsShopItemAction', '.jsNotice');
+		new WCF.Action.Toggle('wcf\\data\\jcoins\\shop\\item\\JCoinsShopItemAction', '.jsNotice');
+		new WCF.Sortable.List('itemList', 'wcf\\data\\jcoins\\shop\\item\\JCoinsShopItemAction', {@$startIndex});
 	});
 	//]]>
 </script>
