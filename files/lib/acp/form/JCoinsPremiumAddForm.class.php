@@ -83,7 +83,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 		}
 		
 		if (empty($this->groups)) {
-			throw new PermissionDeniedException();
+			throw new NamedUserException(WCF::getLanguage()->get('wcf.jcoins.nogroupsavailable'));
 		}
 	}
 

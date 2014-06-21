@@ -7,6 +7,8 @@
 		<item name="wcf.jcoins.summaryOfAccountBalances"><![CDATA[Kontoauszüge zusammengefasst.]]></item>
 		<item name="wcf.jcoins.copyright"><![CDATA[<a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Guthabensystem: JCoins, entwickelt von <strong>JoshsBoard</strong></a>]]></item>
 		
+                <!-- exceptions -->
+                <item name="wcf.jcoins.nogroupsavailable"><![CDATA[Es sind keine normale Gruppen, mit welcher man eine Premiumgruppe bilden könnte, verfügbar.]]></item>
 		
 		<!-- STATEMENTS -->
 		<item name="wcf.jcoins.statement.title"><![CDATA[Kontoauszüge]]></item>

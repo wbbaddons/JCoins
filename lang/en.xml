@@ -7,6 +7,8 @@
                 <item name="wcf.jcoins.summaryOfAccountBalances"><![CDATA[Summarized account statements.]]></item>
                 <item name="wcf.jcoins.copyright"><![CDATA[<a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Creditsystem: JCoins, developed by <strong>JoshsBoard</strong></a>]]></item>
                 
+                <!-- exceptions -->
+                <item name="wcf.jcoins.nogroupsavailable"><![CDATA[@TODO]]></item>
                 
                 <!-- STATEMENTS -->
                 <item name="wcf.jcoins.statement.title"><![CDATA[Account statements]]></item>
