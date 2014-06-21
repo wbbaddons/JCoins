@@ -57,22 +57,11 @@ class JCoinsShopItemTypeInstallationPlugin extends AbstractXMLPackageInstallatio
 			$param = $xpath->query('child::ns:parameter', $element);
 			foreach ($param as $p) {
 				
-				// start with really dirty code
-				$xpathName = $xpath->query('child::ns:name', $p);
-				foreach ($xpathName as $name) {
-					$value['name'] = $name; 
-				}
+				$child = $xpath->query('child::*', $p);
 				
-				$xpathType = $xpath->query('child::ns:type', $p);
-				foreach ($xpathType as $type) {
-					$value['type'] = $type; 
+				foreach ($child as $c) {
+					$value[$c->tagName] = $c->nodeValue; 
 				}
-				
-				$xpathRegex = $xpath->query('child::ns:regex', $p);
-				foreach ($xpathRegex as $regex) {
-					$value['regex'] = $regex; 
-				}
-				// end with really dirty code
 				
 				$nodeValue[] = $value;
 			}
@@ -167,7 +156,8 @@ class JCoinsShopItemTypeInstallationPlugin extends AbstractXMLPackageInstallatio
 		return array(
 			'isMultible' => (isset($data['elements']['multible'])) ? intval($data['elements']['multible']) : 0,
 			'className' => (isset($data['elements']['classname'])) ? $data['elements']['classname'] : '', 
-			'identifer' => (isset($data['elements']['identifer'])) ? $data['elements']['identifer'] : ''
+			'identifer' => (isset($data['elements']['identifer'])) ? $data['elements']['identifer'] : '', 
+			'parameters' => (isset($data['elements']['parameters'])) ? $data['elements']['parameters'] : array(),
 		);
 	}
 
