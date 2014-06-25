@@ -26,7 +26,7 @@ class JCoinsShopItemTypeInstallationPlugin extends AbstractXMLPackageInstallatio
 	 */
 	protected $params = array();
 	
-	public $allowedTypes = array('TEXT', 'INTEGER'); 
+	public $allowedTypes = array('TEXT', 'INTEGER', 'BOOL'); 
 	
 	/**
 	 * @see	\wcf\system\package\plugin\AbstractXMLPackageInstallationPlugin::handleDelete()

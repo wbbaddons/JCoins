@@ -99,9 +99,23 @@ class JCoinsShopItemAddForm extends AbstractForm {
 					case 'INTEGER': 
 						$this->parameterParameters[$parameter['name']] = intval($this->parameterParameters[$parameter['name']]); 
 						break; 
+					
+					case 'BOOL':
+						$this->parameterParameters[$parameter['name']] = 1; // true (it is an text-field)
+						break;
 				}
 			} else {
-				$this->parameterParameters[$parameter['name']] = ''; 
+				switch ($parameter['type']) {
+					case 'INTEGER':
+					case 'BOOL': // 0 == false (it is an text-field)
+						$this->parameterParameters[$parameter['name']] = 0; 
+						break; 
+						
+					case 'TEXT':
+					default: 
+						$this->parameterParameters[$parameter['name']] = '';
+						break; 
+				}
 			}
 		}
 	}
