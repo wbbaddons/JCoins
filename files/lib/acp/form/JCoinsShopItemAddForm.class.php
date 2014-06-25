@@ -140,7 +140,7 @@ class JCoinsShopItemAddForm extends AbstractForm {
 	public function validate() {
 		parent::validate();
 		
-		if (empty($this->name)) {
+		if (!I18nHandler::getInstance()->validateValue('name')) {
 			throw new UserInputException('name'); 
 		}
 		
