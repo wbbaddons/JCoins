@@ -1,5 +1,8 @@
 {include file='header' pageTitle='wcf.acp.jcoins.shop.item.add'}
 
+{include file='multipleLanguageInputJavascript' elementIdentifier='description' forceSelection=false}
+{include file='multipleLanguageInputJavascript' elementIdentifier='name' forceSelection=false}
+
 <script data-relocate="true">
 	//<![CDATA[
 	$(function() {
@@ -63,7 +66,7 @@
                         <dl>
                                 <dt><label for="name">{lang}wcf.jcoins.shop.item.name{/lang}</label></dt>
                                 <dd>
-                                        <input type="text" id="name" name="name" value="{$name}" class="medium" />
+                                        <input type="text" id="name" name="name" value="{$i18nPlainValues['name']}" class="medium" />
                                          {if $errorField == 'name'}
                                                 <small class="innerError">
                                                         {if $errorType == 'empty'}{lang}wcf.global.form.error.empty{/lang}{/if}
@@ -75,7 +78,7 @@
                         <dl>
                                 <dt><label for="description">{lang}wcf.jcoins.shop.item.description{/lang}</label></dt>
                                 <dd>
-                                        <input type="text" id="username" name="description" value="{$description}" class="medium" />
+                                        <textarea cols="40" rows="10" id="description" name="description">{$i18nPlainValues['description']}</textarea>
                                 </dd>
                         </dl>
                                 

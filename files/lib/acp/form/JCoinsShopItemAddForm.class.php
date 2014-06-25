@@ -5,7 +5,6 @@ use wcf\form\AbstractForm;
 use wcf\system\exception\UserInputException;
 use wcf\system\language\I18nHandler;
 use wcf\system\WCF;
-use wcf\system\event\EventHandler; 
 use wcf\system\Regex; 
 
 /**
@@ -69,6 +68,10 @@ class JCoinsShopItemAddForm extends AbstractForm {
 	 * @see	\wcf\page\IPage::readData()
 	 */
 	public function readData() {
+		
+		I18nHandler::getInstance()->register('description');
+		I18nHandler::getInstance()->register('name');
+		
 		parent::readData();
 		
 		$this->typeList = new \wcf\data\jcoins\shop\item\type\JCoinsShopItemTypeList(); 
@@ -80,10 +83,9 @@ class JCoinsShopItemAddForm extends AbstractForm {
 	public function readFormParameters() {
 		parent::readFormParameters();
 
-		if (isset($_POST['price'])) $this->price = intval($_POST['price']);
-		if (isset($_POST['description'])) $this->description = $_POST['description'];
-		if (isset($_POST['name'])) $this->name = $_POST['name'];
+		I18nHandler::getInstance()->readValues();
 		
+		if (isset($_POST['price'])) $this->price = intval($_POST['price']);
 		if (isset($_POST['type'])) $this->typeID = intval($_POST['type']);
 		$this->type = new \wcf\data\jcoins\shop\item\type\JCoinsShopItemType($this->typeID);
 		
@@ -164,15 +166,38 @@ class JCoinsShopItemAddForm extends AbstractForm {
 			'itemType' => $this->type->itemTypeID, 
 			'isDisabled' => 0, 
 			'price' => $this->price, 
-			'description' => $this->description, 
-			'name' => $this->name, 
+			'description' => I18nHandler::getInstance()->isPlainValue('description') ? I18nHandler::getInstance()->getValue('description') : '', 
+			'name' => I18nHandler::getInstance()->isPlainValue('name') ? I18nHandler::getInstance()->getValue('name') : '', 
 			'showOrder' => $this->showOrder
 			), 
 		    'parameters' => $this->parameterParameters
 		)); 
-		$action->executeAction(); 
+		$return = $action->executeAction(); 
+		
+		$itemID = $return['returnValues']->itemID;
+		
+		// save I18n name
+		if (!I18nHandler::getInstance()->isPlainValue('name')) {
+			$updateData = array();
+			$updateData['name'] = 'wcf.jcoins.shop.item.name' . $itemID;
+			I18nHandler::getInstance()->save('name', $updateData['name'], 'wcf.jcoins');
+		}
+		
+		// save I18n description
+		if (!I18nHandler::getInstance()->isPlainValue('description')) {
+			$updateData = array();
+			$updateData['description'] = 'wcf.jcoins.shop.item.description' . $itemID;
+			I18nHandler::getInstance()->save('description', $updateData['description'], 'wcf.jcoins');
+		}
+		
+		if (count($updateData)) {
+			$editor = new \wcf\data\jcoins\shop\item\JCoinsShopItemEditor($return['returnValues']);
+			$editor->update($updateData);
+		}
 		
 		$this->saved(); 
+		
+		I18nHandler::getInstance()->reset();
 		
 		// show success
 		WCF::getTPL()->assign('success', true);
@@ -186,12 +211,12 @@ class JCoinsShopItemAddForm extends AbstractForm {
 		
 		$this->typeList->readObjects(); 
 		
+		I18nHandler::getInstance()->assignVariables();
+		
 		WCF::getTPL()->assign(array(
 		    'types' => $this->typeList->getObjects(), 
 		    'type' => $this->typeID,
 		    'price' => $this->price,
-		    'description' => $this->description,
-		    'name' => $this->name,
 		    'showOrder' => $this->showOrder
 		));
 	}
