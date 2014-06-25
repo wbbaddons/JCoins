@@ -82,7 +82,7 @@ class JCoinsShopItemAddForm extends AbstractForm {
 
 		if (isset($_POST['price'])) $this->price = intval($_POST['price']);
 		if (isset($_POST['description'])) $this->description = $_POST['description'];
-		if (isset($_POST['name'])) $this->name = intval($_POST['name']);
+		if (isset($_POST['name'])) $this->name = $_POST['name'];
 		
 		if (isset($_POST['type'])) $this->typeID = intval($_POST['type']);
 		$this->type = new \wcf\data\jcoins\shop\item\type\JCoinsShopItemType($this->typeID);
@@ -92,8 +92,8 @@ class JCoinsShopItemAddForm extends AbstractForm {
 
 	public function readParameterParameters() {
 		foreach ($this->type->getParameters() as $parameter) {
-			if (isset($_POST[$parameter['name']])) {
-				$this->parameterParameters[$parameter['name']] = $_POST[$parameter['name']];
+			if (isset($_POST['param_'.$parameter['parameterID'].'_'.$parameter['name']])) {
+				$this->parameterParameters[$parameter['name']] = $_POST['param_'.$parameter['parameterID'].'_'.$parameter['name']];
 				
 				switch ($parameter['type']) {
 					case 'INTEGER': 
@@ -150,12 +150,13 @@ class JCoinsShopItemAddForm extends AbstractForm {
 			'itemType' => $this->type->itemTypeID, 
 			'isDisabled' => 0, 
 			'price' => $this->price, 
-			'descrption' => $this->description, 
+			'description' => $this->description, 
 			'name' => $this->name, 
 			'showOrder' => $this->showOrder
 			), 
 		    'parameters' => $this->parameterParameters
 		)); 
+		$action->executeAction(); 
 		
 		$this->saved(); 
 		
@@ -173,7 +174,7 @@ class JCoinsShopItemAddForm extends AbstractForm {
 		
 		WCF::getTPL()->assign(array(
 		    'types' => $this->typeList->getObjects(), 
-		    'type' => $this->type,
+		    'type' => $this->typeID,
 		    'price' => $this->price,
 		    'description' => $this->description,
 		    'name' => $this->name,

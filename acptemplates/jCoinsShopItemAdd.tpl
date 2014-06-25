@@ -103,7 +103,7 @@
                                 <dt></dt>
                                 <dd>
                                         {foreach from=$types item=t}
-                                                <label><input type="radio" name="type" value="{$t->getObjectID()}" {if $type == $t->getObjectID()}checked="checked" {/if}/> {lang}wcf.jcoins.shop.item.type.{$t->name}{/lang}</label>
+                                                <label><input type="radio" name="type" value="{$t->getObjectID()}" {if $type == $t->getObjectID()}checked="checked" {/if}/> {lang}wcf.jcoins.shop.item.type.{$t->identifer}{/lang}</label>
                                         {foreachelse}
                                             <p class="error">This should never happen! Don't play in the database :) If you have not done that, contact Josh :)</p>
                                         {/foreach}
@@ -123,7 +123,7 @@
                     {if $t->getParameters()}
                         <div id="JCoinsShopItemType{$t->getObjectID()}Div">
                                 <fieldset>
-                                        <legend>{lang}wcf.jcoins.shop.item.type.{$t->name}{/lang}</legend>
+                                        <legend>{lang}wcf.jcoins.shop.item.type.{$t->identifer}{/lang}</legend>
 
                                         {foreach from=$t->getParameters() item=param}
                                             {include file='jCoinsShopItemParameter' parameter=$param}

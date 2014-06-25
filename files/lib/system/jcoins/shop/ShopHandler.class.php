@@ -10,7 +10,7 @@ class ShopHandler extends \wcf\system\SingletonFactory {
 	protected function init() {
 		// first load shop items
 		
-		$items = \wcf\system\cache\builder\JCoinsShopItemCacheBuilder::getInstance()->getData();
+		$items = \wcf\system\cache\builder\JCoinsShopItemTypeCacheBuilder::getInstance()->getData();
 		
 		foreach ($items as $i) {
 			if (\wcf\util\ClassUtil::isInstanceOf($i->className, 'wcf\system\jcoins\shop\item\type\IShopItem')) {

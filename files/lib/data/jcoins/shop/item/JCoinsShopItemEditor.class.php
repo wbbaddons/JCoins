@@ -2,6 +2,7 @@
 namespace wcf\data\jcoins\shop\item; 
 
 use wcf\data\DatabaseObjectEditor;
+use wcf\system\WCF; 
 
 /**
  * Provides functions for shop items

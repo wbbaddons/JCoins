@@ -25,7 +25,7 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 	 * get the shop-item-type
 	 */
 	public function getType() {
-		return \wcf\system\jcoins\shop\ShopHandler::getInstance()->getItemTypeByID($this->getObjectID()); 
+		return \wcf\system\jcoins\shop\ShopHandler::getInstance()->getItemTypeByID($this->itemType); 
 	}
 	
 	/**

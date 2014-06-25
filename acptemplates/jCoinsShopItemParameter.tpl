@@ -5,9 +5,9 @@
         </dt>
         <dd>
             {if $parameter.type == 'TEXT'}
-                <input type="text" id="{$parameter.name}" name="{$parameter.name}" value=""  class="medium">
+                <input type="text" id="{$parameter.name}" name="param_{$parameter.parameterID}_{$parameter.name}" value=""  class="medium">
             {elseif $parameter.type == 'INTEGER'}
-                <input type="number" id="{$parameter.name}" name="{$parameter.name}" value="0"  class="medium">
+                <input type="number" id="{$parameter.name}" name="param_{$parameter.parameterID}_{$parameter.name}" value="0"  class="medium">
             {/if}
             
             {event name='additionalParameter'}

@@ -19,6 +19,6 @@ class JCoinsShopItemList extends DatabaseObjectList {
 	/**
 	 * @see	wcf\data\DatabaseObjectList::$sqlOrderBy
 	 */
-	public $sqlOrderBy = "jcoins_shop_item.position ASC";
+	public $sqlOrderBy = "jcoins_shop_item.showOrder ASC";
 
 }

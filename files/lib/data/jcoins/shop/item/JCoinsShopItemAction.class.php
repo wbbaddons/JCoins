@@ -109,7 +109,7 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 		
 		$sql = "INSERT INTO wcf". WCF_N ."_jcoins_shop_item_parameter (itemID, parameterID, value) VALUES (?, ?, ?)";
 		$statement = WCF::getDB()->prepareStatement($sql);
-			
+		
 		foreach ($type->getParameters() as $parameter) {
 			if (!isset($this->parameters['parameters'][$parameter['name']])) {
 				$this->parameters['parameters'][$parameter['name']] = ''; 

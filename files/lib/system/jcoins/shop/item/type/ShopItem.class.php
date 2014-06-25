@@ -8,7 +8,7 @@ use wcf\system\exception\PermissionDeniedException;
 /**
  * 
  */
-abstract class ShopItem implements wcf\system\jcoins\shop\item\type\IShopItem {
+abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 	
 	/**
 	 * can you buy the item more than once?
@@ -20,7 +20,7 @@ abstract class ShopItem implements wcf\system\jcoins\shop\item\type\IShopItem {
 	
 	public function __construct($itemType = null) {
 		
-		if (!$itemType instanceof \wcf\data\jcoins\shop\item\type\JCoinsShopItemType) {
+		if (!($itemType instanceof \wcf\data\jcoins\shop\item\type\JCoinsShopItemType)) {
 			$this->itemType = \wcf\data\jcoins\shop\item\type\JCoinsShopItemType::getByIdentifer($this->getIdentifer()); 
 		} else {
 			$this->itemType = $itemType; 
@@ -70,5 +70,9 @@ abstract class ShopItem implements wcf\system\jcoins\shop\item\type\IShopItem {
 	
 	public function validateBuy() {
 		EventHandler::getInstance()->fireAction($this, 'validateBuy');
+	}
+	
+	public function getParameters() {
+		return $this->itemType->getParameters(); 
 	}
 }
