@@ -147,10 +147,9 @@ class JCoinsPremiumAddForm extends AbstractForm {
 			$premiumGroupID = $returnValues['returnValues']->premiumGroupID;
 
 			$updateData = array();
-			if (!I18nHandler::getInstance()->isPlainValue('description')) {
-				$updateData['description'] = 'wcf.jcoins.premiumGroups.description' . $premiumGroupID;
-				I18nHandler::getInstance()->save('description', $updateData['description'], 'wcf.jcoins');
-			}
+			$updateData['description'] = 'wcf.jcoins.premiumGroups.description' . $premiumGroupID;
+			I18nHandler::getInstance()->save('description', $updateData['description'], 'wcf.jcoins');
+			
 			// update name
 			$editor = new UserGroupPremiumEditor($returnValues['returnValues']);
 			$editor->update($updateData);
