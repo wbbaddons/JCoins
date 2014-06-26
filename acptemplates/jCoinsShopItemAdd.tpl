@@ -67,7 +67,7 @@
                         <legend>{lang}wcf.acp.jcoins.shop.item.general{/lang}</legend>
 
                         <dl>
-                                <dt><label for="name">{lang}wcf.jcoins.shop.item.name{/lang}</label></dt>
+                                <dt><label for="name">{lang}wcf.acp.jcoins.shop.item.name{/lang}</label></dt>
                                 <dd>
                                         <input type="text" id="name" name="name" value="{$i18nPlainValues['name']}" class="medium" />
                                          {if $errorField == 'name'}
@@ -79,14 +79,14 @@
                         </dl>
                                 
                         <dl>
-                                <dt><label for="description">{lang}wcf.jcoins.shop.item.description{/lang}</label></dt>
+                                <dt><label for="description">{lang}wcf.acp.jcoins.shop.item.description{/lang}</label></dt>
                                 <dd>
                                         <textarea cols="40" rows="10" id="description" name="description">{$i18nPlainValues['description']}</textarea>
                                 </dd>
                         </dl>
                                 
                         <dl>
-                                <dt><label for="price">{lang}wcf.jcoins.shop.item.price{/lang}</label></dt>
+                                <dt><label for="price">{lang}wcf.acp.jcoins.shop.item.price{/lang}</label></dt>
                                 <dd>
                                         <input type="number" id="price" name="price" value="{$price}" class="medium" />
                                          {if $errorField == 'price'}

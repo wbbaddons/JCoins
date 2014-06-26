@@ -1,4 +1,4 @@
-{include file='header' pageTitle='wcf.acp.jcoins.shop.list'}
+{include file='header' pageTitle='wcf.acp.jcoins.shop.item.list'}
 
 <script data-relocate="true">
 	//<![CDATA[
@@ -11,7 +11,7 @@
 </script>
 
 <header class="boxHeadline">
-	<h1>{lang}wcf.acp.jcoins.shop.list{/lang}</h1>
+	<h1>{lang}wcf.acp.jcoins.shop.item.list{/lang}</h1>
 </header>
 
 <div class="contentNavigation">
@@ -19,7 +19,7 @@
 	
 	<nav>
 		<ul>
-			<li><a href="{link controller='JCoinsShopItemAdd'}{/link}" class="button"><span class="icon icon16 icon-plus"></span> <span>{lang}wcf.acp.jcoins.shop.add{/lang}</span></a></li>
+			<li><a href="{link controller='JCoinsShopItemAdd'}{/link}" class="button"><span class="icon icon16 icon-plus"></span> <span>{lang}wcf.acp.jcoins.shop.item.add{/lang}</span></a></li>
 			
 			{event name='contentNavigationButtonsTop'}
 		</ul>
@@ -56,7 +56,7 @@
 		
 		<nav>
 			<ul>
-			<li><a href="{link controller='JCoinsShopItemAdd'}{/link}" class="button"><span class="icon icon16 icon-plus"></span> <span>{lang}wcf.acp.jcoins.shop.add{/lang}</span></a></li>
+			<li><a href="{link controller='JCoinsShopItemAdd'}{/link}" class="button"><span class="icon icon16 icon-plus"></span> <span>{lang}wcf.acp.jcoins.shop.item.add{/lang}</span></a></li>
 				
 				{event name='contentNavigationButtonsBottom'}
 			</ul>

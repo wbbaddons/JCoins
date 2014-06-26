@@ -111,6 +111,8 @@
 		<item name="wcf.acp.option.category.module.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.option.module_jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.option.module_jcoins_premiumgroups"><![CDATA[Premiumgruppen]]></item>
+                <item name="wcf.acp.option.module_jcoins_shop"><![CDATA[Shop]]></item>
+                <item name="wcf.acp.option.module_jcoins_showcopyright"><![CDATA[JCoins-Copyright anzeigen]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteafter"><![CDATA[Kontoauszüge löschen]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Legen Sie hier fest nach wie vielen Tagen ein Kontoauszug gelöscht werden soll.]]></item>
@@ -129,12 +131,15 @@
 		<item name="wcf.acp.option.jcoins_receivecoins_useradd"><![CDATA[JCoins bei Beitritt]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_useradd.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn der Benutzer der Community beitritt? Dabei ist es egal, ob der Benutzer im Administrationspanal erstellt wird, oder sich ganz normal registriert.]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
+                <item name="wcf.acp.option.jcoins_dashboard_sidebar_richest_num"><![CDATA[Reichste Benutzer in der Sidebar]]></item>
 	</category>
 	
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.menu.link.jcoins.premium.list"><![CDATA[Premiumgruppen auflisten]]></item>
 		<item name="wcf.acp.menu.link.jcoins.premium.add"><![CDATA[Premiumgruppe hinzufügen]]></item>
+                <item name="wcf.acp.menu.link.jcoins.shop.item.list"><![CDATA[Shop-Items auflisten]]></item>
+                <item name="wcf.acp.menu.link.jcoins.shop.item.add"><![CDATA[Shop-Item hinzufügen]]></item>
 	</category>
 	
 	<category name="wcf.acp.jcoins">
@@ -166,6 +171,15 @@
 		<item name="wcf.acp.jcoins.massprocessing.fromuser.system"><![CDATA[Systembenutzer]]></item>
 		<item name="wcf.acp.jcoins.massprocessing.fromuser.own"><![CDATA[eigenes Benutzeraccount]]></item>
 		<item name="wcf.acp.jcoins.massprocessing.general"><![CDATA[Allgemeine Einstellungen]]></item>
+                
+                <!-- shop -->
+                <item name="wcf.acp.jcoins.shop.item.list"><![CDATA[Shop-Item Liste]]></item>
+		<item name="wcf.acp.jcoins.shop.item.add"><![CDATA[Shop-Item hinzufügen]]></item>
+		<item name="wcf.acp.jcoins.shop.item.general"><![CDATA[Allgemein]]></item>
+                <item name="wcf.acp.jcoins.shop.item.name"><![CDATA[Name]]></item>
+		<item name="wcf.acp.jcoins.shop.item.description"><![CDATA[Beschreibung]]></item>
+                <item name="wcf.acp.jcoins.shop.item.price"><![CDATA[Preis]]></item>
+                <item name="wcf.acp.jcoins.shop.item.types"><![CDATA[Shop-Item-Typ]]></item>
 	</category>
         
         <category name="wcf.clipboard">
