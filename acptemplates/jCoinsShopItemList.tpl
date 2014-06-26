@@ -32,7 +32,7 @@
 			{foreach from=$objects item='item'}
 				<li class="sortableNode sortableNoNesting jsNotice" data-object-id="{@$item->getObjectID()}">
 					<span class="sortableNodeLabel">
-						<a href="{link controller='JCoinsShopItemEdit' object=$item}{/link}">{$item->name}</a>
+						<a href="{link controller='JCoinsShopItemEdit' object=$item}{/link}">{lang}{$item->name}{/lang}</a>
 						
 						<span class="statusDisplay sortableButtonContainer">
 							<span class="icon icon16 icon-check{if $item->isDisabled}-empty{/if} jsToggleButton jsTooltip pointer" title="{lang}wcf.global.button.{if $item->isDisabled}enable{else}disable{/if}{/lang}" data-object-id="{$item->itemID}" data-disable-message="{lang}wcf.global.button.disable{/lang}" data-enable-message="{lang}wcf.global.button.enable{/lang}"></span>

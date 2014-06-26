@@ -2,8 +2,8 @@
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/acpMenu.xsd">
 	<import>
 		<jcoinsshopitemtype>
-                        <identifer>example</identifer>
-			<classname>\wcf\system\jcoins\shop\item\ExampleItem</classname>
+                        <identifer>Exampletwo</identifer>
+			<classname>\wcf\system\jcoins\shop\item\type\ExampleItem</classname>
                         <multiple>1</multiple>
                         <parameters>
                                 <parameter>

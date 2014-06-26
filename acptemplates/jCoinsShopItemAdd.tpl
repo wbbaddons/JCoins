@@ -61,9 +61,8 @@
 	{/hascontent}
 </div>
 
-<form method="post" action="{if $action == 'add'}{link controller='JCoinsShopItemAdd'}{/link}{else}{link controller='JCoinsShopItemEdit' object=$item}{/if}">
-		
-        <div id="general" class="container containerPadding">
+<form method="post" action="{if $action == 'add'}{link controller='JCoinsShopItemAdd'}{/link}{else}{link controller='JCoinsShopItemEdit' object=$item}{/link}{/if}">
+        <div id="general" class="container containerPadding marginTop">
                 <fieldset>
                         <legend>{lang}wcf.acp.jcoins.shop.item.general{/lang}</legend>
 
@@ -133,7 +132,7 @@
                                         <legend>{lang}wcf.jcoins.shop.item.type.{$t->identifer}{/lang}</legend>
 
                                         {foreach from=$t->getParameters() item=param}
-                                            {include file='jCoinsShopItemParameter' parameter=$param}
+                                            {include file='jCoinsShopItemParameter' parameter=$param values=$parameterValues}
                                         {/foreach}
                                 </fieldset>
                         </div>

@@ -111,11 +111,11 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 		$statement = WCF::getDB()->prepareStatement($sql);
 		
 		foreach ($type->getParameters() as $parameter) {
-			if (!isset($this->parameters['parameters'][$parameter['name']])) {
-				$this->parameters['parameters'][$parameter['name']] = ''; 
+			if (!isset($this->parameters['parameters'][$parameter['parameterID']])) {
+				$this->parameters['parameters'][$parameter['parameterID']] = ''; 
 			}
 			
-			$statement->execute(array($item->getObjectID(), $parameter['parameterID'], $this->parameters['parameters'][$parameter['name']]));
+			$statement->execute(array($item->getObjectID(), $parameter['parameterID'], $this->parameters['parameters'][$parameter['parameterID']]));
 		}
 		
 		return new JCoinsShopItem($item->getObjectID());
@@ -131,21 +131,22 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			unset($this->parameters['data']['showOrder']);
 		}
 
-		$item = parent::update();
-		$itemEditor = new JCoinsShopItemEditor($item);
-		$itemEditor->setShowOrder($showOrder);
-
-		$type = $item->getType();
+		parent::update();
 		
-		$sql = "UPDATE wcf". WCF_N ."_jcoins_shop_item_parameter SET value = ? WHERE itemID = ? AND parameterID = ?";
-		$statement = WCF::getDB()->prepareStatement($sql);
-		
-		foreach ($type->getParameters() as $parameter) {
-			if (!isset($this->parameters['parameters'][$parameter['name']])) {
-				$this->parameters['parameters'][$parameter['name']] = ''; 
-			}
+		foreach ($this->getObjects() as $object) {
+			$itemEditor = new JCoinsShopItemEditor($object);
+			$itemEditor->setShowOrder($showOrder);
 			
-			$statement->execute(array($this->parameters['parameters'][$parameter['name']], $item->getObjectID(), $parameter['parameterID']));
+			$type = $object->getType();
+			
+			$sql = "UPDATE wcf". WCF_N ."_jcoins_shop_item_parameter SET value = ? WHERE itemID = ? AND parameterID = ?";
+			$statement = WCF::getDB()->prepareStatement($sql);
+
+			foreach ($type->getParameters() as $parameter) {
+				if (isset($this->parameters['parameters'][$parameter['parameterID']])) {
+					$statement->execute(array($this->parameters['parameters'][$parameter['parameterID']], $object->getObjectID(), $parameter['parameterID']));
+				}
+			}
 		}
 	}
 }

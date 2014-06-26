@@ -95,27 +95,27 @@ class JCoinsShopItemAddForm extends AbstractForm {
 	public function readParameterParameters() {
 		foreach ($this->type->getParameters() as $parameter) {
 			if (isset($_POST['param_'.$parameter['parameterID'].'_'.$parameter['name']])) {
-				$this->parameterParameters[$parameter['name']] = $_POST['param_'.$parameter['parameterID'].'_'.$parameter['name']];
+				$this->parameterParameters[$parameter['parameterID']] = $_POST['param_'.$parameter['parameterID'].'_'.$parameter['name']];
 				
 				switch ($parameter['type']) {
 					case 'INTEGER': 
-						$this->parameterParameters[$parameter['name']] = intval($this->parameterParameters[$parameter['name']]); 
+						$this->parameterParameters[$parameter['parameterID']] = intval($this->parameterParameters[$parameter['parameterID']]); 
 						break; 
 					
 					case 'BOOL':
-						$this->parameterParameters[$parameter['name']] = 1; // true (it is an text-field)
+						$this->parameterParameters[$parameter['parameterID']] = 1; // true (it is an text-field)
 						break;
 				}
 			} else {
 				switch ($parameter['type']) {
 					case 'INTEGER':
 					case 'BOOL': // 0 == false (it is an text-field)
-						$this->parameterParameters[$parameter['name']] = 0; 
+						$this->parameterParameters[$parameter['parameterID']] = 0; 
 						break; 
 						
 					case 'TEXT':
 					default: 
-						$this->parameterParameters[$parameter['name']] = '';
+						$this->parameterParameters[$parameter['parameterID']] = '';
 						break; 
 				}
 			}
@@ -127,7 +127,7 @@ class JCoinsShopItemAddForm extends AbstractForm {
 			if (!empty($parameter['regex'])) {
 				$regex = new Regex($parameter['regex']); 
 				
-				if (!$regex->match($this->parameterParameters[$parameter['name']])) {
+				if (!$regex->match($this->parameterParameters[$parameter['parameterID']])) {
 					throw new UserInputException($parameter['name']); 
 				}
 			}
@@ -176,16 +176,16 @@ class JCoinsShopItemAddForm extends AbstractForm {
 		
 		$itemID = $return['returnValues']->itemID;
 		
+		$updateData = array();
+		
 		// save I18n name
 		if (!I18nHandler::getInstance()->isPlainValue('name')) {
-			$updateData = array();
 			$updateData['name'] = 'wcf.jcoins.shop.item.name' . $itemID;
 			I18nHandler::getInstance()->save('name', $updateData['name'], 'wcf.jcoins');
 		}
 		
 		// save I18n description
 		if (!I18nHandler::getInstance()->isPlainValue('description')) {
-			$updateData = array();
 			$updateData['description'] = 'wcf.jcoins.shop.item.description' . $itemID;
 			I18nHandler::getInstance()->save('description', $updateData['description'], 'wcf.jcoins');
 		}
@@ -217,7 +217,8 @@ class JCoinsShopItemAddForm extends AbstractForm {
 		    'types' => $this->typeList->getObjects(), 
 		    'type' => $this->typeID,
 		    'price' => $this->price,
-		    'showOrder' => $this->showOrder
+		    'showOrder' => $this->showOrder, 
+		    'parameterValues' => $this->parameterParameters
 		));
 	}
 

@@ -1,8 +1,7 @@
 <?php
 namespace wcf\acp\form;
 
-use wcf\data\jcoins\shop\item\JCoinsShopItem; 
-use wcf\data\user\group\premium\UserGroupPremiumAction;
+use wcf\data\jcoins\shop\item\JCoinsShopItem;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\language\I18nHandler;
 use wcf\system\WCF;
@@ -14,7 +13,7 @@ use wcf\system\WCF;
  * @package	de.joshsboard.jcoins
  * @subpackage	acp.form
  */
-class JCoinsShopItemEditForm extends JCoinsPremiumAddForm {
+class JCoinsShopItemEditForm extends JCoinsShopItemAddForm {
 
 	/**
 	 * @see	\wcf\page\AbstractPage::$action
@@ -55,7 +54,7 @@ class JCoinsShopItemEditForm extends JCoinsPremiumAddForm {
 			I18nHandler::getInstance()->setOptions('description', PACKAGE_ID, $this->item->description, 'wcf.jcoins.shop.item.description\d+');
 			I18nHandler::getInstance()->setOptions('name', PACKAGE_ID, $this->item->name, 'wcf.jcoins.shop.item.name\d+');
 			
-			$this->typeID = $this->item->typeID;
+			$this->typeID = $this->item->itemType;
 			$this->price = $this->item->price;
 			$this->showOrder = $this->item->showOrder;
 		}
@@ -106,6 +105,8 @@ class JCoinsShopItemEditForm extends JCoinsPremiumAddForm {
 
 		I18nHandler::getInstance()->assignVariables(!empty($_POST));
 
+		
+		
 		WCF::getTPL()->assign('item', $this->item);
 	}
 }
