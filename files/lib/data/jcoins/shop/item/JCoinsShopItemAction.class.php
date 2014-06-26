@@ -120,4 +120,32 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 		
 		return new JCoinsShopItem($item->getObjectID());
 	}
+	
+	/**
+	 * @see	\wcf\data\AbstractDatabaseObjectAction::update()
+	 */
+	public function update() {
+		$showOrder = 0;
+		if (isset($this->parameters['data']['showOrder'])) {
+			$showOrder = $this->parameters['data']['showOrder'];
+			unset($this->parameters['data']['showOrder']);
+		}
+
+		$item = parent::update();
+		$itemEditor = new JCoinsShopItemEditor($item);
+		$itemEditor->setShowOrder($showOrder);
+
+		$type = $item->getType();
+		
+		$sql = "UPDATE wcf". WCF_N ."_jcoins_shop_item_parameter SET value = ? WHERE itemID = ? AND parameterID = ?";
+		$statement = WCF::getDB()->prepareStatement($sql);
+		
+		foreach ($type->getParameters() as $parameter) {
+			if (!isset($this->parameters['parameters'][$parameter['name']])) {
+				$this->parameters['parameters'][$parameter['name']] = ''; 
+			}
+			
+			$statement->execute(array($this->parameters['parameters'][$parameter['name']], $item->getObjectID(), $parameter['parameterID']));
+		}
+	}
 }

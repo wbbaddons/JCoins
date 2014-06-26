@@ -40,10 +40,14 @@
 </script>
 
 <header class="boxHeadline">
-	<h1>{lang}wcf.acp.jcoins.shop.item.add{/lang}</h1>
+	<h1>{lang}wcf.acp.jcoins.shop.item.{$action}{/lang}</h1>
 </header>
 
 {include file='formError'}
+
+{if $success|isset}
+	<p class="success">{lang}wcf.global.success.{$action}{/lang}</p>	
+{/if}
 
 <div class="contentNavigation">
 	{hascontent}
@@ -57,7 +61,7 @@
 	{/hascontent}
 </div>
 
-<form method="post" action="{link controller='JCoinsShopItemAdd'}{/link}">
+<form method="post" action="{if $action == 'add'}{link controller='JCoinsShopItemAdd'}{/link}{else}{link controller='JCoinsShopItemEdit' object=$item}{/if}">
 		
         <div id="general" class="container containerPadding">
                 <fieldset>
