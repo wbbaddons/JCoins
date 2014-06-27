@@ -8,7 +8,7 @@
         <script data-relocate="true" type="text/javascript">
 		//<![CDATA[
 		$(function() {
-			new WCF.JCoins.Buy($('.jCoinsPremiumList > li'));
+			new WCF.JCoins.Premium.Buy($('.jCoinsPremiumList > li'));
 		});
 		//]]>
         </script>

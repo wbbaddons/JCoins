@@ -8,10 +8,12 @@
  */
 WCF.JCoins = {};
 
+WCF.JCoins.Premium = {};
+
 /**
  * Handles clicks on 'buyPremiumGroupButton'.
  */
-WCF.JCoins.Buy = Class.extend({
+WCF.JCoins.Premium.Buy = Class.extend({
 	/**
 	 * action proxy
 	 * @var	WCF.Action.Proxy
