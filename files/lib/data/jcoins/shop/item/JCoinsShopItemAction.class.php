@@ -149,4 +149,58 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			}
 		}
 	}
+	
+	public function validateBuy() {
+		foreach ($this->getObjects() as $object) {
+			$object->getType()->validateBuy(); 
+			
+			if (!$object->canBuy()) {
+				throw new \wcf\system\exception\PermissionDeniedException(); 
+			}
+		}
+	}
+	
+	public function buy() {
+		$return = array(); 
+		
+		foreach ($this->getObjects() as $object) {
+			// log it 
+			// @TODO
+			
+			$object->getType()->buy(); 
+			$return[$object->getObjectID()] = $object->getType()->boughtAction();
+		}
+		
+		if (count($return) == 1) {
+			foreach ($return as $r) {
+				return $r; 
+			}
+		}
+		
+		return $return; 
+	}
+	
+	public function validateBought() {
+		foreach ($this->getObjects() as $object) {
+			if (!$object->hasBought() || $object->isMultiple()) {
+				throw new \wcf\system\exception\PermissionDeniedException(); 
+			}
+		}
+	}
+	
+	public function bought() {
+		$return = array(); 
+		
+		foreach ($this->getObjects() as $object) {
+			$return[$object->getObjectID()] = $object->getType()->boughtAction();
+		}
+		
+		if (count($return) == 1) {
+			foreach ($return as $r) {
+				return $r; 
+			}
+		}
+		
+		return $return; 
+	}
 }

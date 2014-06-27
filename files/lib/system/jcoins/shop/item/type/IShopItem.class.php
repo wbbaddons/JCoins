@@ -15,11 +15,9 @@ interface iShopItem {
 	public function boughtAction(array $paramters); 
 	
 	/**
-	 * is the item purchasable? 
-	 * 
-	 * @return bool
+	 * execute the item
 	 */
-	public function isPurchasable(); 
+	public function buy(array $parameters); 
 	
 	/**
 	 * get the identifer

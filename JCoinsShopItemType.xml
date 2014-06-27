@@ -2,18 +2,17 @@
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/acpMenu.xsd">
 	<import>
 		<jcoinsshopitemtype>
-                        <identifer>Exampletwo</identifer>
-			<classname>\wcf\system\jcoins\shop\item\type\ExampleItem</classname>
-                        <multiple>1</multiple>
+                        <identifer>download</identifer>
+			<classname>\wcf\system\jcoins\shop\item\type\DownloadItem</classname>
+                        <multiple>0</multiple>
                         <parameters>
                                 <parameter>
-                                        <name>test</name>
-                                        <type>integer</type>
-                                </parameter>
-                                
-                                <parameter>
-                                        <name>testtwo</name>
+                                        <name>source</name>
                                         <type>text</type>
+                                </parameter>
+                                <parameter>
+                                        <name>redirect</name>
+                                        <type>bool</type>
                                 </parameter>
                         </parameters>
 		</jcoinsshopitemtype>

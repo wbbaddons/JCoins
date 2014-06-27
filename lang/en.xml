@@ -7,6 +7,12 @@
                 <item name="wcf.jcoins.summaryOfAccountBalances"><![CDATA[Summarized account statements.]]></item>
                 <item name="wcf.jcoins.copyright"><![CDATA[<a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Creditsystem: JCoins, developed by <strong>JoshsBoard</strong></a>]]></item>
                 
+		<!-- shop -->
+		<item name="wcf.jcoins.shop"><![CDATA[Shop]]></item>
+		<item name="wcf.jcoins.shop.buy"><![CDATA[Buy]]></item>
+		<item name="wcf.jcoins.shop.bought"><![CDATA[Bought]]></item>
+		<item name="wcf.jcoins.shop.noitems"><![CDATA[Currently there are no items available.]]></item>
+		
                 <!-- exceptions -->
                 <item name="wcf.jcoins.nogroupsavailable"><![CDATA[@TODO]]></item>
                 

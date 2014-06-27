@@ -21,11 +21,67 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 	 */
 	protected static $databaseTableIndexName = 'itemID';
 	
+	public $type = null; 
+	
+	private $boughtCache = array(); 
+	
+	public function __construct($id, array $row = null, DatabaseObject $object = null) {
+		parent::__construct($id, $row, $object);
+		
+		$this->type = \wcf\system\jcoins\shop\ShopHandler::getInstance()->getItemTypeByID($this->itemType);
+	}
+	
 	/**
 	 * get the shop-item-type
 	 */
 	public function getType() {
-		return \wcf\system\jcoins\shop\ShopHandler::getInstance()->getItemTypeByID($this->itemType); 
+		return $this->type; 
+	}
+	
+	public function canBuy($userID = null) {
+		if ($userID === null) {
+			$userID = \wcf\system\WCF::getSession()->userID; 
+		}
+		
+		if ($userID == 0) return false; // guest cannot buy products
+		
+		if ($this->price > \wcf\system\WCF::getSession()->jCoinsBalance) return false; 
+		
+		if (!$this->type->isMultiple() && $this->hasBought()) return false; 
+		
+		return true; 
+	}
+	
+	public function hasBought($userID = null) {
+		if ($userID === null) {
+			$userID = \wcf\system\WCF::getSession()->userID; 
+		}
+		
+		// is this already cached? :) 
+		if (isset($this->boughtCache[$userID])) return $this->boughtCache[$userID]; 
+		
+		// we first assume that he has not bought it
+		// we can change this, if he has bought it yet
+		$this->boughtCache[$userID] = false; 
+		
+		if ($userID == 0) return false; // guest cannot buy products
+		
+		// we must query the database :/ 
+		// but it is not reasonable to directly caching all users
+		$sql = "SELECT COUNT(*) as count FROM wcf". WCF_N ."_jcoins_shop_item_bought WHERE userID = ? AND itemID = ?";
+		$stmt = \wcf\system\WCF::getDB()->prepareStatement($sql); 
+		$stmt->execute(array($userID, $this->itemID));
+		
+		if ($stmt->fetchColumn() > 0) {
+			$this->boughtCache[$userID] = true; 
+			return true; 
+		}
+		
+		return false; 
+	}
+	
+	public function isMultiple() {
+		return $this->type->isMultiple(); 
 	}
 	
 	/**

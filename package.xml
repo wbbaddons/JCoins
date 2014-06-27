@@ -48,7 +48,8 @@
                 <instruction type="dashboardBox">dashboardBox.xml</instruction>
 		<instruction type="clipboardAction">clipboardAction.xml</instruction>
                 <instruction type="jcoinsshopitemtype">JCoinsShopItemType.xml</instruction>
-                
+                <instruction type="pageMenu">pageMenu.xml</instruction>
+		
 		<!-- lng -->
 		<instruction type="language">lang/*.xml</instruction>
                 

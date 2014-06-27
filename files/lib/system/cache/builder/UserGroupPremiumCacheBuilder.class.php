@@ -18,7 +18,7 @@ class UserGroupPremiumCacheBuilder extends \wcf\system\cache\builder\AbstractCac
                 $premiumList = new UserGroupPremiumList(); 
 		
 		if (isset($parameters['onlyActive']) && $parameters['onlyActive'])
-			$premiumList->getConditionBuilder()->add("user_group_premium.isDisabled = ?", array(0));
+			$premiumList->getConditionBuilder()->add("jcoins_shop_item.isDisabled = ?", array(0));
 		
 		$premiumList->readObjects();
 		

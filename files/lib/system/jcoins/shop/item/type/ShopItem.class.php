@@ -30,46 +30,58 @@ abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 	}
 	
 	/**
+	 * @see \wcf\system\jcoins\shop\item\IShopItem::buy()
+	 */
+	public function buy(array $paramters) {
+		EventHandler::getInstance()->fireAction($this, 'bought');
+		
+		// prepare parameters
+		$paramters = $this->prepare($paramters);
+	}
+	
+	/**
 	 * @see \wcf\system\jcoins\shop\item\IShopItem::boughtAction()
 	 */
 	public function boughtAction(array $paramters) {
-		EventHandler::getInstance()->fireAction($this, 'bought');
+		EventHandler::getInstance()->fireAction($this, 'boughtAction');
+		
+		// prepare parameters
+		$paramters = $this->prepare($paramters);
+		
+		// aviable types
+		/*
+		 * 'location' => http://tedmosbyisajerk.com/ -> redirect to this location  ; if 'location' is http://www.weddingbridemovie.com/ he redirect to http://www.weddingbridemovie.com/ ;)
+		 * 'showSuccess' =>  true?!false -> show the js success
+		 */
+		
+		return array(
+		    'showSuccess' => true
+		); 
 	}
 	
 	/**
 	 * @see \wcf\system\jcoins\shop\item\IShopItem::prepare()
 	 */
-	public function prepare() {
+	public function prepare(array $parameters) {
 		EventHandler::getInstance()->fireAction($this, 'prepare');
 		
-		return array(); 
-	}
-	
-	/**
-	 * @see \wcf\system\jcoins\shop\item\IShopItem::isPurchasable()
-	 */
-	public function isPurchasable() {
-		return false; // TODO
+		return $parameters; 
 	}
 	
 	public function isMultiple() {
 		return $this->itemType->isMulitple; 
 	}
 	
-	public function validate() {
-		EventHandler::getInstance()->fireAction($this, 'validate');
-		
+	public function validateBuy() {
 		if (WCF::getUser()->userID == 0) {
 			throw new PermissionDeniedException(); 
 		}
 		
-		if (!MODULE_JCOINS) {
+		if (!MODULE_JCOINS || !MODULE_JCOINS_SHOP) {
 			throw new PermissionDeniedException(); 
 		}
-	}
-	
-	public function validateBuy() {
-		EventHandler::getInstance()->fireAction($this, 'validateBuy');
+		
+		EventHandler::getInstance()->fireAction($this, 'validate');
 	}
 	
 	public function getParameters() {
