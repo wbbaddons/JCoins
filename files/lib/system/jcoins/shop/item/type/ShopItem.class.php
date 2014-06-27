@@ -4,6 +4,7 @@ namespace wcf\system\jcoins\shop\item\type;
 use wcf\system\event\EventHandler; 
 use wcf\system\WCF; 
 use wcf\system\exception\PermissionDeniedException; 
+use wcf\system\exception\SystemException; 
 
 /**
  * 
@@ -34,9 +35,6 @@ abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 	 */
 	public function buy(array $paramters) {
 		EventHandler::getInstance()->fireAction($this, 'bought');
-		
-		// prepare parameters
-		$paramters = $this->prepare($paramters);
 	}
 	
 	/**
@@ -44,9 +42,6 @@ abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 	 */
 	public function boughtAction(array $paramters) {
 		EventHandler::getInstance()->fireAction($this, 'boughtAction');
-		
-		// prepare parameters
-		$paramters = $this->prepare($paramters);
 		
 		// aviable types
 		/*
@@ -64,6 +59,16 @@ abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 	 */
 	public function prepare(array $parameters) {
 		EventHandler::getInstance()->fireAction($this, 'prepare');
+		
+		foreach ($this->getParameters() as $param) {
+			if (!isset($parameters[$param['parameterID']])) {
+				throw new SystemException('parameter "'.$param['name'].'" is missing');
+			}
+			
+			$parameters[$param['name']] = $parameters[$param['parameterID']]; 
+			
+			unset($parameters[$param['parameterID']]); 
+		}
 		
 		return $parameters; 
 	}

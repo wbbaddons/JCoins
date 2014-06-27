@@ -60,7 +60,7 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 		
 		if ($userID == 0) return false; // guest cannot buy products
 		
-		if ($this->price > \wcf\system\WCF::getSession()->jCoinsBalance) return false; 
+		if ($this->price > \wcf\system\WCF::getSession()->getUser()->jCoinsBalance) return false; 
 		
 		if (!$this->type->isMultiple() && $this->hasBought()) return false; 
 		

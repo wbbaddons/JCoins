@@ -10,9 +10,11 @@ class DownloadItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 	public function boughtAction(array $paramters) {
 		parent::boughtAction($paramters);
 		
+		$paramters = $this->prepare($paramters); 
+		
 		if ($paramters['redirect'] == 1) {
 			return array(
-			    'location' => $parameters['source']
+			    'location' => $paramters['source']
 			);
 		}
 		
@@ -20,13 +22,5 @@ class DownloadItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 		return array(
 		    'showSuccess' => true
 		);
-	}
-	
-	public function prepare(array $parameters) {
-		$parameters = parent::prepare($parameters); 
-		
-		if (!isset($parameters['source']) || !isset($parameters['redirect'])) {
-			throw new \wcf\system\exception\SystemException('invalid parameters'); 
-		}
 	}
 }
