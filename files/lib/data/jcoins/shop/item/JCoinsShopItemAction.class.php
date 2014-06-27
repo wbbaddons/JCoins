@@ -167,8 +167,11 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			// log it 
 			// @TODO
 			
-			$object->getType()->buy(); 
-			$return[$object->getObjectID()] = $object->getType()->boughtAction();
+			// earn money here
+			// @TODO
+			
+			$object->getType()->buy($object->getParameters()); 
+			$return[$object->getObjectID()] = $object->getType()->boughtAction($object->getParameters());
 		}
 		
 		if (count($return) == 1) {
@@ -192,7 +195,7 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 		$return = array(); 
 		
 		foreach ($this->getObjects() as $object) {
-			$return[$object->getObjectID()] = $object->getType()->boughtAction();
+			$return[$object->getObjectID()] = $object->getType()->boughtAction($object->getParameters());
 		}
 		
 		if (count($return) == 1) {

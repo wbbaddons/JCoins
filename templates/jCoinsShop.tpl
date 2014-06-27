@@ -8,7 +8,7 @@
         <script data-relocate="true" type="text/javascript">
 		//<![CDATA[
 		$(function() {
-			new WCF.JCoins.Shop.Buy($('.jCoinsShopItems > li'));
+			new WCF.JCoins.Shop.Buy($('.jCoinsShopItemButtons > li'));
 		});
 		//]]>
         </script>
@@ -34,7 +34,7 @@
 									<h3>{lang}{$item->name}{/lang} <span class="badge green">{#$item->price} {lang}wcf.jcoins.title{/lang}</span></h3>
 								</div>
 								<p>{lang}{$item->description}{/lang}</p>
-								<ul class="buttonList smallButtons marginTop" style="float: right;">
+								<ul class="buttonList smallButtons marginTop jCoinsShopItemButtons" style="float: right;">
 									{if $item->isMultiple() || !$item->hasBought()}
 										<li><button {if !$item->canBuy()}disabled="disabled" {/if}class="buttonPrimary small buttonBuy" data-item-id="{$item->getObjectID()}">{lang}wcf.jcoins.shop.buy{/lang}</button></li>
 									{else}

@@ -199,6 +199,9 @@ class JCoinsShopItemAddForm extends AbstractForm {
 		
 		I18nHandler::getInstance()->reset();
 		
+		$this->price = 0; 
+		$this->parameterParameters = array(); 
+		
 		// show success
 		WCF::getTPL()->assign('success', true);
 	}

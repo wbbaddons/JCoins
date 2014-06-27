@@ -17,7 +17,7 @@ class JCoinsShopItemCacheBuilder extends \wcf\system\cache\builder\AbstractCache
                 $list = new \wcf\data\jcoins\shop\item\JCoinsShopItemList(); 
 		
 		if (isset($parameters['onlyActive']) && $parameters['onlyActive'])
-			$list->getConditionBuilder()->add("user_group_premium.isDisabled = ?", array(0));
+			$list->getConditionBuilder()->add("jcoins_shop_item.isDisabled = ?", array(0));
 		
 		$list->readObjects();
                 return $list->getObjects();

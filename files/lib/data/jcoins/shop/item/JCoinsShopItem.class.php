@@ -25,10 +25,25 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 	
 	private $boughtCache = array(); 
 	
+	private $parameters = array(); 
+	
 	public function __construct($id, array $row = null, DatabaseObject $object = null) {
 		parent::__construct($id, $row, $object);
 		
 		$this->type = \wcf\system\jcoins\shop\ShopHandler::getInstance()->getItemTypeByID($this->itemType);
+			
+		$condition = new \wcf\system\database\util\PreparedStatementConditionBuilder();
+		$condition->add('itemID = ?', array($this->getObjectID()));
+		$condition->add('parameterID IN (?)', array(array_map(function ($value) {
+			return $value['parameterID'];
+		}, $this->type->getParameters())));
+		$sql = "SELECT * FROM wcf". WCF_N ."_jcoins_shop_item_parameter ".$condition;
+		$stmt = \wcf\system\WCF::getDB()->prepareStatement($sql); 
+		$stmt->execute($condition->getParameters());
+		
+		while ($row = $stmt->fetchArray()) {
+			$this->parameters[$row['parameterID']] = $row['value']; 
+		}
 	}
 	
 	/**
@@ -89,5 +104,9 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 	 */
 	public function getTitle() {
 		return $this->name; 
+	}
+	
+	public function getParameters() {
+		return $this->parameters; 
 	}
 }

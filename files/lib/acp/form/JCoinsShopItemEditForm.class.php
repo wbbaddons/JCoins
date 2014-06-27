@@ -57,6 +57,10 @@ class JCoinsShopItemEditForm extends JCoinsShopItemAddForm {
 			$this->typeID = $this->item->itemType;
 			$this->price = $this->item->price;
 			$this->showOrder = $this->item->showOrder;
+			
+			foreach ($this->item->getParameters() as $id => $param) {
+				$this->parameterParameters[$id] = $param; 
+			}
 		}
 	}
 

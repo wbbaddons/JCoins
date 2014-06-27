@@ -1,7 +1,7 @@
 <?php
 namespace wcf\page;
 
-use wcf\data\user\group\premium\JCoinsShopItemCache;
+use wcf\data\jcoins\shop\item\JCoinsShopItemCache;
 use wcf\page\AbstractPage;
 use wcf\system\WCF;
 

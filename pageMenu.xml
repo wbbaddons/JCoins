@@ -4,7 +4,7 @@
 		<pagemenuitem name="wcf.jcoins.shop">
 			<controller><![CDATA[wcf\page\JCoinsShopPage]]></controller>
 			<position>header</position>
-			<options>module_jcoins_shop,module_jcoins</options>
+			<options>module_jcoins_shop</options>
 		</pagemenuitem>
 	</import>
 </data>

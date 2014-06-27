@@ -31,7 +31,7 @@ interface iShopItem {
 	 * 
 	 * @return String
 	 */
-	public function prepare(); 
+	public function prepare(array $parameters); 
 	
 	/**
 	 * is the item multiple? 
