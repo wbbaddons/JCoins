@@ -32,6 +32,7 @@
 		<item name="wcf.jcoins.statement.compress"><![CDATA[Kontoauszüge zusammenfassen]]></item>
 		
 		<!-- TRANSFER -->
+		<item name="wcf.jcoins.transfer.title"><![CDATA[JCoins überweisen]]></item>
 		<item name="wcf.jcoins.transfer.domoderativ"><![CDATA[Moderative Überweisung tätigen]]></item>
 		<item name="wcf.jcoins.transfer"><![CDATA[Überweisung]]></item>
 		<item name="wcf.jcoins.transfer.info"><![CDATA[JCoins an den Benutzer überweisen.]]></item>
