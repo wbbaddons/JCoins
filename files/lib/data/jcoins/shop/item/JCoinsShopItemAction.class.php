@@ -151,6 +151,10 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 	}
 	
 	public function validateBuy() {
+		if (empty($this->objects)) {
+			$this->readObjects();
+		}
+		
 		foreach ($this->getObjects() as $object) {
 			$object->getType()->validateBuy(); 
 			
@@ -163,12 +167,22 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 	public function buy() {
 		$return = array(); 
 		
+		$stmt = WCF::getDB()->prepareStatement("INSERT INTO wcf". WCF_N ."_jcoins_shop_item_bought (itemID, userID, date) VALUES (?, ?, ?)");
+		
 		foreach ($this->getObjects() as $object) {
-			// log it 
-			// @TODO
+			$action = new \wcf\data\user\jcoins\statement\UserJcoinsStatementAction(array(), 'create', array('data' => array(
+				'reason' => 'wcf.jcoins.statement.shop.buy',
+				'sum' => $object->price,
+			),
+			'changeBalance' => 1));
+			$action->validateAction(); 
+			$action->executeAction();
 			
-			// earn money here
-			// @TODO
+			$stmt->execute(array(
+			    $object->itemID, 
+			    WCF::getSession()->userID, 
+			    TIME_NOW
+			)); 
 			
 			$object->getType()->buy($object->getParameters()); 
 			$return[$object->getObjectID()] = $object->getType()->boughtAction($object->getParameters());
@@ -184,6 +198,10 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 	}
 	
 	public function validateBought() {
+		if (empty($this->objects)) {
+			$this->readObjects();
+		}
+		
 		foreach ($this->getObjects() as $object) {
 			if (!$object->hasBought() || $object->isMultiple()) {
 				throw new \wcf\system\exception\PermissionDeniedException(); 
