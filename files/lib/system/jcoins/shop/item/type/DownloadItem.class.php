@@ -20,7 +20,7 @@ class DownloadItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 		
 		// @TODO
 		return array(
-		    'showSuccess' => true
+		    'location' => \wcf\system\request\LinkHandler::getInstance()->getLink('JCoinsShopDownload', array('id' => $this->itemID))
 		);
 	}
 }
