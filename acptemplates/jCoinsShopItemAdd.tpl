@@ -127,7 +127,7 @@
 
                 {foreach from=$types item=t}
                     {if $t->getParameters()}
-                        <div id="JCoinsShopItemType{$t->getObjectID()}Div">
+                        <div id="JCoinsShopItemType{$t->getObjectID()}Div" class="marginTop">
                                 <fieldset>
                                         <legend>{lang}wcf.jcoins.shop.item.type.{$t->identifer}{/lang}</legend>
 
