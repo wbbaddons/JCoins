@@ -184,8 +184,8 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			    TIME_NOW
 			)); 
 			
-			$object->getType()->buy($object->getParameters()); 
-			$return[$object->getObjectID()] = $object->getType()->boughtAction($object->getParameters());
+			$object->getType()->buy(array_merge($object->getParameters(), array('itemID' => $object->getObjectID()))); 
+			$return[$object->getObjectID()] = $object->getType()->boughtAction(array_merge($object->getParameters(), array('itemID' => $object->getObjectID())));
 		}
 		
 		if (count($return) == 1) {
@@ -213,7 +213,7 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 		$return = array(); 
 		
 		foreach ($this->getObjects() as $object) {
-			$return[$object->getObjectID()] = $object->getType()->boughtAction($object->getParameters());
+			$return[$object->getObjectID()] = $object->getType()->boughtAction(array_merge($object->getParameters(), array('itemID' => $object->getObjectID())));
 		}
 		
 		if (count($return) == 1) {
