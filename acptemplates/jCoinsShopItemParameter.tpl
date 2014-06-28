@@ -1,7 +1,7 @@
 {event name='beforeParameter'}
 <dl>
         <dt>
-            {if $parameter.type != 'BOOL'}<label for="parameter{$parameter.parameterID}">{$parameter.name} <!-- TODO --></label>{/if}
+            {if $parameter.type != 'BOOL'}<label for="parameter{$parameter.parameterID}">{lang}wcf.jcoins.shop.item.type.{$t->identifer}.{$parameter.name}{/lang} <!-- TODO --></label>{/if}
         </dt>
         <dd>
             {if $parameter.type == 'TEXT'}
@@ -14,7 +14,7 @@
             
             {event name='additionalParameter'}
             
-            <small>@@TODO@@</small>
+            <small>{lang}wcf.jcoins.shop.item.type.{$t->identifer}.{$parameter.name}.description{/lang}</small>
         </dd>
 </dl>
 {event name='afterParameter'}

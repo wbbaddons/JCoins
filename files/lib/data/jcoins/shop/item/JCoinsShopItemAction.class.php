@@ -172,7 +172,7 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 		foreach ($this->getObjects() as $object) {
 			$action = new \wcf\data\user\jcoins\statement\UserJcoinsStatementAction(array(), 'create', array('data' => array(
 				'reason' => 'wcf.jcoins.statement.shop.buy',
-				'sum' => $object->price,
+				'sum' => $object->price * -1,
 			),
 			'changeBalance' => 1));
 			$action->validateAction(); 

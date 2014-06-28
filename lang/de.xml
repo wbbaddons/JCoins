@@ -13,6 +13,13 @@
 		<item name="wcf.jcoins.shop.bought"><![CDATA[Gekauft]]></item>
 		<item name="wcf.jcoins.shop.noitems"><![CDATA[Momentan können leider keine Items gekauft werden.]]></item>
 		
+		<!-- item type download -->
+		<item name="wcf.jcoins.shop.item.type.download"><![CDATA[Download]]></item>
+		<item name="wcf.jcoins.shop.item.type.download.source"><![CDATA[Quelle]]></item>
+		<item name="wcf.jcoins.shop.item.type.download.source.description"><![CDATA[Gebe hier den Pfad, relativ zum WCF, zu Datei an. Wenn die Option Weiterleitung aktiv ist, kannst du hier auch einen ganze URL angeben.]]></item>
+		<item name="wcf.jcoins.shop.item.type.download.redirect"><![CDATA[Weiterleitung]]></item>
+		<item name="wcf.jcoins.shop.item.type.download.redirect.description"><![CDATA[Soll der Käufer zur Quelle weitergeleitet werden?]]></item>
+		
                 <!-- exceptions -->
                 <item name="wcf.jcoins.nogroupsavailable"><![CDATA[Es sind keine normale Gruppen, mit welcher man eine Premiumgruppe bilden könnte, verfügbar.]]></item>
 		
@@ -182,6 +189,7 @@
                 <!-- shop -->
                 <item name="wcf.acp.jcoins.shop.item.list"><![CDATA[Shop-Item Liste]]></item>
 		<item name="wcf.acp.jcoins.shop.item.add"><![CDATA[Shop-Item hinzufügen]]></item>
+		<item name="wcf.acp.jcoins.shop.item.edit"><![CDATA[Shop-Item bearbeiten]]></item>
 		<item name="wcf.acp.jcoins.shop.item.general"><![CDATA[Allgemein]]></item>
                 <item name="wcf.acp.jcoins.shop.item.name"><![CDATA[Name]]></item>
 		<item name="wcf.acp.jcoins.shop.item.description"><![CDATA[Beschreibung]]></item>
