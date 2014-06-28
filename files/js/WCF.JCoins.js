@@ -137,13 +137,13 @@ WCF.JCoins.Shop.Buy = Class.extend({
 	 */
 	_success: function(data, textStatus, jqXHR) {
 		// data
-		if (typeof data.showSuccess !== 'undefined' && data.showSuccess) {
+		if (typeof data.returnValues.showSuccess !== 'undefined' && data.returnValues.showSuccess) {
 			var $notification = new WCF.System.Notification(WCF.Language.get('wcf.global.success'));
 			$notification.show();
 		}
 		
-		if (typeof data.location !== 'undefined') {
-			window.location.href = data.location;
+		if (typeof data.returnValues.location !== 'undefined') {
+			window.location.href = data.returnValues.location;
 		}
 	}
 });
