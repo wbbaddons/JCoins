@@ -45,6 +45,7 @@
 		<item name="wcf.jcoins.transfer.info"><![CDATA[JCoins an den Benutzer überweisen.]]></item>
 		<item name="wcf.jcoins.transfer.general"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.jcoins.transfer.moderativDisplay"><![CDATA[Moderativ]]></item>
+		<item name="wcf.jcoins.transfer.userIgnores"><![CDATA[Der User {$ignoredUsername} ignoriert dich leider...]]></item>		
 		
 		<!-- TRANSFER ERRORS -->
 		<item name="wcf.jcoins.transfer.error.tooshort"><![CDATA[Der Grund muss mindestens drei Zeichen enthalten.]]></item>

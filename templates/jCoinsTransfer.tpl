@@ -39,7 +39,7 @@
 							<small class="innerError">
 							{if $errorType == 'empty'}{lang}wcf.global.form.error.empty{/lang}{/if}
 							{if $errorType == 'notFound'}{lang}wcf.user.error.username.notFound{/lang}{/if}
-							{if $errorType == 'isIgnored'}Der User {$ignoredUsername} ignoriert dich leider...{/if}
+							{if $errorType == 'isIgnored'}{lang}wcf.jcoins.transfer.userIgnores{/lang}{/if}
 							</small>
 						{/if}
 					</dd>
