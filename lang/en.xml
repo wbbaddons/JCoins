@@ -11,10 +11,17 @@
 		<item name="wcf.jcoins.shop"><![CDATA[Shop]]></item>
 		<item name="wcf.jcoins.shop.buy"><![CDATA[Buy]]></item>
 		<item name="wcf.jcoins.shop.bought"><![CDATA[Bought]]></item>
-		<item name="wcf.jcoins.shop.noitems"><![CDATA[Currently there are no items available.]]></item>
+		<item name="wcf.jcoins.shop.noitems"><![CDATA[Currently there are no items available.]]></item>		
+		
+		<!-- item type download -->
+		<item name="wcf.jcoins.shop.item.type.download"><![CDATA[Download]]></item>
+		<item name="wcf.jcoins.shop.item.type.download.source"><![CDATA[Source]]></item>
+		<item name="wcf.jcoins.shop.item.type.download.source.description"><![CDATA[Fill in the path, relative to WCF, containing the data. If the redirect option is active, then you can also enter a url.]]></item>
+		<item name="wcf.jcoins.shop.item.type.download.redirect"><![CDATA[Redirect]]></item>
+		<item name="wcf.jcoins.shop.item.type.download.redirect.description"><![CDATA[Will the buyer be redirected to the download?]]></item>
 		
                 <!-- exceptions -->
-                <item name="wcf.jcoins.nogroupsavailable"><![CDATA[@TODO]]></item>
+                <item name="wcf.jcoins.nogroupsavailable"><![CDATA[There are no normal groups available, with which a Premiumgroup can be started.]]></item>
                 
                 <!-- STATEMENTS -->
                 <item name="wcf.jcoins.statement.title"><![CDATA[Account statements]]></item>
@@ -37,7 +44,8 @@
                 <item name="wcf.jcoins.transfer"><![CDATA[Transfer]]></item>
                 <item name="wcf.jcoins.transfer.info"><![CDATA[Send JCoins to this user.]]></item>
                 <item name="wcf.jcoins.transfer.general"><![CDATA[General Information]]></item>
-                <item name="wcf.jcoins.transfer.moderativDisplay"><![CDATA[Moderativ]]></item>
+                <item name="wcf.jcoins.transfer.moderativDisplay"><![CDATA[Moderation]]></item>
+                <item name="wcf.jcoins.transfer.userIgnores"><![CDATA[The user {$ignoredUsername} ignores you...]]></item>                
                 
                 <!-- TRANSFER ERRORS -->
                 <item name="wcf.jcoins.transfer.error.tooshort"><![CDATA[The reason has to contain at least three characters.]]></item>
