@@ -82,6 +82,9 @@
 		<!-- USERADD -->
 		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[JCoins Bonus für neuen Nutzeraccount.]]></item>
 		
+		<!-- shop -->
+		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben einen Artikel im Shop gekauft.]]></item>
+		
 		<!-- PREMIUM GROUPS -->
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.jcoins.premiumgroups.active"><![CDATA[AKTIV]]></item>
