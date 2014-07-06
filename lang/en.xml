@@ -118,6 +118,11 @@
                 <item name="wcf.acp.group.option.category.user.jcoins"><![CDATA[JCoins]]></item>
                 <item name="wcf.acp.group.option.category.user.jcoins.general"><![CDATA[Generally]]></item>
                 <item name="wcf.acp.group.option.user.jcoins.canTransfer"><![CDATA[Can transfer JCoins]]></item>
+		<item name="wcf.acp.group.option.user.jcoins.canUser"><![CDATA[Can use JCoins]]></item>
+		<item name="wcf.acp.group.option.user.jcoins.canSee"><![CDATA[Can see JCoins]]></item>
+		<item name="wcf.acp.group.option.user.jcoins.canSee.description"><![CDATA[Users can see for example in the sidebar JCoins then.]]></item>
+		<item name="wcf.acp.group.option.user.jcoins.canUseShop"><![CDATA[Can use the shop]]></item>
+		<item name="wcf.acp.group.option.user.jcoins.canUsePremiumGroups"><![CDATA[Can use the premium-groups]]></item>
                 <item name="wcf.acp.group.option.category.mod.jcoins"><![CDATA[JCoins]]></item>
                 <item name="wcf.acp.group.option.category.mod.jcoins.general"><![CDATA[Generally]]></item>
                 <item name="wcf.acp.group.option.mod.jcoins.canModTransfer"><![CDATA[Can make moderative transfers.]]></item>
@@ -126,6 +131,8 @@
                 <item name="wcf.acp.group.option.category.admin.jcoins"><![CDATA[JCoins]]></item>
                 <item name="wcf.acp.group.option.category.admin.jcoins.general"><![CDATA[Allgemein]]></item>
                 <item name="wcf.acp.group.option.category.admin.jcoins.premiumgroups"><![CDATA[Premium group]]></item>
+		<item name="wcf.acp.group.option.category.admin.jcoins.shop"><![CDATA[Shop]]></item>
+		<item name="wcf.acp.group.option.admin.jcoins.shop.canManage"><![CDATA[Can manage the shop]]></item>
                 <item name="wcf.acp.group.option.admin.jcoins.canExecuteMassProcessing"><![CDATA[Can do mass transfers]]></item>
                 <item name="wcf.acp.group.option.admin.jcoins.premiumgroups.canEditPremiumGroups"><![CDATA[Can edit premium groups]]></item>
                 <item name="wcf.acp.group.option.admin.jcoins.premiumgroups.canAddPremiumGroups"><![CDATA[Can create premium groups]]></item>
