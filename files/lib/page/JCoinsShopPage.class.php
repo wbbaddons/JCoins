@@ -30,6 +30,8 @@ class JCoinsShopPage extends AbstractPage {
 	 */
 	public $items = null;
 
+	public $neededPermissions = array('user.jcoins.canUseShop', 'user.jcoins.canUse');
+	
 	/**
 	 * @see	\wcf\page\IPage::readData()
 	 */

@@ -47,6 +47,8 @@ class OwnCoinsStatementPage extends SortablePage {
 	 */
 	public $objectListClassName = 'wcf\data\user\jcoins\statement\UserJcoinsStatementList';
 
+	public $neededPermissions = array('user.jcoins.canUse');
+	
 	/**
 	 * @see	wcf\page\MultipleLinkPage::initObjectList()
 	 */

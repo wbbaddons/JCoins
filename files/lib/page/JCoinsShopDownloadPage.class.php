@@ -36,10 +36,17 @@ class JCoinsShopDownloadPage extends AbstractPage {
 	public $item = 0;
 	
 	/**
+	 * @see	\wcf\page\AbstractPage::$neededModules
+	 */
+	public $neededModules = array('MODULE_JCOINS', 'MODULE_JCOINS_SHOP');
+	
+	/**
 	 * file reader object
 	 * @var	\wcf\util\FileReader
 	 */
 	public $fileReader = null;
+	
+	public $neededPermissions = array('user.jcoins.canUseShop', 'user.jcoins.canUse');
 	
 	/**
 	 * @see	\wcf\page\IPage::readParameters()

@@ -1,4 +1,4 @@
-{if MODULE_JCOINS && $__wcf->user->userID}
+{if MODULE_JCOINS && $__wcf->user->userID && $__wcf->session->getPermission('user.jcoins.canUse')}
 	<li id="jCoinsUserPanelLink" class="dropdown">
 		<a class="dropdownToggle" data-toggle="userMenu" href="{link controller='OwnCoinsStatement'}{/link}">
 			<span class="icon icon16 icon-money"></span>
@@ -8,8 +8,8 @@
 
 		<ul class="dropdownMenu">
 			<li><a href="{link controller='OwnCoinsStatement'}{/link}">{lang}wcf.jcoins.statement.title{/lang}</a></li>
-			<li><a href="{link controller='JCoinsTransfer'}{/link}">{lang}wcf.jcoins.transfer.title{/lang}</a></li>			
-		{if MODULE_JCOINS_PREMIUMGROUPS && $premiumGroupsAvailable|isset && $premiumGroupsAvailable}
+			{if $__wcf->session->getPermission('user.jcoins.canTransfer')}<li><a href="{link controller='JCoinsTransfer'}{/link}">{lang}wcf.jcoins.transfer.title{/lang}</a></li>{/if}			
+		{if MODULE_JCOINS_PREMIUMGROUPS && $premiumGroupsAvailable|isset && $premiumGroupsAvailable && $__wcf->session->getPermission('user.jcoins.canUsePremiumGroups')}
 			<li><a href="{link controller='JCoinsPremiumGroupsOverview'}{/link}">{lang}wcf.jcoins.premiumgroups.link{/lang}</a></li>
 		{/if}
 
@@ -18,13 +18,13 @@
 		{hascontent}
 		<li class="dropdownDivider"></li>
 
-		{content}
-		{if $__wcf->session->getPermission('mod.jcoins.canSeeTransferList')}
-			<li><a href="{link controller='JCoinsGlobalActivity'}{/link}">{lang}wcf.jcoins.statement.globalactivity{/lang}</a></li>
-			{/if}
+			{content}
+			{if $__wcf->session->getPermission('mod.jcoins.canSeeTransferList')}
+				<li><a href="{link controller='JCoinsGlobalActivity'}{/link}">{lang}wcf.jcoins.statement.globalactivity{/lang}</a></li>
+				{/if}
 
-		{event name='additionalJCoinsModLinks'}
-		{/content}
+			{event name='additionalJCoinsModLinks'}
+			{/content}
 		{/hascontent}
 	</ul>
 </li>

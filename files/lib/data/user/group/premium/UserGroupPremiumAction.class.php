@@ -73,6 +73,8 @@ class UserGroupPremiumAction extends AbstractDatabaseObjectAction implements ITo
 		if (!MODULE_JCOINS || !MODULE_JCOINS_PREMIUMGROUPS)
 			throw new IllegalLinkException();
 
+		if (!WCF::getSession()->getPermission('user.jcoins.canUse') || !WCF::getSession()->getPermission('user.jcoins.canUsePremiumGroups')) throw new PermissionDeniedException(); 
+		
 		if (empty($this->objects)) {
 			$this->readObjects();
 		}

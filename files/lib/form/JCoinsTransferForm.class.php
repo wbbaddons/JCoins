@@ -37,8 +37,8 @@ class JCoinsTransferForm extends AbstractForm {
 	/**
 	 * @see	wcf\page\AbstractPage::$neededPermissions
 	 */
-	public $neededPermissions = array('user.jcoins.canTransfer');
-
+	public $neededPermissions = array('user.jcoins.canUse', 'user.jcoins.canTransfer');
+	
 	/**
 	 * the sum to transfer
 	 * @var	integer
@@ -74,7 +74,7 @@ class JCoinsTransferForm extends AbstractForm {
 	 * @var	boolean
 	 */
 	public $success = false;
-
+	
 	/**
 	 * @see	wcf\page\IPage::readParameters()
 	 */

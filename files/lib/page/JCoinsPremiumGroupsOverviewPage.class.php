@@ -31,6 +31,8 @@ class JCoinsPremiumGroupsOverviewPage extends AbstractPage {
 	 */
 	public $premiumGroupList = null;
 
+	public $neededPermissions = array('user.jcoins.canUsePremiumGroups', 'user.jcoins.canUse');
+	
 	/**
 	 * @see	\wcf\page\IPage::readData()
 	 */

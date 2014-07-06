@@ -93,6 +93,38 @@
 				<admindefaultvalue>1</admindefaultvalue>
 			</option>
 			
+			<option name="user.jcoins.canUse">
+				<categoryname>user.jcoins.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			
+			<option name="user.jcoins.canSee">
+				<categoryname>user.jcoins.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			
+			<option name="user.jcoins.canUseShop">
+				<categoryname>user.jcoins.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			
+			<option name="user.jcoins.canUsePremiumGroups">
+				<categoryname>user.jcoins.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<userdefaultvalue>1</userdefaultvalue>
+				<admindefaultvalue>1</admindefaultvalue>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			
 			<option name="user.jcoins.canTransfer">
 				<categoryname>user.jcoins.general</categoryname>
 				<optiontype>boolean</optiontype>

@@ -1,6 +1,8 @@
 <?php
 namespace wcf\system\jcoins\shop\item\type; 
 
+use wcf\system\request\LinkHandler; 
+
 class DownloadItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 	
 	public static function getIdentifer() {
@@ -20,7 +22,7 @@ class DownloadItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 		
 		// @TODO
 		return array(
-		    'location' => \wcf\system\request\LinkHandler::getInstance()->getLink('JCoinsShopDownload', array('id' => $this->itemID))
+		    'location' => LinkHandler::getInstance()->getLink('JCoinsShopDownload', array('id' => $paramters['itemID']))
 		);
 	}
 }

@@ -33,7 +33,7 @@ class UserJCoinsAction extends \wcf\data\user\UserAction {
 		
 		// trash statements
 		$list = new UserJcoinsStatementList();
-		$list->getConditionBuilder()->add('user_jcoins_statement.userID IN (?)', $this->objectIDs);
+		$list->getConditionBuilder()->add('user_jcoins_statement.userID IN (?)', array($this->objectIDs));
 		$list->readObjectIDs();
 		
 		// trash statements

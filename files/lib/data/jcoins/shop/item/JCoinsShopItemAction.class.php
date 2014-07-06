@@ -155,6 +155,8 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			$this->readObjects();
 		}
 		
+		WCF::getSession()->checkPermissions(array('user.jcoins.canUseShop', 'user.jcoins.canUse'));
+		
 		foreach ($this->getObjects() as $object) {
 			$object->getType()->validateBuy(); 
 			
@@ -184,7 +186,11 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			    TIME_NOW
 			)); 
 			
-			$object->getType()->buy(array_merge($object->getParameters(), array('itemID' => $object->getObjectID()))); 
+			// array_merge isn't useful here :( 
+			$parameters = $object->getParameters();
+			$parameters['itemID'] = $object->getObjectID(); 
+			
+			$object->getType()->buy($parameters); 
 			$return[$object->getObjectID()] = $object->getType()->boughtAction(array_merge($object->getParameters(), array('itemID' => $object->getObjectID())));
 		}
 		
@@ -202,6 +208,8 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			$this->readObjects();
 		}
 		
+		WCF::getSession()->checkPermissions(array('user.jcoins.canUseShop', 'user.jcoins.canUse', 'user.jcoins.canSee'));
+		
 		foreach ($this->getObjects() as $object) {
 			if (!$object->hasBought() || $object->isMultiple()) {
 				throw new \wcf\system\exception\PermissionDeniedException(); 
@@ -213,7 +221,12 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 		$return = array(); 
 		
 		foreach ($this->getObjects() as $object) {
-			$return[$object->getObjectID()] = $object->getType()->boughtAction(array_merge($object->getParameters(), array('itemID' => $object->getObjectID())));
+			
+			// array_merge isn't useful here :( 
+			$parameters = $object->getParameters();
+			$parameters['itemID'] = $object->getObjectID(); 
+			
+			$return[$object->getObjectID()] = $object->getType()->boughtAction($parameters);
 		}
 		
 		if (count($return) == 1) {
