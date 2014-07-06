@@ -65,9 +65,7 @@ abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 				throw new SystemException('parameter "'.$param['name'].'" is missing');
 			}
 			
-			$parameters[$param['name']] = $parameters[$param['parameterID']]; 
-			
-			unset($parameters[$param['parameterID']]); 
+			$parameters[$param['name']] = $parameters[$param['parameterID']];
 		}
 		
 		return $parameters; 

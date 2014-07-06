@@ -71,7 +71,6 @@ CREATE TABLE wcf1_jcoins_shop_item_bought (
 );
 
 ALTER TABLE wcf1_jcoins_shop_item ADD FOREIGN KEY (itemType) REFERENCES wcf1_jcoins_shop_item_type (itemTypeID) ON DELETE CASCADE;
--- ALTER TABLE wcf1_jcoins_shop_item ADD FOREIGN KEY (packageID) REFERENCES wcf1_package (packageID) ON DELETE CASCADE;
 
 
 ALTER TABLE wcf1_jcoins_shop_item_bought ADD FOREIGN KEY (itemID) REFERENCES wcf1_jcoins_shop_item (itemID) ON DELETE CASCADE;
