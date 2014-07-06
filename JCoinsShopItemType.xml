@@ -25,12 +25,12 @@
 				<parameter>
                                         <name>subject</name>
                                         <type>text</type>
-					<regex>/^\s*$/</regex>
+					<!-- <regex>/^\s*$/</regex> -->
                                 </parameter>
                                 <parameter>
                                         <name>text</name>
                                         <type>textarea</type>
-					<regex>/^\s*$/</regex>
+					<!-- <regex>/^\s*$/</regex> -->
                                 </parameter>
                                 <parameter>
                                         <name>userid</name>

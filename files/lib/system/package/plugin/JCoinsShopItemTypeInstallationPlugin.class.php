@@ -175,7 +175,7 @@ class JCoinsShopItemTypeInstallationPlugin extends AbstractXMLPackageInstallatio
 			$type = JCoinsShopItemType::getByIdentifer($data['identifer']); 
 			
 			if ($type->getObjectID() != 0) {
-				$package = new \wcf\data\package\Package($this->installation->getPackageID());
+				$package = new \wcf\data\package\Package($type->packageID);
 				
 				throw new SystemException('identifer is not unique (use by: '. $package->packageName .')');
 			}
