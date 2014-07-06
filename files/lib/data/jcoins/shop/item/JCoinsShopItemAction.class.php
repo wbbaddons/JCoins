@@ -180,11 +180,14 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			$action->validateAction(); 
 			$action->executeAction();
 			
-			$stmt->execute(array(
-			    $object->itemID, 
-			    WCF::getSession()->userID, 
-			    TIME_NOW
-			)); 
+			// log only, if the Item-Type isn't multiple. 
+			if (!$object->getType()->isMultiple()) {
+				$stmt->execute(array(
+				    $object->itemID, 
+				    WCF::getSession()->userID, 
+				    TIME_NOW
+				)); 
+			}
 			
 			// array_merge isn't useful here :( 
 			$parameters = $object->getParameters();
