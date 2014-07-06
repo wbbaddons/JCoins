@@ -194,7 +194,10 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			$parameters['itemID'] = $object->getObjectID(); 
 			
 			$object->getType()->buy($parameters); 
-			$return[$object->getObjectID()] = $object->getType()->boughtAction(array_merge($object->getParameters(), array('itemID' => $object->getObjectID())));
+			//$return[$object->getObjectID()] = $object->getType()->boughtAction(array_merge($object->getParameters(), array('itemID' => $object->getObjectID())));
+			//                                                                     ^ I hate array_merge!!!!!!!! Quell alles üblen... 
+		
+			$return[$object->getObjectID()] = $object->getType()->boughtAction($parameters);
 		}
 		
 		if (count($return) == 1) {
