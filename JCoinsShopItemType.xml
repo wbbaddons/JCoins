@@ -16,5 +16,25 @@
                                 </parameter>
                         </parameters>
 		</jcoinsshopitemtype>
+		
+		<jcoinsshopitemtype>
+                        <identifer>conversation</identifer>
+			<classname>\wcf\system\jcoins\shop\item\type\ConversationItem</classname>
+                        <multiple>1</multiple>
+                        <parameters>
+                                <parameter>
+                                        <name>text</name>
+                                        <type>text</type>
+                                </parameter>
+                                <parameter>
+                                        <name>userid</name>
+                                        <type>int</type>
+                                </parameter>
+				<parameter>
+                                        <name>close</name>
+                                        <type>bool</type>
+                                </parameter>
+                        </parameters>
+		</jcoinsshopitemtype>
 	</import>
 </data>
