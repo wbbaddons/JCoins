@@ -28,7 +28,7 @@
                                 </parameter>
                                 <parameter>
                                         <name>userid</name>
-                                        <type>int</type>
+                                        <type>integer</type>
                                 </parameter>
 				<parameter>
                                         <name>close</name>
