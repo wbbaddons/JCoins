@@ -26,6 +26,10 @@
                                         <name>text</name>
                                         <type>text</type>
                                 </parameter>
+				<parameter>
+                                        <name>subject</name>
+                                        <type>text</type>
+                                </parameter>
                                 <parameter>
                                         <name>userid</name>
                                         <type>integer</type>

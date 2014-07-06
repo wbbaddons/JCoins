@@ -18,12 +18,28 @@ class ConversationItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 		$data = array(
 		    'userID' => WCF::getSession()->userID, 
 		    'username' => WCF::getSession()->username, 
-		    'time' => TIME_NOW
+		    'time' => TIME_NOW, 
+		    'isDraft' => 0, 
+		    'participantCanInvite' => false, 
+		    'subject' => $paramters['subject']
 		); 
 		
-		$messageData = array('text' => $paramters['text']); 
+		$messageData = array(
+			'message' => $paramters['text'],
+			'enableBBCodes' => true, 
+			'enableHtml' => false, 
+			'enableSmilies' => true, 
+			'showSignature' => true
+		); 
 		
-		$action = new ConversationAction(array(), 'create', array('participants' => $paramters['userid'], 'data' => $data, 'messageData' => $messageData));
+		$conversationData = array(
+		    'data' => $data, 
+		    'messageData' => $messageData, 
+		    'participants' => array($paramters['userID'])
+		); 
+		
+		
+		$action = new ConversationAction(array(), 'create', $conversationData);
 		$conversation = $action->executeAction(); 
 		
 		if ($paramters['close'] == 1) {
