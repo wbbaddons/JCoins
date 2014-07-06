@@ -20,6 +20,17 @@
 		<item name="wcf.jcoins.shop.item.type.download.redirect"><![CDATA[Weiterleitung]]></item>
 		<item name="wcf.jcoins.shop.item.type.download.redirect.description"><![CDATA[Soll der Käufer zur Quelle weitergeleitet werden?]]></item>
 		
+		<!-- item type conversation -->
+		<item name="wcf.jcoins.shop.item.type.conversation"><![CDATA[Konversation starten]]></item>
+		<item name="wcf.jcoins.shop.item.type.conversation.text"><![CDATA[Nachricht]]></item>
+		<item name="wcf.jcoins.shop.item.type.conversation.text.description"><![CDATA[]]></item>
+		<item name="wcf.jcoins.shop.item.type.conversation.subject"><![CDATA[Betreff]]></item>
+		<item name="wcf.jcoins.shop.item.type.conversation.subject.description"><![CDATA[Konversation starten]]></item>
+		<item name="wcf.jcoins.shop.item.type.conversation.userid"><![CDATA[Empfänger]]></item>
+		<item name="wcf.jcoins.shop.item.type.conversation.userid.description"><![CDATA[Geben Sie hier die User-ID des Empfängers der Konversation ein. Der Absender ist immer der Käufer.]]></item>
+		<item name="wcf.jcoins.shop.item.type.conversation.close"><![CDATA[Konversation schließen]]></item>
+		<item name="wcf.jcoins.shop.item.type.conversation.close.description"><![CDATA[Die Konversation wird nach dem Kauf geschlossen.]]></item>
+		
                 <!-- exceptions -->
                 <item name="wcf.jcoins.nogroupsavailable"><![CDATA[Es sind keine normale Gruppen, mit welcher man eine Premiumgruppe bilden könnte, verfügbar.]]></item>
 		
