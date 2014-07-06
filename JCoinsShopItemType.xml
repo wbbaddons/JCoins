@@ -22,13 +22,13 @@
 			<classname>\wcf\system\jcoins\shop\item\type\ConversationItem</classname>
                         <multiple>1</multiple>
                         <parameters>
-                                <parameter>
-                                        <name>text</name>
-                                        <type>text</type>
-                                </parameter>
 				<parameter>
                                         <name>subject</name>
                                         <type>text</type>
+                                </parameter>
+                                <parameter>
+                                        <name>text</name>
+                                        <type>textarea</type>
                                 </parameter>
                                 <parameter>
                                         <name>userid</name>
