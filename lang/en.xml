@@ -195,6 +195,7 @@
 		<item name="wcf.acp.jcoins.shop.item.description"><![CDATA[Description]]></item>
                 <item name="wcf.acp.jcoins.shop.item.price"><![CDATA[Price]]></item>
                 <item name="wcf.acp.jcoins.shop.item.types"><![CDATA[Shop-Item-Type]]></item>
+		<item name="wcf.acp.jcoins.shop.item.error.regex"><![CDATA[The field has an invalid value.]]></item>
         </category>
         
         <category name="wcf.clipboard">

@@ -132,7 +132,7 @@
                                         <legend>{lang}wcf.jcoins.shop.item.type.{$t->identifer}{/lang}</legend>
 
                                         {foreach from=$t->getParameters() item=param}
-                                            {include file='jCoinsShopItemParameter' parameter=$param values=$parameterValues type=$t}
+                                            {include file='jCoinsShopItemParameter' parameter=$param values=$parameterValues type=$t error=$errorField}
                                         {/foreach}
                                 </fieldset>
                         </div>

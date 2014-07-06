@@ -128,7 +128,7 @@ class JCoinsShopItemAddForm extends AbstractForm {
 				$regex = new Regex($parameter['regex']); 
 				
 				if (!$regex->match($this->parameterParameters[$parameter['parameterID']])) {
-					throw new UserInputException($parameter['name']); 
+					throw new UserInputException($parameter['parameterID'], 'regex'); 
 				}
 			}
 		}
