@@ -10,14 +10,6 @@ class ConversationItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 		return 'conversation';
 	}
 	
-	public function boughtAction(array $paramters) {
-		parent::boughtAction($paramters);
-		
-		return array(
-		    'showSuccess' => true
-		); 
-	}
-	
 	public function buy(array $paramters) {
 		parent::buy($paramters);
 		
@@ -54,9 +46,5 @@ class ConversationItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 			$action = new ConversationAction(array($conversation['returnValues']), 'close', array());
 			$action->executeAction(); 
 		}
-		
-		return array(
-		    'showSuccess' => true
-		); 
 	}
 }
