@@ -188,6 +188,7 @@ class JCoinsTransferForm extends AbstractForm {
 		$this->reason = "";
 		$this->user = array();
 		$this->success = true;
+		$this->isModerativ = 0; 
 	}
 
 	/**
@@ -200,7 +201,8 @@ class JCoinsTransferForm extends AbstractForm {
 		    'user' => $this->user,
 		    'sum' => $this->sum,
 		    'reason' => $this->reason,
-		    'success' => $this->success
+		    'success' => $this->success, 
+		    'isModerativ' => $this->isModerativ
 		));
 	}
 

@@ -82,7 +82,7 @@
 				{if $__wcf->session->getPermission('mod.jcoins.canModTransfer')} <dl id="isModTransferDiv">
 					<dd>
 						<label>
-							<input type="checkbox" name="isModerativ" id="isModerativ" value="1">
+							<input type="checkbox" name="isModerativ" id="isModerativ" value="1"{if $isModerativ} checked="checked"{/if}>
 							{lang}wcf.jcoins.transfer.domoderativ{/lang}
 						</label>
 					</dd>
