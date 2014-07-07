@@ -30,7 +30,7 @@ DROP TABLE IF EXISTS wcf1_jcoins_shop_item_type;
 CREATE TABLE wcf1_jcoins_shop_item_type (
 	itemTypeID  		INT(10)			NOT NULL AUTO_INCREMENT PRIMARY KEY,
         identifer               MEDIUMTEXT              NOT NULL, 
-        isMultible              BOOLEAN                 NOT NULL DEFAULT 1,
+        isMultiple              BOOLEAN                 NOT NULL DEFAULT 1,
         className               MEDIUMTEXT              NOT NULL, 
         packageID               INT(10)
 );
