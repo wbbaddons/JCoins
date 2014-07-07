@@ -11,12 +11,6 @@ use wcf\system\exception\SystemException;
  */
 abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 	
-	/**
-	 * can you buy the item more than once?
-	 * @var boolean 
-	 */
-	public $multipleItem = true; 
-	
 	public $itemType = null; 
 	
 	public function __construct($itemType = null) {
