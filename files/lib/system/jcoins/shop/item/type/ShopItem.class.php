@@ -14,6 +14,7 @@ abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 	public $itemType = null; 
 	
 	public function __construct($itemType = null) {
+		EventHandler::getInstance()->fireAction($this, 'init');
 		
 		if (!($itemType instanceof \wcf\data\jcoins\shop\item\type\JCoinsShopItemType)) {
 			$this->itemType = \wcf\data\jcoins\shop\item\type\JCoinsShopItemType::getByIdentifer($this->getIdentifer()); 
