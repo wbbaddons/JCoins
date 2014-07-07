@@ -119,7 +119,7 @@
         <!-- GROUP OPTIONS -->
         <category name="wcf.acp.group">
                 <item name="wcf.acp.group.option.category.user.jcoins"><![CDATA[JCoins]]></item>
-                <item name="wcf.acp.group.option.category.user.jcoins.general"><![CDATA[Generally]]></item>
+                <item name="wcf.acp.group.option.category.user.jcoins.general"><![CDATA[General]]></item>
                 <item name="wcf.acp.group.option.user.jcoins.canTransfer"><![CDATA[Can transfer JCoins]]></item>
 		<item name="wcf.acp.group.option.user.jcoins.canUser"><![CDATA[Can use JCoins]]></item>
 		<item name="wcf.acp.group.option.user.jcoins.canSee"><![CDATA[Can see JCoins]]></item>
@@ -172,23 +172,23 @@
         
         <category name="wcf.acp.menu">
                 <item name="wcf.acp.menu.link.jcoins"><![CDATA[JCoins]]></item>
-                <item name="wcf.acp.menu.link.jcoins.premium.list"><![CDATA[List premium groups]]></item>
-                <item name="wcf.acp.menu.link.jcoins.premium.add"><![CDATA[Add premium group]]></item>
-                <item name="wcf.acp.menu.link.jcoins.shop.item.list"><![CDATA[List Shop-Items]]></item>
-                <item name="wcf.acp.menu.link.jcoins.shop.item.add"><![CDATA[Add Shop-Item]]></item>
+                <item name="wcf.acp.menu.link.jcoins.premium.list"><![CDATA[List Premium Groups]]></item>
+                <item name="wcf.acp.menu.link.jcoins.premium.add"><![CDATA[Add Premium Group]]></item>
+                <item name="wcf.acp.menu.link.jcoins.shop.item.list"><![CDATA[List Shop Items]]></item>
+                <item name="wcf.acp.menu.link.jcoins.shop.item.add"><![CDATA[Add Shop Item]]></item>
         </category>
         
         <category name="wcf.acp.jcoins">
-                <item name="wcf.acp.jcoins.premiumgroups.edit"><![CDATA[Edit premium group]]></item>
-                <item name="wcf.acp.jcoins.premiumgroups.add"><![CDATA[Add premium group]]></item>
+                <item name="wcf.acp.jcoins.premiumgroups.edit"><![CDATA[Edit Premium Group]]></item>
+                <item name="wcf.acp.jcoins.premiumgroups.add"><![CDATA[Add Premium Group]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.editinfo"><![CDATA[Note, that only the description and the count of the JCoins can be changed. If you want to change the group or the length, you need to create a new offer. If you want to make these not buyable, you can deactivate or delete the offer.]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.addinfo"><![CDATA[Note that only premium groups can be deleted again when all subscriptions have expired!]]></item>
-                <item name="wcf.acp.jcoins.premiumgroups.list"><![CDATA[Premium group]]></item>
+                <item name="wcf.acp.jcoins.premiumgroups.list"><![CDATA[Premium Groups]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.nogroups"><![CDATA[No premium groups have been created yet.]]></item>        
                 <item name="wcf.acp.jcoins.premiumgroups.JCoins"><![CDATA[JCoins]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.period"><![CDATA[Duration]]></item>
-                <item name="wcf.acp.jcoins.premiumgroups.period.description"><![CDATA[Enter here the duration in days.]]></item>
-                <item name="wcf.acp.jcoins.premiumgroups.description"><![CDATA[Beschreibung]]></item>
+                <item name="wcf.acp.jcoins.premiumgroups.period.description"><![CDATA[Enter the time the group membership should be active [time in days]]]></item>
+                <item name="wcf.acp.jcoins.premiumgroups.description"><![CDATA[Description]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.groupID"><![CDATA[Gruppe]]></item>
                 
                 <!-- global -->
@@ -209,22 +209,22 @@
                 <item name="wcf.acp.jcoins.massprocessing.fromuser.own"><![CDATA[own user account]]></item>
                 
                 <!-- shop -->
-                <item name="wcf.acp.jcoins.shop.item.list"><![CDATA[Shop-Item list]]></item>
-		<item name="wcf.acp.jcoins.shop.item.add"><![CDATA[Add Shop-Item]]></item>
+                <item name="wcf.acp.jcoins.shop.item.list"><![CDATA[Shop Items]]></item>
+		<item name="wcf.acp.jcoins.shop.item.add"><![CDATA[Add Shop Item]]></item>
 		<item name="wcf.acp.jcoins.shop.item.general"><![CDATA[General]]></item>
                 <item name="wcf.acp.jcoins.shop.item.name"><![CDATA[Name]]></item>
 		<item name="wcf.acp.jcoins.shop.item.description"><![CDATA[Description]]></item>
                 <item name="wcf.acp.jcoins.shop.item.price"><![CDATA[Price]]></item>
-                <item name="wcf.acp.jcoins.shop.item.types"><![CDATA[Shop-Item-Type]]></item>
-		<item name="wcf.acp.jcoins.shop.item.error.regex"><![CDATA[The field has an invalid value.]]></item>
+                <item name="wcf.acp.jcoins.shop.item.types"><![CDATA[Item Type]]></item>
+		<item name="wcf.acp.jcoins.shop.item.error.regex"><![CDATA[The given value is invalid]]></item>
         </category>
         
         <category name="wcf.clipboard">
 		<item name="wcf.clipboard.item.com.woltlab.wcf.user.resetJCoins"><![CDATA[Reset JCoins ({#$count})]]></item>
-		<item name="wcf.clipboard.item.com.woltlab.wcf.user.resetJCoins.confirmMessage"><![CDATA[Do you really want the JCoins from {if $count == 1}a{else}{#$count}{/if} user{if $count > 1}s{/if} reset?]]></item>
+		<item name="wcf.clipboard.item.com.woltlab.wcf.user.resetJCoins.confirmMessage"><![CDATA[Do you really want to reset the JCoins of {#$count} user{if $count > 1}s{/if}?]]></item>
 	</category>
         
         <category name="wcf.dashboard.box">
-		<item name="wcf.dashboard.box.de.joshsboard.jcoins.richestUser"><![CDATA[Richest user]]></item>
+		<item name="wcf.dashboard.box.de.joshsboard.jcoins.richestUser"><![CDATA[Richest Users]]></item>
 	</category>
 </language>
