@@ -33,6 +33,9 @@
 
 	{hascontent}
 	<div class="tabularBox tabularBoxTitle marginTop">
+		<header>
+			<h2>{lang}wcf.jcoins.statement.title{/lang}</h2>
+		</header>
 		<table class="table">
 			<thead>
 				<tr>

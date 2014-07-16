@@ -4,6 +4,13 @@
 	<title>{lang}wcf.jcoins.transfer{/lang} - {PAGE_TITLE|language}</title>
 
 	{include file='headInclude'}
+	<script data-relocate="true">
+		//<![CDATA[
+			$(function() {
+				new WCF.Search.User('#usernameInput', null, false, [ ], false);
+			});
+		//]]>
+	</script>
 </head>
 
 <body id="tpl{$templateName|ucfirst}">

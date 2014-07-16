@@ -122,7 +122,7 @@
                 <item name="wcf.acp.group.option.category.user.jcoins"><![CDATA[JCoins]]></item>
                 <item name="wcf.acp.group.option.category.user.jcoins.general"><![CDATA[General]]></item>
                 <item name="wcf.acp.group.option.user.jcoins.canTransfer"><![CDATA[Can transfer JCoins]]></item>
-		<item name="wcf.acp.group.option.user.jcoins.canUser"><![CDATA[Can use JCoins]]></item>
+		<item name="wcf.acp.group.option.user.jcoins.canUse"><![CDATA[Can use JCoins]]></item>
 		<item name="wcf.acp.group.option.user.jcoins.canSee"><![CDATA[Can see JCoins]]></item>
 		<item name="wcf.acp.group.option.user.jcoins.canSee.description"><![CDATA[Users can see for example in the sidebar JCoins then.]]></item>
 		<item name="wcf.acp.group.option.user.jcoins.canUseShop"><![CDATA[Can use the shop]]></item>
