@@ -231,4 +231,11 @@
 	<category name="wcf.dashboard.box">
 		<item name="wcf.dashboard.box.de.joshsboard.jcoins.richestUser"><![CDATA[Reichste Benutzer]]></item>
 	</category>
+	
+	<category name="wcf.user.usersOnline">
+		<item name="wcf.user.usersOnline.location.OwnCoinsStatementPage"><![CDATA[Kontoauszüge]]></item>
+		<item name="wcf.user.usersOnline.location.JCoinsShopPage"><![CDATA[Shop]]></item>
+		<item name="wcf.user.usersOnline.location.JCoinsPremiumGroupsOverviewPagee"><![CDATA[Premiumgruppen]]></item>
+		<item name="wcf.user.usersOnline.location.JCoinsTransferForm"><![CDATA[Überweisung]]></item>
+	</category>
 </language>

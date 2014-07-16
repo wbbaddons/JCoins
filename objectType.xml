@@ -7,5 +7,34 @@
 			<classname>wcf\system\user\notification\object\type\JCoinsTransferNotificationObjectType</classname>
 			<category>de.joshsboard.wcf.jcoins</category>
 		</type>
+		
+		<!-- locations -->
+		<type>
+			<name>de.joshsboard.jcoins.user.JCoinsShopPage</name>
+			<definitionname>com.woltlab.wcf.user.online.location</definitionname>
+			<controller><![CDATA[wcf\page\JCoinsShopPage]]></controller>
+			<languagevariable>wcf.user.usersOnline.location.JCoinsShopPage</languagevariable>
+		</type>
+		
+		<type>
+			<name>de.joshsboard.jcoins.user.OwnCoinsStatementPage</name>
+			<definitionname>com.woltlab.wcf.user.online.location</definitionname>
+			<controller><![CDATA[wcf\page\OwnCoinsStatementPage]]></controller>
+			<languagevariable>wcf.user.usersOnline.location.OwnCoinsStatementPage</languagevariable>
+		</type>
+		
+		<type>
+			<name>de.joshsboard.jcoins.user.JCoinsPremiumGroupsOverviewPage</name>
+			<definitionname>com.woltlab.wcf.user.online.location</definitionname>
+			<controller><![CDATA[wcf\page\JCoinsPremiumGroupsOverviewPage]]></controller>
+			<languagevariable>wcf.user.usersOnline.location.JCoinsPremiumGroupsOverviewPage</languagevariable>
+		</type>
+		
+		<type>
+			<name>de.joshsboard.jcoins.user.JCoinsTransferForm</name>
+			<definitionname>com.woltlab.wcf.user.online.location</definitionname>
+			<controller><![CDATA[wcf\page\JCoinsTransferForm]]></controller>
+			<languagevariable>wcf.user.usersOnline.location.JCoinsTransferForm</languagevariable>
+		</type>
 	</import>
 </data>

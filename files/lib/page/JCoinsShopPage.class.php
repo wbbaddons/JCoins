@@ -13,6 +13,11 @@ use wcf\system\WCF;
  * @subpackage	wcf.page
  */
 class JCoinsShopPage extends AbstractPage {
+	
+	/**
+	 * @see	wcf\page\AbstractPage::$enableTracking
+	 */
+	public $enableTracking = true;
 
 	/**
 	 * @see	\wcf\page\AbstractPage::$activeMenuItem
