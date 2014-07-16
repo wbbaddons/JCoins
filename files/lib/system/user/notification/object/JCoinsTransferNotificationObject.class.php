@@ -35,7 +35,7 @@ class JCoinsTransferNotificationObject extends DatabaseObjectDecorator implement
 	 * @see	wcf\system\user\notification\object\IUserNotificationObject::getAuthorID()
 	 */
 	public function getAuthorID() {
-		return $this->userID;
+		return $this->executedUserID;
 	}
 
 }
