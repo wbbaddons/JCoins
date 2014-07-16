@@ -148,6 +148,10 @@ class JCoinsShopItemAddForm extends AbstractForm {
 			throw new UserInputException('price'); 
 		}
 		
+		if ($this->price > 4294967294) {
+			throw new UserInputException('price', 'max'); 
+		}
+		
 		if ($this->type->getObjectID() == 0) {
 			throw new UserInputException('type'); 
 		}

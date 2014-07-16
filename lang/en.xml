@@ -33,7 +33,8 @@
 		
                 <!-- exceptions -->
                 <item name="wcf.jcoins.nogroupsavailable"><![CDATA[There are no normal groups available, with which a Premiumgroup can be started.]]></item>
-                
+                <item name="wcf.jcoins.shop.error.integer.max"><![CDATA[The item should not cost more than 4294967294 JCoins.]]></item>
+		
                 <!-- STATEMENTS -->
                 <item name="wcf.jcoins.statement.title"><![CDATA[Account statements]]></item>
                 <item name="wcf.jcoins.statement.globalactivity"><![CDATA[Global Activities]]></item>

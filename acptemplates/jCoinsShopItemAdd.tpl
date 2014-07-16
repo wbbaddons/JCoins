@@ -88,10 +88,11 @@
                         <dl>
                                 <dt><label for="price">{lang}wcf.acp.jcoins.shop.item.price{/lang}</label></dt>
                                 <dd>
-                                        <input type="number" id="price" name="price" value="{$price}" class="medium" />
+                                        <input type="number" id="price" name="price" value="{$price}" max="4294967294" min="0" class="medium" />
                                          {if $errorField == 'price'}
                                                 <small class="innerError">
                                                         {if $errorType == 'empty'}{lang}wcf.global.form.error.empty{/lang}{/if}
+							{if $errorType == 'max'}{lang}wcf.jcoins.shop.error.integer.max{/lang}{/if}
                                                 </small>
                                         {/if}
                                 </dd>

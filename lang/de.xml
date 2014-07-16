@@ -33,6 +33,7 @@
 		
                 <!-- exceptions -->
                 <item name="wcf.jcoins.nogroupsavailable"><![CDATA[Es sind keine normale Gruppen, mit welcher man eine Premiumgruppe bilden könnte, verfügbar.]]></item>
+		<item name="wcf.jcoins.shop.error.integer.max"><![CDATA[Das Item darf nicht mehr als 4294967294 JCoins kosten.]]></item>
 		
 		<!-- STATEMENTS -->
 		<item name="wcf.jcoins.statement.title"><![CDATA[Kontoauszüge]]></item>
