@@ -42,7 +42,7 @@ class JCoinsConversationMessageAddListener implements IEventListener {
 			$this->statementAction->validateAction();
 			$this->statementAction->executeAction();
 		} else {
-			$conversation = new \wcf\data\conversation\Conversation((isset($parameters['objectID'])) ? intavl($parameters['objectID']) : 0);
+			$conversation = new \wcf\data\conversation\Conversation((isset($parameters['objectID'])) ? intval($parameters['objectID']) : 0);
 			
 			$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 				'data' => array(
