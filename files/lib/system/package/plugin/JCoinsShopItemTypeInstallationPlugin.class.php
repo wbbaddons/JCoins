@@ -154,7 +154,7 @@ class JCoinsShopItemTypeInstallationPlugin extends AbstractXMLPackageInstallatio
 	 */
 	protected function prepareImport(array $data) {
 		return array(
-			'isMultible' => (isset($data['elements']['multible'])) ? intval($data['elements']['multible']) : 0,
+			'isMultiple' => (isset($data['elements']['multiple'])) ? intval($data['elements']['multiple']) : 0,
 			'className' => (isset($data['elements']['classname'])) ? $data['elements']['classname'] : '', 
 			'identifer' => (isset($data['elements']['identifer'])) ? $data['elements']['identifer'] : '', 
 			'parameters' => (isset($data['elements']['parameters'])) ? $data['elements']['parameters'] : array(),
