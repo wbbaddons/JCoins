@@ -6,6 +6,7 @@ CREATE TABLE wcf1_user_jcoins_statement (
 	time 			INT(10)			NOT NULL DEFAULT 0,
 	reason 			VARCHAR(255)		NOT NULL DEFAULT '',
 	link			VARCHAR(255)		NOT NULL DEFAULT '',
+	additionalData		MEDIUMTEXT,			
 	sum 			INT(10) 		NOT NULL DEFAULT 0, 
 	isTrashed		BOOLEAN			NOT NULL DEFAULT 0,
 	isModTransfer		BOOLEAN			NOT NULL DEFAULT 0,

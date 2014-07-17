@@ -51,7 +51,7 @@
 				{foreach from=$objects item=item}
 					<tr class="statementTableRow">
 						<td>{#$item->entryID}</td>
-						<td>{if $item->link != ""}<a href="{$item->link}">{/if}{$item->reason|language}{if $item->link != ""}</a>{/if}</td>
+						<td>{if $item->link != ""}<a href="{$item->link}">{/if}{$item->getReason()}{if $item->link != ""}</a>{/if}</td>
 						<td>{if $item->executedUserID == 0}{lang}wcf.jcoins.systemuser{/lang}{else}<a href="{link controller='User' object=$item->getExecutedUser()}{/link}">{$item->getExecutedUser()->username}</a>{/if}</td>
 						<td>{if $item->sum > 0}<span class="badge green">+{#$item->sum}</span>{else}<span class="badge red">{#$item->sum}</span>{/if}</td>
 						<td>{@$item->time|time}</td>

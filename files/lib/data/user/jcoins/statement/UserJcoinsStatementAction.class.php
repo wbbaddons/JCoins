@@ -35,7 +35,7 @@ class UserJcoinsStatementAction extends AbstractDatabaseObjectAction {
 		$this->readInteger('time', true, 'data');
 		$this->readInteger('userID', true, 'data');
 		$this->readString('reason', false, 'data');
-
+		
 		if (!$this->parameters['data']['time']) {
 			$this->parameters['data']['time'] = TIME_NOW;
 		}
@@ -50,6 +50,20 @@ class UserJcoinsStatementAction extends AbstractDatabaseObjectAction {
 		
 		if ($this->parameters['data']['executedUserID'] == 0) {
 			$this->parameters['data']['executedUserID'] = null;
+		}
+		
+		if (isset($this->parameters['data']['additionalData'])) {
+			if (is_array($this->parameters['data']['additionalData'])) {
+				$this->parameters['data']['additionalData'] = serialize($this->parameters['data']['additionalData']); 
+			} else {
+				$test = @unserialize($this->parameters['data']['additionalData']);
+				if ($test === false) {
+					throw new UserInputException('additionalData');
+				}
+			}
+		} else {
+			// we save an empty array yeah! :)
+			$this->parameters['data']['additionalData'] = serialize(array()); 
 		}
 	}
 
@@ -68,6 +82,21 @@ class UserJcoinsStatementAction extends AbstractDatabaseObjectAction {
 		return $statement;
 	}
 
+	public function validateUpdate() {
+		parent::validateUpdate();
+		
+		if (isset($this->parameters['data']['additionalData'])) {
+			if (is_array($this->parameters['data']['additionalData'])) {
+				$this->parameters['data']['additionalData'] = serialize($this->parameters['data']['additionalData']); 
+			} else {
+				$test = @unserialize($this->parameters['data']['additionalData']);
+				if ($test === false) {
+					throw new UserInputException('additionalData');
+				}
+			}
+		}
+	}
+	
 	/**
 	 * Validates the trashing of statements.
 	 */

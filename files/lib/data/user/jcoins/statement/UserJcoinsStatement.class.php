@@ -57,5 +57,20 @@ class UserJcoinsStatement extends DatabaseObject {
 
 		return $this->user;
 	}
-
+	
+	/**
+	 * get the addtional-data array
+	 * @return array<mixed>
+	 */
+	public function getAdditionalData() {
+		return unserialize($this->additionalData); 
+	}
+	
+	/**
+	 * get the reason with the additional data
+	 * @return string
+	 */
+	public function getReason() {
+		return \wcf\system\WCF::getLanguage()->getDynamicVariable($this->reason, $this->getAdditionalData());
+	}
 }
