@@ -26,20 +26,39 @@ class JCoinsConversationMessageAddListener implements IEventListener {
 		$parameters = $eventObj->getParameters();
 		if (isset($parameters['isFirstPost'])) return;
 		
-		$return = $eventObj->getReturnValues();
-		$conversation = $return['returnValues']->getConversation();
-		
-		$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
-		    'data' => array(
-			'reason' => 'wcf.jcoins.statement.conversationreplyadd.recive',
-			'sum' => JCOINS_RECEIVECOINS_ADDCONVERSATIONREPLY, 
-			'additionalData' => array('title' => $conversation->subject), 
-			'link' => $return['returnValues']->getLink()
-		    ),
-		    'changeBalance' => 1
-		));
-		$this->statementAction->validateAction();
-		$this->statementAction->executeAction();
+		if ($eventObj->getActionName() == 'create') {
+			$return = $eventObj->getReturnValues();
+			$conversation = $return['returnValues']->getConversation();
+
+			$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
+			    'data' => array(
+				'reason' => 'wcf.jcoins.statement.conversationreplyadd.recive',
+				'sum' => JCOINS_RECEIVECOINS_ADDCONVERSATIONREPLY, 
+				'additionalData' => array('title' => $conversation->subject), 
+				'link' => $return['returnValues']->getLink()
+			    ),
+			    'changeBalance' => 1
+			));
+			$this->statementAction->validateAction();
+			$this->statementAction->executeAction();
+		} else {
+			$conversation = new \wcf\data\conversation\Conversation((isset($parameters['objectID'])) ? intavl($parameters['objectID']) : 0);
+			
+			$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
+				'data' => array(
+				    'reason' => 'wcf.jcoins.statement.conversationadd.recive',
+				    'sum' => JCOINS_RECEIVECOINS_CREATECONVERSATION,
+				    'additionalData' => array('title' => $conversation->subject), 
+				    // we havn't a specefic link, 
+				    // because the quickreply-editor doesn't gave 
+				    // the object and a work-around is an unnecessary additional expenses
+				    'link' => \wcf\system\request\LinkHandler::getInstance()->getLink('Conversation', array('object' => $conversation)) 
+				),
+				'changeBalance' => 1
+			    ));
+			$this->statementAction->validateAction();
+			$this->statementAction->executeAction();
+		}
 	}
 
 }
