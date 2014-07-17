@@ -85,6 +85,30 @@
                                 </dd>
                         </dl>
                                 
+			<!-- parseBBCodes -->
+			<dl>
+				<dt></dt>
+				<dd>
+					<label for="parseBBCodes"><input type="checkbox" id="parseBBCodes" name="parseBBCodes" value="1" {if $parseBBCodes} checked="checked"{/if}/> {lang}wcf.acp.jcoins.shop.item.bbcodes{/lang}</label>
+				</dd>
+			</dl>
+
+			<!-- allowHTML -->
+			<dl>
+				<dt></dt>
+				<dd>
+					<label for="allowHTML"> <input type="checkbox" name="allowHTML" id="allowHTML" value="1" {if $allowHTML} checked="checked"{/if}/> {lang}wcf.acp.jcoins.shop.item.html{/lang}</label>
+				</dd>
+			</dl>
+
+			<!-- allowSmileys -->
+			<dl>
+				<dt></dt>
+				<dd>
+					<label for="allowSmileys"> <input type="checkbox" name="allowSmileys" id="allowSmileys" value="1" {if $allowSmileys} checked="checked"{/if}/> {lang}wcf.acp.jcoins.shop.item.smileys{/lang}</label>
+				</dd>
+			</dl>
+				
                         <dl>
                                 <dt><label for="price">{lang}wcf.acp.jcoins.shop.item.price{/lang}</label></dt>
                                 <dd>

@@ -65,6 +65,24 @@ class JCoinsShopItemAddForm extends AbstractForm {
 	public $parameterParameters = array(); 
 	
 	/**
+	 * defines wheather allow bbcodes in the content
+	 * @var boolean
+	 */
+	public $parseBBCodes = true;
+
+	/**
+	 * defines wheather allow html in the content
+	 * @var boolean
+	 */
+	public $allowHTML = false;
+
+	/**
+	 * defines wheather allow smileys in the content
+	 * @var boolean
+	 */
+	public $allowSmileys = false;
+	
+	/**
 	 * @see	\wcf\page\IPage::readData()
 	 */
 	public function readData() {
@@ -87,6 +105,11 @@ class JCoinsShopItemAddForm extends AbstractForm {
 		
 		if (isset($_POST['price'])) $this->price = intval($_POST['price']);
 		if (isset($_POST['type'])) $this->typeID = intval($_POST['type']);
+		
+		if (isset($_POST['parseBBCodes']) & $_POST['parseBBCodes'] == 1) $this->parseBBCodes = true;
+		if (isset($_POST['allowHTML']) && $_POST['allowHTML'] == 1) $this->allowHTML = true;
+		if (isset($_POST['allowSmileys']) && $_POST['allowSmileys'] == 1) $this->allowSmileys = true;
+		
 		$this->type = new \wcf\data\jcoins\shop\item\type\JCoinsShopItemType($this->typeID);
 		
 		$this->readParameterParameters(); 
@@ -172,6 +195,9 @@ class JCoinsShopItemAddForm extends AbstractForm {
 			'price' => $this->price, 
 			'description' => I18nHandler::getInstance()->isPlainValue('description') ? I18nHandler::getInstance()->getValue('description') : '', 
 			'name' => I18nHandler::getInstance()->isPlainValue('name') ? I18nHandler::getInstance()->getValue('name') : '', 
+			'parseBBCodes' => ($this->parseBBCodes) ? 1 : 0,
+			'allowHTML' => ($this->allowHTML) ? 1 : 0,
+			'allowSmileys' => ($this->allowSmileys) ? 1 : 0,
 			'showOrder' => $this->showOrder
 			), 
 		    'parameters' => $this->parameterParameters
@@ -206,6 +232,9 @@ class JCoinsShopItemAddForm extends AbstractForm {
 		$this->price = 0; 
 		$this->parameterParameters = array(); 
 		
+		$this->parseBBCodes = true;
+		$this->allowHTML = $this->allowSmileys = false;
+		
 		// show success
 		WCF::getTPL()->assign('success', true);
 	}
@@ -221,11 +250,14 @@ class JCoinsShopItemAddForm extends AbstractForm {
 		I18nHandler::getInstance()->assignVariables();
 		
 		WCF::getTPL()->assign(array(
-		    'types' => $this->typeList->getObjects(), 
-		    'type' => $this->typeID,
-		    'price' => $this->price,
-		    'showOrder' => $this->showOrder, 
-		    'parameterValues' => $this->parameterParameters
+			'types' => $this->typeList->getObjects(), 
+			'type' => $this->typeID,
+			'price' => $this->price,
+			'showOrder' => $this->showOrder, 
+			'parameterValues' => $this->parameterParameters,
+			'parseBBCodes' => ($this->parseBBCodes) ? 1 : 0,
+			'allowHTML' => ($this->allowHTML) ? 1 : 0,
+			'allowSmileys' => ($this->allowSmileys) ? 1 : 0
 		));
 	}
 

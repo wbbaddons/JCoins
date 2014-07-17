@@ -33,7 +33,7 @@
 								<div class="containerHeadline">
 									<h3>{lang}{$item->name}{/lang} <span class="badge green">{#$item->price} {lang}wcf.jcoins.title{/lang}</span></h3>
 								</div>
-								<p>{lang}{$item->description}{/lang}</p>
+								<p>{if $item->allowHTML}{@$item->getDescription()}{else}{@$item->getDescription()|nl2br}{/if}</p>
 								<ul class="buttonList smallButtons marginTop jCoinsShopItemButtons" style="float: right;">
 									{if $item->isMultiple() || !$item->hasBought()}
 										<li><button {if !$item->canBuy()}disabled="disabled" {/if}class="buttonPrimary small buttonBuy" data-item-id="{$item->getObjectID()}">{lang}wcf.jcoins.shop.buy{/lang}</button></li>

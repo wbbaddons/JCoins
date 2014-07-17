@@ -221,6 +221,9 @@
                 <item name="wcf.acp.jcoins.shop.item.price"><![CDATA[Preis]]></item>
                 <item name="wcf.acp.jcoins.shop.item.types"><![CDATA[Shop-Item-Typ]]></item>
 		<item name="wcf.acp.jcoins.shop.item.error.regex"><![CDATA[Das Feld hat einen ungültigen Wert.]]></item>
+		<item name="wcf.acp.jcoins.shop.item.bbcodes"><![CDATA[BBCodes erlauben]]></item>
+		<item name="wcf.acp.jcoins.shop.item.html"><![CDATA[HTML erlauben]]></item>
+		<item name="wcf.acp.jcoins.shop.item.smileys"><![CDATA[Smileys erlauben]]></item>
 	</category>
         
         <category name="wcf.clipboard">

@@ -2,6 +2,7 @@
 namespace wcf\data\jcoins\shop\item;
 
 use wcf\data\DatabaseObject;
+use wcf\system\bbcode\MessageParser; 
 
 /**
  * Represents a shop item type. 
@@ -108,5 +109,10 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 	
 	public function getParameters() {
 		return $this->parameters; 
+	}
+	
+	public function getDescription() {
+		MessageParser::getInstance()->setOutputType('text/html');
+		return MessageParser::getInstance()->parse(WCF::getLanguage()->get($this->description), $this->allowSmileys, $this->allowHTML, $this->parseBBCodes, false);
 	}
 }
