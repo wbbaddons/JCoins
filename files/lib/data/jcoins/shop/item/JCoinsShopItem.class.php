@@ -3,6 +3,7 @@ namespace wcf\data\jcoins\shop\item;
 
 use wcf\data\DatabaseObject;
 use wcf\system\bbcode\MessageParser; 
+use wcf\system\WCF;
 
 /**
  * Represents a shop item type. 
