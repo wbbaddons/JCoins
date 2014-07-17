@@ -70,17 +70,17 @@
                 <item name="wcf.jcoins.globalactivity.noresults"><![CDATA[There are no activities yet.]]></item>
                 
                 <!-- LIKES -->
-                <item name="wcf.jcoins.statement.like.recive"><![CDATA[Someone likes something from you.]]></item>
-                <item name="wcf.jcoins.statement.like.revoke"><![CDATA[Someone likes something not any more from you.]]></item>
-                <item name="wcf.jcoins.statement.dislike.recive"><![CDATA[Someone dislikes something from you.]]></item>
-                <item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[Someone dislikes something not any more from you.]]></item>
+                <item name="wcf.jcoins.statement.like.recive"><![CDATA[{$username} likes „{$title}“ from you.]]></item>
+                <item name="wcf.jcoins.statement.like.revoke"><![CDATA[{$username} likes „{$title}“ not any more from you.]]></item>
+                <item name="wcf.jcoins.statement.dislike.recive"><![CDATA[{$username} dislikes „{$title}“ from you.]]></item>
+                <item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[{$username} dislikes „{$title}“ not any more from you.]]></item>
                 
                 <!-- CONVERSATIONS -->
                 <item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[You have started the conversation „{$title}“.]]></item>
                 <item name="wcf.jcoins.statement.conversationreplyadd.recive"><![CDATA[You have written a reply in the conversation „{$title}“.]]></item>
                 
 		<!-- shop -->
-		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[You bought an item.]]></item>
+		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[You bought the item „{$title}“.]]></item>
 		
                 <!-- USERADD -->
                 <item name="wcf.jcoins.statement.useradd.receive"><![CDATA[JCoins Bonus for new user account.]]></item>

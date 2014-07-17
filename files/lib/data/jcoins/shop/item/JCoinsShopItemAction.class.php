@@ -175,6 +175,7 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 			$action = new \wcf\data\user\jcoins\statement\UserJcoinsStatementAction(array(), 'create', array('data' => array(
 				'reason' => 'wcf.jcoins.statement.shop.buy',
 				'sum' => $object->price * -1,
+				'additionalData' => array('title' => $object->getTitle())
 			),
 			'changeBalance' => 1));
 			$action->validateAction(); 

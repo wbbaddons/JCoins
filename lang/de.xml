@@ -70,10 +70,10 @@
 		<item name="wcf.jcoins.globalactivity.noresults"><![CDATA[Es sind noch keine Aktivitäten vorhanden.]]></item>
 		
 		<!-- LIKES -->
-		<item name="wcf.jcoins.statement.like.recive"><![CDATA[Es wurde etwas von Ihnen geliked.]]></item>
-		<item name="wcf.jcoins.statement.like.revoke"><![CDATA[Es wurde etwas von Ihnen ungeliked.]]></item>
-		<item name="wcf.jcoins.statement.dislike.recive"><![CDATA[Es wurde etwas von Ihnen gedisliked.]]></item>
-		<item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[Es wurde etwas von Ihnen ungedisliked.]]></item>
+		<item name="wcf.jcoins.statement.like.recive"><![CDATA[{$username} mag den Inhalt „{$title}“ von Ihnen.]]></item>
+		<item name="wcf.jcoins.statement.like.revoke"><![CDATA[{$username} hat den Like für „{$title}“ zurückgezogen.]]></item>
+		<item name="wcf.jcoins.statement.dislike.recive"><![CDATA[{$username} mag den Inhalt „{$title}“ von Ihnen nicht.]]></item>
+		<item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[{$username} hat den Dislike für „{$title}“ zurückgezogen.]]></item>
 		
 		<!-- CONVERSATIONS -->
 		<item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[Sie haben die Konversation „{$title}“ begonnen.]]></item>
@@ -83,7 +83,7 @@
 		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[JCoins Bonus für neuen Nutzeraccount.]]></item>
 		
 		<!-- shop -->
-		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben einen Artikel im Shop gekauft.]]></item>
+		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben den Artikel „{$title}“ im Shop gekauft.]]></item>
 		
 		<!-- PREMIUM GROUPS -->
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
