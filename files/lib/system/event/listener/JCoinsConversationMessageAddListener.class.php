@@ -25,11 +25,16 @@ class JCoinsConversationMessageAddListener implements IEventListener {
 		
 		$parameters = $eventObj->getParameters();
 		if (isset($parameters['isFirstPost'])) return;
-
+		
+		$return = $eventObj->getReturnValues();
+		$conversation = $return['returnValues']->getConversation();
+		
 		$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 		    'data' => array(
 			'reason' => 'wcf.jcoins.statement.conversationreplyadd.recive',
-			'sum' => JCOINS_RECEIVECOINS_ADDCONVERSATIONREPLY
+			'sum' => JCOINS_RECEIVECOINS_ADDCONVERSATIONREPLY, 
+			'additionalData' => array('title' => $conversation->subject), 
+			'link' => $return['returnValues']->getLink()
 		    ),
 		    'changeBalance' => 1
 		));

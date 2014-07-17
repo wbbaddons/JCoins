@@ -76,9 +76,8 @@
 		<item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[Es wurde etwas von Ihnen ungedisliked.]]></item>
 		
 		<!-- CONVERSATIONS -->
-		<item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[Sie haben eine Konversation begonnen.]]></item>
-		<item name="wcf.jcoins.statement.conversationreplyadd.recive"><![CDATA[Sie haben eine Antwort in einer Konversation verfasst.]]></item>
-		<item name="wcf.jcoins.statement.conversationreplyadd.revoke"><![CDATA[Ihre Antwort in einer Konversation wurde gelöscht.]]></item>
+		<item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[Sie haben die Konversation „{$title}“ begonnen.]]></item>
+		<item name="wcf.jcoins.statement.conversationreplyadd.recive"><![CDATA[Sie haben eine Antwort in der Konversation „{$title}“ verfasst.]]></item>
 		
 		<!-- USERADD -->
 		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[JCoins Bonus für neuen Nutzeraccount.]]></item>

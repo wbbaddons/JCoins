@@ -23,10 +23,14 @@ class JCoinsConversationAddListener implements IEventListener {
 		// catch 3rdparty plugins, which creates Conversations without an logged in user
 		if (WCF::getUser()->userID == 0) return; 
 		
+		$return = $eventObj->getReturnValues();
+		
 		$this->statementAction = new UserJcoinsStatementAction(array(), 'create', array(
 		    'data' => array(
 			'reason' => 'wcf.jcoins.statement.conversationadd.recive',
 			'sum' => JCOINS_RECEIVECOINS_CREATECONVERSATION,
+			'additionalData' => array('title' => $return['returnValues']->subject), 
+			'link' => \wcf\system\request\LinkHandler::getInstance()->getLink('Conversation', array('object' => $return['returnValues']))
 		    ),
 		    'changeBalance' => 1
 		));

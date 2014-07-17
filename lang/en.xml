@@ -76,9 +76,8 @@
                 <item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[Someone dislikes something not any more from you.]]></item>
                 
                 <!-- CONVERSATIONS -->
-                <item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[You have started a conversation.]]></item>
-                <item name="wcf.jcoins.statement.conversationreplyadd.recive"><![CDATA[You have written a reply in a conversation.]]></item>
-                <item name="wcf.jcoins.statement.conversationreplyadd.revoke"><![CDATA[Your answer in a conversation has been deleted.]]></item>
+                <item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[You have started the conversation „{$title}“.]]></item>
+                <item name="wcf.jcoins.statement.conversationreplyadd.recive"><![CDATA[You have written a reply in the conversation „{$title}“.]]></item>
                 
 		<!-- shop -->
 		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[You bought an item.]]></item>
