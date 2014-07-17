@@ -70,20 +70,20 @@
 		<item name="wcf.jcoins.globalactivity.noresults"><![CDATA[Es sind noch keine Aktivitäten vorhanden.]]></item>
 		
 		<!-- LIKES -->
-		<item name="wcf.jcoins.statement.like.recive"><![CDATA[{$username} mag den Inhalt „{$title}“ von Ihnen.]]></item>
-		<item name="wcf.jcoins.statement.like.revoke"><![CDATA[{$username} hat den Like für „{$title}“ zurückgezogen.]]></item>
-		<item name="wcf.jcoins.statement.dislike.recive"><![CDATA[{$username} mag den Inhalt „{$title}“ von Ihnen nicht.]]></item>
-		<item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[{$username} hat den Dislike für „{$title}“ zurückgezogen.]]></item>
+		<item name="wcf.jcoins.statement.like.recive"><![CDATA[{if $username|isset}{$username}{else}Jemand{/if} mag {if $title|isset}den Inhalt „{$title}“{else}etwas{/if} von Ihnen.]]></item>
+		<item name="wcf.jcoins.statement.like.revoke"><![CDATA[{if $username|isset}{$username}{else}Jemand{/if} hat den Like für {if $title|isset}den Inhalt „{$title}“{else}etwas{/if} zurückgezogen.]]></item>
+		<item name="wcf.jcoins.statement.dislike.recive"><![CDATA[{if $username|isset}{$username}{else}Jemand{/if} mag den Inhalt {if $title|isset}den Inhalt „{$title}“{else}etwas{/if} von Ihnen nicht.]]></item>
+		<item name="wcf.jcoins.statement.dislike.revoke"><![CDATA[{if $username|isset}{$username}{else}Jemand{/if} hat den Dislike für {if $title|isset}den Inhalt „{$title}“{else}etwas{/if} zurückgezogen.]]></item>
 		
 		<!-- CONVERSATIONS -->
-		<item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[Sie haben die Konversation „{$title}“ begonnen.]]></item>
-		<item name="wcf.jcoins.statement.conversationreplyadd.recive"><![CDATA[Sie haben eine Antwort in der Konversation „{$title}“ verfasst.]]></item>
+		<item name="wcf.jcoins.statement.conversationadd.recive"><![CDATA[Sie haben {if $title|isset}die{else}eine{/if} Konversation{if $title|isset} „{$title}“{/if} begonnen.]]></item>
+		<item name="wcf.jcoins.statement.conversationreplyadd.recive"><![CDATA[Sie haben eine Antwort in {if $title|isset}der{else}einer{/if} Konversation{if $title|isset} „{$title}“{/if} verfasst.]]></item>
 		
 		<!-- USERADD -->
 		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[JCoins Bonus für neuen Nutzeraccount.]]></item>
 		
 		<!-- shop -->
-		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben den Artikel „{$title}“ im Shop gekauft.]]></item>
+		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben {if $title|isset}den{else}einen{/if} Artikel{if $title|isset} „{$title}“{/if} im Shop gekauft.]]></item>
 		
 		<!-- PREMIUM GROUPS -->
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
