@@ -57,9 +57,9 @@ class JCoinsShopItemEditForm extends JCoinsShopItemAddForm {
 			$this->typeID = $this->item->itemType;
 			$this->price = $this->item->price;
 			$this->showOrder = $this->item->showOrder;
-			$this->parseBBCodes = (bool) $this->advancedAnnouncement->parseBBCodes;
-			$this->allowHTML = (bool) $this->advancedAnnouncement->allowHTML;
-			$this->allowSmileys = (bool) $this->advancedAnnouncement->allowSmileys;
+			$this->parseBBCodes = (bool) $this->item->parseBBCodes;
+			$this->allowHTML = (bool) $this->item->allowHTML;
+			$this->allowSmileys = (bool) $this->item->allowSmileys;
 			
 			foreach ($this->item->getParameters() as $id => $param) {
 				$this->parameterParameters[$id] = $param; 
