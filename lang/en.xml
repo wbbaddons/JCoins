@@ -184,8 +184,8 @@
                 <item name="wcf.acp.jcoins.premiumgroups.editinfo"><![CDATA[Note, that only the description and the count of the JCoins can be changed. If you want to change the group or the length, you need to create a new offer. If you want to make these not buyable, you can deactivate or delete the offer.]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.addinfo"><![CDATA[Note that only premium groups can be deleted again when all subscriptions have expired!]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.list"><![CDATA[Premium Groups]]></item>
-                <item name="wcf.acp.jcoins.premiumgroups.nogroups"><![CDATA[No premium groups have been created yet.]]></item>        
-                <item name="wcf.acp.jcoins.premiumgroups.JCoins"><![CDATA[JCoins]]></item>
+                <item name="wcf.acp.jcoins.premiumgroups.nogroups"><![CDATA[No premium groups have been created yet.]]></item>       
+		<item name="wcf.acp.jcoins.premiumgroups.jCoins"><![CDATA[JCoins]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.period"><![CDATA[Duration]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.period.description"><![CDATA[Enter the time the group membership should be active [time in days]]]></item>
                 <item name="wcf.acp.jcoins.premiumgroups.description"><![CDATA[Description]]></item>
