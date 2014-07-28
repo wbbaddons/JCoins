@@ -6,6 +6,7 @@ use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
 use wcf\data\like\object\LikeObject;
 use wcf\data\object\type\ObjectTypeCache;
 use wcf\data\like\Like;
+use wcf\util\StringUtil; 
 
 /**
  * Adds jCoins on like an object
@@ -43,8 +44,8 @@ class JCoinsLikeActionListener implements IEventListener {
 		$title = $likedObject->getTitle(); 
 		
 		// because a title which is to long is uncool (profile-comments)
-		if (strlen($title) > 30) {
-			$title = substr($title, 0, 26);
+		if (StringUtil::length($title) > 30) {
+			$title = StringUtil::substring($title, 0, 26);
 			$title .= '...';
 		}
 		
