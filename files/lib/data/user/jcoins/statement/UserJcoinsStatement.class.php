@@ -63,7 +63,13 @@ class UserJcoinsStatement extends DatabaseObject {
 	 * @return array<mixed>
 	 */
 	public function getAdditionalData() {
-		return unserialize($this->additionalData); 
+		$data = @unserialize($this->additionalData); 
+		
+		if (!is_array($data)) {
+			return array(); // return empty array
+		}
+		
+		return $data; 
 	}
 	
 	/**
