@@ -10,3 +10,8 @@ ALTER TABLE  wcf1_user_jcoins_statement ADD (
 	allowSmileys BOOLEAN NOT NULL DEFAULT 0
 )");
 $stmt->execute(); 
+
+// for update :)
+$sql = "UPDATE wcf". WCF_N ."_user_jcoins_statement SET additionalData = ?";
+$stmt = wcf\system\WCF::getDB()->prepareStatement($sql); 
+$stmt->execute(array('a:0:{}'));
