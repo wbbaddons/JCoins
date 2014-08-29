@@ -168,6 +168,7 @@
 		<item name="wcf.acp.option.jcoins_receivecoins_useradd.description"><![CDATA[How many JCoins shall the user get, if he joins the community.]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[General]]></item>
 		<item name="wcf.acp.option.jcoins_dashboard_sidebar_richest_num"><![CDATA[Richest User in Sidebars]]></item>
+		<item name="wcf.acp.option.message_sidebar_jcoins"><![CDATA[Show author’s JCoins]]></item>
 	</category>
         
 	<category name="wcf.acp.menu">

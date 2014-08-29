@@ -97,6 +97,12 @@
 				<defaultvalue>50</defaultvalue>
 				<minvalue>0</minvalue>
 			</option>
+			
+			<option name="message_sidebar_jcoins">
+				<categoryname>message.sidebar</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
 		</options>
 	</import>
 </data>
