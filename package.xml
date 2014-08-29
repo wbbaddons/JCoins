@@ -63,9 +63,6 @@
 		<instruction type="file">files.tar</instruction>
 		<instruction type="acpTemplate">acptemplates.tar</instruction>
                 
-		<!-- sql -->
-		<instruction type="sql">beta_update.sql</instruction>
-                
 		<!-- xml -->
 		<instruction type="option">options.xml</instruction>
 		<instruction type="objectType">objectType.xml</instruction>
@@ -75,5 +72,6 @@
                 
                 <!-- script -->
                 <instruction type="script">acp/install_jcoins_110.php</instruction>
+		<instruction type="script">acp/beta_update.php</instruction>
 	</instructions>
 </package>
