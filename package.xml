@@ -74,7 +74,6 @@
 		<instruction type="language">lang/*.xml</instruction>
                 
                 <!-- script -->
-                <instruction type="script">acp/install_jcoins_110.php</instruction>
 		<instruction type="script">acp/beta_update.php</instruction>
 	</instructions>
 </package>
