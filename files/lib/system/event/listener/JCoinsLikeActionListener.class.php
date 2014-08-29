@@ -41,6 +41,11 @@ class JCoinsLikeActionListener implements IEventListener {
 		$like = LikeObject::getLikeObject($objTID->objectTypeID, $objectID['data']['objectID']);
 		$likedObject = $like->getLikedObject(); 
 		
+		// the object-user-id is unknown
+		if (!$like->objectUserID) {
+			return; 
+		}
+		
 		$title = $likedObject->getTitle(); 
 		
 		// because a title which is to long is uncool (profile-comments)
