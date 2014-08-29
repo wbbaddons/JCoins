@@ -63,6 +63,9 @@
 		<instruction type="file">files.tar</instruction>
 		<instruction type="acpTemplate">acptemplates.tar</instruction>
                 
+		<!-- sql -->
+		<instruction type="sql">beta_update</instruction>
+		
 		<!-- xml -->
 		<instruction type="option">options.xml</instruction>
 		<instruction type="objectType">objectType.xml</instruction>
