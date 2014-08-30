@@ -1,6 +1,6 @@
 <?php
 // sql pipe doesn't support renaming
-$stmt = \wcf\system\WCF::getDB()->prepareStatement("ALTER TABLE wcf". WCF_N ."_jcoins_shop_item_type RENAME COLUMN isMultible TO isMultiple;");
+$stmt = \wcf\system\WCF::getDB()->prepareStatement("ALTER TABLE wcf". WCF_N ."_jcoins_shop_item_type CHANGE isMultible isMultiple BOOLEAN NOT NULL DEFAULT 1;");
 $stmt->execute();
 
 $stmt = \wcf\system\WCF::getDB()->prepareStatement("
