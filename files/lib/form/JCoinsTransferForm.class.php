@@ -113,6 +113,12 @@ class JCoinsTransferForm extends AbstractForm {
 		// remove user doubles
 		$this->user = array_unique($this->user);
 
+		foreach ($this->user as $id => $user) {
+			if ($user === null) {
+				unset($this->user[$id]);
+			}
+		}
+		
 		if ($this->sum < 1 && !$this->isModerativ) {
 			throw new UserInputException('sum', 'tooLess');
 		}
