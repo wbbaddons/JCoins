@@ -97,6 +97,7 @@ class JCoinsShopItemEditForm extends JCoinsShopItemAddForm {
 			), 
 		    'parameters' => $this->parameterParameters
 		));
+		$action->executeAction(); 
 
 		$this->saved(); 
 		
