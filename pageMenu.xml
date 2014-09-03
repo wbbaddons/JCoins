@@ -5,6 +5,8 @@
 			<controller><![CDATA[wcf\page\JCoinsShopPage]]></controller>
 			<position>header</position>
 			<options>module_jcoins_shop</options>
+			<permissions>user.jcoins.canUseShop</permissions>
+			<classname>\wcf\system\menu\page\JCoinsShopPageMenuItemProvider</classname>
 		</pagemenuitem>
 	</import>
 </data>
