@@ -134,8 +134,7 @@ class JCoinsShopItemAction extends AbstractDatabaseObjectAction implements \wcf\
 		parent::update();
 		
 		foreach ($this->getObjects() as $object) {
-			$itemEditor = new JCoinsShopItemEditor($object);
-			$itemEditor->setShowOrder($showOrder);
+			$object->setShowOrder($showOrder);
 			
 			$type = $object->getType();
 			
