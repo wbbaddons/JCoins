@@ -1,21 +1,17 @@
 <?php
 namespace wcf\page;
 use wcf\data\jcoins\shop\item\JCoinsShopItem;
-use wcf\data\attachment\AttachmentEditor;
 use wcf\system\exception\IllegalLinkException;
 use wcf\system\exception\PermissionDeniedException;
-use wcf\system\WCF;
 use wcf\util\FileReader;
 
 /**
- * Shows an attachment.
+ * Shows an shop download
  * 
- * @author	Marcel Werk
- * @copyright	2001-2014 WoltLab GmbH
- * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package	com.woltlab.wcf
- * @subpackage	page
- * @category	Community Framework
+ * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
+ * @package	de.joshsboard.jcoins
  */
 class JCoinsShopDownloadPage extends AbstractPage {
 	/**

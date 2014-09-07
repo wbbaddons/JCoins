@@ -52,3 +52,5 @@ ALTER TABLE wcf1_jcoins_shop_item_type_parameter ADD FOREIGN KEY (itemTypeID) RE
 
 ALTER TABLE wcf1_jcoins_shop_item_parameter ADD FOREIGN KEY (parameterID) REFERENCES wcf1_jcoins_shop_item_type_parameter (parameterID) ON DELETE CASCADE;
 ALTER TABLE wcf1_jcoins_shop_item_parameter ADD FOREIGN KEY (itemID) REFERENCES wcf1_jcoins_shop_item (itemID) ON DELETE CASCADE;
+
+ALTER TABLE  wcf1_user_jcoins_statement ADD additionalData MEDIUMTEXT;

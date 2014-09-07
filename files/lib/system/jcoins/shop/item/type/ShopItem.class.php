@@ -7,7 +7,12 @@ use wcf\system\exception\PermissionDeniedException;
 use wcf\system\exception\SystemException; 
 
 /**
+ * a shop item
  * 
+ * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
+ * @package	de.joshsboard.jcoins
  */
 abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 	
@@ -66,10 +71,16 @@ abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 		return $parameters; 
 	}
 	
+	/**
+	 * @see wcf\system\jcoins\shop\item\type\IShopItem::isMultiple()
+	 */
 	public function isMultiple() {
 		return $this->itemType->isMulitple; 
 	}
 	
+	/**
+	 * @see wcf\system\jcoins\shop\item\type\IShopItem::validateBuy()
+	 */
 	public function validateBuy() {
 		if (WCF::getUser()->userID == 0) {
 			throw new PermissionDeniedException(); 
@@ -82,6 +93,9 @@ abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 		EventHandler::getInstance()->fireAction($this, 'validate');
 	}
 	
+	/**
+	 * @see wcf\system\jcoins\shop\item\type\IShopItem::getParameters()
+	 */
 	public function getParameters() {
 		return $this->itemType->getParameters(); 
 	}

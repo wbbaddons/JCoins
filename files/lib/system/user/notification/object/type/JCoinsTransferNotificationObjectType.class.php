@@ -5,6 +5,8 @@ namespace wcf\system\user\notification\object\type;
  * Object type for transfer-notifications
  * 
  * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoins
  */
 class JCoinsTransferNotificationObjectType extends AbstractUserNotificationObjectType {

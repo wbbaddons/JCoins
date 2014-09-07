@@ -6,9 +6,11 @@ use wcf\data\user\group\premium\UserGroupPremiumList;
 /**
  * Caches the Premium groups
  * 
- * @author         Joshua Rüsweg
- * @package        de.joshsboard.jcoins
- * @subpackage        system.cache.builder
+ * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
+ * @package	de.joshsboard.jcoins
+ * @subpackage	system.cache.builder
  */
 class UserGroupPremiumCacheBuilder extends \wcf\system\cache\builder\AbstractCacheBuilder {
         /**

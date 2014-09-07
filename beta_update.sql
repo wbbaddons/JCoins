@@ -1,1 +1,0 @@
-ALTER TABLE  wcf1_user_jcoins_statement ADD additionalData MEDIUMTEXT;

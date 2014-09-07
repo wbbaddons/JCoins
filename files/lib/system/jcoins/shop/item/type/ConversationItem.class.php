@@ -4,12 +4,26 @@ namespace wcf\system\jcoins\shop\item\type;
 use wcf\data\conversation\ConversationAction; 
 use wcf\system\WCF; 
 
+/**
+ * ConversationItem Shop Item type
+ * 
+ * @author 	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
+ * @package	de.joshsboard.jcoins
+ */
 class ConversationItem extends \wcf\system\jcoins\shop\item\type\ShopItem {
 	
+	/**
+	 * @see wcf\system\jcoins\shop\item\type\IShopItem::getIdentifer()
+	 */
 	public static function getIdentifer() {
 		return 'conversation';
 	}
 	
+	/**
+	 * @see \wcf\system\jcoins\shop\item\type\IShopItem::buy()
+	 */
 	public function buy(array $paramters) {
 		parent::buy($paramters);
 		

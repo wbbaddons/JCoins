@@ -8,6 +8,8 @@ use wcf\system\WCF;
  * Provides functions for shop items
  * 
  * @author	Joshua Rüsweg, Matthias Schmidt (setShowOrder-Methode)
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoins
  */
 class JCoinsShopItemEditor extends DatabaseObjectEditor implements \wcf\data\IEditableCachedObject {

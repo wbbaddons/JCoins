@@ -12,6 +12,8 @@ use wcf\system\WCF;
  * sum up all statement entrys from an user
  * 
  * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoin
  */
 class SumUpStatementsAction extends AbstractAction {

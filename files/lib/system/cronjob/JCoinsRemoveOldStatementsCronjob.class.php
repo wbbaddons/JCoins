@@ -9,6 +9,8 @@ use wcf\data\user\jcoins\statement\UserJcoinsStatementList;
  * Removing old statements
  * 
  * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoins
  * @subpackage	system.cronjob
  * @category	Community Framework

@@ -6,6 +6,16 @@ use wcf\system\dashboard\box\AbstractSidebarDashboardBox;
 use wcf\system\WCF;
 use wcf\data\user\UserProfileList; 
 
+/**
+ * A Dashboardbox for the richest User
+ * 
+ * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
+ * @package	de.joshsboard.jcoins
+ * @subpackage	system.cronjob
+ * @category	Community Framework
+ */
 class RichestUserSidebarDashboardBox extends AbstractSidebarDashboardBox {
 	/**
 	 * latest news entries list

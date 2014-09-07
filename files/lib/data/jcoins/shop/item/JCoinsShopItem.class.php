@@ -9,6 +9,8 @@ use wcf\system\WCF;
  * Represents a shop item type. 
  * 
  * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoins
  */
 class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRouteController {
@@ -23,10 +25,22 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 	 */
 	protected static $databaseTableIndexName = 'itemID';
 	
+	/**
+	 * shop-item item type
+	 * @var \wcf\system\jcoins\shop\item\ShopItem
+	 */
 	public $type = null; 
 	
+	/**
+	 * cache for user
+	 * @var array<boolean> 
+	 */
 	private $boughtCache = array(); 
 	
+	/**
+	 * all parameters for the item
+	 * @var array<mixed> 
+	 */
 	private $parameters = array(); 
 	
 	public function __construct($id, array $row = null, DatabaseObject $object = null) {
@@ -55,6 +69,11 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 		return $this->type; 
 	}
 	
+	/**
+	 * returns true, if the user can buy the item
+	 * @param	integer		$userID
+	 * @return	boolean
+	 */
 	public function canBuy($userID = null) {
 		if ($userID === null) {
 			$userID = \wcf\system\WCF::getSession()->userID; 
@@ -69,6 +88,11 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 		return true; 
 	}
 	
+	/**
+	 * returns true, if the user has bought the item
+	 * @param	integer		$userID
+	 * @return	boolean
+	 */
 	public function hasBought($userID = null) {
 		if ($userID === null) {
 			$userID = \wcf\system\WCF::getSession()->userID; 
@@ -97,6 +121,10 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 		return false; 
 	}
 	
+	/**
+	 * returns true, if the item is multiple
+	 * @return boolean
+	 */
 	public function isMultiple() {
 		return $this->type->isMultiple(); 
 	}
@@ -108,10 +136,18 @@ class JCoinsShopItem extends DatabaseObject implements \wcf\system\request\IRout
 		return $this->name; 
 	}
 	
+	/**
+	 * get all parameter values for the item
+	 * @return array<mixed>
+	 */
 	public function getParameters() {
 		return $this->parameters; 
 	}
 	
+	/**
+	 * get the parsed description
+	 * @return string
+	 */
 	public function getDescription() {
 		MessageParser::getInstance()->setOutputType('text/html');
 		return MessageParser::getInstance()->parse(WCF::getLanguage()->get($this->description), $this->allowSmileys, $this->allowHTML, $this->parseBBCodes, false);

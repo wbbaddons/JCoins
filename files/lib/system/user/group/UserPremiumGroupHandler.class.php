@@ -1,5 +1,4 @@
 <?php
-
 namespace wcf\system\user\group;
 
 use wcf\system\user\storage\UserStorageHandler;
@@ -9,6 +8,8 @@ use wcf\system\WCF;
 /**
  * Handles user-related premium-groups.
  * @author	Dennis Kraffczyk
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoins
  */
 class UserPremiumGroupHandler extends SingletonFactory {

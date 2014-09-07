@@ -10,6 +10,8 @@ use wcf\system\WCF;
  * Executes user-related jcoins actions.
  * 
  * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoins
  * @subpackage	data.user
  * @category	Community Framework

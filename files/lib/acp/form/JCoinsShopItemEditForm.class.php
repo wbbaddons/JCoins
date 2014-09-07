@@ -7,9 +7,11 @@ use wcf\system\language\I18nHandler;
 use wcf\system\WCF;
 
 /**
- * Shows the premium-group edit-form.
+ * Shows the shop item edit-form.
  * 
  * @author	Joshua Rüsweg
+ * @copyright	2013-2014 Joshua Rüsweg
+ * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoins
  * @subpackage	acp.form
  */
