@@ -2,10 +2,10 @@
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de" languagename="Deutsch" countrycode="de">
 	<category name="wcf.jcoins">
 		<!-- JCOINS -->
-		<item name="wcf.jcoins.title"><![CDATA[JCoins]]></item>
+		<item name="wcf.jcoins.title"><![CDATA[{JCOINS_NAME}]]></item>
 		<item name="wcf.jcoins.systemuser"><![CDATA[System]]></item>
 		<item name="wcf.jcoins.summaryOfAccountBalances"><![CDATA[Kontoauszüge zusammengefasst.]]></item>
-		<item name="wcf.jcoins.copyright"><![CDATA[<a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Guthabensystem: JCoins, entwickelt von <strong>JoshsBoard</strong></a>]]></item>
+		<item name="wcf.jcoins.copyright"><![CDATA[<a href="https://tims.bastelstu.be"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Guthabensystem: JCoins, entwickelt in der <strong>Bastelstu.be</strong></a>]]></item>
 		
 		<!-- shop -->
 		<item name="wcf.jcoins.shop"><![CDATA[Shop]]></item>
@@ -51,10 +51,10 @@
 		<item name="wcf.jcoins.statement.compress"><![CDATA[Kontoauszüge zusammenfassen]]></item>
 		
 		<!-- TRANSFER -->
-		<item name="wcf.jcoins.transfer.title"><![CDATA[JCoins überweisen]]></item>
+		<item name="wcf.jcoins.transfer.title"><![CDATA[{JCOINS_NAME} überweisen]]></item>
 		<item name="wcf.jcoins.transfer.domoderativ"><![CDATA[Moderative Überweisung tätigen]]></item>
 		<item name="wcf.jcoins.transfer"><![CDATA[Überweisung]]></item>
-		<item name="wcf.jcoins.transfer.info"><![CDATA[JCoins an den Benutzer überweisen.]]></item>
+		<item name="wcf.jcoins.transfer.info"><![CDATA[{JCOINS_NAME} an den Benutzer überweisen.]]></item>
 		<item name="wcf.jcoins.transfer.general"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.jcoins.transfer.moderativDisplay"><![CDATA[Moderativ]]></item>
 		<item name="wcf.jcoins.transfer.userIgnores"><![CDATA[Der User {$ignoredUsername} ignoriert dich leider...]]></item>		
@@ -63,10 +63,10 @@
 		<item name="wcf.jcoins.transfer.error.tooshort"><![CDATA[Der Grund muss mindestens drei Zeichen enthalten.]]></item>
 		<item name="wcf.jcoins.transfer.error.toolong"><![CDATA[Der Grund darf maximal 255 Zeichen enthalten.]]></item>
 		<item name="wcf.jcoins.transfer.error.toomuch"><![CDATA[Sie können nicht mehr überweisen, als Sie besitzen.]]></item>
-		<item name="wcf.jcoins.transfer.error.tooless"><![CDATA[Sie müssen mindestens 1 JCoin überweisen.]]></item>
+		<item name="wcf.jcoins.transfer.error.tooless"><![CDATA[Sie müssen mindestens 1 {JCOINS_NAME} überweisen.]]></item>
 
 		<!-- GLOBAL ACTIVITY -->
-		<item name="wcf.jcoins.globalactivity.title"><![CDATA[Globale JCoins Aktivitäten]]></item>
+		<item name="wcf.jcoins.globalactivity.title"><![CDATA[Globale {JCOINS_NAME} Aktivitäten]]></item>
 		<item name="wcf.jcoins.globalactivity.noresults"><![CDATA[Es sind noch keine Aktivitäten vorhanden.]]></item>
 		
 		<!-- LIKES -->
@@ -80,7 +80,7 @@
 		<item name="wcf.jcoins.statement.conversationreplyadd.recive"><![CDATA[Sie haben eine Antwort in {if $title|isset}der{else}einer{/if} Konversation{if $title|isset} „{$title}“{/if} verfasst.]]></item>
 		
 		<!-- USERADD -->
-		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[JCoins Bonus für neuen Nutzeraccount.]]></item>
+		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[{JCOINS_NAME} Bonus für neuen Nutzeraccount.]]></item>
 		
 		<!-- shop -->
 		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben {if $title|isset}den{else}einen{/if} Artikel{if $title|isset} „{$title}“{/if} im Shop gekauft.]]></item>
@@ -94,7 +94,7 @@
 		<item name="wcf.jcoins.premiumgroups.period"><![CDATA[Laufzeit]]></item>
 		<item name="wcf.jcoins.premiumgroups.days"><![CDATA[Tage]]></item>
 		<item name="wcf.jcoins.premiumgroups.day"><![CDATA[Tag]]></item>
-		<item name="wcf.jcoins.premiumgroups.notenougthjcoins"><![CDATA[Nicht genügend JCoins]]></item>
+		<item name="wcf.jcoins.premiumgroups.notenougthjcoins"><![CDATA[Nicht genügend {JCOINS_NAME}]]></item>
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.jcoins.premiumgroups.buy"><![CDATA[Kaufen]]></item>
 		<item name="wcf.jcoins.premiumgroups.renew"><![CDATA[Verlängern]]></item>
@@ -106,11 +106,11 @@
 	
 	<!-- NOTIFICATIONS -->
 	<category name="wcf.user.notification">
-		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins"><![CDATA[JCoins]]></item>
+		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins"><![CDATA[{JCOINS_NAME}]]></item>
 		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins.transfer.notification.jCoinsTransfer"><![CDATA[Neue Überweisung erhalten]]></item>
 		<item name="wcf.user.notification.jcoins.title"><![CDATA[Überweisung eingegangen]]></item>
-		<item name="wcf.user.notification.jcoins.message"><![CDATA[Hat Ihnen {#$statement->sum} jCoins überwiesen.]]></item>
-		<item name="wcf.user.notification.jcoins.mail"><![CDATA[{@$author->username} hat Ihnen {#$statement->sum} jCoins überwiesen.
+		<item name="wcf.user.notification.jcoins.message"><![CDATA[Hat Ihnen {#$statement->sum} {JCOINS_NAME} überwiesen.]]></item>
+		<item name="wcf.user.notification.jcoins.mail"><![CDATA[{@$author->username} hat Ihnen {#$statement->sum} {JCOINS_NAME} überwiesen.
 
 {link controller='OwnCoinsStatement'}Ihre Guthabenübersicht{/link}]]>
 		</item>
@@ -153,6 +153,8 @@
                 <item name="wcf.acp.option.module_jcoins_showcopyright"><![CDATA[JCoins-Copyright anzeigen]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteafter"><![CDATA[Kontoauszüge löschen]]></item>
+		<item name="wcf.acp.option.jcoins_name"><![CDATA[Bezeichnung für die Währung]]></item>
+		<item name="wcf.acp.option.jcoins_name.description"><![CDATA[Hier können Sie den Namen für die Währung im Frontend definieren. Im Administrationsbereich heißt die Währung weiterhin JCoins.]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Legen Sie hier fest nach wie vielen Tagen ein Kontoauszug gelöscht werden soll.]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed"><![CDATA[Nur vom Benutzer gelöschte Kontoauszüge löschen]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[Aktivieren Sie diese Option, werden nur Kontoauszüge gelöscht, welche bereits vom Benutzer durch "Kontoauszüge zusammenfassen" gelöscht worden sind.]]></item>
@@ -195,7 +197,7 @@
 		<item name="wcf.acp.jcoins.premiumgroups.groupID"><![CDATA[Gruppe]]></item>
 		
 		<!-- global -->
-		<item name="wcf.acp.jcoins.jcoins"><![CDATA[jCoins]]></item>
+		<item name="wcf.acp.jcoins.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.jcoins.reason"><![CDATA[Grund]]></item>
 		<item name="wcf.acp.jcoins.period"><![CDATA[Dauer]]></item>
 		<item name="wcf.acp.jcoins.members"><![CDATA[Mitglieder]]></item>

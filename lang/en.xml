@@ -2,10 +2,10 @@
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="en" languagename="English" countrycode="en">
 	<category name="wcf.jcoins">
 		<!-- JCOINS -->
-		<item name="wcf.jcoins.title"><![CDATA[JCoins]]></item>
+		<item name="wcf.jcoins.title"><![CDATA[{JCOINS_NAME}]]></item>
 		<item name="wcf.jcoins.systemuser"><![CDATA[System]]></item>
 		<item name="wcf.jcoins.summaryOfAccountBalances"><![CDATA[Summarized account statements.]]></item>
-		<item name="wcf.jcoins.copyright"><![CDATA[<a href="http://www.joshsboard.de"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Creditsystem: JCoins, developed by <strong>JoshsBoard</strong></a>]]></item>
+		<item name="wcf.jcoins.copyright"><![CDATA[<a href="https://tims.bastelstu.be"{if EXTERNAL_LINK_TARGET_BLANK} target="_blank"{/if}>Creditsystem: JCoins, developed by <strong>Bastelstu.be</strong></a>]]></item>
                 
 		<!-- shop -->
 		<item name="wcf.jcoins.shop"><![CDATA[Shop]]></item>
@@ -51,10 +51,10 @@
 		<item name="wcf.jcoins.statement.compress"><![CDATA[Summarize account statements]]></item>
                 
 		<!-- TRANSFER -->
-		<item name="wcf.jcoins.transfer.title"><![CDATA[Transfer JCoins]]></item>
+		<item name="wcf.jcoins.transfer.title"><![CDATA[Transfer {JCOINS_NAME}]]></item>
 		<item name="wcf.jcoins.transfer.domoderativ"><![CDATA[Make a Moderative Transfer]]></item>
 		<item name="wcf.jcoins.transfer"><![CDATA[Transfer]]></item>
-		<item name="wcf.jcoins.transfer.info"><![CDATA[Send JCoins to this user.]]></item>
+		<item name="wcf.jcoins.transfer.info"><![CDATA[Send {JCOINS_NAME} to this user.]]></item>
 		<item name="wcf.jcoins.transfer.general"><![CDATA[General Information]]></item>
 		<item name="wcf.jcoins.transfer.moderativDisplay"><![CDATA[Moderation]]></item>
 		<item name="wcf.jcoins.transfer.userIgnores"><![CDATA[The user {$ignoredUsername} ignores you...]]></item>                
@@ -63,10 +63,10 @@
 		<item name="wcf.jcoins.transfer.error.tooshort"><![CDATA[The reason has to contain at least three characters.]]></item>
 		<item name="wcf.jcoins.transfer.error.toolong"><![CDATA[The reason may contain up to 255 characters.]]></item>
 		<item name="wcf.jcoins.transfer.error.toomuch"><![CDATA[You can not transfer more than you own.]]></item>
-		<item name="wcf.jcoins.transfer.error.tooless"><![CDATA[You have to send at least one JCoin.]]></item>
+		<item name="wcf.jcoins.transfer.error.tooless"><![CDATA[You have to send at least one {JCOINS_NAME}.]]></item>
 
 		<!-- GLOBAL ACTIVITY -->
-		<item name="wcf.jcoins.globalactivity.title"><![CDATA[Global jCoin activities]]></item>
+		<item name="wcf.jcoins.globalactivity.title"><![CDATA[Global {JCOINS_NAME} activities]]></item>
 		<item name="wcf.jcoins.globalactivity.noresults"><![CDATA[There are no activities yet.]]></item>
                 
 		<!-- LIKES -->
@@ -83,7 +83,7 @@
 		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[You bought {if $title|isset}the{else}a{/if} item{if $title|isset} „{$title}“{/if}.]]></item>
 		
 		<!-- USERADD -->
-		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[JCoins Bonus for new user account.]]></item>
+		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[{JCOINS_NAME} Bonus for new user account.]]></item>
                 
 		<!-- PREMIUM GROUPS -->
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premium groups]]></item>
@@ -94,7 +94,7 @@
 		<item name="wcf.jcoins.premiumgroups.period"><![CDATA[Runtime]]></item>
 		<item name="wcf.jcoins.premiumgroups.days"><![CDATA[Days]]></item>
 		<item name="wcf.jcoins.premiumgroups.day"><![CDATA[Day]]></item>
-		<item name="wcf.jcoins.premiumgroups.notenougthjcoins"><![CDATA[Not enough JCoins]]></item>
+		<item name="wcf.jcoins.premiumgroups.notenougthjcoins"><![CDATA[Not enough {JCOINS_NAME}]]></item>
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premium Groups]]></item>
 		<item name="wcf.jcoins.premiumgroups.buy"><![CDATA[Buy]]></item>
 		<item name="wcf.jcoins.premiumgroups.renew"><![CDATA[Extend]]></item>
@@ -106,11 +106,11 @@
         
 	<!-- NOTIFICATIONS -->
 	<category name="wcf.user.notification">
-		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins"><![CDATA[JCoins]]></item>
+		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins"><![CDATA[{JCOINS_NAME}]]></item>
 		<item name="wcf.user.notification.de.joshsboard.wcf.jcoins.transfer.notification.JCoinsTransfer"><![CDATA[You got a new transfer]]></item>
 		<item name="wcf.user.notification.jcoins.title"><![CDATA[Received transfer]]></item>
-		<item name="wcf.user.notification.jcoins.message"><![CDATA[Has transfered you {#$statement->sum} JCoins.]]></item>
-		<item name="wcf.user.notification.jcoins.mail"><![CDATA[{@$author->username} has transfered you {#$statement->sum} JCoins
+		<item name="wcf.user.notification.jcoins.message"><![CDATA[Has transfered you {#$statement->sum} {JCOINS_NAME}.]]></item>
+		<item name="wcf.user.notification.jcoins.mail"><![CDATA[{@$author->username} has transfered you {#$statement->sum} {JCOINS_NAME}
 
 {link controller='OwnCoinsStatement'}Your credit balance overview{/link}]]>
 		</item>
@@ -154,6 +154,7 @@
 		<item name="wcf.acp.option.jcoins_statements_deleteafter.description"><![CDATA[Set here afer how many days the statements will be deleted.]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed"><![CDATA[Only delete statements, which the user deleted already.]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[If you activate this, only statements will be deleted which already got combined by a user.]]></item>
+		<item name="wcf.acp.option.jcoins_name"><![CDATA[Name for the currency]]></item>
 		<item name="wcf.acp.option.category.jcoins.receivecoins"><![CDATA[Einkünfte]]></item>
 		<item name="wcf.acp.option.category.jcoins.receivecoins.general"><![CDATA[General]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_like"><![CDATA[JCoins for a like]]></item>
