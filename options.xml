@@ -65,6 +65,7 @@
 				<categoryname>jcoins.general</categoryname>
 				<optiontype>integer</optiontype>
 				<defaultvalue>5</defaultvalue>
+				<minvalue>1</minvalue>
 			</option>
 			
 			<option name="jcoins_receivecoins_like">
