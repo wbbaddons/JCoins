@@ -24,7 +24,10 @@ CREATE TABLE wcf1_jcoins_shop_item (
         isDisabled              BOOLEAN                 NOT NULL DEFAULT 0,
         price                   INT(10)                 NOT NULL DEFAULT 0, 
         description             MEDIUMTEXT              NOT NULL, 
-        name                    VARCHAR(255)            NOT NULL DEFAULT '', 
+        name                    VARCHAR(255)            NOT NULL DEFAULT '',
+	parseBBCodes		BOOLEAN			NOT NULL DEFAULT 1, 
+	allowHTML		BOOLEAN			NOT NULL DEFAULT 0, 
+	allowSmileys		BOOLEAN			NOT NULL DEFAULT 0, 
         showOrder               INT(10)
 );
 

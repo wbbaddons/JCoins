@@ -5,13 +5,13 @@
 		<packagename language="de"><![CDATA[Guthabensystem jCoins]]></packagename>
 		<packagedescription><![CDATA[A credit system for WCF2.]]></packagedescription>
 		<packagedescription language="de"><![CDATA[Ein Guthabensystem für das Woltlab Community Framework 2.]]></packagedescription>
-		<version>1.1.0 Beta 2</version>
-		<date>2014-08-29</date>
+		<version>1.1.0</version>
+		<date>2014-09-09</date>
 	</packageinformation>
 	
 	<authorinformation>
 		<author><![CDATA[Joshua Rüsweg]]></author>
-		<authorurl><![CDATA[http://www.joshsboard.de/]]></authorurl>
+		<authorurl><![CDATA[https://www.bastelstu.be/]]></authorurl>
 	</authorinformation>
 	
 	<requiredpackages>
@@ -21,7 +21,7 @@
 	</requiredpackages>
 	
 	<optionalpackages>
-		<!-- <optionalpackage file="optionals/de.joshsboard.jcoinswbb.tar">de.joshsboard.jcoinswbb</optionalpackage> --> 
+		<optionalpackage file="optionals/de.joshsboard.jcoinswbb.tar">de.joshsboard.jcoinswbb</optionalpackage>
 	</optionalpackages>
 	
 	<instructions type="install">
@@ -57,23 +57,47 @@
                 <instruction type="script">acp/install_jcoins_110.php</instruction>
 	</instructions>
 	
-	<instructions type="update" fromversion="1.1.0 Beta 1">
+	<instructions type="update" fromversion="1.0.5 pl 1">
+		<!-- my pips -->
+                <instruction type="packageInstallationPlugin">packageInstallationPlugin.xml</instruction>
+                
 		<!-- files -->
 		<instruction type="template">templates.tar</instruction>
 		<instruction type="file">files.tar</instruction>
 		<instruction type="acpTemplate">acptemplates.tar</instruction>
                 
 		<!-- sql -->
-		<instruction type="sql">beta_update.sql</instruction>
-		
+		<instruction type="sql">update.sql</instruction>
+                
 		<!-- xml -->
 		<instruction type="option">options.xml</instruction>
+		<instruction type="eventListener">eventListener.xml</instruction>
 		<instruction type="objectType">objectType.xml</instruction>
+		<instruction type="userGroupOption">userGroupOption.xml</instruction>
+		<instruction type="acpMenu">acpMenu.xml</instruction>
+                <instruction type="dashboardBox">dashboardBox.xml</instruction>
+		<instruction type="clipboardAction">clipboardAction.xml</instruction>
+                <instruction type="jcoinsshopitemtype">JCoinsShopItemType.xml</instruction>
+                <instruction type="pageMenu">pageMenu.xml</instruction>
 		
 		<!-- lng -->
 		<instruction type="language">lang/*.xml</instruction>
                 
                 <!-- script -->
-		<instruction type="script">acp/beta_update.php</instruction>
+                <instruction type="script">acp/install_jcoins_110.php</instruction>
+		<instruction type="script">acp/update_jcoins.php</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.1.0 Beta 2">
+		<!-- files -->
+		<instruction type="template">templates.tar</instruction>
+		<instruction type="file">files.tar</instruction>
+                
+		<!-- xml -->
+		<instruction type="option">options.xml</instruction>
+                <instruction type="pageMenu">pageMenu.xml</instruction>
+		
+		<!-- lng -->
+		<instruction type="language">lang/*.xml</instruction>
 	</instructions>
 </package>
