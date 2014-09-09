@@ -3,7 +3,6 @@ namespace wcf\system\event\listener;
 
 use wcf\system\event\IEventListener;
 use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
-use wcf\data\like\object\LikeObject;
 use wcf\data\object\type\ObjectTypeCache;
 use wcf\data\like\Like;
 use wcf\util\StringUtil; 
@@ -38,20 +37,18 @@ class JCoinsLikeActionListener implements IEventListener {
 		$returnValues = $eventObj->getReturnValues();
 		$returnValues = $returnValues['returnValues'];
 		$objectID = $eventObj->getParameters();
-
-		$objTID = ObjectTypeCache::getInstance()->getObjectTypeByName('com.woltlab.wcf.like.likeableObject', $objectID['data']['objectType']);
-		$like = LikeObject::getLikeObject($objTID->objectTypeID, $objectID['data']['objectID']);
+		
+		$like = ObjectTypeCache::getInstance()->getObjectTypeByName('com.woltlab.wcf.like.likeableObject', $objectID['data']['objectType'])->getProcessor()->getObjectByID($objectID['data']['objectID']);
 		
 		// the object-user-id is unknown
-		if (!$like->objectUserID) {
+		if (!$like->userID) {
 			return; 
 		}
 		
 		$addtionalData = array('username' => \wcf\system\WCF::getUser()->username); 
 		
 		if ($like->getObjectID() != 0) {
-			$likedObject = $like->getLikedObject(); 
-			$addtionalData['title'] = $likedObject->getTitle(); 
+			$addtionalData['title'] = $like->getTitle(); 
 		}
 		
 		// because a title which is to long is uncool (profile-comments)
@@ -68,7 +65,7 @@ class JCoinsLikeActionListener implements IEventListener {
 						'userID' => $like->objectUserID,
 						'reason' => 'wcf.jcoins.statement.like.revoke',
 						'sum' => JCOINS_RECEIVECOINS_LIKE * -1, 
-						'link' => $likedObject->getURL(), 
+						'link' => $like->getURL(), 
 						'additionalData' => $addtionalData
 					    ),
 					    'changeBalance' => 1
@@ -85,7 +82,7 @@ class JCoinsLikeActionListener implements IEventListener {
 						'userID' => $like->objectUserID,
 						'reason' => 'wcf.jcoins.statement.dislike.revoke',
 						'sum' => JCOINS_RECEIVECOINS_DISLIKE * -1, 
-						'link' => $likedObject->getURL(), 
+						'link' => $like->getURL(), 
 						'additionalData' => $addtionalData
 					    ),
 					    'changeBalance' => 1
@@ -104,7 +101,7 @@ class JCoinsLikeActionListener implements IEventListener {
 						'userID' => $like->objectUserID,
 						'reason' => 'wcf.jcoins.statement.like.recive',
 						'sum' => JCOINS_RECEIVECOINS_LIKE, 
-						'link' => $likedObject->getURL(), 
+						'link' => $like->getURL(), 
 						'additionalData' => $addtionalData
 					    ),
 					    'changeBalance' => 1
@@ -121,7 +118,7 @@ class JCoinsLikeActionListener implements IEventListener {
 						'userID' => $like->objectUserID,
 						'reason' => 'wcf.jcoins.statement.dislike.recive',
 						'sum' => JCOINS_RECEIVECOINS_DISLIKE, 
-						'link' => $likedObject->getURL(), 
+						'link' => $like->getURL(), 
 						'additionalData' => $addtionalData
 					    ),
 					    'changeBalance' => 1
