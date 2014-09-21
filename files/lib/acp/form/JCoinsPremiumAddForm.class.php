@@ -108,7 +108,7 @@ class JCoinsPremiumAddForm extends AbstractForm {
 	public function validate() {
 		parent::validate();
 
-		if ($this->jCoins < 0) {
+		if ($this->jCoins <= 0) { // not null
 			throw new UserInputException('jCoins', 'underZero');
 		}
 
