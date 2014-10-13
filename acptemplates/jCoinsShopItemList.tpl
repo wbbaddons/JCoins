@@ -15,7 +15,7 @@
 </header>
 
 <div class="contentNavigation">
-	{pages print=true assign=pagesLinks controller="NoticeList" link="pageNo=%d&sortField=$sortField&sortOrder=$sortOrder"}
+	{pages print=true assign=pagesLinks controller="JCoinsShopItemList" link="pageNo=%d&sortField=$sortField&sortOrder=$sortOrder"}
 	
 	<nav>
 		<ul>
