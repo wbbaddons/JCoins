@@ -75,7 +75,7 @@ abstract class ShopItem implements \wcf\system\jcoins\shop\item\type\IShopItem {
 	 * @see wcf\system\jcoins\shop\item\type\IShopItem::isMultiple()
 	 */
 	public function isMultiple() {
-		return $this->itemType->isMulitple; 
+		return $this->itemType->isMultiple; 
 	}
 	
 	/**
