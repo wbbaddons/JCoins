@@ -83,7 +83,7 @@
 		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[{JCOINS_NAME} Bonus für neuen Nutzeraccount.]]></item>
 		
 		<!-- shop -->
-		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben {if $title|isset}den{else}einen{/if} Artikel{if $title|isset} „{$title}“{/if} im Shop gekauft.]]></item>
+		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben {if $title|isset}den{else}einen{/if} Artikel{if $title|isset} „{$title|language}“{/if} im Shop gekauft.]]></item>
 		
 		<!-- PREMIUM GROUPS -->
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
