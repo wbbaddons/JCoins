@@ -44,7 +44,7 @@
 		<item name="wcf.jcoins.statement.sum"><![CDATA[Summe]]></item>
 		<item name="wcf.jcoins.statement.user"><![CDATA[Benutzer]]></item>
 		<item name="wcf.jcoins.statement.date"><![CDATA[Datum]]></item>
-		<item name="wcf.jcoins.statement.reciveuser"><![CDATA[Erhalter]]></item>
+		<item name="wcf.jcoins.statement.reciveuser"><![CDATA[Begünstigter]]></item>
 		<item name="wcf.jcoins.statement.noresults"><![CDATA[Es sind momentan keine Kontoauszüge verfügbar.]]></item>
 		<item name="wcf.jcoins.statement.domoderativ"><![CDATA[Moderative Überweisung tätigen]]></item>
 		<item name="wcf.jcoins.statement.successfullsumup"><![CDATA[Die Kontoauszüge wurden erfolgreich zusammengefasst.]]></item>
