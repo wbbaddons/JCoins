@@ -27,7 +27,7 @@ class UserJCoinsAction extends \wcf\data\user\UserAction {
 	 */
 	public function resetJCoins() {
 		$condition = new PreparedStatementConditionBuilder(); 
-		$condition->add('user.userID IN (?)', $this->objectIDs);
+		$condition->add('user.userID IN (?)', array($this->objectIDs));
 		
 		// reset it, without set transfer-log
 		$stmt = WCF::getDB()->prepareStatement('UPDATE wcf'.WCF_N.'_user user SET user.jCoinsBalance = 0 '.$condition);
