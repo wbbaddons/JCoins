@@ -28,6 +28,13 @@
 			<listenerclassname>wcf\system\event\listener\JCoinsUserAddListener</listenerclassname>
 		</eventlistener>
 		
+		<!-- user login bonus -->
+		<eventlistener>
+			<eventclassname>wcf\system\session\SessionHandler</eventclassname>
+			<eventname>afterChangeUser</eventname>
+			<listenerclassname>wcf\system\event\listener\JCoinsLoginBonusListener</listenerclassname>
+		</eventlistener>
+		
 		<!-- clear cache -->
 		<eventlistener>
 			<eventclassname>wcf\system\cronjob\RemoveUserFromGroupCronjob</eventclassname>

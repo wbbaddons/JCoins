@@ -85,6 +85,9 @@
 		<!-- USERADD -->
 		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[{JCOINS_NAME} Bonus for new user account.]]></item>
                 
+		<!-- login -->
+		<item name="wcf.jcoins.statement.login.receive"><![CDATA[Daily login bonus]]></item>
+		
 		<!-- PREMIUM GROUPS -->
 		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premium groups]]></item>
 		<item name="wcf.jcoins.premiumgroups.active"><![CDATA[Active]]></item>
@@ -167,6 +170,8 @@
 		<item name="wcf.acp.option.jcoins_receivecoins_addconversationreply.description"><![CDATA[How many JCoins shall the user get if he answers a conversation?]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_useradd"><![CDATA[JCoins on join]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_useradd.description"><![CDATA[How many JCoins shall the user get, if he joins the community.]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_login"><![CDATA[JCoins on login]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_login.description"><![CDATA[How many JCoins shall the user get, if he logs in.]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[General]]></item>
 		<item name="wcf.acp.option.jcoins_dashboard_sidebar_richest_num"><![CDATA[Richest User in Sidebars]]></item>
 		<item name="wcf.acp.option.message_sidebar_jcoins"><![CDATA[Show author’s JCoins]]></item>

@@ -105,6 +105,12 @@
 				<minvalue>0</minvalue>
 			</option>
 			
+			<option name="jcoins_receivecoins_login">
+				<categoryname>jcoins.receivecoins.general</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>10</defaultvalue>
+			</option>
+			
 			<option name="message_sidebar_jcoins">
 				<categoryname>message.sidebar</categoryname>
 				<optiontype>boolean</optiontype>

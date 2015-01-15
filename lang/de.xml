@@ -82,6 +82,9 @@
 		<!-- USERADD -->
 		<item name="wcf.jcoins.statement.useradd.receive"><![CDATA[{JCOINS_NAME} Bonus für neuen Nutzeraccount.]]></item>
 		
+		<!-- login -->
+		<item name="wcf.jcoins.statement.login.receive"><![CDATA[Täglicher Bonus für den Login]]></item>
+		
 		<!-- shop -->
 		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben {if $title|isset}den{else}einen{/if} Artikel{if $title|isset} „{$title|language}“{/if} im Shop gekauft.]]></item>
 		
@@ -170,6 +173,8 @@
 		<item name="wcf.acp.option.jcoins_receivecoins_addconversationreply.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn er in einer Konversation eine Antwort verfasst?]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_useradd"><![CDATA[JCoins bei Beitritt]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_useradd.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn der Benutzer der Community beitritt? Dabei ist es egal, ob der Benutzer im Administrationspanal erstellt wird, oder sich ganz normal registriert.]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_login"><![CDATA[JCoins für den täglichen Login]]></item>
+		<item name="wcf.acp.option.jcoins_receivecoins_login.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn er sich einloggt? Dieser Bonus wird nur einmal am Tag vergeben.]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
                 <item name="wcf.acp.option.jcoins_dashboard_sidebar_richest_num"><![CDATA[Reichste Benutzer in der Sidebar]]></item>
 		<item name="wcf.acp.option.message_sidebar_jcoins"><![CDATA[JCoins der Autoren anzeigen]]></item>
