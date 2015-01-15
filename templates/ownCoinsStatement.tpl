@@ -41,7 +41,7 @@
 				<tr>
 					<th class="columnID{if $sortField == 'entryID'} active {@$sortOrder}{/if}"><a href="{link controller='OwnCoinsStatement'}pageNo={@$pageNo}&sortField=entryID&sortOrder={if $sortField == 'entryID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.id{/lang}</a></th>
 					<th class="columnText{if $sortField == 'reason'} active {@$sortOrder}{/if}"><a href="{link controller='OwnCoinsStatement'}pageNo={@$pageNo}&sortField=reason&sortOrder={if $sortField == 'reason' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.reason{/lang}</a></th>
-					<th class="columnText{if $sortField == 'executedUserID'} active {@$sortOrder}{/if}"><a href="{link controller='OwnCoinsStatement'}pageNo={@$pageNo}&sortField=executedUserID&sortOrder={if $sortField == 'executedUserID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.user{/lang}</a></th>
+					<th class="columnText{if $sortField == 'executedUserID'} active {@$sortOrder}{/if}" colspan="2"><a href="{link controller='OwnCoinsStatement'}pageNo={@$pageNo}&sortField=executedUserID&sortOrder={if $sortField == 'executedUserID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.user{/lang}</a></th>
 					<th class="columnSum{if $sortField == 'sum'} active {@$sortOrder}{/if}"><a href="{link controller='OwnCoinsStatement'}pageNo={@$pageNo}&sortField=sum&sortOrder={if $sortField == 'sum' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.sum{/lang}</a></th>
 					<th class="columnDate{if $sortField == 'time'} active {@$sortOrder}{/if}"><a href="{link controller='OwnCoinsStatement'}pageNo={@$pageNo}&sortField=time&sortOrder={if $sortField == 'time' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{/link}">{lang}wcf.jcoins.statement.date{/lang}</a></th>
 				</tr>
@@ -52,6 +52,13 @@
 					<tr class="statementTableRow">
 						<td>{#$item->entryID}</td>
 						<td>{if $item->link != ""}<a href="{$item->link}">{/if}{$item->getReason()}{if $item->link != ""}</a>{/if}</td>
+						<td class="columnIcon columnAvatar">
+							{if $item->getExecutedUser() && $item->getExecutedUser()->getAvatar()}
+								<div>
+									<p class="framed">{@$item->getExecutedUser()->getAvatar()->getImageTag(32)}</p>
+								</div>
+							{/if}
+						</td>
 						<td>{if $item->executedUserID == 0}{lang}wcf.jcoins.systemuser{/lang}{else}<a href="{link controller='User' object=$item->getExecutedUser()}{/link}">{$item->getExecutedUser()->username}</a>{/if}</td>
 						<td>{if $item->sum > 0}<span class="badge green">+{#$item->sum}</span>{else}<span class="badge red">{#$item->sum}</span>{/if}</td>
 						<td>{@$item->time|time}</td>
@@ -62,23 +69,23 @@
 		</table>
 	</div>
 	{hascontentelse}
-	<p class="info">{lang}wcf.jcoins.statement.noresults{/lang}</p>
+		<p class="info">{lang}wcf.jcoins.statement.noresults{/lang}</p>
 	{/hascontent}
 
 	<div class="contentNavigation">
 		{@$pagesLinks}
 
 		{hascontent}
-		<nav>
-			<ul id="jCoinsStatementButtonContainer">
-				{content}
-			{if $objects|count > 1}<li><a class="button" href="{link controller='SumUpStatements'}{/link}" title="{link controller='SumUpStatements'}{/link}"><span>{lang}wcf.jcoins.statement.compress{/lang}</span></a></li>{/if}
+			<nav>
+				<ul id="jCoinsStatementButtonContainer">
+					{content}
+						{if $objects|count > 1}<li><a class="button" href="{link controller='SumUpStatements'}{/link}" title="{link controller='SumUpStatements'}{/link}"><span>{lang}wcf.jcoins.statement.compress{/lang}</span></a></li>{/if}
 
-			{event name='largeButtonsBottom'}
-			{/content}
-		</ul>
-	</nav>
-	{/hascontent}
+						{event name='largeButtonsBottom'}
+					{/content}
+				</ul>
+			</nav>
+		{/hascontent}
 	</div>
 	
 	{include file='footer'}

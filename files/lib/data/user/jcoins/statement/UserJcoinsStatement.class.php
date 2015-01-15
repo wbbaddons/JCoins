@@ -2,7 +2,8 @@
 namespace wcf\data\user\jcoins\statement;
 
 use wcf\data\DatabaseObject;
-use wcf\data\user\User;
+use wcf\data\user\User; 
+use wcf\data\user\UserProfile;
 
 /**
  * Represents a statement in the database.
@@ -26,23 +27,27 @@ class UserJcoinsStatement extends DatabaseObject {
 
 	/**
 	 * Cotains the user-object which executed the statement.
-	 * @var	wcf\data\user\User
+	 * @var	wcf\data\user\UserProfile
 	 */
 	protected $executedUser = null;
 
 	/**
 	 * Contains the user-object which received the statement.
-	 * @var	wcf\data\user\User
+	 * @var	wcf\data\user\UserProfile
 	 */
 	protected $user = null;
 
 	/**
 	 * Returns the user-object which executed this statement.
-	 * @return	wcf\data\user\User
+	 * @return	wcf\data\user\UserProfile
 	 */
 	public function getExecutedUser() {
 		if ($this->executedUser === null) {
-			$this->executedUser = new User($this->executedUserID);
+			if ($this->executedUserID) {
+				$this->executedUser = UserProfile::getUserProfile($this->executedUserID);
+			} else {
+				$this->executedUser = new UserProfile(new User(null, array()));
+			}
 		}
 
 		return $this->executedUser;
@@ -50,11 +55,15 @@ class UserJcoinsStatement extends DatabaseObject {
 
 	/**
 	 * Returns the user-object which received this statement.
-	 * @return	wcf\data\user\User
+	 * @return	wcf\data\user\UserProfile
 	 */
 	public function getUser() {
 		if ($this->user === null) {
-			$this->user = new User($this->userID);
+			if ($this->userID) {
+				$this->user = UserProfile::getUserProfile($this->userID);
+			} else {
+				$this->user = new UserProfile(new User(null, array()));
+			}
 		}
 
 		return $this->user;
