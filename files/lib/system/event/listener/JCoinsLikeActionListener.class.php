@@ -1,7 +1,5 @@
 <?php
 namespace wcf\system\event\listener;
-
-use wcf\system\event\IEventListener;
 use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
 use wcf\data\object\type\ObjectTypeCache;
 use wcf\data\like\Like;
@@ -15,13 +13,12 @@ use wcf\util\StringUtil;
  * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoins
  */
-class JCoinsLikeActionListener implements IEventListener {
+class JCoinsLikeActionListener implements IParameterizedEventListener {
 
 	/**
-	 * @see	wcf\system\event\IEventListener::execute()
+	 * @see \wcf\system\event\listener\IParameterizedEventListener::execute()
 	 */
-	public function execute($eventObj, $className, $eventName) {
-
+	public function execute($eventObj, $className, $eventName, array &$parameters) {
 		if (MODULE_JCOINS == 0 || MODULE_LIKE == 0) {
 			return;
 		}

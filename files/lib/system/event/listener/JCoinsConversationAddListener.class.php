@@ -1,7 +1,5 @@
 <?php
 namespace wcf\system\event\listener;
-
-use wcf\system\event\IEventListener;
 use wcf\data\user\jcoins\statement\UserJcoinsStatementAction;
 use wcf\system\WCF;
 
@@ -13,12 +11,12 @@ use wcf\system\WCF;
  * @license	Creative Commons Attribution-ShareAlike 4.0 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
  * @package	de.joshsboard.jcoins
  */
-class JCoinsConversationAddListener implements IEventListener {
+class JCoinsConversationAddListener implements IParameterizedEventListener {
 
 	/**
-	 * @see	wcf\system\event\IEventListener::execute()
+	 * @see \wcf\system\event\listener\IParameterizedEventListener::execute()
 	 */
-	public function execute($eventObj, $className, $eventName) {
+	public function execute($eventObj, $className, $eventName, array &$parameters) {
 		if (!MODULE_CONVERSATION || !MODULE_JCOINS || JCOINS_RECEIVECOINS_CREATECONVERSATION == 0) return;
 		if ($eventObj->getActionName() != 'create') return;
 		
