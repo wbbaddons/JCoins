@@ -158,7 +158,7 @@
 		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed"><![CDATA[Only delete statements, which the user deleted already.]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteonlytrashed.description"><![CDATA[If you activate this, only statements will be deleted which already got combined by a user.]]></item>
 		<item name="wcf.acp.option.jcoins_name"><![CDATA[Name for the currency]]></item>
-		<item name="wcf.acp.option.category.jcoins.receivecoins"><![CDATA[Einkünfte]]></item>
+		<item name="wcf.acp.option.category.jcoins.receivecoins"><![CDATA[Income]]></item>
 		<item name="wcf.acp.option.category.jcoins.receivecoins.general"><![CDATA[General]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_like"><![CDATA[JCoins for a like]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_like.description"><![CDATA[How many JCoins shall the user get, if an object by him will get liked?]]></item>
@@ -196,7 +196,7 @@
 		<item name="wcf.acp.jcoins.premiumgroups.period"><![CDATA[Duration]]></item>
 		<item name="wcf.acp.jcoins.premiumgroups.period.description"><![CDATA[Enter the time the group membership should be active [time in days]]]></item>
 		<item name="wcf.acp.jcoins.premiumgroups.description"><![CDATA[Description]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.groupID"><![CDATA[Gruppe]]></item>
+		<item name="wcf.acp.jcoins.premiumgroups.groupID"><![CDATA[Group]]></item>
                 
 		<!-- global -->
 		<item name="wcf.acp.jcoins.jcoins"><![CDATA[JCoins]]></item>
