@@ -36,5 +36,42 @@
 			<controller><![CDATA[wcf\page\JCoinsTransferForm]]></controller>
 			<languagevariable>wcf.user.usersOnline.location.JCoinsTransferForm</languagevariable>
 		</type>
+		
+		<!-- pages -->
+		<type>
+			<name>de.joshsboard.jcoins.JCoinsGlobalActivityPage</name>
+			<definitionname>com.woltlab.wcf.page</definitionname>
+			<classname><![CDATA[wcf\page\JCoinsGlobalActivityPage]]></classname>
+			<options>module_jcoins</options>
+			<categoryname>de.joshsboard.jcoins</categoryname>
+		</type>
+		<type>
+			<name>de.joshsboard.jcoins.JCoinsPremiumGroupsOverviewPage</name>
+			<definitionname>com.woltlab.wcf.page</definitionname>
+			<classname><![CDATA[wcf\page\JCoinsPremiumGroupsOverviewPage]]></classname>
+			<options>module_jcoins</options>
+			<categoryname>de.joshsboard.jcoins</categoryname>
+		</type>
+		<type>
+			<name>de.joshsboard.jcoins.JCoinsShopPage</name>
+			<definitionname>com.woltlab.wcf.page</definitionname>
+			<classname><![CDATA[wcf\page\JCoinsShopPage]]></classname>
+			<options>module_jcoins</options>
+			<categoryname>de.joshsboard.jcoins</categoryname>
+		</type>
+		<type>
+			<name>de.joshsboard.jcoins.OwnCoinsStatementPage</name>
+			<definitionname>com.woltlab.wcf.page</definitionname>
+			<classname><![CDATA[wcf\page\OwnCoinsStatementPage]]></classname>
+			<options>module_jcoins</options>
+			<categoryname>de.joshsboard.jcoins</categoryname>
+		</type>
+		<type>
+			<name>de.joshsboard.jcoins.JCoinsTransferForm</name>
+			<definitionname>com.woltlab.wcf.page</definitionname>
+			<classname><![CDATA[wcf\form\JCoinsTransferForm]]></classname>
+			<options>module_jcoins</options>
+			<categoryname>de.joshsboard.jcoins</categoryname>
+		</type>
 	</import>
 </data>

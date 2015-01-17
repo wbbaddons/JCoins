@@ -248,4 +248,13 @@
 		<item name="wcf.user.usersOnline.location.JCoinsPremiumGroupsOverviewPagee"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.user.usersOnline.location.JCoinsTransferForm"><![CDATA[Überweisung]]></item>
 	</category>
+	
+	<category name="wcf.page">
+		<item name="wcf.page.category.de.joshsboard.jcoins"><![CDATA[JCoins]]></item>
+		<item name="wcf.page.de.joshsboard.jcoins.JCoinsGlobalActivityPage"><![CDATA[Globale Aktivitäten]]></item>
+		<item name="wcf.page.de.joshsboard.jcoins.JCoinsPremiumGroupsOverviewPage"><![CDATA[Premiumgruppen]]></item>
+		<item name="wcf.page.de.joshsboard.jcoins.JCoinsShopPage"><![CDATA[Shop]]></item>
+		<item name="wcf.page.de.joshsboard.jcoins.JCoinsTransferForm"><![CDATA[Überweisung]]></item>
+		<item name="wcf.page.de.joshsboard.jcoins.OwnCoinsStatementPage"><![CDATA[Kontoauszüge]]></item>
+	</category>
 </language>
