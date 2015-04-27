@@ -21,12 +21,12 @@
 
 		{hascontent}
 		<nav>
-			<ul id="jCoinsStatementButtonContainer" class="">
+			<ul class="jCoinsStatementButtonTopContainer">
 				{content}
 					{if $objects|count > 1}<li><a class="button" href="{link controller='SumUpStatements'}{/link}" title="{link controller='SumUpStatements'}{/link}"><span>{lang}wcf.jcoins.statement.compress{/lang}</span></a></li>{/if}
 					{event name='largeButtonsTop'}
 				{/content}
-		</ul>
+			</ul>
 		</nav>
 		{/hascontent}
 	</div>
@@ -70,7 +70,7 @@
 
 		{hascontent}
 		<nav>
-			<ul id="jCoinsStatementButtonContainer">
+			<ul class="jCoinsStatementButtonContainer">
 				{content}
 			{if $objects|count > 1}<li><a class="button" href="{link controller='SumUpStatements'}{/link}" title="{link controller='SumUpStatements'}{/link}"><span>{lang}wcf.jcoins.statement.compress{/lang}</span></a></li>{/if}
 
