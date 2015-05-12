@@ -95,7 +95,10 @@ class JCoinsShopItemEditForm extends JCoinsShopItemAddForm {
 			'price' => $this->price, 
 			'description' => $description, 
 			'name' => $name, 
-			'showOrder' => $this->showOrder
+			'showOrder' => $this->showOrder, 
+			'parseBBCodes' => ($this->parseBBCodes) ? 1 : 0,
+			'allowHTML' => ($this->allowHTML) ? 1 : 0,
+			'allowSmileys' => ($this->allowSmileys) ? 1 : 0,
 			), 
 		    'parameters' => $this->parameterParameters
 		));
