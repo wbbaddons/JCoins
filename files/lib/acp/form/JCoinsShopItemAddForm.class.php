@@ -108,7 +108,7 @@ class JCoinsShopItemAddForm extends AbstractForm {
 		if (isset($_POST['price'])) $this->price = intval($_POST['price']);
 		if (isset($_POST['type'])) $this->typeID = intval($_POST['type']);
 		
-		if (isset($_POST['parseBBCodes']) & $_POST['parseBBCodes'] == 1) $this->parseBBCodes = true;
+		if (isset($_POST['parseBBCodes']) && $_POST['parseBBCodes'] == 1) $this->parseBBCodes = true;
 		if (isset($_POST['allowHTML']) && $_POST['allowHTML'] == 1) $this->allowHTML = true;
 		if (isset($_POST['allowSmileys']) && $_POST['allowSmileys'] == 1) $this->allowSmileys = true;
 		
