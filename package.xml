@@ -26,8 +26,8 @@
 	</optionalpackages>
 	
 	<instructions type="install">
-                <!-- my pips -->
-                <instruction type="packageInstallationPlugin">packageInstallationPlugin.xml</instruction>
+		<!-- my pips -->
+		<instruction type="packageInstallationPlugin">packageInstallationPlugin.xml</instruction>
                 
 		<!-- files -->
 		<instruction type="template">templates.tar</instruction>
@@ -46,15 +46,15 @@
 		<instruction type="userNotificationEvent">userNotificationEvent.xml</instruction>
 		<instruction type="userGroupOption">userGroupOption.xml</instruction>
 		<instruction type="acpMenu">acpMenu.xml</instruction>
-                <instruction type="dashboardBox">dashboardBox.xml</instruction>
+		<instruction type="dashboardBox">dashboardBox.xml</instruction>
 		<instruction type="clipboardAction">clipboardAction.xml</instruction>
-                <instruction type="jcoinsshopitemtype">JCoinsShopItemType.xml</instruction>
-                <instruction type="pageMenu">pageMenu.xml</instruction>
+		<instruction type="jcoinsshopitemtype">JCoinsShopItemType.xml</instruction>
+		<instruction type="pageMenu">pageMenu.xml</instruction>
 		
 		<!-- lng -->
 		<instruction type="language">lang/*.xml</instruction>
-                
-                <!-- script -->
-                <instruction type="script">acp/install_jcoins_110.php</instruction>
+
+		 <!-- script -->
+		<instruction type="script">acp/install_jcoins_110.php</instruction>
 	</instructions>
 </package>
