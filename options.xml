@@ -31,19 +31,13 @@
 				<enableoptions><![CDATA[jcoins]]></enableoptions>
 			</option>
 			
-			<option name="module_jcoins_premiumgroups">
-				<categoryname>module.jcoins</categoryname>
-				<optiontype>boolean</optiontype>
-				<defaultvalue>1</defaultvalue>
-			</option>
-			
-                        <option name="module_jcoins_shop">
+			<option name="module_jcoins_shop">
 				<categoryname>module.jcoins</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>
                         
-                        <option name="module_jcoins_showcopyright">
+			<option name="module_jcoins_showcopyright">
 				<categoryname>module.jcoins</categoryname>
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
@@ -118,4 +112,8 @@
 			</option>
 		</options>
 	</import>
+	
+	<delete>
+		<option name="module_jcoins_premiumgroups" />
+	</delete>
 </data>

@@ -8,10 +8,7 @@
 
 		<ul class="dropdownMenu">
 			<li><a href="{link controller='OwnCoinsStatement'}{/link}">{lang}wcf.jcoins.statement.title{/lang}</a></li>
-			{if $__wcf->session->getPermission('user.jcoins.canTransfer')}<li><a href="{link controller='JCoinsTransfer'}{/link}">{lang}wcf.jcoins.transfer.title{/lang}</a></li>{/if}			
-		{if MODULE_JCOINS_PREMIUMGROUPS && $premiumGroupsAvailable|isset && $premiumGroupsAvailable && $__wcf->session->getPermission('user.jcoins.canUsePremiumGroups')}
-			<li><a href="{link controller='JCoinsPremiumGroupsOverview'}{/link}">{lang}wcf.jcoins.premiumgroups.link{/lang}</a></li>
-		{/if}
+			{if $__wcf->session->getPermission('user.jcoins.canTransfer')}<li><a href="{link controller='JCoinsTransfer'}{/link}">{lang}wcf.jcoins.transfer.title{/lang}</a></li>{/if}
 
 		{event name='additionalJCoinsLinks'}
 

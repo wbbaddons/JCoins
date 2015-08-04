@@ -31,8 +31,7 @@
 		<item name="wcf.jcoins.shop.item.type.conversation.close"><![CDATA[Konversation schließen]]></item>
 		<item name="wcf.jcoins.shop.item.type.conversation.close.description"><![CDATA[Die Konversation wird nach dem Kauf geschlossen.]]></item>
 		
-                <!-- exceptions -->
-                <item name="wcf.jcoins.nogroupsavailable"><![CDATA[Es sind keine normale Gruppen, mit welcher man eine Premiumgruppe bilden könnte, verfügbar.]]></item>
+		<!-- exceptions -->
 		<item name="wcf.jcoins.shop.error.integer.max"><![CDATA[Das Item darf nicht mehr als 4294967294 JCoins kosten.]]></item>
 		
 		<!-- STATEMENTS -->
@@ -87,24 +86,6 @@
 		
 		<!-- shop -->
 		<item name="wcf.jcoins.statement.shop.buy"><![CDATA[Sie haben {if $title|isset}den{else}einen{/if} Artikel{if $title|isset} „{$title|language}“{/if} im Shop gekauft.]]></item>
-		
-		<!-- PREMIUM GROUPS -->
-		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
-		<item name="wcf.jcoins.premiumgroups.active"><![CDATA[AKTIV]]></item>
-		<item name="wcf.jcoins.premiumgroups.until"><![CDATA[Läuft bis: {$premiumGroup.until|date}]]></item>
-		<item name="wcf.jcoins.premiumgroups.description"><![CDATA[Beschreibung]]></item>
-		<item name="wcf.jcoins.premiumgroups.costs"><![CDATA[Kosten]]></item>
-		<item name="wcf.jcoins.premiumgroups.period"><![CDATA[Laufzeit]]></item>
-		<item name="wcf.jcoins.premiumgroups.days"><![CDATA[Tage]]></item>
-		<item name="wcf.jcoins.premiumgroups.day"><![CDATA[Tag]]></item>
-		<item name="wcf.jcoins.premiumgroups.notenougthjcoins"><![CDATA[Nicht genügend {JCOINS_NAME}]]></item>
-		<item name="wcf.jcoins.premiumgroups.title"><![CDATA[Premiumgruppen]]></item>
-		<item name="wcf.jcoins.premiumgroups.buy"><![CDATA[Kaufen]]></item>
-		<item name="wcf.jcoins.premiumgroups.renew"><![CDATA[Verlängern]]></item>
-		<item name="wcf.jcoins.premiumgroups.link"><![CDATA[Meine Premiumgruppen]]></item>
-		<item name="wcf.jcoins.premiumgroups.nogroups"><![CDATA[Momentan kannst du keine Premiumgruppen kaufen, da keine verfügbar sind.]]></item>
-		<item name="wcf.jcoins.premiumgroups.statement.buy"><![CDATA[Es wurde eine Premiumbenutzergruppe gekauft.]]></item>
-		<item name="wcf.jcoins.premiumgroups.statement.update"><![CDATA[Es wurde eine Premiumbenutzergruppe verlängert.]]></item>
 	</category>
 	
 	<!-- NOTIFICATIONS -->
@@ -129,7 +110,6 @@
 		<item name="wcf.acp.group.option.user.jcoins.canSee"><![CDATA[Kann JCoins sehen]]></item>
 		<item name="wcf.acp.group.option.user.jcoins.canSee.description"><![CDATA[Nutzer können JCoins dann beispielsweise in der Seitenleiste sehen.]]></item>
 		<item name="wcf.acp.group.option.user.jcoins.canUseShop"><![CDATA[Kann den Shop benutzen]]></item>
-		<item name="wcf.acp.group.option.user.jcoins.canUsePremiumGroups"><![CDATA[Kann die Premium-Gruppen benutzen]]></item>
 		
 		<item name="wcf.acp.group.option.category.mod.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.group.option.category.mod.jcoins.general"><![CDATA[Allgemein]]></item>
@@ -138,12 +118,9 @@
 		<item name="wcf.acp.group.option.mod.jcoins.canSeeTransferList"><![CDATA[Kann alle Transaktionen sehen]]></item>
 		<item name="wcf.acp.group.option.category.admin.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.group.option.category.admin.jcoins.general"><![CDATA[Allgemein]]></item>
-		<item name="wcf.acp.group.option.category.admin.jcoins.premiumgroups"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.acp.group.option.category.admin.jcoins.shop"><![CDATA[Shop]]></item>
 		<item name="wcf.acp.group.option.admin.jcoins.shop.canManage"><![CDATA[Kann den Shop verwalten]]></item>
 		<item name="wcf.acp.group.option.admin.jcoins.canExecuteMassProcessing"><![CDATA[Kann Massenüberweisungen tätigen]]></item>
-		<item name="wcf.acp.group.option.admin.jcoins.premiumgroups.canEditPremiumGroups"><![CDATA[Kann Premiumbenutzergruppen bearbeiten]]></item>
-		<item name="wcf.acp.group.option.admin.jcoins.premiumgroups.canAddPremiumGroups"><![CDATA[Kann Premiumbenutzergruppen erstellen]]></item>
 	</category>
 
 	<!-- ACP OPTIONS -->
@@ -151,9 +128,8 @@
 		<item name="wcf.acp.option.category.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.option.category.module.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.option.module_jcoins"><![CDATA[JCoins]]></item>
-		<item name="wcf.acp.option.module_jcoins_premiumgroups"><![CDATA[Premiumgruppen]]></item>
-                <item name="wcf.acp.option.module_jcoins_shop"><![CDATA[Shop]]></item>
-                <item name="wcf.acp.option.module_jcoins_showcopyright"><![CDATA[JCoins-Copyright anzeigen]]></item>
+		<item name="wcf.acp.option.module_jcoins_shop"><![CDATA[Shop]]></item>
+		<item name="wcf.acp.option.module_jcoins_showcopyright"><![CDATA[JCoins-Copyright anzeigen]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
 		<item name="wcf.acp.option.jcoins_statements_deleteafter"><![CDATA[Kontoauszüge löschen]]></item>
 		<item name="wcf.acp.option.jcoins_name"><![CDATA[Bezeichnung für die Währung]]></item>
@@ -176,31 +152,17 @@
 		<item name="wcf.acp.option.jcoins_receivecoins_login"><![CDATA[JCoins für den täglichen Login]]></item>
 		<item name="wcf.acp.option.jcoins_receivecoins_login.description"><![CDATA[Wie viele JCoins soll der Benutzer bekommen, wenn er sich einloggt? Dieser Bonus wird nur einmal am Tag vergeben.]]></item>
 		<item name="wcf.acp.option.category.jcoins.general"><![CDATA[Allgemein]]></item>
-                <item name="wcf.acp.option.jcoins_dashboard_sidebar_richest_num"><![CDATA[Reichste Benutzer in der Sidebar]]></item>
+		<item name="wcf.acp.option.jcoins_dashboard_sidebar_richest_num"><![CDATA[Reichste Benutzer in der Sidebar]]></item>
 		<item name="wcf.acp.option.message_sidebar_jcoins"><![CDATA[JCoins der Autoren anzeigen]]></item>
 	</category>
 	
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.jcoins"><![CDATA[JCoins]]></item>
-		<item name="wcf.acp.menu.link.jcoins.premium.list"><![CDATA[Premiumgruppen auflisten]]></item>
-		<item name="wcf.acp.menu.link.jcoins.premium.add"><![CDATA[Premiumgruppe hinzufügen]]></item>
-                <item name="wcf.acp.menu.link.jcoins.shop.item.list"><![CDATA[Shop-Items auflisten]]></item>
-                <item name="wcf.acp.menu.link.jcoins.shop.item.add"><![CDATA[Shop-Item hinzufügen]]></item>
+		<item name="wcf.acp.menu.link.jcoins.shop.item.list"><![CDATA[Shop-Items auflisten]]></item>
+		<item name="wcf.acp.menu.link.jcoins.shop.item.add"><![CDATA[Shop-Item hinzufügen]]></item>
 	</category>
 	
 	<category name="wcf.acp.jcoins">
-		<item name="wcf.acp.jcoins.premiumgroups.edit"><![CDATA[Premiumgruppe bearbeiten]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.add"><![CDATA[Premiumgruppe hinzufügen]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.editinfo"><![CDATA[Beachte, dass nur die Beschreibung und die Anzahl der jCoins geändert werden können. Möchten Sie die Gruppe oder die Länge ändern, so müssen Sie ein neues Angebot erstellen. Möchten Sie dieses dabei nicht mehr kaufbar machen, so kannst müssen Sie das Angebot deaktivieren oder löschen.]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.addinfo"><![CDATA[Beachte, dass Premiumgruppen erst wieder gelöscht werden können, wenn alle Abonnements ausgelaufen sind!]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.list"><![CDATA[Premiumgruppen]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.nogroups"><![CDATA[Es wurden noch keine Premiumgruppen angelegt.]]></item>        
-		<item name="wcf.acp.jcoins.premiumgroups.jCoins"><![CDATA[JCoins]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.period"><![CDATA[Dauer]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.period.description"><![CDATA[Geben Sie hier die Dauer in Tagen an.]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.description"><![CDATA[Beschreibung]]></item>
-		<item name="wcf.acp.jcoins.premiumgroups.groupID"><![CDATA[Gruppe]]></item>
-		
 		<!-- global -->
 		<item name="wcf.acp.jcoins.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.acp.jcoins.reason"><![CDATA[Grund]]></item>
@@ -223,10 +185,10 @@
 		<item name="wcf.acp.jcoins.shop.item.add"><![CDATA[Shop-Item hinzufügen]]></item>
 		<item name="wcf.acp.jcoins.shop.item.edit"><![CDATA[Shop-Item bearbeiten]]></item>
 		<item name="wcf.acp.jcoins.shop.item.general"><![CDATA[Allgemein]]></item>
-                <item name="wcf.acp.jcoins.shop.item.name"><![CDATA[Name]]></item>
+		<item name="wcf.acp.jcoins.shop.item.name"><![CDATA[Name]]></item>
 		<item name="wcf.acp.jcoins.shop.item.description"><![CDATA[Beschreibung]]></item>
-                <item name="wcf.acp.jcoins.shop.item.price"><![CDATA[Preis]]></item>
-                <item name="wcf.acp.jcoins.shop.item.types"><![CDATA[Shop-Item-Typ]]></item>
+		<item name="wcf.acp.jcoins.shop.item.price"><![CDATA[Preis]]></item>
+		<item name="wcf.acp.jcoins.shop.item.types"><![CDATA[Shop-Item-Typ]]></item>
 		<item name="wcf.acp.jcoins.shop.item.error.regex"><![CDATA[Das Feld hat einen ungültigen Wert.]]></item>
 		<item name="wcf.acp.jcoins.shop.item.bbcodes"><![CDATA[BBCodes erlauben]]></item>
 		<item name="wcf.acp.jcoins.shop.item.html"><![CDATA[HTML erlauben]]></item>
@@ -245,14 +207,12 @@
 	<category name="wcf.user.usersOnline">
 		<item name="wcf.user.usersOnline.location.OwnCoinsStatementPage"><![CDATA[Kontoauszüge]]></item>
 		<item name="wcf.user.usersOnline.location.JCoinsShopPage"><![CDATA[Shop]]></item>
-		<item name="wcf.user.usersOnline.location.JCoinsPremiumGroupsOverviewPagee"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.user.usersOnline.location.JCoinsTransferForm"><![CDATA[Überweisung]]></item>
 	</category>
 	
 	<category name="wcf.page">
 		<item name="wcf.page.category.de.joshsboard.jcoins"><![CDATA[JCoins]]></item>
 		<item name="wcf.page.de.joshsboard.jcoins.JCoinsGlobalActivityPage"><![CDATA[Globale Aktivitäten]]></item>
-		<item name="wcf.page.de.joshsboard.jcoins.JCoinsPremiumGroupsOverviewPage"><![CDATA[Premiumgruppen]]></item>
 		<item name="wcf.page.de.joshsboard.jcoins.JCoinsShopPage"><![CDATA[Shop]]></item>
 		<item name="wcf.page.de.joshsboard.jcoins.JCoinsTransferForm"><![CDATA[Überweisung]]></item>
 		<item name="wcf.page.de.joshsboard.jcoins.OwnCoinsStatementPage"><![CDATA[Kontoauszüge]]></item>

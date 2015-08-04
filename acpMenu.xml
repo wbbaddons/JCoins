@@ -5,7 +5,7 @@
 			<parent>wcf.acp.menu.link.content</parent>
 		</acpmenuitem>
 		
-                <acpmenuitem name="wcf.acp.menu.link.jcoins.shop.item.list">
+		<acpmenuitem name="wcf.acp.menu.link.jcoins.shop.item.list">
 			<controller><![CDATA[wcf\acp\page\JCoinsShopItemList]]></controller>
 			<parent>wcf.acp.menu.link.jcoins</parent>
 			<permissions>admin.jcoins.shop.canManage</permissions>
@@ -13,28 +13,17 @@
 			<options>module_jcoins_shop</options>
 		</acpmenuitem>
                 
-                <acpmenuitem name="wcf.acp.menu.link.jcoins.shop.item.add">
+		<acpmenuitem name="wcf.acp.menu.link.jcoins.shop.item.add">
 			<controller><![CDATA[wcf\acp\form\JCoinsShopItemAdd]]></controller>
 			<parent>wcf.acp.menu.link.jcoins</parent>
 			<permissions>admin.jcoins.shop.canManage</permissions>
 			<showorder>2</showorder>
 			<options>module_jcoins_shop</options>
 		</acpmenuitem>
-                
-		<acpmenuitem name="wcf.acp.menu.link.jcoins.premium.list">
-			<controller><![CDATA[wcf\acp\page\JCoinsPremiumList]]></controller>
-			<parent>wcf.acp.menu.link.jcoins</parent>
-			<permissions>admin.jcoins.premiumgroups.canEditPremiumGroups</permissions>
-			<showorder>3</showorder>
-			<options>module_jcoins_premiumgroups</options>
-		</acpmenuitem>
-		
-		<acpmenuitem name="wcf.acp.menu.link.jcoins.premium.add">
-			<controller><![CDATA[wcf\acp\form\JCoinsPremiumAddForm]]></controller>
-			<parent>wcf.acp.menu.link.jcoins</parent>
-			<permissions>admin.jcoins.premiumgroups.canAddPremiumGroups</permissions>
-			<showorder>4</showorder>
-			<options>module_jcoins_premiumgroups</options>
-		</acpmenuitem>
 	</import>
+
+	<delete>
+		<acpmenuitem name="wcf.acp.menu.link.jcoins.premium.list" />
+		<acpmenuitem name="wcf.acp.menu.link.jcoins.premium.add" />
+	</delete>
 </data>
